@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "qa_file": "golden_qa_pairs.json",
+    "dist_file": "question-type-distribution.json"
+  },
+  "quality_metrics": {
+    "total_pairs": 40,
+    "pairs_with_sources": 40,
+    "pairs_with_questions": 40,
+    "pairs_with_answers": 40,
+    "question_length_stats": {
+      "avg_words": 25.12,
+      "min_words": 4,
+      "max_words": 47
+    },
+    "answer_length_stats": {
+      "avg_words": 226.88,
+      "min_words": 4,
+      "max_words": 515
+    },
+    "source_stats": {
+      "avg_sources_per_pair": 2.2,
+      "max_sources_per_pair": 3,
+      "unique_source_files": 18,
+      "most_used_files": [
+        [
+          "ragspecs.rst",
+          17
+        ],
+        [
+          "fitfunctions.rst",
+          10
+        ],
+        [
+          "walkthroughrag.rst",
+          9
+        ]
+      ]
+    }
+  },
+  "type_distribution": {
+    "distribution": {
+      "factual_lookup": {
+        "question_ids": [
+          0,
+          6,
+          12,
+          18,
+          24,
+          30,
+          36
+        ],
+        "count": 7
+      },
+      "conceptual_explanation": {
+        "question_ids": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          31,
+          37
+        ],
+        "count": 7
+      },
+      "procedural": {
+        "question_ids": [
+          2,
+          8,
+          14,
+          20,
+          26,
+          32,
+          38
+        ],
+        "count": 7
+      },
+      "comparative": {
+        "question_ids": [
+          3,
+          9,
+          15,
+          21,
+          27,
+          33,
+          39
+        ],
+        "count": 7
+      },
+      "feature_enumeration": {
+        "question_ids": [
+          4,
+          10,
+          16,
+          22,
+          28,
+          34
+        ],
+        "count": 6
+      },
+      "multi_file_synthesis": {
+        "question_ids": [
+          5,
+          11,
+          17,
+          23,
+          29,
+          35
+        ],
+        "count": 6
+      }
+    },
+    "summary": {
+      "total_questions": 40,
+      "unique_type_assignments": 6,
+      "questions_with_single_type": 40,
+      "questions_with_multiple_types": 0
+    }
+  },
+  "coverage": {
+    "total_unique_files_referenced": 18,
+    "pairs_with_single_file_source": 10,
+    "pairs_with_multiple_file_sources": 30,
+    "file_coverage": {
+      "ragspecs.rst": 17,
+      "fitfunctions.rst": 10,
+      "walkthroughrag.rst": 9,
+      "evalsfunctions.rst": 8,
+      "onlineagg.rst": 7,
+      "walkthroughft.rst": 6,
+      "models.rst": 4,
+      "icops.rst": 4,
+      "experiment.rst": 4,
+      "issues.rst": 3,
+      "dashboard.rst": 3,
+      "configs.rst": 3,
+      "generators.rst": 3,
+      "sft.rst": 2,
+      "difference.rst": 2,
+      "troubleshooting.rst": 1,
+      "glossary.rst": 1,
+      "dpo.rst": 1
+    }
+  }
+}
