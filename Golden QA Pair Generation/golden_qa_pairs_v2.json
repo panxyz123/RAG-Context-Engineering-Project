@@ -1,0 +1,1743 @@
+[
+  {
+    "question": "What are the recommended parameters to include in the `client_config` dictionary when initializing the AsyncOpenAI client?",
+    "reference_answer": "The recommended parameters to include in the `client_config` dictionary for initializing the AsyncOpenAI client are:\n\n1. `\"api_key\"`: Your OpenAI API key for authentication (required, but not provided publicly).\n2. `\"max_retries\"`: The maximum number of retry attempts for failed API calls, with a default value of 2.\n3. `\"timeout\"`: The request timeout in seconds, which is optional.",
+    "source_evidence": [
+      {
+        "file": "generators.rst",
+        "lines": [
+          93,
+          99
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it assist readers in understanding key terms and concepts?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines and explains key terms and concepts relevant to the subject matter. It assists readers by providing clear, concise definitions for specialized or complex terminology, ensuring consistency in interpretation and improving comprehension of the material. By centralizing these definitions, a glossary helps readers quickly clarify unfamiliar terms without disrupting the flow of the main content.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the key procedural steps involved in comparing different base model architectures using quantization and training knobs?",
+    "reference_answer": "To compare different base model architectures like Llama-3.1-8B-Instruct, Qwen2.5-3B-Instruct, and Qwen2.5-7B-Instruct with 4-bit quantization for efficient training, follow these procedural steps:\n\n1. **Select Model Architectures**: Choose the base models to compare (e.g., Llama-3.1-8B-Instruct, Qwen2.5-3B-Instruct, and Qwen2.5-7B-Instruct).\n2. **Apply Quantization**: Use 4-bit quantization to reduce memory usage and computational overhead during training.\n3. **Configure Training Knobs**: Adjust training parameters (e.g., learning rate, batch size, optimizer settings) via the Trainer, Model, and Adapter knobs to ensure fair and consistent comparisons.\n4. **Train Models**: Execute training for each model architecture under the same conditions (e.g., dataset, quantization, and training knobs).\n5. **Evaluate Performance**: Compare the models based on metrics like accuracy, training efficiency, and resource utilization to determine the best-performing architecture.",
+    "source_evidence": [
+      {
+        "file": "grpo.rst",
+        "lines": [
+          28,
+          29
+        ]
+      },
+      {
+        "file": "grpo.rst",
+        "lines": [
+          31,
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do Snippet 1 and Snippets 2/3 differ in their description of the relationship between configuration knobs and the generation of a config group?",
+    "reference_answer": "Snippet 1 describes `config_group` as either a single evals config knob dictionary, a generated config group, or a list of configs/config groups, explicitly referencing the 'Multi-Config Specification' for its structure. In contrast, Snippets 2 and 3 focus on how individual arguments (knobs) can be `List` or `Range` valued to form the *base set of knob combinations* from which a config group is produced. While Snippet 1 treats `config_group` as an input that may already be a composite structure, Snippets 2 and 3 emphasize the *generation process* of such groups from lower-level knob variations. Snippet 2 uses the phrase 'forms the base set,' while Snippet 3 slightly rephrases it as 'helps form the base set,' but both convey the same underlying relationship.",
+    "source_evidence": [
+      {
+        "file": "experiment.rst",
+        "lines": [
+          142,
+          143
+        ]
+      },
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          8,
+          10
+        ]
+      },
+      {
+        "file": "models.rst",
+        "lines": [
+          81,
+          83
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How does the Interactive Control (IC) Ops dashboard support both manual and automated workflows, and what are the key use cases for each?",
+    "reference_answer": "The Interactive Control (IC) Ops dashboard supports two distinct workflows:\n\n1. **Manual Workflows**: Triggering IC Ops manually from the dashboard is only possible when a human is in the loop, allowing for real-time decision-making and adjustments.\n\n2. **Automated Workflows**: IC Ops can also be utilized in offline scripted settings, where application logic drives actions without direct human intervention. For example, the system can automatically stop 90% of runs with poor evaluation metrics and clone-modify the top 10% to refine their parameters (knobs) for further optimization.\n\nThe dashboard thus bridges interactive human oversight with automated, data-driven operations.",
+    "source_evidence": [
+      {
+        "file": "icops.rst",
+        "lines": [
+          1,
+          2
+        ]
+      },
+      {
+        "file": "glossary.rst",
+        "lines": [
+          80,
+          80
+        ]
+      },
+      {
+        "file": "issues.rst",
+        "lines": [
+          59,
+          62
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What happens when the value of `k` in `search_cfg` is less than the value of `top_n` in `reranker_cfg` during the construction of a config group in RapidFire AI?",
+    "reference_answer": "When the assigned value of `k` in `search_cfg` is less than the assigned value of `top_n` in `reranker_cfg`, the combination is considered meaningless and is automatically omitted by RapidFire AI. Only combinations where `k` is greater than or equal to `top_n` will create valid runs.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          381,
+          382
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in a technical or academic document, and how does it assist readers in understanding key terms and concepts?",
+    "reference_answer": "A glossary in a technical or academic document serves as a reference section that defines and explains key terms and concepts used throughout the material. It assists readers by providing clear, concise definitions for specialized or complex terminology, ensuring consistency in interpretation and helping to clarify unfamiliar or ambiguous terms. This improves comprehension and reduces confusion, especially in subjects with domain-specific language.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the key procedural steps and configurations in the RAG pipeline described, and how are variations tested in the experimental setup?",
+    "reference_answer": "The RAG pipeline follows these procedural steps and configurations: \n1. **Embeddings**: Uses OpenAI's `text-embedding-3-small` model.\n2. **Vector Store**: Employs FAISS with CPU-based exact search (no approximate nearest neighbor approximation).\n3. **Chunking**: Splits documents into 512-token chunks with a 32-token overlap using recursive character splitting and `tiktoken` encoding.\n4. **Retrieval**: Initially retrieves the top-15 documents.\n5. **Reranking**: Uses the `cross-encoder/ms-marco-MiniLM-L6-v2` model to refine results to the top-5 final documents.\n6. **Document Template**: Applies a custom template that includes document titles and content.\n\nTo test variations, the experimental setup fixes all other configurations and performs a grid search over 4 combinations: 2 generator models × 2 search strategies.",
+    "source_evidence": [
+      {
+        "file": "rag_scifact.rst",
+        "lines": [
+          31,
+          31
+        ]
+      },
+      {
+        "file": "rag_scifact.rst",
+        "lines": [
+          33,
+          38
+        ]
+      },
+      {
+        "file": "rag_scifact.rst",
+        "lines": [
+          40,
+          41
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the return types and document handling behaviors differ between the default and non-default settings of the `serialize` parameter in a RAG document chunking function, and how does the `text_splitter` parameter influence this process?",
+    "reference_answer": "The three snippets describe different aspects of a RAG document chunking function:\n\n1. **Default Behavior (`serialize=True`)**:\n   - When `serialize` is set to `True` (the default), the function returns a `list[str]` where each entry is a formatted document chunk string. These chunks are separated by double newlines (Snippet 1) and are derived from the documents split by the `text_splitter` (Snippet 2). The `text_splitter` controls chunk size, overlap, and splitting strategy, ensuring the documents are divided appropriately for RAG.\n\n2. **Non-Default Behavior (`serialize=False`)**:\n   - When `serialize` is set to `False`, the function returns a `list[list[Document]]` instead of strings. This means the raw `Document` objects (as split by the `text_splitter`) are preserved without conversion to strings (Snippet 3). The `text_splitter` still governs how these documents are chunked, but the output format changes to retain the original document structure.\n\n3. **Relationship Between Parameters**:\n   - The `text_splitter` parameter is independent of `serialize` but influences both behaviors. It determines how documents are chunked (e.g., chunk size, overlap) before either serialization (to strings) or raw document retention occurs. The `serialize` parameter only dictates the output format, not the chunking logic itself.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          157,
+          158
+        ]
+      },
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          50,
+          51
+        ]
+      },
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          172,
+          178
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the provided snippets collectively describe the implementation of a Retrieval-Augmented Generation (RAG) system for a financial opinion Q&A chatbot, and where can the associated tutorial be accessed?",
+    "reference_answer": "The snippets together outline the development of a Retrieval-Augmented Generation (RAG) system tailored for a financial opinion Q&A chatbot. Snippet 1 introduces the concept and purpose of the tutorial, while Snippet 3 explicitly names the project as 'FiQA' and provides its title. Snippet 2 complements these by offering a direct GitHub link to the tutorial notebook (`rf-tutorial-rag-fiqa.ipynb`), which demonstrates the practical implementation of the RAG system for this use case.",
+    "source_evidence": [
+      {
+        "file": "rag_fiqa.rst",
+        "lines": [
+          17,
+          17
+        ]
+      },
+      {
+        "file": "rag_fiqa.rst",
+        "lines": [
+          6,
+          6
+        ]
+      },
+      {
+        "file": "rag_fiqa.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the required parameters for configuring a PGVector collection in Read/Update mode, and what is the purpose of the 'pre_delete_collection' parameter?",
+    "reference_answer": "For Read/Update mode in a PGVector collection configuration, the required parameters are:\n1. `connection`: A DB connection string or engine, which is mandatory for all modes.\n2. `collection_name`: The name of a pre-existing PGVector collection/table used for retrieval.\n\nThe `pre_delete_collection` parameter is optional and applicable only to Update mode. If set to `True`, it deletes the existing collection before writing new data. By default, this parameter is `False`, and it should be used with caution as it permanently removes the collection.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          92,
+          95
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it aid the reader's understanding?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines key terms and concepts used throughout the material. It aids the reader's understanding by providing clear, concise explanations of specialized or complex terminology, ensuring consistency in interpretation and reducing ambiguity. This allows readers to quickly look up unfamiliar terms without disrupting their engagement with the main content.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the key procedural difference between distributive metrics and algebraic metrics in the context of evaluating data points?",
+    "reference_answer": "The key procedural difference lies in how they aggregate data points. Distributive metrics are purely additive, meaning they sum values directly across data points (e.g., counting correct predictions or summing token lengths). In contrast, algebraic metrics involve a two-step process: first, they decompose into distributive components (e.g., counting correct predictions and total data points separately), and then they compute an average or proportion (e.g., dividing correct predictions by total data points for precision or averaging per-example values for mean rouge-1).",
+    "source_evidence": [
+      {
+        "file": "onlineagg.rst",
+        "lines": [
+          63,
+          65
+        ]
+      },
+      {
+        "file": "onlineagg.rst",
+        "lines": [
+          67,
+          69
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the parameters `ref_model_type`, `ref_model_name`, and `ref_model_kwargs` differ in their purpose and usage for DPO and GRPO, and what do they have in common?",
+    "reference_answer": "The parameters `ref_model_type`, `ref_model_name`, and `ref_model_kwargs` are all used exclusively for DPO and GRPO methods and serve analogous roles to their non-reference counterparts (`model_type`, `model_name`, and `model_kwargs`), but specifically for the frozen reference model. While `ref_model_type` defines the type of the reference model (e.g., its architecture), `ref_model_name` specifies the name or identifier of the reference model (e.g., a pretrained model name), and `ref_model_kwargs` provides additional keyword arguments (e.g., configuration settings) for loading or initializing the reference model. All three parameters are optional and share the commonality of being tailored to the reference model rather than the primary model.",
+    "source_evidence": [
+      {
+        "file": "models.rst",
+        "lines": [
+          118,
+          119
+        ]
+      },
+      {
+        "file": "models.rst",
+        "lines": [
+          115,
+          116
+        ]
+      },
+      {
+        "file": "models.rst",
+        "lines": [
+          121,
+          122
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the provided snippets collectively describe the role and usage of a postprocess function in a system, and what key details are highlighted about its implementation and purpose?",
+    "reference_answer": "The snippets collectively describe the `postprocess_fn` as an optional user-provided function designed to process a batch of examples and their generated outputs. Snippet 1 introduces the general concept of a 'Postprocess Function,' while Snippet 2 specifies that it is a callable (`postprocess_fn`) passed as input by the system, taking a single configuration (`cfg`) as an argument. Snippet 3 elaborates on its purpose, explaining that it is injected into the system to enable tasks such as extracting structured information from generations, incorporating ground truth data, or applying transformations before metric computation. Together, the snippets emphasize its flexibility, optional nature, and utility in customizing the post-generation workflow.",
+    "source_evidence": [
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          161,
+          162
+        ]
+      },
+      {
+        "file": "promptothers.rst",
+        "lines": [
+          86,
+          87
+        ]
+      },
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          164,
+          167
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the recommended key parameters to include in the `model_config` dictionary for vLLM-based generation in a self-hosted LLM setup?",
+    "reference_answer": "The recommended key parameters to include in the `model_config` dictionary for vLLM-based generation are:\n\n1. `\"model\"`: The name or path of the Hugging Face model to use (e.g., \"Qwen/Qwen2.5-0.5B-Instruct\").\n2. `\"dtype\"`: The data type for model weights and activations (e.g., \"half\", \"float\", or \"bfloat16\").\n3. `\"distributed_executor_backend\"`: The backend for distributed model workers, which must be either \"ray\" or \"mp\" (only \"mp\" is currently supported).\n4. `\"max_model_len\"`: The model context length (prompt and output), which will be auto-derived from the model config if unspecified.\n\nUnspecified parameters will use vLLM's default values.",
+    "source_evidence": [
+      {
+        "file": "generators.rst",
+        "lines": [
+          23,
+          30
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it aid the reader's understanding of key terms and concepts?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines and explains key terms and concepts used throughout the material. It aids the reader's understanding by providing clear, concise definitions for specialized or complex terminology, ensuring consistency in interpretation and reducing ambiguity. This allows readers to quickly look up unfamiliar terms without disrupting their engagement with the main content.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the procedural relationship between defining a Task, Dataset, and Prompt in the context of using Group Relative Policy Optimization (GRPO) for improving mathematical reasoning?",
+    "reference_answer": "In the procedural workflow for applying Group Relative Policy Optimization (GRPO) to enhance mathematical reasoning, the Task, Dataset, and Prompt serve as foundational components before implementing the RL approach. The Task defines the specific mathematical reasoning objective, the Dataset provides the examples or problems for training and evaluation, and the Prompt structures the input format to guide the model's responses. GRPO then uses these components to generate multiple reward functions, which offer richer training signals to optimize the model's performance on the defined task.",
+    "source_evidence": [
+      {
+        "file": "grpo.rst",
+        "lines": [
+          14,
+          15
+        ]
+      },
+      {
+        "file": "grpo.rst",
+        "lines": [
+          17,
+          18
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the key difference between the two provided Google Colab notebooks for RapidFire AI, and which one is specifically designed for RAG (Retrieval-Augmented Generation)?",
+    "reference_answer": "The first snippet (`RapidFire AI on Google Colab`) refers to a general pre-configured notebook for RapidFire AI, while the second snippet (`RapidFire AI RAG on Google Colab`) and the third snippet explicitly highlight a version tailored for **RAG (Retrieval-Augmented Generation)**. The RAG-specific notebook is accessible via the link in Snippet 2 (`https://tinyurl.com/rapidfireai-rag-colab`) and is also mentioned in Snippet 3 as the 'RapidFire AI RAG' option, emphasizing its focus on retrieval-augmented workflows.",
+    "source_evidence": [
+      {
+        "file": "sft.rst",
+        "lines": [
+          12,
+          13
+        ]
+      },
+      {
+        "file": "rag_fiqa.rst",
+        "lines": [
+          10,
+          11
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          16,
+          16
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How does RapidFire AI improve the efficiency of running multiple Supervised Fine-Tuning (SFT) configurations on a single or multi-GPU setup compared to traditional sequential or parallel execution methods?",
+    "reference_answer": "RapidFire AI enhances efficiency through three key mechanisms:\n\n1. **Sharded and Concurrent Execution**: Instead of running SFT configurations sequentially (one after another) or waiting for a full dataset pass, RapidFire AI shards the dataset into smaller 'chunks' and processes one shard at a time across all configurations. This allows multiple configurations to progress concurrently, cycling through shards rather than waiting for full epochs or evaluations.\n\n2. **Adaptive Execution Engine**: The system uses an 'interruptible' execution model, enabling dynamic swapping of adapters and base models across GPUs/CPUs via shared memory-based caching (with disk spillover). This avoids GPU underutilization and ensures workloads are distributed adaptively, unlike traditional Task Parallelism where some GPUs may remain idle.\n\n3. **Multi-GPU Optimization**: RapidFire AI natively supports multi-GPU setups by automatically scheduling tasks to maximize GPU utilization. Unlike Data Parallelism (e.g., DDP/FSDP) or Task Parallelism (e.g., Weights & Biases), it avoids inefficiencies like idle GPUs by intelligently navigating workloads across available hardware, even incorporating IC Ops for further optimization.",
+    "source_evidence": [
+      {
+        "file": "difference.rst",
+        "lines": [
+          11,
+          15
+        ]
+      },
+      {
+        "file": "difference.rst",
+        "lines": [
+          4,
+          9
+        ]
+      },
+      {
+        "file": "difference.rst",
+        "lines": [
+          60,
+          64
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are some key LangChain-related API references and resources for document loading, embeddings, text splitting, vector stores, and retrievers?",
+    "reference_answer": "Key LangChain-related API references and resources include:\n\n- **Document Loading**: `DirectoryLoader API Reference` for loading documents from directories.\n- **Embeddings**: `HuggingFaceEmbeddings API Reference` for Hugging Face embeddings, and the general `LangChain Embeddings` documentation.\n- **Text Splitting**: `LangChain Text Splitters` for splitting text into manageable chunks.\n- **Vector Stores**: `FAISS` for in-memory vector similarity search, `Pinecone` for managed vector databases, and `PGVector` for PostgreSQL-based vector storage. Additional details are available in the `LangChain Vector Stores` reference.\n- **Retrievers**: `LangChain Retrievers` for retrieving relevant documents.\n- **Core Components**: `LangChain Document` for document handling and structure.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          181,
+          191
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it support the reader's understanding of key terms and concepts?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines and explains key terms and concepts used throughout the material. It supports the reader's understanding by providing clear, concise definitions for specialized or complex terminology, ensuring consistency in interpretation and reducing ambiguity. This helps readers, especially those unfamiliar with the subject, to grasp foundational ideas and follow the content more effectively.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the procedural relationship between the `model_type` and `model_kwargs` parameters when initializing a model using the `run_fit()` function?",
+    "reference_answer": "The `model_type` parameter is a user-defined string used to identify the type of model inside the `create_model_fn()` function provided to `run_fit()`, with a default value of `'causal_lm'`. In contrast, the `model_kwargs` parameter is a dictionary of additional arguments passed directly to `AutoModel.from_pretrained()` during model initialization, such as `torch_dtype`, `device_map`, or `trust_remote_code`. While `model_type` helps customize the model creation logic within the user-defined function, `model_kwargs` provides fine-grained control over the underlying model loading process.",
+    "source_evidence": [
+      {
+        "file": "models.rst",
+        "lines": [
+          109,
+          110
+        ]
+      },
+      {
+        "file": "models.rst",
+        "lines": [
+          112,
+          113
+        ]
+      }
+    ]
+  },
+  {
+    "question": "Compare the return type structures described in the three snippets. How do they differ in terms of the dictionary's value types and the presence of reserved keys?",
+    "reference_answer": "The three snippets describe different return type structures for dictionaries, with key differences in their value types and reserved keys:\n\n1. **Snippet 1 and Snippet 2** both specify a return type of `dict[str, dict[str, Any]]`. However, Snippet 2 provides additional context, stating that the inner dictionary must include a reserved key `\"value\"` containing the metric's value for a batch of examples. The inner dictionary may also contain other keys of type `Any`.\n\n2. **Snippet 3** describes a simpler structure, `Dict[str, float]`, where the dictionary maps user-defined metric names directly to numerical (float) values, without any nested dictionaries or reserved keys.\n\nIn summary, Snippets 1 and 2 use a nested dictionary structure with a reserved key, while Snippet 3 uses a flat dictionary with direct numerical values.",
+    "source_evidence": [
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          321,
+          321
+        ]
+      },
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          233,
+          234
+        ]
+      },
+      {
+        "file": "fitfunctions.rst",
+        "lines": [
+          83,
+          84
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the provided snippets describe the workflow for monitoring and managing evaluation metrics in a machine learning experiment within a notebook environment?",
+    "reference_answer": "The snippets collectively outline a workflow for running, monitoring, and managing machine learning evaluation metrics in a notebook environment. Snippet 1 instructs the user to run a cell to print evaluation results or view log files and emphasizes ending the experiment afterward. Snippet 2 highlights the monitoring of online aggregation of evaluation metrics, which can be observed either in an in-notebook table or an ML metrics dashboard. Snippet 3 elaborates on this by explaining that the system auto-generates ML metrics based on user specifications and displays them in an auto-updated table within the notebook (and soon on the ML metrics dashboard). Additionally, it mentions the appearance of an Interactive Control (IC) Ops panel in the notebook, which requires the active execution of the `run_evals()` function to remain usable. Together, these snippets describe a seamless process for running evaluations, dynamically tracking metrics, and interacting with the results in real time.",
+    "source_evidence": [
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          267,
+          268
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          225,
+          226
+        ]
+      },
+      {
+        "file": "experiment.rst",
+        "lines": [
+          170,
+          173
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What types of language models can the `sample_create_model` function handle based on the provided `model_config`, and how are they instantiated?",
+    "reference_answer": "The `sample_create_model` function can handle four types of language models based on the `model_type` specified in the `model_config`: 1) **Causal Language Models (causal_lm)**, instantiated using `AutoModelForCausalLM.from_pretrained`; 2) **Sequence-to-Sequence Language Models (seq2seq_lm)**, instantiated using `AutoModelForSeq2SeqLM.from_pretrained`; 3) **Masked Language Models (masked_lm)**, instantiated using `AutoModelForMaskedLM.from_pretrained`; and 4) **Custom models (custom)**, where the logic is left unimplemented (marked as `pass`). If an unrecognized `model_type` is provided, the function defaults to instantiating a Causal Language Model.",
+    "source_evidence": [
+      {
+        "file": "fitfunctions.rst",
+        "lines": [
+          34,
+          55
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it assist readers in understanding key concepts?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines and explains key terms and concepts used throughout the material. It assists readers by providing clear, concise definitions for specialized or complex terminology, ensuring consistency in interpretation and helping to clarify ambiguous or domain-specific language. This improves comprehension and reduces confusion, especially for readers who may be unfamiliar with the subject matter.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the steps involved in creating a multi-config specification, and what types of knob set generators are supported for defining knob values?",
+    "reference_answer": "To create a multi-config specification, you first need **knob set generators** to define the possible values for knobs, followed by **config group generators** that take a configuration with set-valued knobs and produce groups of complete configurations. For knob set generators, the system currently supports two types: `:func:`List()` for specifying a discrete set of values and `:func:`Range()` for sampling from a continuous interval of values.",
+    "source_evidence": [
+      {
+        "file": "configs.rst",
+        "lines": [
+          19,
+          21
+        ]
+      },
+      {
+        "file": "configs.rst",
+        "lines": [
+          23,
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the RapidFire AI RAG pipeline specification and the LangChain RAG specification relate to each other based on the provided snippets?",
+    "reference_answer": "The snippets indicate that RapidFire AI defines an RAG (Retrieval-Augmented Generation) specification that wraps or integrates with LangChain classes. Specifically, Snippet 1 mentions defining an 'RF RAG spec that wraps LangChain classes,' while Snippet 3 references an `RFLangChainRagSpec` parameter, which is described as an instance of a RapidFire AI RAG pipeline spec. This suggests that the RapidFire AI RAG implementation (`RFLangChainRagSpec`) is built on top of or extends LangChain's RAG functionality, as implied by the API documentation in Snippet 2.",
+    "source_evidence": [
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          211,
+          211
+        ]
+      },
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          1,
+          2
+        ]
+      },
+      {
+        "file": "generators.rst",
+        "lines": [
+          40,
+          41
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the ML metrics dashboard and Interactive Control (IC) operations interact across different types of experiments, and what are the prerequisites for their functionality based on the provided snippets?",
+    "reference_answer": "The ML metrics dashboard automatically visualizes metrics plots for specific experiment types—SFT/RFT (via the dashboard) and RAG/context engineering (via in-notebook output). According to Snippet 1, Interactive Control (IC) operations (e.g., stop, resume, clone, modify) are available for dynamic run management. Snippet 2 clarifies that metrics are auto-generated and overlaid on the same dashboard plots for multiple reruns of `:func:`run_fit()` within an experiment. However, IC operations are only accessible while `:func:`run_fit()` is actively running, as noted in Snippet 2. Thus, the dashboard consolidates metrics across runs, while IC operations require an ongoing `:func:`run_fit()` process to function.",
+    "source_evidence": [
+      {
+        "file": "overview.rst",
+        "lines": [
+          25,
+          27
+        ]
+      },
+      {
+        "file": "experiment.rst",
+        "lines": [
+          110,
+          114
+        ]
+      },
+      {
+        "file": "dashboard.rst",
+        "lines": [
+          58,
+          59
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the required and optional configuration parameters for the Create mode and Read/Update mode when using the RapidFire AI Pinecone integration?",
+    "reference_answer": "For **Create mode**, the required parameters are `\"pinecone_api_key\"` (either in the config or as an environment variable) and `\"embedding_cfg\"` (either in the config or top-level config), along with `\"spec\"`. Optional parameters include `\"metric\"`, `\"vector_type\"`, `\"tags\"`, `\"timeout\"`, and `\"deletion_protection\"`. The `\"index_namespace\"` is inapplicable, as RapidFire AI automatically generates an index name with the prefix \"rf-\" and an SHA hash, while the namespace defaults to an empty string.\n\nFor **Read/Update mode**, the required parameters are `\"pinecone_api_key\"`, `\"embedding_cfg\"`, and `\"index_namespace\"` (which must point to a pre-existing index and namespace). All other arguments, such as `\"spec\"`, `\"metric\"`, and `\"vector_type\"`, are inapplicable in this mode. The `\"text_key\"` is optional for all modes and defaults to `\"text\"`.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          84,
+          88
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it aid the reader's understanding of key terms?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines and explains key terms and concepts relevant to the subject matter. It aids the reader's understanding by providing clear, concise definitions for specialized or complex terminology, ensuring consistency in interpretation and reducing ambiguity. This allows readers to quickly look up unfamiliar terms without disrupting their engagement with the main content.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the procedural difference between using `run_fit()` and the function described in Snippet 3, particularly regarding input handling, concurrency control, and return values?",
+    "reference_answer": "The procedural differences are as follows:\n\n1. **Input Handling**: Both `run_fit()` and the function in Snippet 3 accept similar input types for configurations, such as a single config dictionary, a list of config dictionaries, or outputs from config group generators like `RFGridSearch()` or `RFRandomSearch`. However, the function in Snippet 3 explicitly returns a value, unlike `run_fit()`.\n\n2. **Concurrency Control**: Both functions use the `num_shards` (or `num_chunks` in `run_fit()`) argument to balance concurrency for cross-config comparisons. A value of at least 4 is recommended to manage overhead while updating results incrementally (e.g., for 1/4th of the data at a time).\n\n3. **Return Values**: Unlike `run_fit()`, which does not return a value, the function in Snippet 3 returns a dictionary where the keys are run/config IDs. The values are 2-tuples containing two dictionaries: one for aggregated metrics and another for cumulative metrics.",
+    "source_evidence": [
+      {
+        "file": "experiment.rst",
+        "lines": [
+          181,
+          184
+        ]
+      },
+      {
+        "file": "experiment.rst",
+        "lines": [
+          186,
+          189
+        ]
+      },
+      {
+        "file": "experiment.rst",
+        "lines": [
+          191,
+          193
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the key differences between running RapidFire AI for Supervised Fine-Tuning (SFT) on Google Colab versus a local multi-GPU machine using PyTorch's FSDP?",
+    "reference_answer": "The snippets highlight two distinct approaches for running RapidFire AI for SFT:\n\n1. **Google Colab (Snippet 1)**: This method allows users to run RapidFire AI on Google Colab, which is ideal for simplified use cases or when local computational resources are limited. It provides an accessible, cloud-based environment without requiring GPU setup on the user's own machine.\n\n2. **Local Multi-GPU Machine with FSDP (Snippet 3)**: For users with access to a local machine with multiple GPUs, RapidFire AI supports automated model partitioning using PyTorch's Fully Sharded Data Parallel (FSDP). This approach requires configuring FSDP details (e.g., GPU count) and is better suited for large-scale SFT tasks where distributed training across GPUs is necessary for performance and scalability.\n\nThe key difference lies in the deployment environment: Google Colab offers convenience and ease of use for smaller-scale or exploratory tasks, while local multi-GPU setups with FSDP provide greater control and efficiency for resource-intensive workloads.",
+    "source_evidence": [
+      {
+        "file": "tutorials.rst",
+        "lines": [
+          36,
+          37
+        ]
+      },
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          4,
+          4
+        ]
+      },
+      {
+        "file": "sft.rst",
+        "lines": [
+          45,
+          47
+        ]
+      }
+    ]
+  },
+  {
+    "question": "In a model evaluation pipeline, how do the `preprocess_fn`, `postprocess_fn`, and `compute_metrics_fn` functions interact during batch processing, and where should each be specified in the evaluation configuration?",
+    "reference_answer": "During the evaluation process, the three functions serve distinct but sequential roles for each batch:\n\n1. **`preprocess_fn`** (Snippet 1) prepares the inputs before they are passed to the generator model. It is called first for each batch and must be specified in the eval config dictionary under the `:code:`preprocess_fn`` key.\n\n2. **`postprocess_fn`** (Snippet 2) processes the model's generated outputs after generation but before metrics are computed. It is invoked second for each batch and is specified in the eval config under the `:code:`postprocess_fn`` key.\n\n3. **`compute_metrics_fn`** (Snippet 3) calculates metrics from the generated and postprocessed outputs. It is called last for each batch and is specified in the eval config under the `:code:`compute_metrics_fn`` key.\n\nTogether, these functions form a pipeline where inputs are preprocessed, passed to the model, postprocessed, and finally evaluated for metrics.",
+    "source_evidence": [
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          11,
+          13
+        ]
+      },
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          169,
+          170
+        ]
+      },
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          224,
+          225
+        ]
+      }
+    ]
+  },
+  {
+    "question": "In the FiQA use case example for RAG-based preprocessing, how is the 'corpus_id' metadata field accessed from the retrieved documents, and what is its purpose?",
+    "reference_answer": "The 'corpus_id' metadata field is accessed from each retrieved Document object's .metadata dictionary (e.g., `doc.metadata[\"corpus_id\"]`). This field is ingested during document loading via the `metadata_func` in the document loader and is used to track and extract the unique identifiers of the retrieved documents for evaluation or reference purposes.",
+    "source_evidence": [
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          38,
+          77
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it support the understanding of key terms and concepts?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines and explains key terms and concepts used throughout the material. Its purpose is to provide readers with clear, concise definitions to ensure consistent understanding, especially when terms may have specialized or context-specific meanings. By centralizing these definitions, a glossary helps reduce ambiguity, aids comprehension, and supports readers in grasping complex or domain-specific information more effectively.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the procedural steps to implement a Retrieval-Augmented Generation (RAG) system for scientific claim verification using the provided notebook, and what are the key requirements for running it?",
+    "reference_answer": "To implement a RAG system for scientific claim verification using the provided notebook (`rf-tutorial-scifact-full-evaluation.ipynb`), follow these procedural steps:\n\n1. **Access the Notebook**: Navigate to the GitHub repository link provided in Snippet 1 to locate the notebook.\n2. **Understand the Workflow**: The notebook uses an all-closed model API workflow (Snippet 2), meaning it relies on external API calls (e.g., OpenAI) for both embedding and generation tasks.\n3. **Set Up API Access**: Ensure you have valid API credentials for the services used (e.g., OpenAI) since the notebook does not require a GPU (Snippet 2).\n4. **Task and Dataset Preparation**: Refer to Snippet 3 for the specific task (scientific claim verification), dataset, and prompt structure outlined in the notebook. Follow the instructions to load and preprocess the dataset.\n5. **Execute the Notebook**: Run the notebook step-by-step, ensuring all API calls are properly configured and the dataset is correctly formatted.\n6. **Evaluate Results**: Use the evaluation metrics and outputs generated by the notebook to verify the performance of the RAG system.\n\nKey requirements for running the notebook:\n- No GPU is needed (Snippet 2).\n- Access to closed-model APIs (e.g., OpenAI) for embedding and generation (Snippet 2).\n- The dataset and prompt structure specified in Snippet 3.",
+    "source_evidence": [
+      {
+        "file": "rag_scifact.rst",
+        "lines": [
+          6,
+          6
+        ]
+      },
+      {
+        "file": "rag_scifact.rst",
+        "lines": [
+          8,
+          8
+        ]
+      },
+      {
+        "file": "rag_scifact.rst",
+        "lines": [
+          11,
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "question": "Compare the installation instructions for the RapidFire AI OSS package across the provided snippets. How do they differ in purpose or scope, and what additional guidance does the third snippet offer?",
+    "reference_answer": "The first two snippets are identical and focus solely on the basic installation of the RapidFire AI OSS package from PyPI, emphasizing the inclusion of dependencies and correct installation. The third snippet, however, does not repeat the installation instructions but instead provides a diagnostic resource for troubleshooting common issues that may arise *after* installation or during runtime. While Snippets 1 and 2 address the initial setup, Snippet 3 complements them by offering post-installation support for resolving operational problems.",
+    "source_evidence": [
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          36,
+          36
+        ]
+      },
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          33,
+          33
+        ]
+      },
+      {
+        "file": "troubleshooting.rst",
+        "lines": [
+          4,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the `RFPromptManager` class and `RFDPOConfig` relate within the provided code structure, and what might be their roles in a larger system?",
+    "reference_answer": "Based on the snippets, `RFPromptManager` is defined as a Python class (as indicated by the `.. py:class::` directive in Snippet 2), suggesting it is a component responsible for managing prompts, likely in a machine learning or NLP pipeline. `RFDPOConfig` (Snippet 3) appears to be another component, possibly a configuration class or module related to Direct Preference Optimization (DPO) or a similar training paradigm. While the snippets do not explicitly show their relationship, their naming conventions (`RF` prefix) and proximity in the codebase imply they are part of the same system, where `RFPromptManager` handles prompt generation or processing, and `RFDPOConfig` provides configuration settings for a DPO-based training or inference process.",
+    "source_evidence": [
+      {
+        "file": "promptothers.rst",
+        "lines": [
+          4,
+          5
+        ]
+      },
+      {
+        "file": "promptothers.rst",
+        "lines": [
+          14,
+          14
+        ]
+      },
+      {
+        "file": "trainers.rst",
+        "lines": [
+          102,
+          103
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the two chunking strategies and their respective configurations used in the FiQA RAG setup from the provided snippet?",
+    "reference_answer": "The FiQA RAG setup uses two chunking strategies with the following configurations:\n1. A `RecursiveCharacterTextSplitter` with a chunk size of 64 and a chunk overlap of 32, using the 'gpt2' encoding.\n2. A `RecursiveCharacterTextSplitter` with a chunk size of 256 and a chunk overlap of 32, also using the 'gpt2' encoding. Both splitters are initialized via the `from_tiktoken_encoder` method.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          199,
+          245
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it support the reader's understanding of key terms?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines and explains key terms and concepts used throughout the material. It supports the reader's understanding by providing clear, concise definitions for specialized or complex terminology, ensuring consistency in interpretation and reducing ambiguity. This allows readers to quickly look up unfamiliar terms without disrupting their engagement with the main content.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What procedural advantage does RapidFire AI offer over traditional hyperparameter tuning methods like grid search or random search?",
+    "reference_answer": "RapidFire AI extends the procedural capability of traditional hyperparameter tuning by allowing dynamic control and comparison of multiple configurations beyond just hyperparameters. While methods like grid search or random search focus on tuning hyperparameters, RapidFire AI generalizes this to include a broader range of configurable elements such as base model architectures, prompt schemes, LoRA adapters, optimizers, data chunking, embedding, retrieval, reranking, generation, and other user-defined knobs. This enables a more comprehensive and flexible approach to optimizing AI systems.",
+    "source_evidence": [
+      {
+        "file": "configs.rst",
+        "lines": [
+          4,
+          7
+        ]
+      },
+      {
+        "file": "configs.rst",
+        "lines": [
+          9,
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "question": "Compare the two approaches for processing batches in Snippet 1 and Snippet 2, and explain how Snippet 3 contributes to the functionality observed in Snippet 1.",
+    "reference_answer": "Snippet 1 and Snippet 2 both populate the `ground_truth_documents` field in a batch by extracting relevant corpus IDs from `qrels` based on `query_id`. However, Snippet 1 additionally processes the `generated_text` field to extract structured answers using the `extract_solution` function, which is then stored in the `answer` field before returning the batch. Snippet 2, in contrast, simply returns the batch after populating `ground_truth_documents` without further processing.\n\nSnippet 3 provides the implementation of `extract_solution`, which is used in Snippet 1 to parse structured answers (e.g., 'SUPPORT', 'CONTRADICT', or 'NOINFO') from the generated text using regex. This function ensures that the extracted answer adheres to a predefined format, defaulting to 'INVALID' if no valid pattern is found. Thus, Snippet 3 enables the additional functionality in Snippet 1 by defining how answers are extracted from the generated text.",
+    "source_evidence": [
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          208,
+          213
+        ]
+      },
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          190,
+          194
+        ]
+      },
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          198,
+          203
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How are the three provided snippets related in the context of machine learning workflow documentation?",
+    "reference_answer": "The three snippets collectively describe the role and usage of an 'ML Metrics Dashboard' in a machine learning workflow. Snippet 1 and Snippet 2 both reference the 'ML Metrics Dashboard' as a titled section or heading, suggesting it is a key component or interface in the system. Snippet 3 explicitly connects this dashboard to a practical step in the workflow—'Step 5: Monitor training behaviors on ML metrics dashboard'—indicating that the dashboard is used to observe and analyze the performance or progress of machine learning training processes. Together, the snippets highlight the dashboard's importance as a monitoring tool in the ML pipeline.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          103,
+          104
+        ]
+      },
+      {
+        "file": "dashboard.rst",
+        "lines": [
+          1,
+          2
+        ]
+      },
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          268,
+          269
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How does the multimodal preprocessing function in the provided RAG pipeline handle image data extraction and integration with text prompts?",
+    "reference_answer": "The multimodal preprocessing function extracts image data from document metadata, specifically from a field named 'image_data' that was ingested via a metadata_func in the document loader. It retrieves unserialized documents to access both text content and image metadata, then compiles base64-encoded image strings into a list per query. These images are integrated into the prompt as 'image_url' blocks with a data URL scheme (e.g., 'data:image/jpeg;base64,...'), while the text content is serialized separately. The final prompt combines both text and image content in a structured format for the generator model, with instructions to answer questions using the provided context and images.",
+    "source_evidence": [
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          104,
+          157
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it aid the reader?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines key terms and concepts used throughout the material. It aids the reader by providing clear, concise explanations of specialized or complex terminology, ensuring better understanding and reducing ambiguity. This helps readers, especially those unfamiliar with the subject, to quickly look up and grasp essential terms without interrupting their flow of reading.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the procedural requirement for defining reward functions in GRPO when using custom implementations?",
+    "reference_answer": "In GRPO, the procedural requirement for defining reward functions involves creating user-provided reward function(s) with custom names. You can generate as many reward functions as needed, allowing flexibility in how rewards are calculated and applied during the optimization process.",
+    "source_evidence": [
+      {
+        "file": "fitfunctions.rst",
+        "lines": [
+          157,
+          158
+        ]
+      },
+      {
+        "file": "fitfunctions.rst",
+        "lines": [
+          160,
+          161
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How does the robustness of the Normal Approximation method compare to an alternative strategy for handling distributive metrics, particularly in cases involving small sample sizes or extreme proportions?",
+    "reference_answer": "The Normal Approximation method is used as a fallback for distributive metrics, but it is less robust than an alternative strategy when dealing with small sample sizes or metrics near 0/1 boundaries. The alternative strategy is specifically designed to perform better in these scenarios, offering greater reliability for extreme proportions compared to the Normal Approximation.",
+    "source_evidence": [
+      {
+        "file": "onlineagg.rst",
+        "lines": [
+          140,
+          141
+        ]
+      },
+      {
+        "file": "onlineagg.rst",
+        "lines": [
+          180,
+          180
+        ]
+      },
+      {
+        "file": "onlineagg.rst",
+        "lines": [
+          165,
+          166
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How does RapidFire AI handle experiment naming and visualization across its API and ML metrics dashboard, and what role does the dashboard play in tracking experiments?",
+    "reference_answer": "In RapidFire AI, each experiment is defined as a collection of training and evaluation operations and must have a unique user-given name. This name is critical for two purposes: (1) collating plots on the ML metrics dashboard for visualization, and (2) saving and tracking experiment artifacts. If a user mistakenly reuses an experiment name, RapidFire AI appends a suffix to ensure uniqueness, similar to filesystem behavior. The dashboard, which is a fork of MLflow, serves as a centralized tool to display plots of all ML metrics (e.g., loss and evaluation metrics) from all runs and experiments, overlay operational functionality, and provide informative logs. Additionally, the API enforces that only one experiment can be active at any given time, ensuring clarity in tracking and visualization.",
+    "source_evidence": [
+      {
+        "file": "experiment.rst",
+        "lines": [
+          9,
+          10
+        ]
+      },
+      {
+        "file": "glossary.rst",
+        "lines": [
+          53,
+          56
+        ]
+      },
+      {
+        "file": "glossary.rst",
+        "lines": [
+          106,
+          108
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the required parameters for configuring a PGVector collection in Read or Update mode, and what is the purpose of the 'pre_delete_collection' parameter?",
+    "reference_answer": "For Read or Update mode in a PGVector collection configuration, the required parameters are:\n1. `connection`: A DB connection string or engine, necessary for all modes.\n2. `collection_name`: The name of a pre-existing PGVector collection/table used for retrieval.\n\nThe `pre_delete_collection` parameter is optional and applies only to Update mode. If set to `True`, it deletes the existing collection before writing new data. By default, this parameter is `False`, and caution is advised when enabling it.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          92,
+          95
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it assist readers in understanding key terms?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines and explains key terms and concepts used throughout the material. It assists readers by providing clear, concise definitions for specialized or complex terminology, ensuring consistency in understanding and reducing ambiguity. This helps readers, especially those unfamiliar with the subject, to grasp the content more effectively.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the steps to initialize an experiment using the provided Python class constructor, and what parameters must be specified?",
+    "reference_answer": "To initialize an experiment using the provided constructor, follow these steps:\n\n1. Call the `__init__` method of the class with the required parameters.\n2. Provide a unique `experiment_name` (type: `str`) to identify the experiment.\n3. Optionally specify the `mode` parameter (type: `str`), which can be either `\"fit\"` (default) or `\"eval\"`.\n4. Optionally provide the `experiments_path` parameter (type: `str`) to set the folder path where the experiment's artifacts will be stored. The default path is `\"./rapidfire_experiments\"`.\n\nThe constructor does not return any value (`None`).",
+    "source_evidence": [
+      {
+        "file": "experiment.rst",
+        "lines": [
+          27,
+          27
+        ]
+      },
+      {
+        "file": "experiment.rst",
+        "lines": [
+          29,
+          36
+        ]
+      },
+      {
+        "file": "experiment.rst",
+        "lines": [
+          38,
+          39
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the DPO training configurations in Snippet 2 differ from the standard setup implied in Snippet 3, and what key hyperparameters are being explored in the comparative study mentioned in Snippet 1?",
+    "reference_answer": "The DPO training configurations in Snippet 2 introduce a comparative exploration of hyperparameters and loss functions, as indicated in Snippet 1, while Snippet 3 specifies the starting point for training—a pre-trained SFT model (`rapidfire-ai-inc/mistral-7b-sft-bnb-4bit`). The key differences and explored parameters in Snippet 2 include:\n\n1. **Loss Function**: The configuration uses `loss_type=\"sigmoid\"`, which is one of the variations being tested (Snippet 1 mentions multiple loss functions).\n2. **Beta Values**: The `beta` hyperparameter is set as a list (`[0.1, 0.001]`), indicating a comparative study of its impact on DPO alignment.\n3. **Training Stability**: The configuration includes settings like `bf16=True`, `gradient_accumulation_steps=4`, and `learning_rate=5e-6` to ensure stable training, which may vary across the 4 configurations mentioned in Snippet 1.\n4. **Batch and Sequence Lengths**: Fixed values for `max_prompt_length`, `max_completion_length`, and `per_device_train_batch_size` are specified, but these could also be part of the comparative study.\n\nThe relationship between the snippets highlights that Snippet 2 defines one of the 4 DPO configurations (Snippet 1) that all start from the same pre-trained model (Snippet 3) but vary in loss functions and hyperparameters like `beta`.",
+    "source_evidence": [
+      {
+        "file": "dpo.rst",
+        "lines": [
+          37,
+          37
+        ]
+      },
+      {
+        "file": "trainers.rst",
+        "lines": [
+          121,
+          143
+        ]
+      },
+      {
+        "file": "dpo.rst",
+        "lines": [
+          28,
+          29
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How are the training and evaluation datasets defined and sampled in the provided code snippets, and what is the relationship between their sizes?",
+    "reference_answer": "In the provided snippets, the `train_dataset` and `eval_dataset` are both derived from the same dataset split (`dataset[\"train\"]`) but are sampled differently. The `train_dataset` is created by selecting the first 128 examples (`range(128)`), while the `eval_dataset` consists of 32 examples selected from a later portion of the dataset (`range(5000, 5032)`). This demonstrates a small training subset and a separate, non-overlapping evaluation subset for measuring metrics, though both are sourced from the same original training split.",
+    "source_evidence": [
+      {
+        "file": "experiment.rst",
+        "lines": [
+          82,
+          83
+        ]
+      },
+      {
+        "file": "experiment.rst",
+        "lines": [
+          85,
+          86
+        ]
+      },
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          231,
+          232
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the required and optional configuration parameters for the Create mode in the described system, and how does the handling of the `index_namespace` differ between Create and Read/Update modes?",
+    "reference_answer": "In Create mode, the required configuration parameters are `pinecone_api_key` (provided either directly or as an environment variable) and `embedding_cfg` (provided either directly or in the top-level config). The `spec` parameter is also required. Optional parameters include `metric`, `vector_type`, `tags`, `timeout`, and `deletion_protection`. The `text_key` is optional and defaults to `text`. The `index_namespace` is inapplicable in Create mode, as the system automatically generates an index name with the prefix 'rf-' and an SHA hash per pre-processing worker, while the namespace created is the default empty string.\n\nIn contrast, for Read/Update mode, `index_namespace` is required and must point to a pre-existing index and namespace, while all other arguments mentioned for Create mode (e.g., `spec`, `metric`, `vector_type`) are inapplicable.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          84,
+          88
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it aid the reader's understanding of key concepts?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines and explains key terms and concepts used throughout the material. Its purpose is to provide clarity and consistency by offering concise, standardized definitions for specialized or complex terminology. This aids readers by reducing ambiguity, ensuring they interpret terms uniformly, and helping them quickly look up unfamiliar or nuanced concepts without disrupting their flow of reading. A well-structured glossary enhances comprehension, particularly in fields with domain-specific jargon.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the procedural relationship between the 'Install and Get Started' section and the 'toctree' directive in documentation?",
+    "reference_answer": "The 'Install and Get Started' section typically serves as a top-level heading or guide in documentation, providing users with initial setup instructions. The '.. toctree::' directive (table of contents tree) in Snippet 2 is used to organize and link multiple documentation pages, including sections like 'Install and Get Started', into a structured hierarchy. The procedural relationship is that the 'toctree' directive references or includes the 'Install and Get Started' section as part of the documentation's navigation flow, ensuring users can easily access it from the main table of contents.",
+    "source_evidence": [
+      {
+        "file": "walkthrough.rst",
+        "lines": [
+          1,
+          2
+        ]
+      },
+      {
+        "file": "walkthrough.rst",
+        "lines": [
+          4,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the three snippets describe the relationship between vector store modes and their type-specific arguments in the RAG specification?",
+    "reference_answer": "The snippets collectively explain that the vector store in the RAG specification operates in one of three modes, which are determined by the remaining parts of the RAG spec (Snippet 1). Each vector store type supports specific argument keys, as outlined separately (Snippet 2). For further details on how to specify these external vector stores and their configurations, the snippets reference the LangChain RAG Spec API documentation (Snippet 3). The relationship highlights that the mode of operation depends on the type-specific arguments provided for the chosen vector store.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          61,
+          61
+        ]
+      },
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          67,
+          67
+        ]
+      },
+      {
+        "file": "rag_fiqa.rst",
+        "lines": [
+          59,
+          59
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How can users access and interact with IC Ops, and what are the similarities between the available methods?",
+    "reference_answer": "Users can access IC Ops in three ways: through the in-notebook IC Ops panel, the dashboard's IC Ops panel, or by invoking the in-notebook IC Ops control panel using code. Regardless of the method, the in-notebook IC Ops controller provides the same operations and interface as the other panels.",
+    "source_evidence": [
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          243,
+          243
+        ]
+      },
+      {
+        "file": "icops.rst",
+        "lines": [
+          40,
+          41
+        ]
+      },
+      {
+        "file": "icops.rst",
+        "lines": [
+          54,
+          54
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the supported values for the 'reasoning_effort' parameter in OpenAI's API, and how does adjusting this parameter affect response generation?",
+    "reference_answer": "The supported values for the 'reasoning_effort' parameter in OpenAI's API are 'minimal', 'low', 'medium', and 'high'. Adjusting this parameter constrains the effort for reasoning models: reducing the reasoning effort can result in faster responses and fewer tokens used on reasoning in the response. Specifically, the 'gpt-5-pro' model defaults to and only supports 'high' reasoning effort.",
+    "source_evidence": [
+      {
+        "file": "generators.rst",
+        "lines": [
+          103,
+          107
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it assist readers?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines key terms and concepts used throughout the material. It assists readers by providing clear, concise explanations of specialized or complex terminology, ensuring better understanding and reducing ambiguity. This helps readers, especially those unfamiliar with the subject, to quickly look up and grasp essential terms without interrupting the flow of the main content.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the key parameters required when configuring few-shot learning examples and embeddings for semantic similarity in a procedural workflow?",
+    "reference_answer": "For few-shot learning, the `examples` parameter must be a list of dictionaries, where each dictionary contains keys matching the expected input-output format (e.g., \"question\" and \"answer\"). For semantic similarity, the `embedding_cfg` parameter requires a dictionary specifying the embedding class (e.g., `HuggingFaceEmbeddings` or `OpenAIEmbeddings`) under the key `\"class\"`, along with all necessary initialization parameters. For instance, `HuggingFaceEmbeddings` requires `model_name`, `model_kwargs`, and `device`, while `OpenAIEmbeddings` requires `\"model\"` and `\"api_key\"`. Both parameters are optional but critical for defining the few-shot learning and embedding behavior.",
+    "source_evidence": [
+      {
+        "file": "promptothers.rst",
+        "lines": [
+          22,
+          23
+        ]
+      },
+      {
+        "file": "promptothers.rst",
+        "lines": [
+          26,
+          27
+        ]
+      }
+    ]
+  },
+  {
+    "question": "Compare the approaches to dataset handling in the provided code snippets. How do they differ in terms of dataset loading and usage for evaluation?",
+    "reference_answer": "The three snippets demonstrate different levels of detail and purpose in dataset handling:\n\n1. **Snippet 1** is minimalistic, only mentioning the action of loading datasets without specifying how or for what purpose. It lacks context about partitions or usage.\n\n2. **Snippet 2** is more explicit, combining imports with dataset loading and explicitly defining train and evaluation partitions. This suggests a structured approach for model training and validation, where the dataset is split for distinct phases of the workflow.\n\n3. **Snippet 3** focuses solely on the evaluation phase, treating the dataset as a parameter for measuring metrics. It implies a modular or function-based design where the evaluation dataset is passed as an argument, rather than being loaded or partitioned within the same scope.\n\nThe key difference lies in the granularity: Snippet 1 is generic, Snippet 2 is workflow-oriented (training + evaluation), and Snippet 3 is evaluation-specific with a functional interface.",
+    "source_evidence": [
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          207,
+          207
+        ]
+      },
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          223,
+          224
+        ]
+      },
+      {
+        "file": "experiment.rst",
+        "lines": [
+          145,
+          146
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the difference between the two Google Colab notebooks provided for RapidFire AI, and which one is specifically designed for RAG (Retrieval-Augmented Generation)?",
+    "reference_answer": "The two Google Colab notebooks provided are:\n1. **RapidFire AI** (`https://tinyurl.com/rapidfireai-colab`) – This is a general pre-configured notebook for running RapidFire AI without installation.\n2. **RapidFire AI RAG** (`https://tinyurl.com/rapidfireai-rag-colab`) – This notebook is specifically designed for **Retrieval-Augmented Generation (RAG)**, as indicated by its name and Snippet 3, which explicitly mentions 'RapidFire AI RAG.' Both notebooks allow instant browser-based execution without local installation.",
+    "source_evidence": [
+      {
+        "file": "sft.rst",
+        "lines": [
+          12,
+          13
+        ]
+      },
+      {
+        "file": "rag_fiqa.rst",
+        "lines": [
+          10,
+          11
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          16,
+          16
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How does the multimodal preprocessing function in the provided snippet handle image data extraction and integration with text prompts for a RAG pipeline?",
+    "reference_answer": "The multimodal preprocessing function extracts image data from document metadata as base64 strings, which were originally ingested via the `metadata_func` in the document loader (e.g., stored under the key `image_data`). It retrieves unserialized documents to access both text content and image metadata, then constructs prompts combining text context and images. The images are embedded in the prompt as `image_url` objects with base64-encoded data (e.g., `data:image/jpeg;base64,{b64}`), while the text is serialized separately. The final output includes a structured conversational prompt with system instructions, text context, and images for each query.",
+    "source_evidence": [
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          104,
+          157
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it support conceptual understanding?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines key terms and concepts relevant to the subject matter. Its purpose is to provide clear, concise explanations of specialized terminology, ensuring that readers can quickly clarify unfamiliar or ambiguous terms. By standardizing definitions, a glossary supports conceptual understanding by reducing confusion, improving consistency, and helping readers grasp foundational ideas before engaging with more complex material.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the correct procedural order to specify GPU usage when starting RapidFire AI?",
+    "reference_answer": "To control which GPU(s) RapidFire AI can use, you must set the `CUDA_VISIBLE_DEVICES` environment variable **before** executing the `rapidfireai start` command. This ensures the specified GPU(s) are visible to RapidFire at launch.",
+    "source_evidence": [
+      {
+        "file": "troubleshooting.rst",
+        "lines": [
+          55,
+          55
+        ]
+      },
+      {
+        "file": "troubleshooting.rst",
+        "lines": [
+          57,
+          57
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the provided snippets describe the role and scope of user-provided custom functions in the evaluation configuration process, and what differences can be observed in their presentation?",
+    "reference_answer": "The snippets collectively describe the use of user-provided custom functions in the evaluation configuration for `run_evals()`, but they differ in their level of detail and presentation. Snippet 1 explains that users can include custom functions as part of their `eval config` and specifies that each `leaf config` may have its own set of functions. Snippet 2 introduces an API section titled 'User-Provided Functions for Run Evals,' suggesting a formalized interface for these functions. Snippet 3 simply mentions 'Run Evals' as a subsection, implying a broader context but without additional details. While Snippet 1 focuses on the flexibility and modularity of custom functions, Snippet 2 emphasizes the API structure, and Snippet 3 serves as a minimal heading without elaboration.",
+    "source_evidence": [
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          4,
+          5
+        ]
+      },
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          1,
+          2
+        ]
+      },
+      {
+        "file": "experiment.rst",
+        "lines": [
+          133,
+          134
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the common purpose of using the `.. raw:: html` directive in the provided snippets, and how does it relate across multiple files in a documentation or markup context?",
+    "reference_answer": "The `.. raw:: html` directive in all three snippets is used in reStructuredText (RST) or Sphinx documentation to embed raw HTML code directly into the output. Across multiple files, this directive serves a consistent purpose: allowing authors to include custom HTML snippets (e.g., for styling, interactivity, or layout) that are not natively supported by the markup language. The relationship between the snippets is that they demonstrate a uniform approach to integrating HTML in documentation, ensuring compatibility with tools that render RST while preserving the flexibility of raw HTML output.",
+    "source_evidence": [
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          280,
+          280
+        ]
+      },
+      {
+        "file": "dashboard.rst",
+        "lines": [
+          52,
+          52
+        ]
+      },
+      {
+        "file": "experiment.rst",
+        "lines": [
+          229,
+          229
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What configuration settings are used for the document loader in the FiQA RAG tutorial notebook to process the corpus.jsonl file?",
+    "reference_answer": "The document loader in the FiQA RAG tutorial notebook is configured with the following settings for processing the corpus.jsonl file: \n- It uses `DirectoryLoader` with the path set to the 'fiqa' subdirectory of `dataset_dir`.\n- The `glob` parameter is set to 'corpus.jsonl' to target this specific file.\n- The `JSONLoader` is used as the loader class with these key arguments:\n  - `jq_schema`: \".\" (processes the entire JSON object).\n  - `content_key`: \"text\" (extracts content from the 'text' field).\n  - `metadata_func`: A function that stores the document ID as an integer under the 'corpus_id' key in metadata, extracted from the '_id' field of each record.\n  - `json_lines`: True (indicates the file is in JSON Lines format).\n  - `text_content`: False (treats the content as non-text data).\n- A `sample_seed` of 42 is also specified for reproducibility.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          199,
+          245
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and what key elements does it typically include?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines key terms and concepts to ensure clarity and consistency for the reader. It typically includes specialized terminology, abbreviations, or jargon relevant to the subject matter, providing concise explanations to help users understand and interpret the content accurately.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the different ways to run the Supervised Fine-Tuning (SFT) use case from HuggingFace TRL, and how do they compare in terms of setup requirements?",
+    "reference_answer": "HuggingFace TRL provides multiple variations for running the Supervised Fine-Tuning (SFT) use case. Locally, you can choose between a 'lite' version using a fast small language model (SLM) or more advanced FSDP-based versions that support larger models auto-partitioned across GPUs. Alternatively, for a simpler setup without local machine requirements, you can use the `RapidFire AI on Google Colab` environment, which showcases a streamlined SFT example.",
+    "source_evidence": [
+      {
+        "file": "tutorials.rst",
+        "lines": [
+          30,
+          34
+        ]
+      },
+      {
+        "file": "tutorials.rst",
+        "lines": [
+          36,
+          37
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the motivations for IC Ops differ from their semantic implementation in AI experiment control operations?",
+    "reference_answer": "The motivations for IC Ops (Interactive Control Operations) stem from a practical pain point faced by AI developers during ongoing experiments, as they address the need for real-time control over 'runs in flight.' In contrast, the semantics of IC Ops define the formal rules and behaviors governing how these control operations are executed, ensuring consistency and predictability in their application. While the motivation focuses on the *why* (solving an under-appreciated challenge), the semantics outline the *how* (the structured implementation of these operations).",
+    "source_evidence": [
+      {
+        "file": "icops.rst",
+        "lines": [
+          8,
+          9
+        ]
+      },
+      {
+        "file": "icops.rst",
+        "lines": [
+          11,
+          12
+        ]
+      },
+      {
+        "file": "icops.rst",
+        "lines": [
+          32,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How does the GRPO tutorial demonstrate the use of multiple reward functions in improving mathematical reasoning, and what is an example of a reward function provided in the snippets?",
+    "reference_answer": "The GRPO tutorial employs Group Relative Policy Optimization (GRPO), a reinforcement learning approach that leverages multiple reward functions to enhance mathematical reasoning by providing richer training signals. According to Snippet 1, users can define as many custom reward functions as needed for GRPO. Snippet 2 provides an example of such a reward function, named `correctness_reward_func`, which evaluates the correctness of completions relative to given prompts and answers. Together, these snippets illustrate how GRPO uses diverse reward functions (like correctness evaluation) to optimize policy training.",
+    "source_evidence": [
+      {
+        "file": "fitfunctions.rst",
+        "lines": [
+          160,
+          161
+        ]
+      },
+      {
+        "file": "fitfunctions.rst",
+        "lines": [
+          196,
+          197
+        ]
+      },
+      {
+        "file": "grpo.rst",
+        "lines": [
+          17,
+          18
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the recommended parameters to include in the `client_config` dictionary when initializing an AsyncOpenAI client, and what is their purpose?",
+    "reference_answer": "The recommended parameters to include in the `client_config` dictionary for initializing an AsyncOpenAI client are:\n\n1. `\"api_key\"`: Your OpenAI API key, which is required for authentication. Note that a publicly visible API key cannot be provided.\n2. `\"max_retries\"`: The maximum number of retry attempts for failed API calls, with a default value of 2.\n3. `\"timeout\"`: The request timeout in seconds, which is optional and specifies how long to wait for a response before timing out.",
+    "source_evidence": [
+      {
+        "file": "generators.rst",
+        "lines": [
+          93,
+          99
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and what type of information does it typically include?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines key terms and concepts used throughout the material. It typically includes concise explanations of specialized vocabulary, jargon, or important ideas to help readers understand and clarify terminology they may encounter in the text.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are the key steps and configuration settings involved in setting up Fully Sharded Data Parallel (FSDP) for Direct Preference Optimization (DPO) training in PyTorch, as demonstrated in the DPO FSDP Lite notebook?",
+    "reference_answer": "To set up Fully Sharded Data Parallel (FSDP) for DPO training in the provided snippet, follow these procedural steps:\n\n1. **Initialize the DPO Configuration**: Use `RFDPOConfig` to define the base configuration for DPO training.\n\n2. **Enable FSDP**: Set the `fsdp` parameter to `\"full_shard auto_wrap\"` to enable full sharding and automatic wrapping of model parameters.\n\n3. **Configure FSDP Settings**: Specify the `fsdp_config` dictionary with the following key settings:\n   - **Backward Prefetch**: Set `\"backward_prefetch\": \"backward_pre\"` to prefetch gradients during the backward pass.\n   - **Forward Prefetch**: Enable `\"forward_prefetch\": True` to prefetch activations during the forward pass.\n   - **Original Parameters**: Disable `\"use_orig_params\": False` to avoid using the original parameters for optimization.\n   - **CPU RAM Efficiency**: Enable `\"cpu_ram_efficient_loading\": True` to optimize CPU RAM usage during loading.\n   - **Parameter Offloading**: Disable `\"offload_params\": False` to keep parameters on GPU.\n   - **Module State Synchronization**: Enable `\"sync_module_states\": True` to synchronize module states across processes.\n   - **Minimum Parameter Threshold**: Set `\"min_num_params\": 1000000` to ensure only layers with at least 1 million parameters are wrapped.\n   - **Limit All-Gathers**: Enable `\"limit_all_gathers\": True` to reduce memory overhead during all-gather operations.\n   - **Sharding Strategy**: Use `\"sharding_strategy\": \"FULL_SHARD\"` to fully shard model parameters, gradients, and optimizer states.\n   - **Auto-Wrap Policy**: Set `\"auto_wrap_policy\": \"TRANSFORMER_BASED_WRAP\"` to automatically wrap transformer layers.\n   - **Activation Checkpointing**: Disable `\"activation_checkpointing\": False` to avoid recomputing activations during the backward pass.\n\nThese settings collectively optimize memory usage and computational efficiency for large-scale DPO training with FSDP.",
+    "source_evidence": [
+      {
+        "file": "trainers.rst",
+        "lines": [
+          150,
+          150
+        ]
+      },
+      {
+        "file": "trainers.rst",
+        "lines": [
+          152,
+          169
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the key difference between the two Google Colab notebooks provided for RapidFire AI, and how does the third snippet relate to them?",
+    "reference_answer": "The two Google Colab notebooks differ in their functionality: Snippet 1 (`RapidFire AI RAG on Google Colab`) includes Retrieval-Augmented Generation (RAG) capabilities, while Snippet 2 (`RapidFire AI on Google Colab`) offers the base RapidFire AI without RAG. Snippet 3 reinforces the ease of use for the RAG version by emphasizing its instant accessibility in a browser with no installation required, aligning specifically with the RAG-enabled notebook mentioned in Snippet 1.",
+    "source_evidence": [
+      {
+        "file": "rag_fiqa.rst",
+        "lines": [
+          10,
+          11
+        ]
+      },
+      {
+        "file": "sft.rst",
+        "lines": [
+          12,
+          13
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          16,
+          16
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the sections 'Troubleshooting', 'Known Issues and Updates Coming Soon', and 'Quick diagnostics' relate to each other in a software documentation context, and what purpose does each serve?",
+    "reference_answer": "In software documentation, these three sections are interconnected and serve distinct but complementary roles in assisting users with problem-solving and system maintenance:\n\n1. **Troubleshooting**: This section provides step-by-step guidance for diagnosing and resolving common or complex issues users may encounter. It typically includes solutions to specific error messages, unexpected behaviors, or operational failures.\n\n2. **Known Issues and Updates Coming Soon**: This section lists identified problems or limitations in the current version of the software that have not yet been resolved. It may also outline upcoming fixes, patches, or feature enhancements, helping users understand temporary workarounds or expected timelines for improvements.\n\n3. **Quick diagnostics**: This section offers a concise, often checklist-style approach to rapidly identify the root cause of an issue. It is designed for users who need to perform initial triage before diving into detailed troubleshooting or consulting the list of known issues.\n\nTogether, these sections form a structured workflow: users can first use 'Quick diagnostics' to narrow down the problem, refer to 'Known Issues' to check if the problem is already documented, and then follow the 'Troubleshooting' steps for resolution. If the issue is unresolved, the 'Updates Coming Soon' subsection may indicate whether a fix is planned.",
+    "source_evidence": [
+      {
+        "file": "troubleshooting.rst",
+        "lines": [
+          1,
+          2
+        ]
+      },
+      {
+        "file": "issues.rst",
+        "lines": [
+          1,
+          2
+        ]
+      },
+      {
+        "file": "troubleshooting.rst",
+        "lines": [
+          10,
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "question": "In the FiQA use case example for RAG-based preprocessing, how is the 'corpus_id' metadata field accessed from the retrieved documents, and what purpose does it serve?",
+    "reference_answer": "In the FiQA example, the 'corpus_id' metadata field is accessed from each retrieved Document object's `.metadata` dictionary after retrieval. Specifically, it is extracted using `doc.metadata['corpus_id']` for each document in the retrieved context. This field, which was originally ingested via the `metadata_func` in the document loader, is used to track and reference the unique identifiers of the retrieved documents, enabling retrieval evaluation and traceability of the source documents.",
+    "source_evidence": [
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          38,
+          77
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the purpose of a glossary in technical or academic documentation, and how does it support readers' understanding of key terms?",
+    "reference_answer": "A glossary in technical or academic documentation serves as a reference section that defines and explains key terms and concepts used throughout the material. It supports readers' understanding by providing clear, concise definitions for specialized or complex terminology, ensuring consistency in interpretation and reducing ambiguity. This helps readers, especially those unfamiliar with the subject, grasp essential ideas more effectively.",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What is the procedural step provided to access the tutorial notebook for GSM8K's Context Engineering for Math Reasoning?",
+    "reference_answer": "The procedural step involves right-clicking on the GitHub link provided in the tutorial notebook reference to save the file locally.",
+    "source_evidence": [
+      {
+        "file": "rag_gsm8k.rst",
+        "lines": [
+          1,
+          2
+        ]
+      },
+      {
+        "file": "rag_gsm8k.rst",
+        "lines": [
+          4,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How do the tutorial notebooks for RAG evals handle gated versus non-gated models from Hugging Face, and what steps should users follow if they want to use a gated model?",
+    "reference_answer": "The tutorial notebooks for RAG evals are designed to use non-gated models from Hugging Face by default, as indicated by the instruction to switch the `model_name` to a non-gated model in Snippet 1. Snippet 2 clarifies that no gated models are used in the tutorials, but if users want to access gated models, they must provide their Hugging Face account token and follow the steps outlined in the linked documentation. Snippet 3 further emphasizes that while support is available via Discord for accessing gated models, a publicly visible token cannot be provided due to Hugging Face's policies.",
+    "source_evidence": [
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          55,
+          55
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          58,
+          60
+        ]
+      },
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          78,
+          78
+        ]
+      }
+    ]
+  },
+  {
+    "question": "How does the system determine which components (retriever, vector store, document loader, or text splitter) are required when configuring a RAG pipeline based on the provided inputs?",
+    "reference_answer": "The system follows a hierarchical logic to determine the required components based on the provided inputs:\n\n1. **If a `retriever` is provided**: It is used directly, and no other components (`document_loader`, `text_splitter`, or `vector_store_cfg`) are needed.\n\n2. **If no `retriever` but a `vector_store_cfg` is provided**: A retriever is created from the vector store using LangChain's `as_retriever()` method. The `embedding_cfg` is still required to embed evaluation queries, and it must match the embedding model used to build the vector store. In **Read mode**, `document_loader` and `text_splitter` are unnecessary, but in **Update mode**, `document_loader` is required while `text_splitter` remains optional.\n\n3. **If neither `retriever` nor `vector_store_cfg` is provided but preprocessing is needed**: A default FAISS vector store (and retriever) is built from documents. Here, `document_loader` is mandatory, while `text_splitter` is optional—documents can be embedded whole if chunking is omitted.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          368,
+          368
+        ]
+      },
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          370,
+          370
+        ]
+      },
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          372,
+          372
+        ]
+      }
+    ]
+  },
+  {
+    "question": "What are some key LangChain components and external tools referenced in the API documentation for building document processing and retrieval pipelines?",
+    "reference_answer": "The provided snippet references several key LangChain components and external tools for document processing and retrieval, including:\n\n1. **Document Loaders**: Such as the `DirectoryLoader` for loading documents from directories.\n2. **Embeddings**: Including `HuggingFaceEmbeddings` for generating vector representations of text.\n3. **Text Splitters**: Tools for splitting documents into smaller chunks, available in LangChain's integrations.\n4. **Vector Stores**: Such as `FAISS`, `Pinecone`, and `PGVector` for storing and retrieving vector embeddings.\n5. **Retrievers**: LangChain's core retriever components for fetching relevant documents.\n6. **Core LangChain Concepts**: Including `Documents`, `Embeddings`, and `Vector Stores` as foundational elements for building retrieval pipelines.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          181,
+          191
+        ]
+      }
+    ]
+  }
+]

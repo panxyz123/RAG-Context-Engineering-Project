@@ -3,78 +3,44 @@
     "factual_lookup": {
       "question_ids": [
         0,
-        6,
-        12,
-        18,
-        24,
-        30,
-        36
+        5,
+        10
       ],
-      "count": 7
+      "count": 3
     },
     "conceptual_explanation": {
       "question_ids": [
         1,
-        7,
-        13,
-        19,
-        25,
-        31,
-        37
+        6
       ],
-      "count": 7
+      "count": 2
     },
     "procedural": {
       "question_ids": [
         2,
-        8,
-        14,
-        20,
-        26,
-        32,
-        38
+        7
       ],
-      "count": 7
+      "count": 2
     },
     "comparative": {
       "question_ids": [
         3,
-        9,
-        15,
-        21,
-        27,
-        33,
-        39
+        8
       ],
-      "count": 7
-    },
-    "feature_enumeration": {
-      "question_ids": [
-        4,
-        10,
-        16,
-        22,
-        28,
-        34
-      ],
-      "count": 6
+      "count": 2
     },
     "multi_file_synthesis": {
       "question_ids": [
-        5,
-        11,
-        17,
-        23,
-        29,
-        35
+        4,
+        9
       ],
-      "count": 6
+      "count": 2
     }
   },
   "summary": {
-    "total_questions": 40,
-    "unique_type_assignments": 6,
-    "questions_with_single_type": 40,
+    "total_questions": 11,
+    "unique_type_assignments": 5,
+    "questions_with_single_type": 11,
     "questions_with_multiple_types": 0
   }
 }

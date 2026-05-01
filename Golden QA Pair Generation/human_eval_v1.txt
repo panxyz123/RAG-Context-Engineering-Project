@@ -1,0 +1,2196 @@
+================================================================================
+HUMAN EVALUATION: GOLDEN QA PAIRS WITH SOURCE TEXT
+================================================================================
+Total QA Pairs: 40
+
+
+================================================================================
+📌 QA PAIR #1
+================================================================================
+
+❓ QUESTION:
+  What are the required parameters for initializing the `OpenAIEmbeddings` class in RapidFire AI?
+
+✓ REFERENCE ANSWER:
+  According to the documentation, the `OpenAIEmbeddings` class in RapidFire AI requires two specific parameters for initialization:
+  
+  1. `"model"` – This specifies the OpenAI model to be used for embeddings.
+  2. `"api_key"` – This is the API key required to authenticate and access OpenAI's services.
+  
+  These parameters are mandatory and must be provided when creating an instance of `OpenAIEmbeddings`.
+
+📚 SOURCE EVIDENCE (2 source(s)):
+
+  Source #1:
+  📄 File: ragspecs.rst
+     Lines: 47-47
+     ──────────────────────────────────────────────────────────────────────
+       47 |     :param document_loader: The loader for source documents from various sources (files, directories, databases, etc.). Must be a LangChain BaseLoader implementation.
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: troubleshooting.rst
+     Lines: 1-17
+     ──────────────────────────────────────────────────────────────────────
+        1 | Troubleshooting
+        2 | ===============
+        4 | Use this page to diagnose and resolve common issues when installing and running RapidFire AI.
+        6 | .. note::
+        8 |   RapidFire AI requires Python 3.12+. Verify your shell's ``python3`` is 3.12 before creating/activating the venv.
+       10 | Quick diagnostics
+       11 | -----------------
+       13 | If you encounter any error, run the doctor command to get a complete diagnostic report (Python env, relevant packages, GPU/CUDA, and key environment variables):
+       15 | .. code-block:: bash
+       17 |    rapidfireai doctor
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #2
+================================================================================
+
+❓ QUESTION:
+  What is the purpose and functionality of 'Semi-Automated IC Ops' as described in the RapidFire AI documentation, and how does it integrate with machine learning workflows?
+
+✓ REFERENCE ANSWER:
+  Semi-Automated IC Ops (Iterative Configuration Operations) in RapidFire AI refers to a hybrid approach for managing machine learning experiments and model tuning processes. Its core purpose is to automate parts of the experimentation workflow while retaining human oversight for critical decisions.
+  
+  Key functionalities and concepts include:
+  
+  1. **Human-in-the-Loop Hybrid Model**: While manual triggering via a dashboard is possible, Semi-Automated IC Ops is designed to operate in offline, scripted environments where application logic dictates actions. This allows for partial automation without completely removing human control.
+  
+  2. **Performance-Based Intervention**: The system can automatically evaluate model runs using predefined metrics. For example, it can:
+     - Terminate 90% of underperforming runs (those with poor evaluation metrics)
+     - Clone and modify the top 10% of runs for further fine-tuning, focusing on adjusting hyperparameters (referred to as 'knobs') to explore more granular configurations.
+  
+  3. **Integration with ML Workflows**: Semi-Automated IC Ops enhances iterative development by:
+     - Reducing manual effort in monitoring and adjusting experiments
+     - Enabling systematic exploration of hyperparameter spaces through automated cloning and modification of successful runs
+     - Supporting scalability in experimentation, especially in environments with limited human resources or large-scale testing requirements
+  
+  4. **Use Cases**: This approach is particularly useful in scenarios requiring extensive hyperparameter tuning, model selection, or comparative analysis of multiple experiments. It bridges the gap between fully automated systems (which may lack contextual judgment) and purely manual processes (which can be inefficient).
+  
+  Overall, Semi-Automated IC Ops represents a pragmatic balance between automation and control, optimizing ML workflows for efficiency while maintaining flexibility for human intervention when needed.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: sft.rst
+     Lines: 8-16
+     ──────────────────────────────────────────────────────────────────────
+        9 | Lite version: `View on GitHub <https://github.com/RapidFireAI/rapidfireai/blob/main/tutorial_notebooks/fine-tuning/rf-tutorial-sft-chatqa-lite.ipynb>`__. 
+       10 | Use this version if your GPU has < 80 GB HBM; it just uses smaller LLMs and finishes faster. 
+       12 | Or run this pre-configured Google Colab notebook on your browser; no installation required on your machine: 
+       13 | `RapidFire AI on Google Colab <https://tinyurl.com/rapidfireai-colab>`_
+       16 | Task, Dataset, and Prompt
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: fitfunctions.rst
+     Lines: 54-59
+     ──────────────────────────────────────────────────────────────────────
+       54 | 			# Default to causal LM
+       55 | 			model = AutoModelForCausalLM.from_pretrained(model_name, **model_kwargs)
+       57 | 		tokenizer = AutoTokenizer.from_pretrained(model_name)
+       59 | 		return (model,tokenizer)
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: issues.rst
+     Lines: 64-70
+     ──────────────────────────────────────────────────────────────────────
+       64 | In the near future, we plan to update the :class:`Experiment` API to let you specify such custom 
+       65 | semi-automation logic for IC Ops in code using the runs' metrics and progress so far.
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #3
+================================================================================
+
+❓ QUESTION:
+  How can I perform Interactive Control Operations (IC Ops) such as Stop, Resume, Clone-Modify, or Delete on active runs during a `run_fit()` in RapidFire AI?
+
+✓ REFERENCE ANSWER:
+  To perform Interactive Control Operations (IC Ops) on active runs during a `run_fit()` in RapidFire AI, follow these steps:
+  
+  1. **Access the IC Ops Panel**: 
+     - You can use either of the following methods:
+       - **In-notebook IC Ops panel**: Directly interact with the panel embedded in your notebook environment.
+       - **Dashboard IC Ops panel**: Navigate to the RapidFire AI dashboard and locate the IC Ops panel there. The dashboard also provides a visual interface (e.g., ML metrics dashboard) for monitoring training behaviors, as shown in the walkthrough.
+  
+  2. **Select the Operation**: 
+     - Choose one of the four supported IC Ops:
+       - **Stop**: Terminate an active run.
+       - **Resume**: Continue a previously stopped run.
+       - **Clone-Modify**: Create a duplicate of an existing run with modified parameters.
+       - **Delete**: Remove a run entirely from the system.
+  
+  3. **Execute the Operation**: 
+     - Apply the selected operation to the target run(s). RapidFire AI automatically manages GPU resource reapportionment across runs under the hood, so no manual intervention is required for resource allocation.
+  
+  4. **Verify the Results**: 
+     - Check the outcome of the operation either in the in-notebook panel or the dashboard. The dashboard provides real-time updates on run statuses and metrics.
+  
+  For more detailed guidance, refer to the [Dashboard: Interactive Control (IC) Ops documentation](/icops).
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: glossary.rst
+     Lines: 80-94
+     ──────────────────────────────────────────────────────────────────────
+       80 | Read more here: :doc:`Dashboard: Interactive Control (IC) Ops</icops>`.
+       83 | Knob
+       84 | -----
+       86 | A single entry in the config dictionary given for experimentation. 
+       87 | A knob's value can be a singleton or set-valued (:class:`List` or :class:`Range`). 
+       89 | Read more here: :doc:`API: Multi-Config Specification</configs>`.
+       92 | Logs
+       93 | -----
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: ragspecs.rst
+     Lines: 348-350
+     ──────────────────────────────────────────────────────────────────────
+      348 |         "pre_delete_collection": True, # Optional. Deletes the collection if already exists. Use with caution!
+      349 |     }
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: walkthroughrag.rst
+     Lines: 233-242
+     ──────────────────────────────────────────────────────────────────────
+      233 |     <img src="_static/evals-online.png" alt="Monitor runs table and online aggregation of eval metrics" 
+      234 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+      236 |     <img src="_static/evals-mlflow.png" alt="Monitor training behaviors on ML metrics dashboard" 
+      237 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+      240 | Step 6: Interactive Control (IC) Ops: Stop, Clone-Modify; check their results 
+      241 | -----
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #4
+================================================================================
+
+❓ QUESTION:
+  Unable to parse question
+
+✓ REFERENCE ANSWER:
+  Unable to parse answer
+
+📚 SOURCE EVIDENCE (1 source(s)):
+
+  Source #1:
+  📄 File: ragspecs.rst
+     Lines: 168-171
+     ──────────────────────────────────────────────────────────────────────
+      169 |     :param use_reranker: Whether to apply reranking if a reranker is provided. Default is True. Set to False to skip reranking.
+      170 |     :type use_reranker: bool, optional
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #5
+================================================================================
+
+❓ QUESTION:
+  Based on the provided LoRA (Low-Rank Adaptation) configuration documentation, enumerate the key configurable features and their typical or recommended values/settings. Include any relevant options for `target_modules`, `lora_dropout`, as well as any additional context regarding RAG specifications and reward function requirements in TRL (Transformer Reinforcement Learning).
+
+✓ REFERENCE ANSWER:
+  Here is a comprehensive enumeration of the key configurable features, components, and their settings based on the provided documentation:
+  
+  ### 1. **LoRA-Specific Configurations**
+     - **`target_modules`**: Specifies which layers in the model to apply LoRA to. Common options include:
+       - **Query/Value only**: `["q_proj", "v_proj"]`
+       - **Query/Key/Value**: `["q_proj", "k_proj", "v_proj"]`
+       - **All linear layers**: `["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]`
+  
+     - **`lora_dropout`**: Controls regularization to prevent overfitting. Typical values range from `0.0` to `0.05`. The default is often `0.0` unless overfitting is observed.
+  
+  ### 2. **RAG (Retrieval-Augmented Generation) Specifications**
+     - **`search_cfg`**: A dictionary (optional) used to configure retrieval or search parameters in RAG systems. Specific keys/values are not detailed in the provided context but typically include settings like:
+       - `top_k` (number of retrievals)
+       - `retriever_type` (e.g., dense, sparse)
+       - `similarity_metric` (e.g., cosine, dot product)
+  
+  ### 3. **Reward Function Requirements in TRL**
+     - **Injectable Keyword Arguments**: TRL injects the following into reward functions, which can be selectively used in the function signature (with `**kwargs` for flexibility):
+       - `prompts`: Input prompts provided to the model.
+       - `completions`: Generated outputs from the model.
+       - `completion_ids`: Identifiers for the completions (e.g., for tracking).
+       - `trainer_state`: Metadata or state from the training process (e.g., epoch, step).
+     - **Flexibility**: The reward function can use a subset of these arguments as long as `**kwargs` is included to handle any additional or unused injected parameters.
+  
+  This enumeration covers the core configurable elements for LoRA, RAG, and TRL reward function integration as described in the documentation.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: models.rst
+     Lines: 58-64
+     ──────────────────────────────────────────────────────────────────────
+       58 |   * Query/Key/Value: `["q_proj", "k_proj", "v_proj"]`
+       59 |   * All linear layers: `["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]`
+       61 | * :code:`lora_dropout`:  Controls regularization. Typically between 0.0 to 0.05; often set at 0.0 unless there is overfitting.
+       63 | * :code:`init_lora_weights`: Initialization strategy. Most use default :code:`True` but some experiment with :code:`"gaussian"` or newer methods such as :code:`"pissa"`. 
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: ragspecs.rst
+     Lines: 96-96
+     ──────────────────────────────────────────────────────────────────────
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: fitfunctions.rst
+     Lines: 215-219
+     ──────────────────────────────────────────────────────────────────────
+      215 |         matches = [re.match(pattern, r) for r in responses]
+      216 |         return [0.5 if match else 0.0 for match in matches]
+      218 | **Notes:**
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #6
+================================================================================
+
+❓ QUESTION:
+  Unable to parse question
+
+✓ REFERENCE ANSWER:
+  Unable to parse answer
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: walkthroughft.rst
+     Lines: 283-295
+     ──────────────────────────────────────────────────────────────────────
+      283 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+      286 | .. raw:: html
+      288 |     <img src="_static/icop-clone.png" alt="IC Op: Clone-Modify" 
+      289 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+      292 | .. raw:: html
+      294 |     <img src="_static/step10.png" alt="IC Op results on dashboard" 
+      295 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: ragspecs.rst
+     Lines: 152-158
+     ──────────────────────────────────────────────────────────────────────
+      152 |     Serialize batch of context document chunks into formatted strings for context injection.
+      154 |     :param batch_docs: List of Document lists, where each inner list contains Documents for one query.
+      155 |     :type batch_docs: list[list[Document]]
+      157 |     :return: List of formatted document chunk strings, one per query, with different document chunks separated by double newlines.
+      158 |     :rtype: list[str]
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: models.rst
+     Lines: 108-112
+     ──────────────────────────────────────────────────────────────────────
+      109 |   :param model_type: Custom user-defined string to identify model type inside your :code:`create_model_fn()` given to :func:`run_fit()`; default: ``"causal_lm"``
+      110 |   :type model_type: str, optional
+      112 |   :param model_kwargs: Additional parameters for model initialization, passed to :code:`AutoModel.from_pretrained()` (e.g., :code:`torch_dtype`, :code:`device_map`, :code:`trust_remote_code`).
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #7
+================================================================================
+
+❓ QUESTION:
+  What are the different view options available in the experiment dashboard, and what does the 'Table' view specifically display?
+
+✓ REFERENCE ANSWER:
+  The experiment dashboard provides four main view options:
+  
+  1. **Table** – Displays all runs of an experiment in a tabular format. Each row represents one model run with a unique set of configuration knob values. This view shows metadata about the runs, such as parameters, metrics, and other relevant details.
+  2. **Chart** – Visualizes experiment data through graphical representations (e.g., plots of metrics).
+  3. **Experiment Log** – Likely provides a historical or detailed log of the experiment’s execution.
+  4. **Interactive Control (IC) Log** – Appears to log interactive adjustments or controls applied during the experiment.
+  
+  The **Table** view, in particular, follows standard dashboard semantics where each run corresponds to a single model configuration.
+
+📚 SOURCE EVIDENCE (2 source(s)):
+
+  Source #1:
+  📄 File: fitfunctions.rst
+     Lines: 71-74
+     ──────────────────────────────────────────────────────────────────────
+       71 | You can create multiple variants of these functions and pass them all as a single 
+       72 | :code:`List` to your :class:`RFModelConfig` to create a multi-config specification.
+       74 | This function is invoked by the underlying HF trainer at a cadence controlled by the 
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: dashboard.rst
+     Lines: 47-67
+     ──────────────────────────────────────────────────────────────────────
+       48 | The screenshot below shows the "Table" view of an experiment with all its runs. 
+       49 | Each run represents one model with one set of config knob values, which is standard dashboard semantics.
+       52 | .. raw:: html
+       54 |     <img src="_static/mlflow-1-table.png" alt="Table view of runs metadata" 
+       55 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+       58 | Metrics Plots
+       59 | ----
+       61 | The screenshot below shows the "Chart" view of an experiment with all its runs. 
+       62 | Each plot corresponds to a metric, spanning :code:`loss` on the training set and evaluation set, 
+       63 | as well all named metrics returned in your :func:`compute_metrics()` function in the trainer config.
+       65 | We call attention to 3 key aspects of the visualizations here: 
+       67 | * The x-axis "Step" for the mini batch-level plots represents absolute number of minibatches seen by that run. So, if the :code:`batch_size` is different for different runs in your experiment, they will take different numbers of steps and the curves will not line up till the end. This is not a bug but the expected correct behavior.
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #8
+================================================================================
+
+❓ QUESTION:
+  What is the purpose and scope of the RFModelConfig class in the RapidFire AI API, and how does it simplify the management of model-related configurations across different training paradigms?
+
+✓ REFERENCE ANSWER:
+  The RFModelConfig class in the RapidFire AI API serves as a central abstraction layer designed to unify and simplify model-related configurations by integrating multiple Hugging Face APIs under a single interface. Its primary purpose is to streamline the management of complex machine learning workflows, particularly for fine-tuning and experimentation with large language models (LLMs).
+  
+  Key aspects of RFModelConfig's scope and functionality include:
+  
+  1. **Unified Model Management**: It consolidates model loading, training configurations, and Low-Rank Adaptation (LoRA) settings into one cohesive class. This eliminates the need to manually handle disparate APIs, reducing boilerplate code and potential errors during model initialization.
+  
+  2. **Flexibility in Training Paradigms**: RFModelConfig supports multiple training control flows, including Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and Generalized Reinforcement Learning from Human Feedback (GRPO). This allows practitioners to experiment with different training methodologies without rewriting or reconfiguring the underlying infrastructure.
+  
+  3. **LoRA Adapter Customization**: The class provides flexibility to experiment with variations of LoRA adapter structures. This is critical for optimizing model performance, memory efficiency, or inference speed, especially when deploying models in resource-constrained environments.
+  
+  4. **Configuration of Training Arguments**: It standardizes the specification of training arguments across different paradigms, ensuring consistency in hyperparameters, optimization settings, and other training-specific configurations. This is particularly useful for reproducibility and iterative experimentation.
+  
+  5. **Formatting and Metrics**: RFModelConfig also unifies the handling of data formatting (e.g., prompt templates, input preprocessing) and metrics functions. This ensures that evaluation and data preparation logic remains consistent across experiments, even when switching between training methods or model architectures.
+  
+  6. **Generation Specifics**: The class encapsulates generation-specific parameters, such as decoding strategies, temperature, or top-k sampling, which are essential for tasks like text generation or reinforcement learning.
+  
+  By abstracting these complexities, RFModelConfig enables system architects and ML practitioners to focus on high-level design decisions (e.g., choosing training paradigms or LoRA configurations) rather than low-level implementation details. This is especially valuable in dynamic environments where models must adapt to evolving data distributions, application schemas, or the emergence of newer, more efficient models (e.g., smaller yet more capable LLMs).
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: issues.rst
+     Lines: 25-36
+     ──────────────────────────────────────────────────────────────────────
+       25 | If you run multiple experiments back to back from the same notebook/IDE session, you might 
+       26 | see the following error appear occasionally: 
+       28 | .. code-block:: python
+       30 |    ImportError: cannot import name 'GenerationMixin' from 'transformers.generation'
+       32 | This is caused by stray Python processes from the previous experiment not ending properly. 
+       33 | If you see this error, we recommend the following steps:
+       35 | * Run the command :code:`ps - ef | grep python`, look for "multiprocessing.spawn"/"defunct" processes, and kill if there are any with command :code:`kill -9 [PID]`.
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: icops.rst
+     Lines: 15-15
+     ──────────────────────────────────────────────────────────────────────
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: models.rst
+     Lines: 74-82
+     ──────────────────────────────────────────────────────────────────────
+       74 | This is a core class in the RapidFire AI API that abstracts multiple Hugging Face APIs under the 
+       75 | hood to simplify and unify all model-related specifications. In particular, it unifies model 
+       76 | loading, training configurations, and LoRA settings into one class. 
+       78 | It gives you flexibility to try out variations of LoRA adapter structures, training arguments for 
+       79 | multiple control flows (SFT, DPO, and GRPO), formatting and metrics functions, and generation specifics. 
+       81 | Some of the arguments (knobs) here can also be :class:`List` valued or :class:`Range` valued depending 
+       82 | on its data type, as explained below. All this helps form the base set of knob combinations from which 
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #9
+================================================================================
+
+❓ QUESTION:
+  How can I set up and launch a multi-config training experiment using RapidFire AI wrapper APIs, including defining model configurations, adjusting concurrency, and generating comparative config groups?
+
+✓ REFERENCE ANSWER:
+  To set up and launch a multi-config training experiment using RapidFire AI wrapper APIs, follow these steps:
+  
+  1. **Define Multi-Config Knobs**:
+     - Use RapidFire AI wrapper APIs to define configurable parameters (knobs) for:
+       - The **model** (e.g., architecture, hyperparameters).
+       - **LoRA (Low-Rank Adaptation)** configurations (if applicable).
+       - **SFT (Supervised Fine-Tuning) Trainer** settings (e.g., batch size, learning rate, optimizer).
+  
+  2. **Create a Model Creation Function**:
+     - Define a single function that can instantiate models of all types (e.g., Transformers, LLMs) based on the configurations specified. This ensures consistency across experiments.
+  
+  3. **Generate Config Groups for Comparison**:
+     - Use the wrapper APIs to generate a group of configurations you want to compare in a single run. This allows you to evaluate multiple settings (e.g., different learning rates, LoRA ranks) simultaneously.
+  
+  4. **Launch Multi-Config Training**:
+     - Execute the training process for all configurations in the group. Adjust the `num_chunks` parameter to control concurrency:
+       - A higher `num_chunks` value increases parallelism but may require more resources.
+       - Refer to the `Run Fit` section in the [experiment documentation](experiment.html#run-fit) for details on optimizing `num_chunks` based on your infrastructure.
+  
+  Example Code Snippet (if applicable):
+  ```python
+  # Example structure (adapt based on RapidFire API)
+  from rapidfire import ModelConfig, TrainerConfig, generate_config_group, launch_training
+  
+  # Define knobs
+  model_knobs = {"model_type": "llama2", "hidden_size": [512, 1024]}
+  lora_knobs = {"rank": [8, 16], "alpha": [16, 32]}
+  sft_knobs = {"batch_size": [32, 64], "lr": [1e-4, 1e-5]}
+  
+  # Generate config group
+  config_group = generate_config_group(model_knobs, lora_knobs, sft_knobs)
+  
+  # Launch training with concurrency control
+  launch_training(config_group, num_chunks=4)  # Adjust `num_chunks` as needed
+  ```
+  
+  5. **Monitor and Analyze**:
+     - After launching, monitor the training runs and compare results across configurations to identify the optimal setup.
+
+📚 SOURCE EVIDENCE (1 source(s)):
+
+  Source #1:
+  📄 File: walkthroughft.rst
+     Lines: 261-269
+     ──────────────────────────────────────────────────────────────────────
+      261 |      # Launch training of all configs in the config_group with swap granularity of 4 chunks
+      262 |      experiment.run_fit(config_group, sample_create_model, train_dataset, eval_dataset, num_chunks=4, seed=42)
+      264 |   Note that in the same experiment, you can run as many :func:`run_fit()` as you want. All their runs will be superimposed on the same plots on the dashboard.
+      268 | Step 5: Monitor training behaviors on ML metrics dashboard
+      269 | --------
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #10
+================================================================================
+
+❓ QUESTION:
+  Unable to parse question
+
+✓ REFERENCE ANSWER:
+  Unable to parse answer
+
+📚 SOURCE EVIDENCE (2 source(s)):
+
+  Source #1:
+  📄 File: sft.rst
+     Lines: 50-50
+     ──────────────────────────────────────────────────────────────────────
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: fitfunctions.rst
+     Lines: 34-43
+     ──────────────────────────────────────────────────────────────────────
+       34 | 	# From the SFT tutorial notebook
+       35 | 	def sample_create_model(model_config):
+       36 |     	"""Function to create model object for any given config; must return tuple of (model, tokenizer)"""
+       37 | 		from transformers import AutoModelForCausalLM, AutoTokenizer, AutoModelForSeq2SeqLM, AutoModelForMaskedLM
+       39 | 		model_name = model_config["model_name"]
+       40 | 		model_type = model_config["model_type"]
+       41 | 		model_kwargs = model_config["model_kwargs"]
+       43 | 		if model_type == "causal_lm":
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #11
+================================================================================
+
+❓ QUESTION:
+  Based on the provided documentation for RapidFire AI's experimentation system, enumerate the key features and components related to experiment management and session handling. Specifically, include details about persistence, artifact storage, and session termination mechanisms.
+
+✓ REFERENCE ANSWER:
+  Here are the key features and components related to experiment management and session handling in RapidFire AI:
+  
+  1. **Named Experiments**:
+     - Ability to run multiple (named) experiments within the same session.
+     - Each experiment can be uniquely identified for tracking and comparison.
+  
+  2. **Metrics Tracking**:
+     - Metrics for each experiment are displayed in separate tables under the `:func:`run_evals()` cell.
+     - Enables side-by-side comparison of experiment performance.
+  
+  3. **Persistent Artifacts**:
+     - All experiment artifacts are stored persistently on the local machine.
+     - Includes:
+       - Metrics files (quantitative results and evaluations).
+       - Logs (detailed records of experiment execution).
+       - Checkpoints (saved model states or progress snapshots).
+  
+  4. **Artifact Storage Path**:
+     - Artifacts are stored in the `experiments path` specified during the constructor (initialization) of the session.
+     - Ensures organized and centralized storage for all experiment-related data.
+  
+  5. **Session Management**:
+     - Support for running multiple experiments sequentially within a single session.
+     - Graceful session termination mechanisms to ensure proper cleanup:
+       - **Method 1**: Explicit session stop command.
+       - **Method 2**: Automatic or manual port deallocation to free resources.
+  
+  6. **Resource Efficiency**:
+     - Ports used during the session are freed upon termination to avoid conflicts or resource leaks.
+  
+  These features collectively enable scalable, reproducible, and organized experimentation in RapidFire AI.
+
+📚 SOURCE EVIDENCE (1 source(s)):
+
+  Source #1:
+  📄 File: walkthroughrag.rst
+     Lines: 268-273
+     ──────────────────────────────────────────────────────────────────────
+      268 | End the expeirment after you are done with it.
+      270 | You can then move on to another (named) experiment in the same session. 
+      271 | Run as many experiments as you like; each will have its metrics apppear on its own table under the :func:`run_evals()` cell. 
+      272 | All experiment artifacts (metrics files, logs, checkpoints, etc.) are *persistent* on 
+      273 | your machine in the experiments path specified in the constructor.
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #12
+================================================================================
+
+❓ QUESTION:
+  How does the random sampling process in `RFRandomSearch()` relate to the evaluation metrics computation in a use case like GSM8K, and how can one ensure the sampled knob combinations align with the metrics being evaluated?
+
+✓ REFERENCE ANSWER:
+  The `RFRandomSearch()` function generates knob combinations for hyperparameter tuning by independently sampling values from specified single values, lists, or ranges for each knob in an IID (independently and identically distributed) manner. This means each knob's value is uniformly and randomly selected from its defined discrete or continuous set, and this process is repeated `num_runs` times to produce distinct combinations. 
+  
+  In a use case like GSM8K, where evaluation metrics are computed using a function such as `sample_compute_metrics_fn`, the sampled knob combinations directly influence the model's behavior during training or inference. For example, if the knobs represent hyperparameters (e.g., learning rate, batch size, or model architecture choices), each sampled combination will yield a unique model configuration whose performance is assessed via metrics like accuracy, precision, or answer correctness.
+  
+  To ensure alignment between the sampled knob combinations and the evaluation metrics:
+  1. **Define Knob Ranges Carefully**: Ensure the ranges or lists of values for each knob in `RFRandomSearch()` are meaningful for the task. For instance, if evaluating answer correctness in GSM8K, knobs should include parameters that could impact reasoning or generation quality (e.g., temperature, top-k sampling values, or prompt variations).
+  2. **Map Metrics to Knobs**: The `sample_compute_metrics_fn` should compute metrics that reflect the impact of the sampled knobs. For example, if a knob controls the model's creativity (e.g., temperature), the metrics should include measures like diversity or correctness of generated answers.
+  3. **Iterate and Validate**: After sampling knob combinations and running evaluations, validate that the metrics vary meaningfully across runs. If metrics are insensitive to knob changes, the sampling ranges may need adjustment or the knobs may not be relevant to the task.
+  4. **Logging and Analysis**: Log both the knob combinations and their corresponding metrics for post-hoc analysis. This helps identify which combinations lead to optimal performance and whether the sampling process adequately explores the hyperparameter space.
+  
+  By synthesizing the IID sampling approach of `RFRandomSearch()` with the metrics computation in `sample_compute_metrics_fn`, you can systematically explore hyperparameter spaces and correlate knob values with model performance in tasks like GSM8K.
+
+📚 SOURCE EVIDENCE (2 source(s)):
+
+  Source #1:
+  📄 File: configs.rst
+     Lines: 92-96
+     ──────────────────────────────────────────────────────────────────────
+       92 | For :func:`RFGridSearch()`, each knob can have either a single value or a :func:`List()` of values but no knob 
+       93 | should have :func:`Range()` of values; otherwise, it will error out.
+       95 | For :func:`RFRandomSearch()`, each knob can have either a single value, or a :func:`List()` of values, or a 
+       96 |  :func:`Range()` of values. The semantics of sampling are independently-identically-distributed (IID), i.e.,
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: evalsfunctions.rst
+     Lines: 281-285
+     ──────────────────────────────────────────────────────────────────────
+      282 |         correct = sum(
+      283 |             1
+      284 |             for pred, gt in zip(batch["model_answer"], batch["ground_truth"])
+      285 |             if pred == gt
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #13
+================================================================================
+
+❓ QUESTION:
+  What are the two main stages in RapidFire AI's execution pipeline for RAG (Retrieval-Augmented Generation) pipelines as described in the documentation?
+
+✓ REFERENCE ANSWER:
+  According to the documentation, RapidFire AI's execution pipeline for RAG pipelines is split into two main stages:
+  
+  1. **Document Preprocessing:** In this stage, workers operate in parallel on the base data to produce preprocessed data, which is then stored in a vector store.
+  
+  2. **Retrieval and Generation (implied by context):** While not explicitly named in the provided snippet, the second stage typically involves retrieving relevant information from the vector store and generating responses using the preprocessed data. This is inferred from the broader context of RAG pipelines.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: walkthroughrag.rst
+     Lines: 253-262
+     ──────────────────────────────────────────────────────────────────────
+      253 |     <img src="_static/evals-icop-results.png" alt="IC Op results on table" 
+      254 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+      256 |     <img src="_static/evals-icop-stop-mlflow.png" alt="IC Op: Stop" 
+      257 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+      259 |     <img src="_static/evals-icop-clone-mlflow.png" alt="IC Op: Clone-Modify" 
+      260 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: fitfunctions.rst
+     Lines: 201-205
+     ──────────────────────────────────────────────────────────────────────
+      201 |             answer = answer.split("</answer>")[0]
+      202 |             return answer.strip()
+      204 |         responses = [completion[0]['content'] for completion in completions]
+      205 |         q = prompts[0][-1]['content']
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: ragspecs.rst
+     Lines: 17-23
+     ──────────────────────────────────────────────────────────────────────
+       17 | .. image:: /images/ragspec-1.png
+       18 |    :width: 600px
+       21 | RapidFire AI's execution pipeline for RAG pipelines engineering is split into 2 main stages as illustrated in the figure below:
+       23 | * **Document Preprocessing:** Workers operate in parallel on the base data and produce preprocessed data that is stored in a vector store.
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #14
+================================================================================
+
+❓ QUESTION:
+  What is the significance of the `search_cfg` parameter in the context of vector/chunk retrieval within a Retrieval-Augmented Generation (RAG) system, and how do the different `type` options influence the retrieval behavior?
+
+✓ REFERENCE ANSWER:
+  The `search_cfg` parameter in a RAG system plays a critical role in configuring the retrieval mechanism for vectors or chunks of data, which directly impacts the quality and relevance of the information fed into the generation component. Specifically, it defines the search algorithm and its associated hyperparameters (kwargs) used to identify and retrieve the most pertinent vectors or chunks from a vector store or knowledge base.
+  
+  Based on the provided documentation, the `search_cfg` parameter must be structured as a dictionary that includes a mandatory key `"type"`, which specifies the search algorithm to employ. The default type is `"similarity"`, implying that, by default, the system retrieves vectors or chunks based on their similarity to the input query, typically measured using metrics like cosine similarity or Euclidean distance. The documentation mentions three possible options for the `"type"` key, though only `"similarity"` is explicitly named.
+  
+  The influence of the `"type"` options on retrieval behavior can be summarized as follows:
+  1. **Similarity-Based Retrieval (`"similarity"`)**: This is the default approach, where the system ranks and retrieves vectors or chunks based on their proximity to the query vector in the embedding space. This method is effective for general-purpose retrieval tasks where relevance is the primary criterion.
+  
+  2. **Other Unspecified Types**: While the documentation does not explicitly detail the other two `"type"` options, they likely represent alternative retrieval strategies. For example:
+     - **Diversity-Aware Retrieval**: This could prioritize retrieving a diverse set of results to avoid redundancy, which is useful for exploratory tasks or when broad coverage of a topic is desired.
+     - **Hybrid Retrieval**: This might combine multiple retrieval strategies (e.g., keyword-based and vector-based) to leverage the strengths of different approaches, improving robustness in scenarios with varying query types.
+  
+  The kwargs provided in `search_cfg` allow for further customization of the selected algorithm, such as tuning the number of results to retrieve, adjusting similarity thresholds, or specifying other algorithm-specific parameters. This flexibility enables system architects to optimize retrieval performance for specific use cases, balancing factors like speed, accuracy, and diversity of results.
+
+📚 SOURCE EVIDENCE (1 source(s)):
+
+  Source #1:
+  📄 File: ragspecs.rst
+     Lines: 85-85
+     ──────────────────────────────────────────────────────────────────────
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #15
+================================================================================
+
+❓ QUESTION:
+  How can I stop or clone-modify an ongoing intelligent control (IC) operation in the system, and what should I expect to see on the dashboard after performing these actions?
+
+✓ REFERENCE ANSWER:
+  To stop or clone-modify an ongoing intelligent control (IC) operation in the system, follow these procedural steps based on the provided documentation:
+  
+  ### Stopping an IC Operation:
+  1. **Locate the Stop Icon**: On the system dashboard, identify the "IC Op: Stop" icon (represented by a red stop symbol, as shown in the first image in the documentation).
+  2. **Initiate Stop Action**: Click the "IC Op: Stop" icon. This action will terminate the currently running IC operation immediately.
+  3. **Confirmation**: Ensure the operation halts by verifying that the status updates on the dashboard reflect the stop action (e.g., progress bars or status indicators should reset or display "Stopped").
+  
+  ### Clone-Modifying an IC Operation:
+  1. **Locate the Clone-Modify Icon**: On the dashboard, find the "IC Op: Clone-Modify" icon (depicted in the second image in the documentation). This icon typically resembles a duplicate or branching symbol.
+  2. **Initiate Clone-Modify Action**: Click the "IC Op: Clone-Modify" icon. This will create a clone of the existing IC operation, allowing you to modify parameters or configurations without altering the original operation.
+  3. **Modify Parameters**: After cloning, the system will prompt you to adjust parameters, inputs, or other settings. Make the necessary changes and confirm to create the new, modified IC operation.
+  4. **Dashboard Update**: The dashboard will display both the original and cloned operations, with the cloned one marked as a new or modified instance.
+  
+  ### Expected Dashboard Results:
+  After performing either action, the dashboard (as shown in the third image, "IC Op results on dashboard") will update to reflect:
+  - **For Stop**: The operation’s progress will freeze, and its status will change to "Stopped" or "Terminated." Any associated metrics or logs will cease updating.
+  - **For Clone-Modify**: The dashboard will display an additional entry for the cloned operation, often with a distinct identifier (e.g., "Operation X - Clone"). The original operation remains unchanged. Both operations will be visible in the dashboard’s list or visualization panel, allowing you to compare or manage them independently.
+  
+  ### Additional Notes:
+  - The images in the documentation are interactive; clicking them will expand them to fullscreen for better visibility. Use this feature if you need to inspect the icons or dashboard results more closely.
+  - Ensure you have the necessary permissions to stop or clone-modify operations, as these actions may affect workflows or dependencies in the system.
+
+📚 SOURCE EVIDENCE (1 source(s)):
+
+  Source #1:
+  📄 File: walkthroughft.rst
+     Lines: 296-311
+     ──────────────────────────────────────────────────────────────────────
+      299 | Step 7: End experiment; stop server when done
+      300 | ------
+      302 | Run the cell to end the expeirment when you are done with it.
+      304 | .. code-block:: python
+      306 |    experiment.end()
+      308 | You can then move on to another (named) experiment in the same session. 
+      309 | Run as many experiments as you like; each will have its plots apppear on the dashboard 
+      310 | under its name. 
+      311 | All experiment artifacts (metrics files, logs, checkpoints, etc.) are *persistent* on 
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #16
+================================================================================
+
+❓ QUESTION:
+  How do IC Ops differ from using fit functions with RFModelConfig in terms of automation and customization for machine learning experiments?
+
+✓ REFERENCE ANSWER:
+  IC Ops and fit functions with RFModelConfig serve different but complementary purposes in machine learning experiments, particularly in automation and customization:
+  
+  1. **Purpose and Scope**:
+     - **IC Ops**: Focus on improving experiment effectiveness through high-level operational capabilities like stopping, cloning, modifying, or scheduling experiments. They are designed to enforce consistent policies across projects or teams and can be semi-automated with custom heuristics or fully automated for future execution. IC Ops reduce manual intervention by allowing users to step out of the loop.
+     - **Fit Functions (RFModelConfig)**: These are reward or evaluation functions passed to the `reward_funcs` argument in `RFModelConfig`. They are used during model training to evaluate generated outputs on the fly. Fit functions enable fine-grained control over how models are assessed but operate at the model training level rather than the experiment workflow level.
+  
+  2. **Automation Level**:
+     - **IC Ops**: Offer advanced automation for experiment management, such as automated template support (planned for the future) and scheduling. This allows experiments to run without continuous user oversight.
+     - **Fit Functions**: While they automate the evaluation of model outputs during training, they do not inherently manage the broader experiment lifecycle (e.g., stopping or cloning experiments). Automation is limited to the training phase.
+  
+  3. **Customization**:
+     - **IC Ops**: Customization is achieved through semi-automated heuristics or templates that apply consistent policies (e.g., when to stop or clone an experiment). This is ideal for standardizing workflows across teams.
+     - **Fit Functions**: Customization involves creating subsets of functions and passing them as a list to `RFModelConfig` to define multi-config specifications. This allows tailored evaluation metrics for different model variants but requires manual setup for each experiment.
+  
+  4. **Use Case Alignment**:
+     - Use **IC Ops** if your goal is to streamline experiment workflows, enforce team-wide policies, or reduce manual monitoring (e.g., automatically stopping underperforming experiments).
+     - Use **fit functions with RFModelConfig** if you need to dynamically evaluate model outputs during training with custom metrics (e.g., combining accuracy, latency, and fairness in a single reward function).
+  
+  In summary, IC Ops are best for operational efficiency and consistency in experiment management, while fit functions provide granular control over model evaluation during training. They can be used together—for example, IC Ops could schedule experiments that use custom fit functions for evaluation.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: icops.rst
+     Lines: 182-186
+     ──────────────────────────────────────────────────────────────────────
+      182 | IC Ops are a powerful capability to dramatically improve the effectiveness of your experiments. 
+      183 | We plan to add automated template support for IC Ops based on feedback. 
+      184 | This will help you apply a consistent policy for using stop, clone-modify, etc. across your projects 
+      185 | and/or personnel via code. You can also create new customized semi-automated heuristics on top of 
+      186 | IC Ops or schedule them for automated future execution instead of having to sit in the loop. 
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: ragspecs.rst
+     Lines: 363-363
+     ──────────────────────────────────────────────────────────────────────
+      363 | But you can specify a :class:`List` or :class:`Range` (when applicable) for all the other knobs in a multi-config specification. 
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: fitfunctions.rst
+     Lines: 163-168
+     ──────────────────────────────────────────────────────────────────────
+      163 | A list of such functions is passed to the :code:`reward_funcs` argument of :class:`RFModelConfig`. 
+      164 | Also read: :doc:`the LoRA and Model Configs page</models>`.
+      165 | You can create multiple variants of this list with different subsets of functions and pass them 
+      166 | all as a single :code:`List` to your :class:`RFModelConfig` to create a multi-config specification.
+      168 | These functions are invoked by the underlying HF trainer on the generated outputs on the fly.
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #17
+================================================================================
+
+❓ QUESTION:
+  Based on the provided documentation, enumerate the key features and components of the RapidFire AI system that contribute to its efficiency and early performance insights during model evaluation. Include both architectural elements and functional components mentioned in the context.
+
+✓ REFERENCE ANSWER:
+  The RapidFire AI system incorporates several key features and components that enhance its efficiency and provide early performance insights during model evaluation. Below is an enumeration of these elements:
+  
+  1. **Chunk-Based Parallel Evaluation**:
+     - RapidFire AI divides the evaluation process into multiple chunks (e.g., 4 chunks as mentioned in the documentation).
+     - This allows concurrent evaluation of multiple model configurations (e.g., M1, M2, M3) on different chunks, enabling early insights into learning behaviors.
+  
+  2. **Minimal Swapping Overhead**:
+     - The system employs efficient memory management techniques to reduce the overhead of swapping models during evaluation.
+     - The overhead is quantified as less than 5% of the total runtime, ensuring near-seamless transitions between model configurations.
+  
+  3. **Preprocess Function (`preprocess_fn`)**:
+     - A mandatory user-provided function that prepares inputs for the generator model before each batch evaluation.
+     - It is invoked for every batch and is critical for transforming raw data into a format suitable for the model.
+     - The function is passed to the `preprocess_fn` key in the evaluation configuration dictionary.
+  
+  4. **System-Injected Components in Preprocessing**:
+     - The preprocess function receives additional contextual data injected by the system, including:
+       - **Batch Data**: The input data for the current batch.
+       - **RAG Spec**: Retrieval-augmented generation specifications, which may include configuration details for retrieval or augmentation processes.
+       - **Prompt Manager**: A component managing prompts for individual leaf configurations, ensuring tailored input generation for each model.
+  
+  5. **Early Learning Behavior Insights**:
+     - By evaluating multiple model configurations across chunks in parallel, RapidFire AI provides early feedback on the performance and learning trends of each configuration.
+     - This contrasts with sequential evaluation, where insights are delayed until all configurations complete their full epochs.
+  
+  6. **Configurable Model Configurations**:
+     - Support for evaluating multiple model configurations (e.g., M1, M2, M3) simultaneously, enabling comparative analysis without waiting for sequential completion.
+  
+  7. **Memory Management Techniques**:
+     - Advanced memory optimization reduces the runtime impact of model swapping, contributing to the system's overall efficiency.
+  
+  These features collectively enable RapidFire AI to deliver faster, more insightful, and resource-efficient model evaluations compared to traditional sequential approaches.
+
+📚 SOURCE EVIDENCE (2 source(s)):
+
+  Source #1:
+  📄 File: difference.rst
+     Lines: 17-21
+     ──────────────────────────────────────────────────────────────────────
+       17 | .. image:: /images/gantt-1gpu.png
+       18 |    :width: 800px
+       20 | In the above figure, all 3 model configs are shown for 1 epoch. RapidFire AI is set to use 4 chunks.
+       21 | So, before model config 3 (M3) even starts in the sequential approach, RapidFire AI already shows you 
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: evalsfunctions.rst
+     Lines: 10-18
+     ──────────────────────────────────────────────────────────────────────
+       11 | Mandatory user-provided function to prepare the inputs to be given to the generator model. 
+       12 | It is invoked for each batch during the evaluation process before generation.
+       13 | Pass it directly to the :code:`preprocess_fn` key in your eval config dictionary.
+       15 | The system injects into this function the batch data, as well as the RAG spec and 
+       16 | the prompt manager of an individual leaf config.
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #18
+================================================================================
+
+❓ QUESTION:
+  How can I configure vLLM sampling parameters and integrate custom evaluation metrics when fine-tuning a model using RFvLLMModelConfig in a training pipeline?
+
+✓ REFERENCE ANSWER:
+  To configure vLLM sampling parameters and integrate custom evaluation metrics in a fine-tuning pipeline using RFvLLMModelConfig, follow these steps:
+  
+  1. **Configure vLLM Sampling Parameters via RFvLLMModelConfig**:
+     - RFvLLMModelConfig serves as a wrapper around vLLM's `config` and `SamplingParams` classes. You can pass arguments to these classes through RFvLLMModelConfig to control generation behavior.
+     - For `SamplingParams`, refer to the [vLLM documentation](https://docs.vllm.ai/en/v0.6.4/dev/sampling_params.html) for available parameters such as `temperature`, `top_p`, `max_tokens`, `n`, etc. These parameters can be defined when initializing the model configuration.
+     - Example:
+       ```python
+       from your_library import RFvLLMModelConfig
+       
+       model_config = RFvLLMModelConfig(
+           sampling_params={
+               "temperature": 0.7,
+               "top_p": 0.9,
+               "max_tokens": 100
+           }
+       )
+       ```
+  
+  2. **Define Custom Evaluation Metrics**:
+     - As shown in the `fitfunctions.rst` documentation, you can create a custom `compute_metrics` function to evaluate model predictions during training or evaluation.
+     - The function should take `eval_preds` (a tuple of predictions and labels) as input and return a dictionary of metric names and values. You can use libraries like `evaluate` to load standard metrics such as ROUGE or BLEU.
+     - Example:
+       ```python
+       def compute_metrics(eval_preds):
+           predictions, labels = eval_preds
+           
+           # Load standard metrics
+           import evaluate
+           rouge = evaluate.load("rouge")
+           bleu = evaluate.load("bleu")
+           
+           # Compute metrics (example for ROUGE)
+           rouge_results = rouge.compute(predictions=predictions, references=labels)
+           
+           # Return metrics as a dictionary
+           return {
+               "rouge1": rouge_results["rouge1"],
+               "rougeL": rouge_results["rougeL"],
+           }
+       ```
+  
+  3. **Integrate Both in the Training Pipeline**:
+     - Pass the `RFvLLMModelConfig` to your model initialization to apply the sampling parameters during inference or generation.
+     - Pass the `compute_metrics` function to your trainer or evaluation loop to compute custom metrics during training/evaluation.
+     - Example integration:
+       ```python
+       from transformers import Trainer
+       
+       trainer = Trainer(
+           model=model,
+           args=training_args,
+           train_dataset=train_dataset,
+           eval_dataset=eval_dataset,
+           compute_metrics=compute_metrics,
+       )
+       
+       # Use RFvLLMModelConfig for generation/inference
+       model.config = model_config
+       ```
+  
+  By combining these steps, you can control the generation behavior of your model using vLLM's sampling parameters while simultaneously evaluating its performance with custom metrics during fine-tuning.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: generators.rst
+     Lines: 11-16
+     ──────────────────────────────────────────────────────────────────────
+       12 | This is a wrapper around vLLM's :class:`config` and :class:`SamplingParams` classes. 
+       13 | The full list of their arguments are available on `this page <https://docs.vllm.ai/en/latest/api/vllm/config/index.html>`__ 
+       14 | and `this page <https://docs.vllm.ai/en/v0.6.4/dev/sampling_params.html>`__, respectively.
+       16 | The difference here is that the individual arguments (knobs) can be :class:`List` valued or 
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: fitfunctions.rst
+     Lines: 83-99
+     ──────────────────────────────────────────────────────────────────────
+       83 |    :return: Dictionary with user-defined metrics with names keys and numbers as values
+       84 |    :rtype: Dict[str, float]
+       87 | **Example:**
+       89 | .. code-block:: python
+       91 | 	# From the SFT tutorial notebook
+       92 | 	def sample_compute_metrics(eval_preds):  
+       93 | 		"""Optional function to compute eval metrics based on predictions and labels"""
+       94 | 		predictions, labels = eval_preds
+       96 | 		# Standard text-based eval metrics: Rouge and BLEU
+       97 | 		import evaluate
+       98 | 		rouge = evaluate.load("rouge")
+       99 | 		bleu = evaluate.load("bleu")
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: walkthroughft.rst
+     Lines: 196-199
+     ──────────────────────────────────────────────────────────────────────
+      197 | |
+      199 | Full Usage Walkthrough Video (12min)
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #19
+================================================================================
+
+❓ QUESTION:
+  Unable to parse question
+
+✓ REFERENCE ANSWER:
+  Unable to parse answer
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: onlineagg.rst
+     Lines: 113-118
+     ──────────────────────────────────────────────────────────────────────
+      114 | * :math:`N` = Total population size (total number of queries in eval set)
+      115 | * :math:`n` = Sample size (number of queries processed so far)
+      116 | * :math:`\hat{p}` = Observed sample proportion or average for an algebraic metric
+      117 | * :math:`\bar{X}` = Sample mean for a distributive metric
+      118 | * :math:`\widehat{T}` = Estimated population total for a distributive metric
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: configs.rst
+     Lines: 69-73
+     ──────────────────────────────────────────────────────────────────────
+       69 | 	:type configs: Dict[str, Any] | List[Dict[str, Any]]
+       71 | 	:param trainer_type: The fine-tuning/post-training control flow to use: "SFT", "DPO", or "GRPO". Skip this argument for :func:`run_evals()`.
+       72 | 	:type trainer_type: str, optional 
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: issues.rst
+     Lines: 12-16
+     ──────────────────────────────────────────────────────────────────────
+       13 | Ordinarily, any given run's model(s) for its batch size must fit on a single GPU's memory. 
+       14 | For DPO and GRPO, both the policy and reference models must fit on the GPU together. 
+       16 | For SFT (and DPO), RapidFire AI can use FSDP automatically to partition a large model across GPUs on the same machine.
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #20
+================================================================================
+
+❓ QUESTION:
+  Unable to parse question
+
+✓ REFERENCE ANSWER:
+  Unable to parse answer
+
+📚 SOURCE EVIDENCE (2 source(s)):
+
+  Source #1:
+  📄 File: ragspecs.rst
+     Lines: 209-220
+     ──────────────────────────────────────────────────────────────────────
+      209 |                     "corpus_id": int(record.get("_id"))
+      210 |                 },  # store the document id
+      211 |                 "json_lines": True,
+      212 |                 "text_content": False,
+      213 |             },
+      214 |             sample_seed=42,
+      215 |         ),
+      216 |         # 2 chunking strategies with different chunk sizes
+      217 |         text_splitter=List([
+      218 |             RecursiveCharacterTextSplitter.from_tiktoken_encoder(
+      219 |                 encoding_name="gpt2", chunk_size=64, chunk_overlap=32
+      220 |             ),
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: experiment.rst
+     Lines: 11-13
+     ──────────────────────────────────────────────────────────────────────
+       12 | The Experiment class has the functions and semantics detailed below. 
+       13 | As of this writing, an experiment can operate in either :code:`"fit"` mode or :code:`"eval"` mode but not both. 
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #21
+================================================================================
+
+❓ QUESTION:
+  How can I configure and perform a grid search with multiple OpenAI model configurations using the `RFGridSearch` class, as shown in the provided documentation? Specifically, what are the steps to define the configuration set and initialize the grid search?
+
+✓ REFERENCE ANSWER:
+  To configure and perform a grid search with multiple OpenAI model configurations using the `RFGridSearch` class, follow these steps:
+  
+  1. **Define Individual Model Configurations**:
+     - Create separate `RFOpenAIAPIModelConfig` objects for each OpenAI model configuration you want to include in the grid search. For example:
+       ```python
+       openai_config1 = RFOpenAIAPIModelConfig(
+           client_config={"api_key": OPENAI_API_KEY, "max_retries": 2},
+           model_config={
+               "model": "gpt-4o-mini",
+               "max_completion_tokens": 512,
+               "reasoning_effort": "medium"
+           }
+       )
+       
+       openai_config2 = RFOpenAIAPIModelConfig(
+           client_config={"api_key": OPENAI_API_KEY, "max_retries": 2},
+           model_config={
+               "model": "gpt-4o",
+               "max_completion_tokens": 1024,
+               "reasoning_effort": List(["medium", "high"])  # Multiple reasoning levels
+           }
+       )
+       ```
+  
+  2. **Create the Configuration Set**:
+     - Combine the individual configurations into a dictionary (`config_set`) that includes all parameters for the grid search. The `openai_config` key should map to a `List` of the configurations you defined. For example:
+       ```python
+       config_set = {
+           "openai_config": List([openai_config1, openai_config2]),
+           "batch_size": batch_size,  # Replace with your desired batch size
+           # Include other hyperparameters or configurations as needed
+       }
+       ```
+  
+  3. **Initialize the Grid Search**:
+     - Pass the `config_set` to the `RFGridSearch` class to initialize the grid search. This will create a search space over all combinations of the provided configurations. For example:
+       ```python
+       config_group = RFGridSearch(config_set)
+       ```
+  
+  4. **Run the Grid Search**:
+     - Use the `config_group` object to perform the grid search. The exact method for running the search (e.g., `.fit()`, `.search()`, or similar) depends on the broader framework, but the initialization is complete with the above steps.
+  
+  ### Key Notes:
+  - The `List` wrapper around reasoning levels (e.g., `List(["medium", "high"])`) ensures the grid search explores both values.
+  - The `batch_size` and other parameters in `config_set` are placeholders; replace them with your actual values or additional hyperparameters.
+  - The grid search will evaluate all combinations of the provided configurations, including different models, token limits, and reasoning efforts.
+
+📚 SOURCE EVIDENCE (1 source(s)):
+
+  Source #1:
+  📄 File: configs.rst
+     Lines: 139-157
+     ──────────────────────────────────────────────────────────────────────
+      139 | 		...
+      140 | 	)
+      142 | 	openai_config2 = RFOpenAIAPIModelConfig(
+      143 | 		client_config={"api_key": OPENAI_API_KEY, "max_retries": 2},
+      144 | 		model_config={
+      145 | 			"model": "gpt-4o",
+      146 | 			"max_completion_tokens": 1024,
+      147 | 			"reasoning_effort": List(["medium", "high"]),  # 2 different reasoning levels
+      148 | 		},
+      149 | 		...
+      150 | 	)
+      152 | 	config_set = {
+      153 | 		"openai_config": List(
+      154 | 			[openai_config1, openai_config2]
+      155 | 		),
+      156 | 		"batch_size": batch_size,
+      157 | 		...
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #22
+================================================================================
+
+❓ QUESTION:
+  How does the 'Singleton config' approach for RFLoraConfig differ from the '4 combinations' approach in terms of configuration flexibility and use cases? When would you choose one over the other?
+
+✓ REFERENCE ANSWER:
+  The 'Singleton config' and '4 combinations' approaches for `RFLoraConfig` serve different purposes in terms of configuration flexibility and use cases:
+  
+  ### **1. Singleton Config Approach**
+  - **Definition**: Uses fixed, single values for parameters like `r`, `lora_alpha`, and `lora_dropout`.
+    ```python
+    RFLoraConfig(
+        r=128, lora_alpha=256, lora_dropout=0.05,
+        target_modules=["q_proj", "v_proj"], bias="none"
+    )
+    ```
+  - **Flexibility**: Limited to one specific configuration. All training/inference runs will use these exact parameters.
+  - **Use Case**: Ideal for scenarios where you have already determined the optimal hyperparameters (e.g., after experimentation) and want consistent, reproducible results. It is also simpler to implement and debug.
+  
+  ### **2. 4 Combinations Approach**
+  - **Definition**: Uses lists of values for parameters (`r`, `lora_alpha`) to generate multiple configurations automatically.
+    ```python
+    RFLoraConfig(
+        r=List([16, 32]), lora_alpha=List([16, 32]), lora_dropout=0.05,
+        target_modules=["q_proj", "v_proj"], bias="none"
+    )
+    ```
+  - **Flexibility**: Highly flexible, as it explores multiple combinations of hyperparameters (e.g., `r=16` with `lora_alpha=16`, `r=16` with `lora_alpha=32`, etc.). This approach is useful for hyperparameter tuning.
+  - **Use Case**: Best suited for experimentation, ablation studies, or grid search scenarios where you want to evaluate the impact of different parameter combinations. It reduces manual effort but may require more computational resources.
+  
+  ### **When to Choose One Over the Other**
+  - **Use Singleton Config if**:
+    - You are deploying a model with known optimal parameters.
+    - You need simplicity and reproducibility.
+    - You are working with limited computational resources.
+  
+  - **Use 4 Combinations if**:
+    - You are in the experimentation phase and need to compare different hyperparameters.
+    - You want to automate the search for the best-performing configuration.
+    - You have the resources to handle multiple training runs.
+  
+  ### **Key Trade-offs**
+  - **Singleton Config**: Faster and more deterministic but less exploratory.
+  - **4 Combinations**: More exploratory and adaptable but computationally expensive and complex to manage.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: walkthroughft.rst
+     Lines: 59-59
+     ──────────────────────────────────────────────────────────────────────
+       59 |   * `mistralai/Mistral-7B-Instruct-v0.3 <https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3>`_
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: models.rst
+     Lines: 27-41
+     ──────────────────────────────────────────────────────────────────────
+       27 |     # Singleton config
+       28 |     RFLoraConfig( 
+       29 |         r=128, lora_alpha=256, lora_dropout=0.05,
+       30 |         target_modules=["q_proj", "v_proj"], bias="none"
+       31 |     )
+       33 |     # 4 combinations
+       34 |     RFLoraConfig(
+       35 |         r=List([16, 32]), lora_alpha=List([16,32]), lora_dropout=0.05,
+       36 |         target_modules=["q_proj", "v_proj"], bias="none"
+       37 |     )
+       39 |     # 2 combinations
+       40 |     RFLoraConfig( 
+       41 |         r=64, lora_alpha=128,
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: evalsfunctions.rst
+     Lines: 281-285
+     ──────────────────────────────────────────────────────────────────────
+      282 |         correct = sum(
+      283 |             1
+      284 |             for pred, gt in zip(batch["model_answer"], batch["ground_truth"])
+      285 |             if pred == gt
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #23
+================================================================================
+
+❓ QUESTION:
+  Based on the provided documentation, what are the key features and configurable components available when setting up a model configuration using `RFModelConfig` in RapidFire AI? Please enumerate them, including any relevant strategies or functions that can be customized.
+
+✓ REFERENCE ANSWER:
+  When configuring a model using `RFModelConfig` in RapidFire AI, the following key features and configurable components are available:
+  
+  1. **Formatting Functions (`formatting_func`)**:
+     - Customizable functions passed to the `formatting_func` argument of `RFModelConfig`.
+     - These functions are invoked by the underlying Hugging Face (HF) trainer on all examples of the train and evaluation datasets on the fly.
+     - Multiple variants of these functions can be created and passed as a single `List` to `RFModelConfig` to enable multi-config specifications.
+  
+  2. **LoRA and Model Configurations**:
+     - Additional model-specific configurations can be applied (e.g., Low-Rank Adaptation (LoRA)).
+     - Refer to the [LoRA and Model Configs page](/models) for detailed options.
+  
+  3. **Online Aggregation Strategy (`online_strategy_kwargs`)**:
+     - Configurable parameters for online aggregation strategies, including:
+       - `strategy_name`: Specifies the strategy type (e.g., "normal").
+       - `confidence_level`: Sets the confidence threshold (e.g., 0.95).
+       - `use_fpc`: A boolean flag to enable or disable the use of a specific component (e.g., "use_fpc": True).
+  
+  4. **API and Self-Hosting Options**:
+     - Support for OpenAI API integration (no GPU required if using OpenAI APIs for embedding or generation).
+     - Requires a valid OpenAI API key provided via the configuration.
+     - Self-hosted models can also be used but may require GPU resources.
+  
+  5. **Multi-Config Specifications**:
+     - Ability to pass multiple configurations (e.g., lists of formatting functions) to create diverse model variants in a single setup.
+  
+  6. **Dependencies and Installation**:
+     - The RapidFire AI OSS package includes all necessary dependencies and can be installed via PyPI.
+     - Ensure correct installation to leverage all features seamlessly.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: fitfunctions.rst
+     Lines: 122-128
+     ──────────────────────────────────────────────────────────────────────
+      123 | This function is invoked by the underlying HF trainer on all examples of the train dataset 
+      124 | and (if given) eval dataset on the fly.
+      127 | .. py:function:: sample_formatting_fn(row: Dict[str, Any]) -> Dict[str, List[Dict[str, str]]]
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: onlineagg.rst
+     Lines: 102-112
+     ──────────────────────────────────────────────────────────────────────
+      102 | .. code-block:: python
+      104 |     # Based on FiQA RAG tutorial use case
+      105 |     "online_strategy_kwargs": {
+      106 |         "strategy_name": "normal",
+      107 |         "confidence_level": 0.95,
+      108 |         "use_fpc": True,
+      109 |     },
+      111 | Notation 
+      112 | ^^^^^^^
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: walkthroughrag.rst
+     Lines: 26-35
+     ──────────────────────────────────────────────────────────────────────
+       27 | To install RapidFire AI for RAG/context engineering on your local machine or remote/cloud instance for complete functionality without limitations, follow the steps below.
+       29 | Note that if you plan to use only OpenAI APIs and not self-hosted models (for embedding or generation), you do NOT need GPUs on your machine. 
+       30 | But you must provide a valid OpenAI API key via a config argument as shown in the GSM8K and SciFact tutorial notebooks.
+       33 | Step 1: Install dependencies and package
+       34 | -----------------------
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #24
+================================================================================
+
+❓ QUESTION:
+  How does the behavior of the vector store differ between 'Create mode' and 'Read mode' in the context of an Experiment class operating in 'fit' versus 'eval' mode? Specifically, what are the implications for document loading and index usage in each scenario?
+
+✓ REFERENCE ANSWER:
+  The behavior of the vector store and its interaction with the Experiment class depends on both the vector store's mode (Create or Read) and the Experiment's mode ('fit' or 'eval'). Here’s a synthesis of the implications based on the provided documentation:
+  
+  ### 1. **Vector Store Modes (from `ragspecs.rst`)**
+     - **Create mode**: 
+       - Triggered when a `document_loader` is provided and no pre-existing index/collection names are specified.
+       - A new vector store is created and populated with documents from the `document_loader`.
+       - This mode is typically used when you want to build an index from scratch, such as during training or when ingesting new data.
+     - **Read mode**:
+       - Triggered when `document_loader` is absent and pre-existing index/collection names are specified.
+       - The vector store is opened in read-only mode, allowing retrieval against the existing index but not modifications.
+       - This mode is ideal for inference or evaluation where the index is already pre-built.
+  
+  ### 2. **Experiment Modes (from `experiment.rst`)**
+     - **'fit' mode**:
+       - This mode implies training or building a model/index. It is the natural fit for **Create mode** in the vector store, as it requires loading new documents and populating an index.
+       - If the Experiment is in 'fit' mode, the vector store should likely operate in Create mode to ensure the index is built from the provided documents.
+     - **'eval' mode**:
+       - This mode implies evaluation or inference, where the focus is on querying an existing index rather than building one.
+       - It aligns with the vector store's **Read mode**, as the goal is to retrieve information from a pre-built index without modifying it.
+  
+  ### 3. **Implications for Document Loading and Index Usage**
+     - **'fit' + Create mode**:
+       - The Experiment loads documents via `document_loader` and creates a new vector store/index. This is a resource-intensive operation, as it involves embedding and storing documents.
+       - Best suited for scenarios where you are training a model or initializing a new knowledge base.
+     - **'eval' + Read mode**:
+       - The Experiment skips document loading (no `document_loader`) and relies on a pre-existing index. This is efficient for evaluation, as it avoids recomputing embeddings or rebuilding the index.
+       - Best suited for scenarios like testing, validation, or inference, where the index is static.
+  
+  ### 4. **Key Considerations**
+     - The Experiment class currently enforces a mutual exclusivity between 'fit' and 'eval' modes, so you cannot combine both in a single run. This means:
+       - If you are in 'fit' mode, you must use Create mode (or risk failing to build the index).
+       - If you are in 'eval' mode, you must use Read mode (or risk unnecessary recomputation).
+     - Future updates may allow combining 'fit' and 'eval' modes, which could enable hybrid workflows (e.g., fine-tuning while evaluating). However, this would require careful handling of the vector store's mode to avoid conflicts.
+  
+  ### Summary Table:
+  | Experiment Mode | Vector Store Mode | Document Loader | Index Usage               | Use Case                     |
+  |-----------------|--------------------|------------------|---------------------------|------------------------------|
+  | 'fit'           | Create             | Present          | New index created         | Training, index building     |
+  | 'eval'          | Read               | Absent           | Existing index used       | Evaluation, inference        |
+
+📚 SOURCE EVIDENCE (2 source(s)):
+
+  Source #1:
+  📄 File: ragspecs.rst
+     Lines: 54-55
+     ──────────────────────────────────────────────────────────────────────
+       54 |     :type embedding_cfg: dict[str, Any], optional
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: experiment.rst
+     Lines: 11-13
+     ──────────────────────────────────────────────────────────────────────
+       12 | The Experiment class has the functions and semantics detailed below. 
+       13 | As of this writing, an experiment can operate in either :code:`"fit"` mode or :code:`"eval"` mode but not both. 
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #25
+================================================================================
+
+❓ QUESTION:
+  What happens when the `serialize` parameter is set to False in the RAG specification's document retrieval process, and what type of data is returned?
+
+✓ REFERENCE ANSWER:
+  When the `serialize` parameter is set to False in the RAG specification's document retrieval process, the system returns the raw Document objects instead of converting them into strings. Specifically, the method will return a list of lists of Document objects (i.e., `list[list[Document]]`), where each inner list corresponds to the documents retrieved for a single query. This is in contrast to the default behavior (when `serialize=True`), where the documents are serialized into strings and returned as a list of strings (`list[str]`).
+
+📚 SOURCE EVIDENCE (1 source(s)):
+
+  Source #1:
+  📄 File: ragspecs.rst
+     Lines: 152-158
+     ──────────────────────────────────────────────────────────────────────
+      152 |     Serialize batch of context document chunks into formatted strings for context injection.
+      154 |     :param batch_docs: List of Document lists, where each inner list contains Documents for one query.
+      155 |     :type batch_docs: list[list[Document]]
+      157 |     :return: List of formatted document chunk strings, one per query, with different document chunks separated by double newlines.
+      158 |     :rtype: list[str]
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #26
+================================================================================
+
+❓ QUESTION:
+  What is the role and structure of the `model_config` parameter in RapidFire AI's fit functions, and how does it relate to multi-config training workflows?
+
+✓ REFERENCE ANSWER:
+  The `model_config` parameter in RapidFire AI serves as a critical bridge between the configuration generation phase and the user-defined fit functions during model training. Here's a detailed explanation of its role and structure:
+  
+  1. **Definition and Structure**:
+     - `model_config` is a dictionary (`Dict[str, Any]`) automatically injected by RapidFire AI into user-defined fit functions.
+     - It contains all key-value pairs for a *single* model configuration generated by the config-group generator. This means each `model_config` represents one unique combination of hyperparameters, model settings, or other configurable knobs (e.g., LoRA, SFT Trainer parameters) defined during the multi-config setup.
+  
+  2. **Role in Multi-Config Training**:
+     - **Config-Group Generation**: Prior to training, RapidFire AI generates a *config group*—a collection of multiple `model_config` dictionaries—using wrapper APIs. This allows users to define and compare disparate configurations (e.g., different models, LoRA ranks, or SFT Trainer settings) in a single experiment.
+     - **Isolation of Configs**: During training, the system iterates over the config group, injecting one `model_config` at a time into the fit function. This ensures each training run is isolated to its specific configuration while sharing the same codebase.
+     - **Concurrency Control**: The `num_chunks` parameter (mentioned in the walkthrough) determines how many `model_config` instances are processed concurrently, enabling parallelized training across configurations.
+  
+  3. **User Interaction**:
+     - Users do not manually create or pass `model_config`; it is handled internally by RapidFire AI. However, they *consume* it within the fit function to dynamically configure the model, training loop, or other components (e.g., `model = ModelClass(**model_config['model_kwargs'])`).
+     - The dictionary's contents are defined by the user during the config-group setup phase (e.g., via `define_model_config_knobs()` or similar APIs).
+  
+  4. **Relation to RAG/Non-RAG Workflows**:
+     - While the `model_config` parameter is agnostic to the specific use case (e.g., RAG vs. prompt engineering), it can include settings relevant to either workflow. For example:
+       - In **non-RAG workflows** (as illustrated in `ragspecs.rst`), `model_config` might hold prompt templates, few-shot examples (if using the Prompt Manager), or model-specific parameters.
+       - In **RAG workflows**, it could encompass retrieval settings or context-engineering knobs.
+  
+  5. **Key Takeaway**:
+     The `model_config` parameter abstracts the complexity of multi-config experiments by encapsulating all variable settings for a single run. This design enables scalable, reproducible comparisons across configurations while maintaining a clean separation between configuration and execution logic.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: fitfunctions.rst
+     Lines: 25-26
+     ──────────────────────────────────────────────────────────────────────
+       26 |   :return: Tuple containing the initialized Hugging Face model (e.g., ``AutoModelForCausalLM``, ``AutoModelForSequenceClassification``) and tokenizer (e.g., ``AutoTokenizer``, ``PreTrainedTokenizer``) objects
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: walkthroughft.rst
+     Lines: 261-269
+     ──────────────────────────────────────────────────────────────────────
+      261 |      # Launch training of all configs in the config_group with swap granularity of 4 chunks
+      262 |      experiment.run_fit(config_group, sample_create_model, train_dataset, eval_dataset, num_chunks=4, seed=42)
+      264 |   Note that in the same experiment, you can run as many :func:`run_fit()` as you want. All their runs will be superimposed on the same plots on the dashboard.
+      268 | Step 5: Monitor training behaviors on ML metrics dashboard
+      269 | --------
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: ragspecs.rst
+     Lines: 10-16
+     ──────────────────────────────────────────────────────────────────────
+       10 | a config group can be produced. Also read :doc:`the Multi-Config Specification page</configs>`.
+       12 | Note that for plain prompt/context engineering use cases without RAG, you can skip providing this entire class. 
+       13 | If you'd like to do few-shot prompting instead, also read :doc:`API: Prompt Manager and Other Eval Config Knobs page</promptothers>`.
+       14 | Here is an illustration of the non-RAG prompt engineering workflow, with optional few-shot prompting.
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #27
+================================================================================
+
+❓ QUESTION:
+  How can I configure and execute an experiment with custom GPU allocation and random seed settings using the `run_fit()` method?
+
+✓ REFERENCE ANSWER:
+  To configure and execute an experiment with custom GPU allocation and random seed settings using the `run_fit()` method, follow these steps:
+  
+  1. **Set the Random Seed**:
+     - The `run_fit()` method accepts an optional `seed` parameter (default: 42) to control randomness in your experiment. Pass an integer value to ensure reproducibility. For example:
+       ```python
+       run_fit(seed=123)
+       ```
+  
+  2. **Configure GPU Allocation**:
+     - Use the `num_gpus` parameter to specify the number of GPUs to allocate per run/config. This can be set at two levels:
+       - **Global Level**: Pass `num_gpus` directly to `run_fit()` to apply it to all configurations in `param_config`. For example:
+         ```python
+         run_fit(num_gpus=2)
+         ```
+       - **Per-Config Level**: Override the global `num_gpus` setting by specifying `num_gpus` within individual `RFModelConfig` objects in your `param_config`. The per-config value takes precedence.
+  
+  3. **Execute the Experiment**:
+     - Call `run_fit()` with your desired parameters. The method will auto-generate ML metrics files and plot them on the dashboard. Example:
+       ```python
+       run_fit(seed=42, num_gpus=1, param_config=your_config)
+       ```
+  
+  4. **Rerun and Overlay Results**:
+     - You can rerun `run_fit()` multiple times within the same experiment. All runs will be overlaid on the same plots in the ML metrics dashboard.
+  
+  5. **Interactive Control (IC) Ops**:
+     - Ensure `run_fit()` is actively running to use Interactive Control operations on the dashboard. IC ops will not be available once the method completes execution.
+  
+  **Note**: The method returns `None`, so results are visualized directly on the dashboard rather than returned programmatically.
+
+📚 SOURCE EVIDENCE (2 source(s)):
+
+  Source #1:
+  📄 File: experiment.rst
+     Lines: 99-110
+     ──────────────────────────────────────────────────────────────────────
+      100 | **Example:**
+      102 | .. code-block:: python
+      104 | 	# Based on SFT chatbot tutorial notebook
+      105 | 	>>> experiment.run_fit(config_group, sample_create_model, train_dataset, eval_dataset, num_chunks=4, seed=42)
+      106 | 	Started 4 worker processes successfully ...
+      108 | **Notes:**
+      110 | This method auto-generates the ML metrics files as per user specification and auto-plots them on the dashboard.
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: experiment.rst
+     Lines: 123-129
+     ──────────────────────────────────────────────────────────────────────
+      123 | Each individual config is passed as input to your :func:`create_model_fn()`. Inside it you can use whatever 
+      124 | knob you set in the config group, e.g., model type or name to instantiate a model accordingly. 
+      125 | You can import models from libraries such as HuggingFace transformers or load your own PyTorch checkpoints.
+      127 | The :code:`num_chunks` argument is a critical one that enables you to balance a higher degree of concurrency 
+      128 | you desire for cross-config comparisons against the (relatively minor) extra swapping overhead incurred. 
+      129 | We recommend at least 4, which means you will see results for all runs on 1/4th of the data at a time.
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #28
+================================================================================
+
+❓ QUESTION:
+  How does RapidFire AI's approach to handling model configurations and token reallocation compare to traditional downsampling methods for evaluation sets, and what are the key advantages of each?
+
+✓ REFERENCE ANSWER:
+  Based on the provided documentation, here’s a comparison of RapidFire AI’s approach and traditional downsampling methods for evaluation sets, along with their key advantages:
+  
+  ### **1. RapidFire AI’s Approach**
+  - **Model Configurations:**
+    - RapidFire AI uses `RFvLLMModelConfig`, which allows individual arguments (knobs) to be `List` or `Range` valued. This enables the specification of a base set of knob combinations, from which multiple configurations can be dynamically generated and tested. This is particularly useful for exploring a wide range of hyperparameters or settings efficiently.
+    - The system supports **multi-config specification**, allowing users to define and evaluate diverse configurations without manual intervention.
+  
+  - **Token Reallocation:**
+    - For closed model APIs, RapidFire AI reallocates token spend to more productive configurations. This ensures that computational resources and API costs are optimized for better return on investment (ROI) by focusing on high-performing setups.
+  
+  - **Advantages:**
+    - **Dynamic Exploration:** Automatically generates and tests multiple configurations, reducing the need for manual trial-and-error.
+    - **Cost Efficiency:** Reallocates tokens to productive configurations, minimizing wasted spend on underperforming models.
+    - **Scalability:** Well-suited for large-scale experiments where manually managing configurations would be impractical.
+  
+  ### **2. Traditional Downsampling Methods**
+  - **Approach:**
+    - Downsampling involves reducing the size of the evaluation dataset to speed up testing or reduce computational costs. This is often done by randomly sampling a subset of the data.
+  
+  - **Limitations (as noted in the documentation):**
+    - **Loss of Information:** Smaller evaluation sets may not capture the full diversity of real-world data, leading to biased or less reliable results.
+    - **Suboptimal Performance:** Downsampling alone does not address the inefficiency of testing unproductive configurations, as it focuses on reducing data rather than optimizing the evaluation process.
+  
+  - **Advantages:**
+    - **Simplicity:** Easy to implement and understand, requiring minimal setup.
+    - **Faster Iterations:** Smaller datasets can speed up evaluation cycles, which may be useful for quick prototyping.
+  
+  ### **Key Differences and Why RapidFire AI’s Approach is Preferred**
+  - **Dynamic vs. Static:** RapidFire AI dynamically adjusts configurations and token allocation, while downsampling is a static reduction of data.
+  - **Efficiency:** RapidFire AI optimizes for both computational resources and model performance, whereas downsampling only addresses computational load.
+  - **ROI:** By reallocating tokens to productive configurations, RapidFire AI maximizes the value of each evaluation, unlike downsampling, which may still test suboptimal models.
+  
+  In summary, while downsampling can be useful for quick experiments, RapidFire AI’s approach offers a more robust, scalable, and cost-effective solution for evaluating and optimizing model configurations.
+
+📚 SOURCE EVIDENCE (2 source(s)):
+
+  Source #1:
+  📄 File: generators.rst
+     Lines: 17-22
+     ──────────────────────────────────────────────────────────────────────
+       17 | :class:`Range` valued in an :class:`RFvLLMModelConfig`. 
+       18 | That is how you can specify a base set of knob combinations from which a config group can 
+       19 | be produced. Also read :doc:`the Multi-Config Specification page</configs>`.
+       21 | .. py:class:: RFvLLMModelConfig
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: onlineagg.rst
+     Lines: 234-243
+     ──────────────────────────────────────────────────────────────────────
+      234 | First, you have to decide a downsample size upfront, which is not trivial if your
+      235 | eval metrics have high variance across examples. Point estimates without confidence 
+      236 | intervals can give false confidence in a sample. You can resample manually 
+      237 | over and over, but that adds manual grunt work of juggling separate samples/files. 
+      238 | Finally, downsampling alone does not offer you the power of IC Ops and automated 
+      239 | parallelization to try new configs on the fly--you'd have reimplement those manually.
+      241 | RapidFire AI's online aggregation approach with IC Ops avoids all the above issues,
+      242 | while also being **complementary** to downsampling, i.e., you can use both in 
+      243 | conjunction for even lower runtimes/costs.
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #29
+================================================================================
+
+❓ QUESTION:
+  Based on the provided documentation, enumerate the key components and features of the Direct Preference Optimization (DPO) and Retrieval-Augmented Generation (RAG) systems as described. Specifically, include details about the dataset used in DPO, the core elements of the RAG configuration, and the metrics used in evaluation functions.
+
+✓ REFERENCE ANSWER:
+  {
+    "Direct Preference Optimization (DPO)": {
+      "Dataset": {
+        "Name": "ultrafeedback binarized",
+        "Source": "Available on Hugging Face at https://huggingface.co/datasets/trl-lib/ultrafeedback_binarized",
+        "Sample Size": "500 training examples for tractable demo runtimes",
+        "Data Structure": "Paired preference data containing chosen (preferred) and rejected (dispreferred) responses for identical prompts"
+      }
+    },
+    "Retrieval-Augmented Generation (RAG) Configuration": {
+      "Core Components": [
+        {
+          "Name": "vector_store_cfg",
+          "Description": "Configuration for the vector store. If no retriever is provided but this is, a retriever is created from the vector store using LangChain's `as_retriever()` method."
+        },
+        {
+          "Name": "embedding_cfg",
+          "Description": "Required to embed evaluation queries when RAG is in use. Must match the embedding model used to build the vector store for RAG."
+        },
+        {
+          "Name": "document_loader",
+          "Description": "Required in Update mode but not in Read mode if `vector_store_cfg` is provided."
+        },
+        {
+          "Name": "text_splitter",
+          "Description": "Optional in Read mode if `vector_store_cfg` is provided; required details depend on the mode of operation (e.g., Update mode)."
+        }
+      ]
+    },
+    "Evaluation Functions": {
+      "Metrics": {
+        "Total": {
+          "Description": "Sum of all instances evaluated, derived from `aggregated_metrics.get('Total', [{}])`."
+        },
+        "Correct": {
+          "Description": "Sum of correctly evaluated instances, derived from `aggregated_metrics.get('Correct', [{}])`. It is distributive and has a value range of (0, 1)."
+        },
+        "Accuracy": {
+          "Description": "Calculated as `correct / total` if `total > 0`; otherwise, defaults to 0. Represents the proportion of correct evaluations."
+        }
+      }
+    }
+  }
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: dpo.rst
+     Lines: 21-26
+     ──────────────────────────────────────────────────────────────────────
+       21 | It uses the "ultrafeedback binarized" dataset;
+       22 | `see its details on Hugging Face <https://huggingface.co/datasets/trl-lib/ultrafeedback_binarized>`__.
+       23 | We use a sample of 500 training examples for tractable demo runtimes. 
+       25 | The dataset contains paired preference data with chosen (preferred) and rejected (dispreferred) 
+       26 | responses for the same prompts.
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: ragspecs.rst
+     Lines: 351-351
+     ──────────────────────────────────────────────────────────────────────
+      351 |     rag_gpu = RFLangChainRagSpec(
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: evalsfunctions.rst
+     Lines: 332-342
+     ──────────────────────────────────────────────────────────────────────
+      332 |         correct = sum(m.get("value", 0) for m in aggregated_metrics.get("Correct", [{}]))
+      333 |         total = sum(m.get("value", 0) for m in aggregated_metrics.get("Total", [{}]))
+      334 |         accuracy = correct / total if total > 0 else 0
+      335 |         return {
+      336 |             "Total": {"value": total},
+      337 |             "Correct": {
+      338 |                 "value": correct,
+      339 |                 "is_distributive": True,
+      340 |                 "value_range": (0, 1),
+      341 |             },
+      342 |             "Accuracy": {
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #30
+================================================================================
+
+❓ QUESTION:
+  How does the system's dynamic real-time control (IC Ops) interact with the configurable knobs specified in the RAG system, and how can an ML Engineer monitor or log these interactions during an experiment run?
+
+✓ REFERENCE ANSWER:
+  The system combines dynamic real-time control (Interactive Control Operations, or IC Ops) with flexible configuration knobs to enable adaptive execution during experiment runs. Here’s how these components interact and how monitoring is supported:
+  
+  1. **Dynamic Control via IC Ops**:
+     - As described in `difference.rst`, IC Ops allows interactive, real-time adjustments to runs *while they are in flight*. This means an ML Engineer can modify parameters or behaviors dynamically without stopping or restarting the experiment.
+  
+  2. **Configurable Knobs in RAG System**:
+     - According to `ragspecs.rst`, the system supports `List` or `Range` valued arguments (knobs) that form the base set of configurations. These knobs can be adjusted to explore different hyperparameters, model architectures, or execution strategies during a run. The configurations are generated from combinations of these knobs, as detailed in the Multi-Config Specification.
+  
+  3. **Synthesis of IC Ops and Knobs**:
+     - IC Ops can leverage these knobs to dynamically alter the experiment’s behavior in real time. For example, an ML Engineer could adjust a `Range`-valued knob (e.g., learning rate) mid-execution based on intermediate results, and IC Ops would propagate this change without requiring a restart. Similarly, `List`-valued knobs (e.g., model variants) could be swapped or reordered dynamically.
+  
+  4. **Monitoring and Logging**:
+     - The `dashboard.rst` file highlights two key monitoring mechanisms:
+       - **Dashboard Visualization**: Real-time logs and metrics are displayed on the dashboard (e.g., the `mlflow-4-log.png` image), allowing the engineer to observe the impact of IC Ops adjustments as they happen. This visual feedback is critical for making informed decisions during dynamic control.
+       - **Local Log File**: All experiment interactions, including changes made via IC Ops and knob adjustments, are logged in a text file named `rapidfire.log`. This file is saved locally and provides a comprehensive audit trail for post-experiment analysis, debugging, or reproducibility.
+  
+  5. **Workflow for ML Engineers**:
+     - During an experiment, an engineer would:
+       1. Start with a base configuration generated from the knobs (e.g., a grid of hyperparameters).
+       2. Use IC Ops to dynamically tweak specific knobs (e.g., increase batch size if GPU memory is underutilized).
+       3. Monitor the dashboard for real-time feedback on the impact of these changes.
+       4. Review the `rapidfire.log` afterward to analyze the sequence of adjustments and their outcomes.
+  
+  This integration ensures that experiments remain flexible, adaptive, and traceable, combining the power of dynamic control with structured configuration management.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: difference.rst
+     Lines: 30-34
+     ──────────────────────────────────────────────────────────────────────
+       32 | The Power of Dynamic Real-Time Control
+       33 | ------------
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: ragspecs.rst
+     Lines: 7-9
+     ──────────────────────────────────────────────────────────────────────
+        8 | Many of the arguments (knobs) here can also be :class:`List` valued or :class:`Range` valued depending 
+        9 | on its data type, as explained below. All this forms the base set of knob combinations from which 
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: dashboard.rst
+     Lines: 114-120
+     ──────────────────────────────────────────────────────────────────────
+      114 | [START LINE 114 OUT OF RANGE - File has 105 lines]
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #31
+================================================================================
+
+❓ QUESTION:
+  What is the role of 'online aggregation' in RapidFire AI's approach to LLM evaluations, and how does it differ from traditional methods?
+
+✓ REFERENCE ANSWER:
+  In RapidFire AI, **online aggregation** is a key concept adapted from database systems research to improve LLM evaluations. Unlike traditional methods that process data in large, static batches, RapidFire AI's adaptive execution engine uses online aggregation to:
+  
+  1. **Automatically shard the data**: The dataset is divided into smaller, manageable chunks (shards) to enable parallel processing.
+  2. **Process configs in parallel**: Multiple evaluation configurations are executed simultaneously, one shard at a time, improving efficiency.
+  3. **Use efficient swapping techniques**: The system dynamically allocates resources and swaps shards during execution to optimize performance and reduce latency.
+  
+  This approach transforms the evaluation process by making it more scalable, adaptive, and resource-efficient compared to conventional batch-processing methods.
+
+📚 SOURCE EVIDENCE (2 source(s)):
+
+  Source #1:
+  📄 File: onlineagg.rst
+     Lines: 11-15
+     ──────────────────────────────────────────────────────────────────────
+       12 | RapidFire AI transforms the status quo by adapting the powerful idea of **online aggregation** 
+       13 | from database systems research to LLM evals. 
+       14 | Our adaptive execution engine, :doc:`as described on this page</difference>`, automatically 
+       15 | shards the data and processes multiple configs in parallel, one shard at a time, with 
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: evalsfunctions.rst
+     Lines: 313-314
+     ──────────────────────────────────────────────────────────────────────
+      314 |       * :code:`"value"` (required): The metric's value over the whole dataset.
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #32
+================================================================================
+
+❓ QUESTION:
+  What is the purpose and functionality of the 'IC Op' (Inspection and Control Operations) buttons shown in the MLflow evaluation interface, specifically the 'Stop' and 'Clone-Modify' operations, and how do they integrate with the RapidFire AI experimentation workflow?
+
+✓ REFERENCE ANSWER:
+  The 'IC Op' (Inspection and Control Operations) buttons in the MLflow evaluation interface—specifically 'Stop' and 'Clone-Modify'—are designed to provide users with interactive control over their machine learning experiments within the RapidFire AI framework.
+  
+  1. **IC Op: Stop**
+     - **Purpose**: The 'Stop' button allows users to gracefully terminate an active experiment or session. This is particularly useful when an experiment is running longer than expected, consuming excessive resources, or if the user decides to halt it prematurely.
+     - **Functionality**: When clicked, it sends a termination signal to the RapidFire AI server, ensuring that all processes are stopped cleanly, ports are freed, and no residual artifacts are left in an inconsistent state. This aligns with the documentation's guidance to 'gracefully stop the RapidFire AI session' when done to avoid resource leaks.
+  
+  2. **IC Op: Clone-Modify**
+     - **Purpose**: The 'Clone-Modify' button enables users to duplicate an existing experiment configuration and modify it for further testing. This is valuable for iterative experimentation, where users want to build upon a previous run without starting from scratch.
+     - **Functionality**: It creates a copy of the selected experiment's configuration (including knobs, metrics, and artifacts) and loads it into a new editable session. Users can then adjust parameters (e.g., `List` or `Range`-valued arguments in `RFOpenAIAPIModelConfig`) to explore variations. This aligns with the documentation's emphasis on running multiple experiments in the same session, where each experiment's metrics and artifacts persist independently.
+  
+  3. **Integration with RapidFire AI Workflow**
+     - These operations are part of the broader experimentation lifecycle described in the documentation. After inspecting results, logs, or metrics (Step 7), users can:
+       - Use 'Stop' to end a session if no further work is needed.
+       - Use 'Clone-Modify' to iterate on an experiment (e.g., tweaking `RFOpenAIAPIModelConfig` knobs) while preserving the original run's artifacts.
+     - All experiments, including those cloned or stopped, maintain persistence in the specified experiments path, ensuring reproducibility and traceability.
+  
+  In summary, these IC Ops streamline the experimentation process by providing intuitive controls for managing the lifecycle of ML experiments, from initiation to termination or iteration.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: walkthroughrag.rst
+     Lines: 253-262
+     ──────────────────────────────────────────────────────────────────────
+      253 |     <img src="_static/evals-icop-results.png" alt="IC Op results on table" 
+      254 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+      256 |     <img src="_static/evals-icop-stop-mlflow.png" alt="IC Op: Stop" 
+      257 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+      259 |     <img src="_static/evals-icop-clone-mlflow.png" alt="IC Op: Clone-Modify" 
+      260 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: walkthroughrag.rst
+     Lines: 268-273
+     ──────────────────────────────────────────────────────────────────────
+      268 | End the expeirment after you are done with it.
+      270 | You can then move on to another (named) experiment in the same session. 
+      271 | Run as many experiments as you like; each will have its metrics apppear on its own table under the :func:`run_evals()` cell. 
+      272 | All experiment artifacts (metrics files, logs, checkpoints, etc.) are *persistent* on 
+      273 | your machine in the experiments path specified in the constructor.
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: generators.rst
+     Lines: 81-86
+     ──────────────────────────────────────────────────────────────────────
+       81 | ------
+       83 | This is a wrapper around OpenAI's API client config and chat completion parameters. 
+       84 | The full list of their arguments are available on `this page <https://platform.openai.com/docs/api-reference/chat/create>`__.
+       86 | The difference here is that the individual arguments (knobs) can be :class:`List` valued or 
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #33
+================================================================================
+
+❓ QUESTION:
+  How do I implement a custom document formatting template for metadata and content in the RAG system, and what are the key considerations when doing so?
+
+✓ REFERENCE ANSWER:
+  To implement a custom document formatting template for metadata and content in the RAG system, follow these steps based on the provided documentation:
+  
+  1. **Understand the Default Template**: The default template formats all metadata fields as `"key: value"` pairs separated by semicolons, followed by the document's page content. For example:
+     ```python
+     metadata = "; ".join([f"{k}: {v}" for k, v in doc.metadata.items()])
+     return f"{metadata}:\n{doc.page_content}"
+     ```
+  
+  2. **Define a Custom Template Function**: Create a function that takes a `Document` object as input and returns a formatted string. You can control:
+     - Which metadata fields to include (e.g., only specific fields like `author` or `date`).
+     - How the metadata and content are formatted (e.g., separators, line breaks, or custom prefixes).
+  
+     Example of a custom template including only the `title` metadata field:
+     ```python
+     def sample_template(doc: Document) -> str:
+         metadata = f"Title: {doc.metadata.get('title', 'N/A')}"
+         return f"{metadata}\n\n{doc.page_content}"
+     ```
+  
+  3. **Key Considerations**:
+     - **Metadata Selection**: Explicitly choose which metadata fields to include to avoid exposing sensitive or irrelevant information.
+     - **Formatting Clarity**: Ensure the output is human-readable, with clear separators between metadata and content.
+     - **Edge Cases**: Handle cases where metadata fields might be missing (e.g., using `.get()` with a default value).
+     - **Performance**: If processing large documents, optimize string operations to avoid bottlenecks.
+  
+  4. **Integration**: Pass your custom template function to the appropriate component in your RAG pipeline (e.g., the document processor or retriever). The documentation does not specify the exact integration point, so refer to your system's API or configuration files for details.
+  
+  By customizing the template, you can tailor the document representation to your application's needs, such as highlighting specific metadata or adjusting the output format for downstream tasks.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: evalsfunctions.rst
+     Lines: 308-312
+     ──────────────────────────────────────────────────────────────────────
+      309 |    :param aggregated_metrics: Dictionary with a metric's name as key and a list of per-batch metric dictionaries as values from across all data batches. Inside each value dictionary, at least the reserved key :code:`"value"` will exist that was returned by your :code:`eval_compute_metrics_fn` function.
+      310 |    :type aggregated_metrics: dict[str, list[dict[str, Any]]]
+      312 |    :return: Dictionary with a metric's name as key and a dictionary as value. The value dictionary can have these keys:
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: ragspecs.rst
+     Lines: 108-116
+     ──────────────────────────────────────────────────────────────────────
+      109 |       Additional parameters for search configuration depend on the type; the keys can include the following:
+      111 |       * :code:`"k"`: Number of documents to retrieve. Default is 5.
+      112 |       * :code:`"filter"`: Optional filter criteria function for search results.
+      113 |       * :code:`"score_threshold"`: Only for SST. Minimum similarity score threshold. 
+      114 |       * :code:`"fetch_k"`: Only for MMR. Number of documents to fetch before MMR reranking. Default is 20.
+      115 |       * :code:`"lambda_mult"`: Only for MMR. Diversity parameter for MMR balancing relevance vs. diversity. Default is 0.5.
+      116 |     :type search_cfg: dict, optional
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: dashboard.rst
+     Lines: 47-67
+     ──────────────────────────────────────────────────────────────────────
+       48 | The screenshot below shows the "Table" view of an experiment with all its runs. 
+       49 | Each run represents one model with one set of config knob values, which is standard dashboard semantics.
+       52 | .. raw:: html
+       54 |     <img src="_static/mlflow-1-table.png" alt="Table view of runs metadata" 
+       55 |          style="cursor: zoom-in; max-width: 100%;" onclick="this.requestFullscreen()">
+       58 | Metrics Plots
+       59 | ----
+       61 | The screenshot below shows the "Chart" view of an experiment with all its runs. 
+       62 | Each plot corresponds to a metric, spanning :code:`loss` on the training set and evaluation set, 
+       63 | as well all named metrics returned in your :func:`compute_metrics()` function in the trainer config.
+       65 | We call attention to 3 key aspects of the visualizations here: 
+       67 | * The x-axis "Step" for the mini batch-level plots represents absolute number of minibatches seen by that run. So, if the :code:`batch_size` is different for different runs in your experiment, they will take different numbers of steps and the curves will not line up till the end. This is not a bug but the expected correct behavior.
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #34
+================================================================================
+
+❓ QUESTION:
+  In the provided documentation, how does the graceful stopping approach for the rapidfireai server compare to forcibly killing it in terms of experiment artifacts and metadata preservation?
+
+✓ REFERENCE ANSWER:
+  Based on the documentation, the two approaches—graceful stopping and forcibly killing the rapidfireai server—differ significantly in terms of experiment artifacts and metadata preservation:
+  
+  1. **Graceful Stopping (Recommended Approach):**
+     - **Method:** Running the command `rapidfireai stop` ensures a graceful shutdown of the server.
+     - **Preservation of Artifacts/Metadata:** This method is explicitly designed to safely terminate the server, ensuring that all experiment artifacts and metadata are preserved without loss. The documentation emphasizes this as the correct way to stop the server to avoid data corruption or loss.
+  
+  2. **Forcibly Killing the Server:**
+     - **Method:** Manually killing the server process (e.g., via `kill -9` or task manager) without using the `rapidfireai stop` command.
+     - **Preservation of Artifacts/Metadata:** The documentation warns that forcibly killing the server may result in the loss of some experiment artifacts and/or metadata. This is because the server may not have the opportunity to save or flush pending data before termination, leading to potential data inconsistencies or missing records.
+  
+  **Key Comparison:**
+  - **Reliability:** Graceful stopping is reliable and ensures data integrity, while forcibly killing the server risks losing critical experiment data.
+  - **User Convenience:** Graceful stopping requires an additional command (`rapidfireai stop`), but this extra step is justified by the guarantee of data preservation. Forcibly killing the server is quicker but comes with the risk of incomplete or corrupted experiment records.
+  - **Use Case:** Graceful stopping is mandatory if the server was started and experiment data is valuable. If the server was not started (as it is optional in some cases), neither approach is needed, as noted in the documentation.
+  
+  In summary, always prefer graceful stopping to avoid data loss, unless the server was not started in the first place.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: onlineagg.rst
+     Lines: 50-51
+     ──────────────────────────────────────────────────────────────────────
+       51 | Note that the confidence intervals shown will keep narrowing as configs see more shards, converging 
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: evalsfunctions.rst
+     Lines: 281-285
+     ──────────────────────────────────────────────────────────────────────
+      282 |         correct = sum(
+      283 |             1
+      284 |             for pred, gt in zip(batch["model_answer"], batch["ground_truth"])
+      285 |             if pred == gt
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: walkthroughrag.rst
+     Lines: 281-294
+     ──────────────────────────────────────────────────────────────────────
+      281 | .. code-block:: bash
+      283 |    rapidfireai stop
+      285 | .. important::
+      286 |   If you kill the rapidfireai server forcibly without graceful stopping as above, you might lose some experiment artifacts and/or metadata.
+      288 | .. note::
+      289 |   Of course, if you did not even start the server in Step 2 since it is optional, there is no need to run the stop command here.
+      293 | Step 8: Venture Beyond!
+      294 | -----
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #35
+================================================================================
+
+❓ QUESTION:
+  Based on the provided RapidFire AI OSS documentation, enumerate the key components, features, and requirements for setting up and utilizing the system effectively. Include details about dependencies, API configurations, and advanced capabilities like IC Ops.
+
+✓ REFERENCE ANSWER:
+  Here are the key components, features, and requirements for setting up and utilizing the RapidFire AI OSS system based on the provided documentation:
+  
+  ### **1. Core Setup and Dependencies**
+  - **Package Installation**: Obtain and install the RapidFire AI OSS package from PyPI, which includes all necessary dependencies.
+  - **Hardware Requirements**:
+    - **GPU Requirement**: Not needed if using only OpenAI APIs (for embedding or generation).
+    - Required only for self-hosted models.
+  - **API Configuration**:
+    - **OpenAI API Key**: Must be provided via a config argument if using OpenAI APIs (e.g., as shown in the GSM8K and SciFact tutorial notebooks).
+  
+  ### **2. RAG (Retrieval-Augmented Generation) Components**
+  - **Document Chunk Retrieval**: Supports retrieval of document chunks with metadata fields.
+  - **Metadata Access**: Fields ingested via `metadata_func` in the document loader (e.g., `corpus_id`) are accessible on each `Document` object’s `.metadata` dictionary after retrieval.
+  - **Preprocessing Function**: Example (`sample_preprocess_fn`) demonstrates batch processing with:
+    - `RFLangChainRagSpec`: RAG specification for document retrieval.
+    - `RFPromptManager`: Manages prompts for generation.
+  
+  ### **3. Advanced Capabilities: IC Ops (Intelligent Control Operations)**
+  - **Purpose**: Designed to improve the effectiveness of experiments via semi-automated or automated workflows.
+  - **Features**:
+    - **Stop/Clone-Modify**: Apply consistent policies for experiment control.
+    - **Custom Heuristics**: Create new semi-automated heuristics on top of IC Ops.
+    - **Scheduled Execution**: Schedule IC Ops for automated future runs without manual intervention.
+  - **Future Enhancements**: Automated template support planned based on user feedback to ensure consistency across projects/personnel.
+  
+  ### **4. Use Case Examples**
+  - **FiQA Use Case**: Demonstrates RAG-based preprocessing with document chunk retrieval and metadata utilization.
+  - **Tutorial Notebooks**: GSM8K and SciFact notebooks provide examples of OpenAI API key configuration and usage.
+  
+  ### **5. Key Considerations**
+  - **Self-Hosted vs. API-Based Models**: GPU requirements differ based on whether you use self-hosted models or third-party APIs (e.g., OpenAI).
+  - **Metadata Utilization**: Enables retrieval evaluation by leveraging metadata fields during document ingestion.
+  - **Automation**: IC Ops reduce manual effort by enabling scheduled or heuristic-driven experiment management.
+
+📚 SOURCE EVIDENCE (3 source(s)):
+
+  Source #1:
+  📄 File: walkthroughrag.rst
+     Lines: 26-35
+     ──────────────────────────────────────────────────────────────────────
+       27 | To install RapidFire AI for RAG/context engineering on your local machine or remote/cloud instance for complete functionality without limitations, follow the steps below.
+       29 | Note that if you plan to use only OpenAI APIs and not self-hosted models (for embedding or generation), you do NOT need GPUs on your machine. 
+       30 | But you must provide a valid OpenAI API key via a config argument as shown in the GSM8K and SciFact tutorial notebooks.
+       33 | Step 1: Install dependencies and package
+       34 | -----------------------
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: evalsfunctions.rst
+     Lines: 36-40
+     ──────────────────────────────────────────────────────────────────────
+       36 | .. code-block:: python
+       38 |     # Example 1 from FiQA use case: RAG-based preprocessing with document chunk retrieval
+       39 |     # This example demonstrates how metadata fields ingested via metadata_func in the
+       40 |     # document loader (e.g., "corpus_id") are accessible on each Document object's
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #3:
+  📄 File: icops.rst
+     Lines: 182-186
+     ──────────────────────────────────────────────────────────────────────
+      182 | IC Ops are a powerful capability to dramatically improve the effectiveness of your experiments. 
+      183 | We plan to add automated template support for IC Ops based on feedback. 
+      184 | This will help you apply a consistent policy for using stop, clone-modify, etc. across your projects 
+      185 | and/or personnel via code. You can also create new customized semi-automated heuristics on top of 
+      186 | IC Ops or schedule them for automated future execution instead of having to sit in the loop. 
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #36
+================================================================================
+
+❓ QUESTION:
+  Unable to parse question
+
+✓ REFERENCE ANSWER:
+  Unable to parse answer
+
+📚 SOURCE EVIDENCE (2 source(s)):
+
+  Source #1:
+  📄 File: fitfunctions.rst
+     Lines: 206-214
+     ──────────────────────────────────────────────────────────────────────
+      206 |         extracted_responses = [extract_xml_answer(r) for r in responses]
+      207 |         # x('-'*20, f"Question:\n{q}", f"\nAnswer:\n{answer[0]}", f"\nResponse:\n{responses[0]}", f"\nExtracted:\n{extracted_responses[0]}")
+      208 |         return [2.0 if r == a else 0.0 for r, a in zip(extracted_responses, answer)]
+      210 |     def strict_format_reward_func(completions, **kwargs) -> list[float]:
+      211 |         """Reward function that checks if the completion has a specific format."""
+      212 |         import re
+      213 |         pattern = r"^<reasoning>\n.*?\n</reasoning>\n<answer>\n.*?\n</answer>\n$"
+      214 |         responses = [completion[0]["content"] for completion in completions]
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: icops.rst
+     Lines: 169-181
+     ──────────────────────────────────────────────────────────────────────
+      169 | ----
+      171 | This IC Op earmarks the run to be deleted from the next chunk onward. 
+      172 | On the chart, you will see its curves vanish almost immediately. 
+      173 | You cannot do any further IC Ops on a deleted run because it will not be visible. 
+      174 | Note that although a deleted run vanishes from the plots, its model checkpoints are still part of 
+      175 | the artifacts of that experiment so that you have post-hoc audibility.
+      179 | Coming Soon: Templated Automation of IC Ops
+      180 | ----
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #37
+================================================================================
+
+❓ QUESTION:
+  What is the purpose of the `metadata_func` function in the provided documentation, and what specific metadata fields does it extract from a source JSON record?
+
+✓ REFERENCE ANSWER:
+  The `metadata_func` function in the provided documentation is designed to extract custom metadata fields from each source JSON record. Specifically, it performs the following actions:
+  
+  1. **Purpose**: It processes a given JSON record (passed as a dictionary) and populates a metadata dictionary with specific fields derived from that record. This metadata is later associated with the document or chunk for retrieval or contextual purposes.
+  
+  2. **Extracted Fields**:
+     - `corpus_id`: Extracted from the `_id` field in the record and converted to an integer. If `_id` is not present, the behavior would depend on the `record.get()` method's default handling (potentially raising an error or returning `None`).
+     - `title`: Extracted from the `title` field in the record. If `title` is not present, it defaults to an empty string (`""`).
+  
+  The function then returns the updated metadata dictionary with these fields included.
+
+📚 SOURCE EVIDENCE (1 source(s)):
+
+  Source #1:
+  📄 File: ragspecs.rst
+     Lines: 237-245
+     ──────────────────────────────────────────────────────────────────────
+      237 |         # 2 reranking strategies with different top-n values
+      238 |         reranker_cfg={
+      239 |             "class": CrossEncoderReranker,
+      240 |             "model_name": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      241 |             "model_kwargs": {"device": "cpu"},
+      242 |             "top_n": List([2, 5]),
+      243 |         },
+      244 |         enable_gpu_search=True,  # GPU-based exact search instead of ANN index
+      245 |     )
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #38
+================================================================================
+
+❓ QUESTION:
+  Can you explain the concept of 'multi-config knob dictionary' and 'config group' in the context of launching multi-config evaluations for machine learning systems, as referenced in the documentation? How do these components relate to adjusting concurrency via `num_shards`?
+
+✓ REFERENCE ANSWER:
+  In the context of the provided documentation, the 'multi-config knob dictionary' and 'config group' are key components designed to enable flexible and scalable evaluation of machine learning systems, particularly when experimenting with different configurations of an RF (Radio Frequency) generator or other model serving components like vLLM or OpenAI classes.
+  
+  1. **Multi-Config Knob Dictionary**:
+     This refers to a structured collection of configurable parameters (or 'knobs') that define variations of a system's setup. These knobs could include hyperparameters, model architectures, input/output formats, or infrastructure-related settings (e.g., batch size, model version, or hardware allocation). The dictionary serves as a centralized way to define all possible configurations that need to be evaluated. For example, it might include:
+     - Different RF generator specifications (e.g., power levels, modulation schemes).
+     - Variants of the underlying serving engine (e.g., vLLM vs. OpenAI).
+     - Resource allocations (e.g., GPU types, memory limits).
+  
+  2. **Config Group**:
+     A config group is a logical grouping of related configurations derived from the multi-config knob dictionary. It represents a subset of the full configuration space that will be evaluated together. For instance, you might create a config group to test all combinations of a specific model version with varying concurrency levels or hardware sharding settings. Config groups help organize evaluations into meaningful experiments, such as:
+     - Comparing latency and throughput under different `num_shards` values.
+     - Evaluating the trade-offs between model accuracy and serving efficiency.
+  
+  3. **Relation to `num_shards` and Concurrency**:
+     The `num_shards` parameter is a specific knob within the multi-config dictionary that controls the degree of parallelism or concurrency in the evaluation. Sharding typically refers to splitting a workload across multiple processes, GPUs, or machines to improve throughput or reduce latency. By adjusting `num_shards`, you can:
+     - Scale the evaluation horizontally to handle larger workloads or simulate higher request volumes.
+     - Test how the system behaves under different levels of concurrency, which is critical for understanding performance bottlenecks or resource utilization.
+     - Generate config groups where `num_shards` is varied alongside other parameters (e.g., model batch size or RF generator settings) to identify optimal configurations for specific use cases.
+  
+  In summary, the multi-config knob dictionary and config groups provide a framework for systematically exploring the performance and behavior of ML systems under diverse conditions. The `num_shards` parameter is one of the configurable knobs that directly influences concurrency, enabling architects to assess scalability and efficiency as part of the evaluation process.
+
+📚 SOURCE EVIDENCE (1 source(s)):
+
+  Source #1:
+  📄 File: walkthroughrag.rst
+     Lines: 214-225
+     ──────────────────────────────────────────────────────────────────────
+      215 | * Define eval metrics functions per batch and for accumulation
+      217 | * Define RF generator spec that wraps vLLM or OpenAI classes
+      219 | * Define rest of multi-config knob dictionary and generate config group
+      221 | * Launch multi-config evals; adjust :code:`num_shards` as per desired concurrency (see `Run Evals <experiment.html#run-evals>`__ for details)
+      225 | Step 5: Monitor online aggregation of eval metrics on in-notebook table and/or ML metrics dashboard
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #39
+================================================================================
+
+❓ QUESTION:
+  Unable to parse question
+
+✓ REFERENCE ANSWER:
+  Unable to parse answer
+
+📚 SOURCE EVIDENCE (1 source(s)):
+
+  Source #1:
+  📄 File: onlineagg.rst
+     Lines: 119-125
+     ──────────────────────────────────────────────────────────────────────
+      119 | * :math:`\text{Var}(\widehat{T})` = Variance of the above estimated population total
+      120 | * :math:`\text{SE}` = Standard error (measure of estimate uncertainty)
+      121 | * :math:`\text{CI}` = Confidence interval
+      122 | * :math:`z` = Z-score for confidence level (1.96 for 95% confidence; used in Normal and Wilson)
+      123 | * :math:`\alpha` = Significance level (0.05 for 95% confidence)
+      124 | * :math:`n_{\text{eff}}` = Effective sample size (adjusted for FPC in Wilson)
+      125 | * :math:`a, b` = Lower and upper bounds of metric value range
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+📌 QA PAIR #40
+================================================================================
+
+❓ QUESTION:
+  How do algebraic metrics and distributive metrics differ in their estimation approaches for online aggregation, and what key statistical measures are used for each?
+
+✓ REFERENCE ANSWER:
+  In online aggregation, algebraic metrics and distributive metrics use different approaches for estimating population-level statistics based on sample data. Here’s a comparison of their key differences and the statistical measures involved:
+  
+  1. **Algebraic Metrics**:
+     - **Definition**: Metrics where the final result can be derived from intermediate algebraic calculations (e.g., proportions, averages).
+     - **Key Measure**: The observed sample proportion or average, denoted as :math:`\hat{p}`. This is calculated directly from the sample data and used to estimate the population proportion.
+     - **Application**: Algebraic metrics are straightforward to compute incrementally as new data arrives, as they rely on simple aggregations (e.g., counts or sums divided by sample size).
+  
+  2. **Distributive Metrics**:
+     - **Definition**: Metrics where the final result depends on the distribution of data points (e.g., sums, means, or totals).
+     - **Key Measures**:
+       - **Sample Mean** (:math:`\bar{X}`): The average of the observed sample values.
+       - **Estimated Population Total** (:math:`\widehat{T}`): Derived from the sample mean, scaled to the total population size :math:`N` (e.g., :math:`\widehat{T} = N \cdot \bar{X}`).
+       - **Variance of Estimated Population Total** (:math:`\text{Var}(\widehat{T})`): Measures the uncertainty or variability of the estimated total, which is critical for assessing confidence in the results.
+     - **Application**: Distributive metrics require tracking the distribution of data points (e.g., sums and counts) to compute population-level estimates. They are more complex to handle incrementally than algebraic metrics but provide richer insights for metrics like totals or variances.
+  
+  ### Key Differences:
+  - **Complexity**: Algebraic metrics are simpler to compute incrementally, while distributive metrics require additional steps (e.g., scaling to population size and calculating variance).
+  - **Uncertainty Quantification**: Distributive metrics explicitly account for variability (:math:`\text{Var}(\widehat{T})`), whereas algebraic metrics typically rely on the observed proportion or average without a direct variance measure.
+  - **Use Cases**: Algebraic metrics are ideal for proportions or simple averages, while distributive metrics are better suited for estimating totals or analyzing data distributions.
+  
+  In summary, algebraic metrics focus on direct sample-based proportions, while distributive metrics extend this to population-level estimates with measures of uncertainty.
+
+📚 SOURCE EVIDENCE (2 source(s)):
+
+  Source #1:
+  📄 File: onlineagg.rst
+     Lines: 113-118
+     ──────────────────────────────────────────────────────────────────────
+      114 | * :math:`N` = Total population size (total number of queries in eval set)
+      115 | * :math:`n` = Sample size (number of queries processed so far)
+      116 | * :math:`\hat{p}` = Observed sample proportion or average for an algebraic metric
+      117 | * :math:`\bar{X}` = Sample mean for a distributive metric
+      118 | * :math:`\widehat{T}` = Estimated population total for a distributive metric
+     ──────────────────────────────────────────────────────────────────────
+
+  Source #2:
+  📄 File: ragspecs.rst
+     Lines: 66-66
+     ──────────────────────────────────────────────────────────────────────
+     ──────────────────────────────────────────────────────────────────────
+
+================================================================================
+✓ EVALUATION COMPLETE: Exported 40 QA pairs
+================================================================================
