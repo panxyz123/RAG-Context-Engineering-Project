@@ -59,9 +59,13 @@ RERANKER_TOP_N     = 3
 BATCH_SIZE         = 32
 
 SYSTEM_INSTRUCTIONS = (
-    "You are a helpful QA assistant. "
-    "Answer the question based solely on the provided context. "
-    "Be concise and accurate."
+    "You are a technical QA assistant for RapidFire AI documentation. "
+    "Answer the question using ONLY the provided context. "
+    "Your answer will be scored on three criteria: "
+    "Correctness (matches the reference answer), "
+    "Faithfulness (no information beyond the context), and "
+    "Completeness (covers all key points in the context relevant to the question). "
+    "You must provide the answer that best meets all three criteria."
 )
 
 # ── API key ──────────────────────────────────────────────────────────────────
