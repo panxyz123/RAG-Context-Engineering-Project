@@ -7,7 +7,7 @@ Same config as main.py:
     Generator : api-mistral-small-3.2-2506
 
 Usage:
-    python3 main_standalone.py --input test_questions.json --output predictions.json
+    python3 main.py --input test_questions.json --output predictions.json
 
 Input schema  (list of dicts):
     [{"question_id": <int>, "question": <str>}, ...]

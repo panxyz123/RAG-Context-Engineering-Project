@@ -1,0 +1,21 @@
+rank,question_id,composite_score,categories,source_files,question_preview
+1,12,0.9929,procedural | factual_lookup,dashboard.rst,What are the steps to specify one or more tracking dashboards when starting a RapidFire AI server?
+2,2,0.9917,procedural | comparative | factual_lookup,configs.rst,"What are the two common knob set generators supported in the system, and what is the key difference between their use ca"
+3,23,0.9793,procedural | factual_lookup,difference.rst,What are the steps to create a new variation of a high-performing AI run in RapidFire AI?
+4,41,0.9721,procedural,evalsfunctions.rst,How do you extract the retrieved document IDs from the context in a RAG system when the corpus_id is stored in the docum
+5,69,0.9627,factual_lookup,experiment.rst,"What are the two operational modes of the Experiment class, and what is the current limitation regarding their usage?"
+6,27,0.9627,procedural,difference.rst,How does RapidFire AI's scheduler optimize token spend for RAG configurations when using closed model APIs like OpenAI?
+7,70,0.9544,procedural | factual_lookup,experiment.rst,What is the recommended practice for starting a new experiment object when using the Experiment class in the tutorial no
+8,7,0.9502,procedural | factual_lookup | conceptual_explanation,configs.rst,How does the sampling process work in RFRandomSearch() to generate knob combinations for multiple runs?
+9,74,0.9461,procedural | factual_lookup,experiment.rst,"What is the purpose of the `num_gpus` parameter in the `experiment.run_fit` function, and how can it be overridden?"
+10,94,0.9458,procedural | factual_lookup,fitfunctions.rst,"What is the purpose of the 'Create Model Function' in the context of user-provided functions for a Run Fit API, and what"
+11,9,0.9419,comparative | factual_lookup,configs.rst,What is the key difference between the model configurations specified in `openai_config1` and `openai_config2`?
+12,46,0.9390,procedural | factual_lookup,evalsfunctions.rst,What are the steps required to preprocess multimodal inputs (text and images) in a RAG pipeline using the provided sampl
+13,75,0.9378,procedural,experiment.rst,How can I visualize multiple runs of the :func:`run_fit()` function on the ML metrics dashboard?
+14,95,0.9375,procedural | factual_lookup,fitfunctions.rst,"What is the purpose of the `create_model_fn` function in the RapidFire AI framework, and what are its expected inputs an"
+15,114,0.9360,factual_lookup,generators.rst,Which two types of generator models does RapidFire AI currently support for its API?
+16,129,0.9280,factual_lookup,glossary.rst,"What are artifacts in the context of an experiment, and what types of files do they include?"
+17,142,0.9153,procedural,grpo.rst,"How do the three base model architectures (Llama-3.1-8B-Instruct, Qwen2.5-3B-Instruct, and Qwen2.5-7B-Instruct) differ i"
+18,148,0.9126,procedural,icops.rst,How can a user access the IC Ops panel during an active `run_fit()` session in RapidFire AI?
+19,165,0.9111,procedural | factual_lookup,issues.rst,What are the recommended steps to resolve the 'ImportError: cannot import name 'GenerationMixin' from 'transformers.gene
+20,172,0.9084,factual_lookup,models.rst,What is the recommended starting approach for setting the rank and alpha parameters when configuring a PEFT model for qu

@@ -1,0 +1,1075 @@
+[
+  {
+    "question": "How does RapidFire AI integrate its Multi-Config Specification with its adaptive execution engine to enable dynamic and efficient AI experimentation, and what role does downsampling play in this process?",
+    "reference_answer": "RapidFire AI combines its Multi-Config Specification (Snippet 1) with its adaptive execution engine (Snippet 3) to enable dynamic and efficient AI experimentation. The Multi-Config Specification allows users to launch, compare, and control multiple configurations simultaneously, which is foundational for techniques like hyperparameter sweeps (Snippet 1). The adaptive execution engine, powered by shard-based adaptive multi-config execution (Snippet 2), enhances this by providing dynamic experiment control and hyperparallelized execution, eliminating the need for additional DevOps work and enabling rapid experimentation (Snippet 2). Additionally, downsampling is complementary to this process, as the adaptive execution engine can operate seamlessly on downsampled datasets, allowing users to balance efficiency and experimentation flexibility (Snippet 2). Together, these components enable IC Ops on running configs (Snippet 3) while maximizing power and flexibility in AI development.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "configs.rst",
+        "lines": [
+          1,
+          7
+        ]
+      },
+      {
+        "file": "difference.rst",
+        "lines": [
+          89,
+          94
+        ]
+      },
+      {
+        "file": "overview.rst",
+        "lines": [
+          33,
+          53
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question explicitly requires synthesizing information across all three snippets to address the integration of Multi-Config Specification, adaptive execution, and downsampling.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer accurately and comprehensively integrates all key points from the three snippets, including Multi-Config Specification, adaptive execution, and the complementary role of downsampling.",
+    "quality_score": 1.0,
+    "qa_id": 1
+  },
+  {
+    "question": "How does RapidFire AI enable dynamic, resource-efficient experimentation across both RAG and fine-tuning workflows, and what key mechanisms support this flexibility?",
+    "reference_answer": "RapidFire AI facilitates dynamic and resource-efficient experimentation by integrating configurable knobs, parallel execution, and real-time intervention mechanisms across both RAG and fine-tuning (SFT/RFT) workflows. \n\n1. **Configurable Knobs and Multi-Config Generation (Snippet 1)**: RapidFire AI generalizes configuration knobs beyond traditional hyperparameters to include components like model architectures, LoRA adapters, optimizers, data chunking, embedding, retrieval, and generation schemes. To create a multi-config specification, it uses **knob set generators** (to define possible values for each knob) and **config group generators** (to produce full configurations from these sets), enabling systematic exploration of diverse setups.\n\n2. **Unified Workflow Support (Snippet 3)**: The framework supports two primary workflows—**RAG/context engineering** and **SFT/RFT post-training**—each with dedicated installation guides. This dual support ensures that users can apply RapidFire AI’s capabilities to both retrieval-augmented generation and model fine-tuning, leveraging the same underlying infrastructure for consistency.\n\n3. **Parallel Execution and Resource Optimization (Snippet 4)**: RapidFire AI enables hyperparallelized execution, allowing users to launch multiple configurations (e.g., 16 configs on a 4-GPU machine) and dynamically adjust resource allocation. Under the hood, it automatically optimizes GPU utilization among ongoing runs, ensuring maximal efficiency. During long-running processes like `run_fit()`, users can intermittently invoke **IC ops** (intervention operations) to monitor progress, stop underperforming runs (e.g., bottom 80%), and clone or modify top performers for finer-grained experimentation, all while maintaining warm-started parameters.\n\n4. **Practical Implementation (Snippet 2)**: For fine-tuning workflows, users define custom eval metrics, multi-config knobs (e.g., for models, LoRA, and SFT trainers), and model creation functions. They then generate config groups and launch training with adjustable `num_chunks` to control concurrency. This mirrors the flexibility seen in RAG workflows, where similar knob-based customization applies to components like data chunking and retrieval.\n\nTogether, these mechanisms allow RapidFire AI to transform sequential, rigid experimentation into adaptive, parallelized workflows that dynamically respond to intermediate results while optimizing computational resources.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "configs.rst",
+        "lines": [
+          9,
+          21
+        ]
+      },
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          249,
+          259
+        ]
+      },
+      {
+        "file": "overview.rst",
+        "lines": [
+          1,
+          10
+        ]
+      },
+      {
+        "file": "icops.rst",
+        "lines": [
+          84,
+          96
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question requires synthesizing information across all four snippets to address dynamic experimentation, resource efficiency, and key mechanisms in both RAG and fine-tuning workflows.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly draws on all four snippets, covering configurable knobs, unified workflow support, parallel execution, and practical implementation without introducing outside information.",
+    "quality_score": 1.0,
+    "qa_id": 2
+  },
+  {
+    "question": "How do the value constraints for knobs differ between `RFGridSearch()` and `RFGROConfig`, and what is the practical implication of this difference for specifying configurations?",
+    "reference_answer": "The `RFGridSearch()` function restricts each knob to either a single value or a `List()` of values, explicitly prohibiting the use of `Range()` values, which would cause an error. In contrast, the `RFGROConfig` class allows knobs to be either `List` valued or `Range` valued, enabling the specification of a base set of knob combinations for generating config groups. This key difference means that `RFGridSearch()` is limited to discrete, predefined values, while `RFGROConfig` supports both discrete values and continuous ranges, offering greater flexibility in defining configuration spaces for training or evaluation.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "configs.rst",
+        "lines": [
+          92,
+          93
+        ]
+      },
+      {
+        "file": "trainers.rst",
+        "lines": [
+          179,
+          188
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question accurately captures the cross-file contrast in knob value constraints and their practical implications, requiring synthesis of both snippets.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly addresses all key points from both snippets, correctly contrasting the constraints and their implications without adding or misrepresenting information.",
+    "quality_score": 1.0,
+    "qa_id": 3
+  },
+  {
+    "question": "How does the RFOpenAIAPIModelConfig enable the generation of multiple model configurations from a single base configuration, and what specific parameters in the provided snippets demonstrate this capability?",
+    "reference_answer": "The RFOpenAIAPIModelConfig allows for the creation of multiple model configurations from a single base configuration by supporting list-valued or range-valued parameters (knobs), as described in Snippet 2. This means individual arguments can specify multiple values, enabling the generation of a 'config group' from a base set of knob combinations. In Snippet 1, this capability is demonstrated by the `reasoning_effort` parameter, which is defined as a list containing two values: `['medium', 'high']` for both `openai_config1` (using 'gpt-5-mini') and `openai_config2` (using 'gpt-4o'). This indicates that each configuration can produce multiple variants with different reasoning effort levels, even though the base model and other parameters (e.g., `max_completion_tokens`) remain the same.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "configs.rst",
+        "lines": [
+          132,
+          150
+        ]
+      },
+      {
+        "file": "generators.rst",
+        "lines": [
+          83,
+          91
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question explicitly requires synthesizing information about RFOpenAIAPIModelConfig's multi-config generation capability (from generators.rst) and the specific parameters demonstrating this (from configs.rst), making it genuinely multi-source.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer accurately integrates both snippets: it explains the list/range-valued parameter concept from generators.rst and cites the `reasoning_effort` example from configs.rst, covering all key points without invention.",
+    "quality_score": 1.0,
+    "qa_id": 4
+  },
+  {
+    "question": "How can a user access and visualize ML metrics in RapidFire AI when working on a remote machine, and what alternative dashboard options are available if they prefer not to use the default MLflow-fork dashboard?",
+    "reference_answer": "To access and visualize ML metrics in RapidFire AI on a remote machine, a user must first establish SSH tunnels to forward the necessary ports (8850, 8851, and 8853) from the remote machine to their local machine, as shown in Snippet 3. Once the tunnels are set up, the user can open the dashboard URI in a browser, which is printed when the RapidFire AI server starts (Snippet 1 and Snippet 3). The default dashboard is a fork of MLflow and provides functionalities such as visualizing all ML metrics (loss and eval metrics), overlaying IC Ops functionality, and displaying logs (Snippet 2). If the user prefers not to use the default MLflow-fork dashboard, RapidFire AI also supports alternative tools like TensorBoard and Trackio for logging and visualizing metrics (Snippet 3).",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "dashboard.rst",
+        "lines": [
+          1,
+          9
+        ]
+      },
+      {
+        "file": "glossary.rst",
+        "lines": [
+          106,
+          126
+        ]
+      },
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          130,
+          141
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question fully addresses the cross-file scope, requiring synthesis of SSH tunneling (Snippet 3), dashboard access (Snippets 1 and 3), and alternative dashboard options (Snippet 3).",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly draws on all three snippets, covering SSH tunneling, dashboard URI access, default MLflow-fork features, and alternative dashboard options without introducing external information.",
+    "quality_score": 1.0,
+    "qa_id": 5
+  },
+  {
+    "question": "How can a user enable multiple tracking dashboards in RapidFire AI, and what is the expected outcome when starting the services with these dashboards configured?",
+    "reference_answer": "To enable multiple tracking dashboards in RapidFire AI, a user can specify them either via the command-line argument or environment variables. \n\n1. **Command-line method**: When starting the server, include the desired dashboards in the `--tracking-backends` argument, such as:\n   ```bash\n   rapidfireai start --tracking-backends mlflow tensorboard trackio\n   ```\n   This allows the selection of one, two, or all three supported dashboards (MLflow, TensorBoard, and Trackio) (Snippet 1 & 2).\n\n2. **Environment variable method**: Alternatively, set the corresponding environment variables in Python code or a notebook before starting the server:\n   ```python\n   os.environ[\"RF_MLFLOW_ENABLED\"] = \"true\"\n   os.environ[\"RF_TENSORBOARD_ENABLED\"] = \"true\"\n   os.environ[\"RF_TRACKIO_ENABLED\"] = \"true\"\n   ```\n   (Snippet 2).\n\nOnce the dashboards are configured and the services are started using `rapidfireai start`, the system will launch the frontend with the ML metrics dashboard and the API server. The user can then access the frontend by navigating to the provided URL (e.g., `http://0.0.0.0:8853`) in a local browser (Snippet 3). The output will confirm the services are ready, and the enabled dashboards will be available for logging metrics plots.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "dashboard.rst",
+        "lines": [
+          11,
+          23
+        ]
+      },
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          143,
+          156
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          74,
+          89
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question addresses both the configuration methods (command-line and environment variables) and the expected outcome, requiring synthesis across all three snippets.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly covers all key points from all three snippets, including configuration methods and the expected outcome of starting services.",
+    "quality_score": 1.0,
+    "qa_id": 6
+  },
+  {
+    "question": "How does RapidFire AI's use of online aggregation with sharded execution specifically enable dynamic real-time control during RAG evaluation, and what practical advantages does this provide over traditional batch evaluations?",
+    "reference_answer": "RapidFire AI leverages online aggregation from the database systems literature to process evaluation metrics in shards, enabling real-time estimation of eval metrics with confidence intervals as each shard is processed. This sharded execution (e.g., with 8 shards for 400 queries) allows the system to surface running metric estimates immediately, rather than waiting for the entire dataset to be processed (Snippet 1). \n\nThe dynamic real-time control stems from these running estimates, which empower users to make informed decisions on the fly—such as stopping underperforming RAG configurations early or cloning promising ones—without waiting for batch completion. Unlike traditional batch evaluations, which provide metrics only after full processing, RapidFire AI's approach reduces optimization time by enabling iterative adjustments based on partial but statistically reliable results (Snippet 2). This synthesis of sharded execution and online aggregation thus accelerates the exploration of better eval metrics while maintaining confidence in the estimates.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "difference.rst",
+        "lines": [
+          26,
+          33
+        ]
+      },
+      {
+        "file": "onlineagg.rst",
+        "lines": [
+          18,
+          28
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question explicitly requires synthesizing details about sharded execution, online aggregation, and dynamic real-time control from both snippets, making it genuinely multi-source.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer integrates all key points from both snippets—sharded execution, real-time estimates, confidence intervals, and practical advantages—without introducing extraneous information.",
+    "quality_score": 1.0,
+    "qa_id": 7
+  },
+  {
+    "question": "How does the system enable monitoring and real-time interactive control of runs, and what specific visual interfaces and operations are available for users to manage these runs?",
+    "reference_answer": "The system enables monitoring and real-time interactive control of runs through its adaptive execution engine, which supports *dynamic real-time control over runs in flight* via Interactive Control Operations (IC Ops) (Snippet 1). Users can monitor runs using visual dashboards, including a table for online aggregation of evaluation metrics and an ML metrics dashboard, as shown in the images from the walkthrough (Snippet 2). Additionally, the system provides specific IC Ops such as 'Stop' and 'Clone-Modify,' which allow users to halt ongoing runs or duplicate and modify them, respectively. These operations can be executed either from an in-notebook IC Ops panel or directly from the dashboard's IC Ops panel, with visual representations of these actions available in the interface (Snippet 3).",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "difference.rst",
+        "lines": [
+          35,
+          36
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          233,
+          245
+        ]
+      },
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          273,
+          289
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question requires synthesizing information about monitoring (from walkthroughrag.rst), real-time control (from difference.rst), and specific operations/interfaces (from walkthroughft.rst), making it genuinely multi-source.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly references all three snippets, covering monitoring dashboards, real-time control via IC Ops, and specific operations/interfaces without introducing extraneous information.",
+    "quality_score": 1.0,
+    "qa_id": 8
+  },
+  {
+    "question": "How does RapidFire AI's combined approach of early stopping, cloning, and warm-starting configurations contribute to both runtime efficiency and improved evaluation metrics in AI experiments?",
+    "reference_answer": "RapidFire AI achieves significant runtime efficiency and improved evaluation metrics by integrating three key mechanisms across its workflow:\n\n1. **Early Stopping of Non-Promising Runs**: As described in [difference.rst], users can *stop* non-promising runs at any point, which places them on a wait queue. This is quantitatively demonstrated in [onlineagg.rst], where the worst 15 configurations are stopped after the first shard, and the worst 4 are stopped after the second shard. This selective pruning reduces unnecessary computation time, directly contributing to the 4.7x runtime reduction (from ~18 hours to 3.8 hours) while focusing resources on more promising candidates.\n\n2. **Cloning and Warm-Starting High-Performing Runs**: [difference.rst] highlights the ability to *clone* high-performing runs from the dashboard and *warm start* their parameters with the parent's values. This gives new variations a 'headstart' in learning behavior. In [onlineagg.rst], this is applied by cloning the best configuration after the first shard and adding 4 new variants, ensuring that subsequent trials build on proven strengths rather than starting from scratch. This reuse of optimized parameters likely contributes to the 'better eval metrics' mentioned in the results.\n\n3. **Automated Resource Management**: The runtime savings are further enabled by RapidFire AI's automated GPU placement and parallelization (as noted in [difference.rst]), which eliminates manual low-level systems work. This allows the iterative process of stopping, cloning, and modifying configurations to proceed without bottlenecks, as reflected in the shard-based timing calculations in [onlineagg.rst] (e.g., 16 configs → 5 configs → 1 final config).\n\nTogether, these mechanisms create a feedback loop: early stopping frees up resources, cloning preserves and propagates successful configurations, and warm-starting accelerates convergence, resulting in both faster experiments and higher-quality outcomes.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "difference.rst",
+        "lines": [
+          38,
+          44
+        ]
+      },
+      {
+        "file": "onlineagg.rst",
+        "lines": [
+          211,
+          218
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question requires synthesizing early stopping, cloning, warm-starting, and runtime efficiency concepts from both snippets, none of which are fully addressed in a single source.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly integrates all key points from both snippets, including early stopping, cloning, warm-starting, automated resource management, and the quantitative runtime/eval metrics improvement.",
+    "quality_score": 1.0,
+    "qa_id": 9
+  },
+  {
+    "question": "How does the `preprocess_fn` function integrate with the broader batch processing workflow in a RAG system evaluation, and what role do the `RagSpec` and `PromptManager` play in this context?",
+    "reference_answer": "The `preprocess_fn` function serves as a critical preprocessing step in the batch processing workflow of a RAG system evaluation, as defined in both snippets. From Snippet 1, it is a user-defined function that takes a batch of examples (`batch`), a RAG specification object (`rag` of type `RFLangChainRagSpec`), and a `prompt_manager` (of type `RFPromptManager`) as inputs. The `rag` parameter is responsible for document chunk retrieval and context serialization, while the `prompt_manager` likely handles prompt templating or formatting for the RAG system.\n\nSnippet 2 contextualizes this function within the broader evaluation pipeline, where `preprocess_fn` is a required parameter in the batch processing configuration. The `batch_size` parameter (also from Snippet 2) determines the number of examples processed in one batch for efficiency, and the `preprocess_fn` operates on these batches. The `RagSpec` and `PromptManager` injected into `preprocess_fn` ensure that each batch is enriched with the necessary retrieval context and prompt structures before further processing (e.g., generation or evaluation). This integration allows the system to dynamically preprocess batches while leveraging RAG-specific configurations and prompt management, enabling consistent and scalable evaluation across multiple examples.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          15,
+          25
+        ]
+      },
+      {
+        "file": "promptothers.rst",
+        "lines": [
+          80,
+          90
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question requires synthesizing details about `preprocess_fn`'s role, inputs, and integration from both snippets, capturing the cross-file relationship explicitly.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly references both snippets, correctly integrates their details about `preprocess_fn`, `RagSpec`, `PromptManager`, and the broader workflow, leaving no key points unaddressed.",
+    "quality_score": 1.0,
+    "qa_id": 10
+  },
+  {
+    "question": "How does the `create_model_fn` parameter in the `run_fit` function interact with the `model_type` and `model_kwargs` parameters described in the model configuration, and what role do these parameters play together in model initialization?",
+    "reference_answer": "The `create_model_fn` parameter in `run_fit` is a user-provided function that creates a model instance, receiving a single configuration (cfg) as input (Snippet 1). This function works in conjunction with the `model_type` and `model_kwargs` parameters (Snippet 2) to customize model initialization. Specifically, `model_type` is a user-defined string passed to `create_model_fn` to identify the model type (defaulting to `'causal_lm'`), while `model_kwargs` provides additional parameters (e.g., `torch_dtype`, `device_map`) that are passed to `AutoModel.from_pretrained()` during model creation. Together, these parameters allow the user to control the model's architecture, initialization settings, and hardware-specific configurations within the `run_fit` workflow.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "experiment.rst",
+        "lines": [
+          74,
+          80
+        ]
+      },
+      {
+        "file": "models.rst",
+        "lines": [
+          109,
+          116
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question effectively captures the cross-file relationship between `create_model_fn` in `run_fit` and `model_type`/`model_kwargs` in the model configuration, requiring synthesis of both snippets.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly integrates all key points from both snippets, accurately describing the interaction between `create_model_fn`, `model_type`, and `model_kwargs` without introducing extraneous information.",
+    "quality_score": 1.0,
+    "qa_id": 11
+  },
+  {
+    "question": "How does the `num_gpus` parameter behave differently when specified in `RFModelConfig` versus when passed directly to `experiment.run_fit`, and what is the priority order for GPU allocation in a multi-config experiment?",
+    "reference_answer": "The `num_gpus` parameter serves distinct but related purposes in the two contexts, with a clear priority order for GPU allocation in experiments involving multiple configurations.\n\nFrom **Snippet 1 (experiment.rst)**, the `num_gpus` parameter in `experiment.run_fit` sets the default number of GPUs to use *per run/config* for all configurations in `param_config`. However, this default is *overridden* if any individual `RFModelConfig` in `param_config` specifies its own `num_gpus` value. This means the global `num_gpus` in `run_fit` acts as a fallback when no per-config GPU count is provided.\n\nFrom **Snippet 2 (models.rst)**, the `num_gpus` parameter in `RFModelConfig` defines the GPU count *for runs derived from that specific configuration*. The snippet explicitly notes that this can be skipped if all runs should use the same GPU count, implying the `RFModelConfig`-level `num_gpus` takes precedence over the `run_fit` argument.\n\nThus, the priority order for GPU allocation is:\n1. **Per-config `num_gpus`** (highest priority): If specified in `RFModelConfig`, it overrides any global `num_gpus` passed to `run_fit`.\n2. **Global `num_gpus` in `run_fit`** (fallback): Used only if no `num_gpus` is set in the individual `RFModelConfig` objects.\n\nThis design allows fine-grained control in multi-config experiments, where some configurations (e.g., larger models) may require more GPUs than others.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "experiment.rst",
+        "lines": [
+          94,
+          108
+        ]
+      },
+      {
+        "file": "models.rst",
+        "lines": [
+          130,
+          141
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question fully captures the cross-file relationship and priority order of `num_gpus` parameters, requiring synthesis of both snippets.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly addresses all key points from both snippets, correctly synthesizing the priority order and behavior of `num_gpus`.",
+    "quality_score": 1.0,
+    "qa_id": 12
+  },
+  {
+    "question": "How can you combine the outputs of config group generators with other configuration inputs when running an experiment, and what specific tools are available for generating these config groups?",
+    "reference_answer": "To run an experiment, you can provide a variety of configuration inputs, including single config dictionaries, lists of config dictionaries, or outputs from config group generators. Specifically, the system supports combining these inputs by allowing a list that mixes configs or config group generator outputs (as mentioned in Snippet 1 from [experiment.rst]). For generating config groups, the currently available tools are grid search (`RFGridSearch`) and random search (`RFRandomSearch`), which create multiple config dictionaries from an input config with set-valued knobs (e.g., `List` or `Range`). These generators can be used individually or mixed with other config inputs to form a comprehensive experiment setup (as described in Snippet 2 from [glossary.rst]).",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "experiment.rst",
+        "lines": [
+          181,
+          184
+        ]
+      },
+      {
+        "file": "glossary.rst",
+        "lines": [
+          41,
+          51
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question accurately captures the cross-file relationship by asking about combining config group generators with other inputs and the tools available for generating config groups, requiring synthesis of both snippets.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly addresses all key points from both snippets, including the combination of inputs and the specific tools for config group generation, without introducing extraneous information.",
+    "quality_score": 1.0,
+    "qa_id": 13
+  },
+  {
+    "question": "When initializing a Hugging Face model and tokenizer together, how can you specify a tokenizer that differs from the model name, and what additional configurations can be applied to the tokenizer during this process?",
+    "reference_answer": "To specify a tokenizer that differs from the model name, you can use the `tokenizer` parameter (of type `str`) when initializing the components, as noted in the `models.rst` snippet. Additionally, you can pass extra configurations to the tokenizer's `from_pretrained()` method via the `tokenizer_kwargs` parameter (a dictionary accepting keys like `padding_side`, `truncation`, and `model_max_length`). The `fitfunctions.rst` snippet confirms that the initialization process returns both the model and tokenizer objects, allowing these tokenizer-specific settings to be applied during the same workflow.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "fitfunctions.rst",
+        "lines": [
+          26,
+          32
+        ]
+      },
+      {
+        "file": "models.rst",
+        "lines": [
+          91,
+          95
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question accurately captures the cross-file relationship by requiring details from both snippets about tokenizer specification and additional configurations.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly references both snippets, covering the tokenizer parameter, tokenizer_kwargs, and the return of model/tokenizer objects without adding extraneous information.",
+    "quality_score": 1.0,
+    "qa_id": 14
+  },
+  {
+    "question": "How do the configuration mechanisms for knob combinations in RFvLLMModelConfig and RFLoraConfig compare, and what shared approach do they use to enable multi-config specification?",
+    "reference_answer": "Both RFvLLMModelConfig (from generators.rst) and RFLoraConfig (from models.rst) allow for the specification of multiple knob combinations by supporting :class:`List` or :class:`Range` valued arguments for individual knobs. This shared approach enables users to define a base set of knob combinations from which a config group can be produced. While RFvLLMModelConfig is tailored for LLM-related configurations and RFLoraConfig is used for LoRA-specific settings (as shown in the example with parameters like `r`, `lora_alpha`, and `target_modules`), both rely on the same underlying mechanism for multi-config generation, as referenced in the :doc:`Multi-Config Specification page</configs>` mentioned in both snippets.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "generators.rst",
+        "lines": [
+          16,
+          21
+        ]
+      },
+      {
+        "file": "models.rst",
+        "lines": [
+          17,
+          31
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question explicitly requires comparing the configuration mechanisms of both classes across two files and identifying their shared approach, which cannot be answered by a single snippet alone.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer accurately synthesizes all key points from both snippets, including the shared mechanism for knob combinations and the distinct use cases of each config class, without adding extraneous information.",
+    "quality_score": 1.0,
+    "qa_id": 15
+  },
+  {
+    "question": "How does RapidFire AI's execution engine facilitate the use of Interactive Control (IC) Ops while managing GPU resources and parallelism strategies during a `run_fit()` session?",
+    "reference_answer": "RapidFire AI's execution engine enables the use of Interactive Control (IC) Ops by handling lower-level scheduling and orchestration adaptively, supporting various parallelism strategies such as data-parallelism (DDP), model-parallelism (FSDP/DeepSpeed), and task-parallelism (e.g., W&B, Ray Tune). This adaptive orchestration allows users to perform IC Ops like Stop, Resume, Clone-Modify, and Delete during an active `run_fit()` session without manually managing disparate tools. Additionally, the system automatically reapportions GPU resources across runs under the hood, ensuring efficient resource utilization while IC Ops are executed. Users can access the IC Ops panel via the 'IC Ops' column buttons in the runs table or through metrics plots in the 'Chart' view, as long as `run_fit()` is actively running.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "glossary.rst",
+        "lines": [
+          76,
+          93
+        ]
+      },
+      {
+        "file": "icops.rst",
+        "lines": [
+          25,
+          38
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question effectively synthesizes the cross-file relationship between GPU resource management, IC Ops, and parallelism strategies, requiring all snippets for a complete answer.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly integrates all key points from both snippets, including IC Ops functionality, adaptive orchestration, GPU reapportionment, and access methods, without introducing extraneous information.",
+    "quality_score": 1.0,
+    "qa_id": 16
+  },
+  {
+    "question": "What are the GPU memory constraints for running the GRPO math reasoning tutorial, and how do these constraints relate to the known multi-GPU model support limitations in RapidFire AI?",
+    "reference_answer": "The GRPO math reasoning tutorial offers a lite version designed for GPUs with less than 80 GB of HBM, which uses smaller LLMs to ensure faster completion and lower memory usage (Snippet 1). However, for both DPO and GRPO, the policy and reference models must fit together on a single GPU's memory, as RapidFire AI currently does not support distributing these models across multiple GPUs (Snippet 2). This means users with GPUs below the 80 GB threshold may still face challenges if the combined memory requirements of the policy and reference models exceed their available GPU memory, despite the lite version's optimizations.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "grpo.rst",
+        "lines": [
+          9,
+          18
+        ]
+      },
+      {
+        "file": "issues.rst",
+        "lines": [
+          1,
+          14
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question requires synthesizing GPU memory constraints from the GRPO tutorial (Snippet 1) and multi-GPU limitations (Snippet 2), making it genuinely multi-source.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly addresses the lite version's GPU memory constraints (Snippet 1) and the single-GPU requirement for policy/reference models (Snippet 2), covering all key points without invention.",
+    "quality_score": 1.0,
+    "qa_id": 17
+  },
+  {
+    "question": "How do RapidFire AI's model and trainer configuration APIs integrate with Hugging Face's libraries to support LoRA-based fine-tuning, and what specific Hugging Face components do RFLoraConfig and RFSFTConfig wrap?",
+    "reference_answer": "RapidFire AI's model and trainer configuration APIs are designed to facilitate LoRA-based fine-tuning by acting as thin wrappers around Hugging Face's libraries. Specifically, the **RFLoraConfig** in RapidFire AI's model specifications wraps the `:class:`LoraConfig`` from Hugging Face's PEFT (Parameter-Efficient Fine-Tuning) library, which is documented in the `PEFT LoRA guide <https://huggingface.co/docs/peft/developer_guides/lora>`__. Meanwhile, the **RFSFTConfig** in RapidFire AI's trainer specifications wraps the `:class:`SFTConfig`` from Hugging Face's TRL (Transformer Reinforcement Learning) library, as referenced in the `TRL SFTConfig documentation <https://huggingface.co/docs/trl/sft_trainer#trl.SFTConfig>`__. Together, these wrappers enable seamless integration between RapidFire AI's APIs and Hugging Face's ecosystem for efficient LoRA-based model training and adaptation.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "models.rst",
+        "lines": [
+          1,
+          15
+        ]
+      },
+      {
+        "file": "trainers.rst",
+        "lines": [
+          1,
+          13
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question accurately captures the cross-file relationship between model and trainer configurations and their integration with Hugging Face's libraries, requiring synthesis of both snippets.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly draws on both snippets, correctly identifying the wrapped Hugging Face components and their roles in LoRA-based fine-tuning without adding extraneous information.",
+    "quality_score": 1.0,
+    "qa_id": 18
+  },
+  {
+    "question": "How do the configuration grids in the two described experiments differ in terms of the factors considered and the total number of combinations launched, and what is the combined total of all unique configurations across both experiments?",
+    "reference_answer": "The two experiments differ in the factors used to determine the total combinations. In the first experiment (Snippet 1), the grid combines three factors: 1 generator, reasoning effort levels (1 or 2 levels), and few-shot k values (2 values), resulting in 6 combinations calculated as (1 x 1 x 2) + (1 x 2 x 2). In the second experiment (Snippet 2), the grid uses two factors: 2 generator models and 2 search strategies, yielding 4 combinations (2 x 2). The combined total of unique configurations across both experiments is 10 (6 + 4), assuming no overlap in the specific configurations between the two grids.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "rag_gsm8k.rst",
+        "lines": [
+          38,
+          39
+        ]
+      },
+      {
+        "file": "rag_scifact.rst",
+        "lines": [
+          40,
+          41
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question requires synthesizing details about configuration grids, factors, and totals from both snippets, which cannot be answered by either snippet alone.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly addresses all key points from both snippets, including the factors, calculations, and combined total, without introducing external information.",
+    "quality_score": 1.0,
+    "qa_id": 19
+  },
+  {
+    "question": "How do the specifications for argument (knob) valuations in the base configuration system compare between the general framework and the RFSFTConfig implementation, and what underlying principles or shared resources unify their approaches?",
+    "reference_answer": "Both the general framework described in `ragspecs.rst` and the `RFSFTConfig` implementation in `trainers.rst` allow arguments (knobs) to be valued as either `:class:`List`` or `:class:`Range``, enabling the specification of a base set of knob combinations for config group generation. The general framework establishes this as a foundational capability for producing config groups, while `RFSFTConfig` explicitly adopts this mechanism to support multi-config scenarios. Both systems reference the same external resource, `:doc:`the Multi-Config Specification page</configs>``, indicating they rely on a shared underlying specification for defining and managing these combinations. Despite `RFSFTConfig` preserving Hugging Face's SFT trainer semantics, its multi-config functionality is directly aligned with the broader framework's approach to knob valuation and config group generation.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          8,
+          10
+        ]
+      },
+      {
+        "file": "trainers.rst",
+        "lines": [
+          15,
+          25
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question explicitly requires synthesizing the shared and distinct aspects of knob valuations across both sources, including the reference to the shared Multi-Config Specification page.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer accurately integrates all key points from both snippets, including the shared List/Range valuation mechanism, the config group generation purpose, and the reference to the Multi-Config Specification page.",
+    "quality_score": 1.0,
+    "qa_id": 20
+  },
+  {
+    "question": "How do the setup options for RapidFire AI compare across its different use cases (SFT/RFT vs. RAG/Context Engineering), and what are the key considerations when choosing between Google Colab and full installation for each?",
+    "reference_answer": "RapidFire AI offers two consistent setup options across both its SFT/RFT and RAG/Context Engineering workflows: Google Colab and full installation. For both use cases, **Google Colab** provides a zero local setup solution that takes under 3 minutes (SFT/RFT) or 2 minutes (RAG) to start, but is limited by the free T4 GPU instance, restricting usage to smaller models and datasets. The **full installation** option, in contrast, delivers complete functionality for any environment (local or cloud) and supports models/datasets of any size, with the added benefit for RAG/Context Engineering of allowing integration with your own OpenAI keys. Key considerations when choosing include: (1) **Scale needs** - Google Colab suffices for experimentation with small-scale workloads, while full installation is required for production or large-scale tasks; (2) **Customization** - RAG users requiring OpenAI key integration must use full installation; and (3) **Setup time** - Google Colab offers faster initial access, though with trade-offs in capability.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          1,
+          10
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          1,
+          8
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question explicitly requires synthesizing information across both snippets to compare setup options and key considerations for SFT/RFT vs. RAG/Context Engineering.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer accurately integrates all key points from both snippets, including setup times, limitations, and unique features like OpenAI key integration for RAG, without adding extraneous information.",
+    "quality_score": 1.0,
+    "qa_id": 21
+  },
+  {
+    "question": "What are the key differences between using RapidFire AI in Google Colab versus a full local/cloud installation, particularly regarding model and dataset limitations and hardware requirements?",
+    "reference_answer": "Using RapidFire AI in Google Colab allows instant access without installation, but it is limited to small models and datasets due to free resource constraints (Snippet 1). In contrast, a full installation on a local machine or remote/cloud instance provides complete functionality without these limitations (Snippet 1). Additionally, for RAG/context engineering, a local or cloud installation does not require GPUs if only OpenAI APIs are used (Snippet 2), but a valid OpenAI API key must be provided (Snippet 2). Thus, Colab is convenient for quick trials but restrictive, while a full installation offers flexibility and scalability.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          13,
+          27
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          27,
+          34
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question effectively captures the cross-file relationship by addressing limitations, hardware requirements, and functionality differences between Google Colab and full installation, requiring synthesis of both snippets.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly draws on all key points from both snippets, accurately contrasting Colab's limitations with the flexibility of full installation and OpenAI API requirements.",
+    "quality_score": 1.0,
+    "qa_id": 22
+  },
+  {
+    "question": "What are the key differences in the post-installation steps for the RapidFire AI OSS package when setting up for fine-tuning (ft) versus retrieval-augmented generation (RAG) workflows, and what specific issue does the RAG setup address?",
+    "reference_answer": "The installation steps for the RapidFire AI OSS package are nearly identical for both fine-tuning (ft) and retrieval-augmented generation (RAG) workflows up to the version verification step, including the requirement for Python 3.12+, virtual environment creation, and package installation via `pip install rapidfireai`. However, the RAG setup includes an additional post-installation step that is not present in the fine-tuning setup: `pip uninstall -y hf-xet`. This step is explicitly added to address a known issue referenced in the GitHub link (https://github.com/huggingface/xet-core/issues/527), which is not mentioned or required in the fine-tuning walkthrough. Thus, the key difference lies in the RAG-specific mitigation for the `hf-xet` conflict.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          30,
+          49
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          36,
+          55
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question accurately captures the cross-file contrast (post-installation steps) and the RAG-specific issue, requiring synthesis of both snippets.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly addresses all key points from both snippets, including the shared steps, the RAG-specific `hf-xet` uninstall, and the referenced GitHub issue.",
+    "quality_score": 1.0,
+    "qa_id": 23
+  },
+  {
+    "question": "What are the critical steps to ensure continuous access to RapidFireAI services across different scenarios, including initial startup, terminal closure, and command failures?",
+    "reference_answer": "To ensure continuous access to RapidFireAI services, follow these steps based on the provided snippets:\n\n1. **Initial Startup**: Run the `rapidfireai start` command and verify successful startup by checking for approximately 50 lines of output, including the message 'RapidFire Frontend is ready' and the endpoint 'http://0.0.0.0:8853'. Additionally, confirm that 'Available endpoints' is printed, as emphasized in both snippets. Do not proceed until this confirmation is visible.\n\n2. **Terminal or Machine Restart**: If you close the terminal running RapidFireAI or reboot your machine, restart the service by running the `rapidfireai start` command again. This step is explicitly mentioned in both snippets to maintain service availability.\n\n3. **Command Failure Handling**: If the `rapidfireai start` command fails initially, wait for 30 seconds and rerun the command. For further diagnostics and fixes, refer to the Troubleshooting guide linked in Snippet 2, which provides platform-specific steps for Linux, macOS, and Windows.\n\nBy combining these steps, you ensure the service remains accessible whether you are starting it for the first time, recovering from a terminal closure, or troubleshooting a failed command.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          100,
+          113
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          91,
+          100
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question comprehensively addresses the combined scope of both snippets, requiring synthesis of startup, terminal closure, and failure handling steps.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly integrates all key points from both snippets, including startup verification, terminal/machine restart, and failure handling with troubleshooting references.",
+    "quality_score": 1.0,
+    "qa_id": 24
+  },
+  {
+    "question": "How do the two RapidFire AI walkthrough videos differ in their focus, based on their titles and the context implied by their filenames?",
+    "reference_answer": "The two videos serve different purposes within the RapidFire AI ecosystem. The first video, titled 'RapidFire AI Full Usage Walkthrough Video' (from walkthroughft.rst), appears to provide a comprehensive guide on using the general RapidFire AI system, covering broader functionality beyond just retrieval-augmented generation. The second video, titled 'RapidFire AI RAG: Quickstart' (from walkthroughrag.rst), is specifically focused on the RAG (Retrieval-Augmented Generation) feature, as indicated by both its title and the filename, suggesting it offers a targeted introduction or quickstart guide for users interested in the RAG capabilities of the system. Together, these videos address distinct aspects: one for general usage and the other for RAG-specific implementation.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          204,
+          213
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          168,
+          179
+        ]
+      }
+    ],
+    "question_completeness": 5,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question requires synthesizing information from both snippets to compare their focus, as neither snippet alone provides the full contrast.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly references both snippets' titles and filenames, accurately contrasting their distinct focuses without adding extraneous information.",
+    "quality_score": 1.0,
+    "qa_id": 25
+  },
+  {
+    "question": "How does RapidFire AI ensure seamless integration between experiment naming, artifact tracking, and interactive control operations (IC Ops) to support rapid AI experimentation?",
+    "reference_answer": "RapidFire AI integrates experiment naming, artifact tracking, and IC Ops to enable efficient and streamlined AI experimentation. Each experiment is assigned a unique name (Snippet 1, Snippet 2), which serves multiple critical functions: it collates plots on the ML metrics dashboard, saves artifacts (Snippet 1), and ensures only one experiment is active at any time (Snippet 2). This unique naming system prevents conflicts by appending a suffix if a name is reused (Snippet 1). Additionally, Interactive Control Operations (IC Ops) leverage this structure by allowing developers to perform control operations on *in-flight* runs within an ongoing experiment (Snippet 3). This addresses the pain point of managing dynamic adjustments during experimentation, enabling rapid customization and iteration (Snippet 3). Together, these features create a cohesive system where experiment organization, artifact tracking, and real-time control operations work in tandem to support AI developers.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "experiment.rst",
+        "lines": [
+          1,
+          10
+        ]
+      },
+      {
+        "file": "glossary.rst",
+        "lines": [
+          53,
+          62
+        ]
+      },
+      {
+        "file": "icops.rst",
+        "lines": [
+          1,
+          12
+        ]
+      }
+    ],
+    "question_completeness": 4,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question addresses the integration of experiment naming, artifact tracking, and IC Ops, requiring synthesis across all three snippets, though it could slightly emphasize the 'pain point' motivation from Snippet 3 more explicitly.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly draws on all three snippets, accurately synthesizing their key points about experiment naming, artifact tracking, and IC Ops without introducing extraneous information.",
+    "quality_score": 0.9643,
+    "qa_id": 26
+  },
+  {
+    "question": "How does the FiQA RAG for Financial Opinion Q&A Chatbot tutorial notebook demonstrate an all-self-hosted open model workflow, and where can it be accessed according to the provided documentation?",
+    "reference_answer": "The FiQA RAG for Financial Opinion Q&A Chatbot tutorial notebook demonstrates an all-self-hosted open model workflow by utilizing models from Hugging Face for both embedding and generation, as explicitly mentioned in Snippet 1. To access this notebook, users must first complete Step 2 (referenced in Snippet 2) and then download the example tutorial notebooks, which are available either via the GitHub link provided in both snippets or in the 'tutorial_notebooks' folder under the directory where RapidFireAI was initialized. The GitHub link for direct access is: `https://github.com/RapidFireAI/rapidfireai/blob/main/tutorial_notebooks/rag-contexteng/rf-tutorial-rag-fiqa.ipynb`.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "rag_fiqa.rst",
+        "lines": [
+          1,
+          8
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          151,
+          155
+        ]
+      }
+    ],
+    "question_completeness": 4,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question addresses the core cross-file details (workflow and access) but omits minor procedural details like the explicit mention of 'Step 2' in Snippet 2.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly synthesizes all key points from both snippets, including the self-hosted workflow, Hugging Face models, and access instructions.",
+    "quality_score": 0.9643,
+    "qa_id": 27
+  },
+  {
+    "question": "How can a user experiment with RapidFire AI's RAG capabilities using external vector stores while considering resource limitations, and what operational modes would be involved in this process?",
+    "reference_answer": "To experiment with RapidFire AI's RAG capabilities using external vector stores while accounting for resource limitations, a user can start by leveraging the **Google Colab notebook** option, which provides a pre-configured environment with no installation required. This is particularly useful for testing small models and datasets, as noted in Snippet 2, due to the free resource constraints of Google Colab.\n\nFor the operational modes involved, the user would first need to **create a new index** (Create mode) from base documents within RapidFire AI to build the initial external vector store, as described in Snippet 1. If additional content needs to be incorporated later, the user can switch to **Update mode** to add new documents to the existing index. The **Read mode** would then be used to retrieve information from the pre-existing or updated index for RAG purposes. This workflow ensures that the external vector stores are properly specified and utilized, as referenced in the :doc:`API: LangChain RAG Spec page</ragspecs>` mentioned in Snippet 1.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "rag_fiqa.rst",
+        "lines": [
+          55,
+          61
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          10,
+          25
+        ]
+      }
+    ],
+    "question_completeness": 4,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question effectively combines the operational modes from Snippet 1 and the resource limitations/context from Snippet 2, though it could more explicitly reference the 'external vector stores' detail from Snippet 1.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly integrates all key points from both snippets, including operational modes, Google Colab's resource constraints, and the workflow for external vector stores.",
+    "quality_score": 0.9643,
+    "qa_id": 28
+  },
+  {
+    "question": "How do the GSM8K and SciFact RAG tutorials in RapidFire AI's API demonstrate different applications of context engineering, and where can both be accessed?",
+    "reference_answer": "The GSM8K tutorial demonstrates context engineering for math reasoning, focusing on few-shot learning to improve mathematical problem-solving capabilities. In contrast, the SciFact tutorial applies RAG (Retrieval-Augmented Generation) for scientific claim verification, using context to validate or refute claims based on scientific literature. Both tutorials are part of RapidFire AI's RAG and Context Engineering examples, with the GSM8K tutorial accessible via the GitHub notebook link: `https://github.com/RapidFireAI/rapidfireai/blob/main/tutorial_notebooks/rag-contexteng/rf-tutorial-gsm8k-fewshot.ipynb` and the SciFact tutorial accessible via: `https://github.com/RapidFireAI/rapidfireai/blob/main/tutorial_notebooks/rag-contexteng/rf-tutorial-scifact-full-evaluation.ipynb`.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "tutorials.rst",
+        "lines": [
+          1,
+          14
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          157,
+          166
+        ]
+      }
+    ],
+    "question_completeness": 4,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question addresses the cross-file relationship between GSM8K and SciFact tutorials and their access points, but omits minor details like the 'all-local model' and 'hybrid workflow' mentioned in the first snippet.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly draws on both snippets, covering the distinct applications of GSM8K and SciFact and their GitHub access links without adding extraneous information.",
+    "quality_score": 0.9643,
+    "qa_id": 29
+  },
+  {
+    "question": "How does the requirement to gracefully stop the rapidfireai server differ between the fine-tuning and RAG workflows, and what shared risk applies if this step is skipped in either scenario?",
+    "reference_answer": "In both the fine-tuning (Snippet 1) and RAG (Snippet 2) workflows, the command to gracefully stop the rapidfireai server is identical: `rapidfireai stop`, which must be run in a separate terminal tab and allowed to finish fully. However, the RAG workflow explicitly notes that this stop command is unnecessary if the server was never started in Step 2 (as it is optional for RAG), whereas the fine-tuning workflow implies the server was started and thus requires stopping. Despite this difference, both snippets warn that forcibly killing the server without graceful stopping risks losing experiment artifacts and/or metadata, a shared consequence applicable to either workflow.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          318,
+          330
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          279,
+          294
+        ]
+      }
+    ],
+    "question_completeness": 4,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question addresses the core contrast (graceful stop requirement) and shared risk across both workflows but omits the explicit mention of the RAG workflow's optional server start.",
+    "answer_completeness": 5,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer explicitly draws on all key points from both snippets, including the identical stop command, the RAG workflow's optional server note, and the shared risk of losing artifacts/metadata.",
+    "quality_score": 0.9643,
+    "qa_id": 30
+  },
+  {
+    "question": "How can knob set generators like List() and Range() be applied to the additional eval config knobs mentioned in the system, and what constraints or considerations must be observed when using them in this context?",
+    "reference_answer": "The system supports two primary knob set generators, List() and Range(), which can be applied to the additional eval config knobs described in the evaluation configuration. Specifically, Snippet 2 states that these knobs—such as the four user-provided functions and online aggregation strategy arguments—can also utilize List() for discrete values or Range() for continuous values. \n\nFrom Snippet 1, List() requires all values to be of the same Python data type, which means when applying it to eval config knobs, the discrete values provided must adhere to this constraint. Similarly, Range() is used for sampling from a continuous interval defined by a start and end value, with an optional dtype parameter to specify whether the output should be an integer or float. When using Range() for eval config knobs, the start and end values must align with the expected data type of the knob (e.g., if a knob expects an integer, the dtype should be set to 'int' or omitted, as the default is 'int'). \n\nThus, the choice between List() and Range() for these knobs depends on whether the knob requires discrete or continuous values, while ensuring type consistency and bounds compatibility with the knob's intended use.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "configs.rst",
+        "lines": [
+          23,
+          39
+        ]
+      },
+      {
+        "file": "promptothers.rst",
+        "lines": [
+          69,
+          77
+        ]
+      }
+    ],
+    "question_completeness": 4,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question addresses the cross-file relationship between knob set generators and additional eval config knobs but does not explicitly mention the 'four user-provided functions' or 'online aggregation strategy arguments' by name, slightly limiting completeness.",
+    "answer_completeness": 4,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer covers the key points from both snippets but does not explicitly enumerate the 'four user-provided functions' or 'online aggregation strategy arguments' mentioned in Snippet 2, omitting some detail.",
+    "quality_score": 0.9286,
+    "qa_id": 31
+  },
+  {
+    "question": "How does the `accumulate_metrics_fn` parameter interact with the default aggregation behavior and the `online_strategy_kwargs` configuration in the evaluation process, and what determines whether custom aggregation logic is applied?",
+    "reference_answer": "The `accumulate_metrics_fn` parameter allows users to override the default aggregation behavior for algebraic evaluation metrics. By default, if this function is not provided (as mentioned in Snippet 1), metrics returned by `eval.compute_metrics_fn()` are assumed to be distributive, meaning they are summed across batches. However, when `accumulate_metrics_fn` is specified (Snippet 1 and Snippet 2), it enables custom dataset-wide aggregation logic, such as weighted averaging or other non-distributive operations, and is invoked once at the end of the evaluation process after all batches are processed.\n\nThe `online_strategy_kwargs` parameter (Snippet 2) provides additional configuration for the evals' online aggregation strategy, though its exact relationship with `accumulate_metrics_fn` is not explicitly detailed in the snippets. However, the presence of `accumulate_metrics_fn` takes precedence over the default distributive assumption, ensuring that custom aggregation logic is applied instead of the default behavior. Thus, the decision to use custom aggregation depends on whether `accumulate_metrics_fn` is provided in the eval config dictionary.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          298,
+          304
+        ]
+      },
+      {
+        "file": "promptothers.rst",
+        "lines": [
+          92,
+          96
+        ]
+      }
+    ],
+    "question_completeness": 4,
+    "question_faithfulness": "pass",
+    "question_correctness": "pass",
+    "question_non_trivial": "pass",
+    "question_reasoning": "The question addresses the interaction between `accumulate_metrics_fn`, default aggregation, and `online_strategy_kwargs`, requiring synthesis across both snippets, though it slightly underweights the role of `online_strategy_kwargs`.",
+    "answer_completeness": 4,
+    "answer_faithfulness": "pass",
+    "answer_correctness": "pass",
+    "answer_reasoning": "The answer covers all key points from both snippets but does not explicitly clarify the exact relationship between `accumulate_metrics_fn` and `online_strategy_kwargs`, as the snippets do not detail this interaction.",
+    "quality_score": 0.9286,
+    "qa_id": 32
+  }
+]
