@@ -27,18 +27,21 @@ What this script does
 
 Dependencies
 ────────────
-    pip install anthropic          # Anthropic Python SDK
-Set your key:
-    export ANTHROPIC_API_KEY="sk-ant-..."
+    pip install openai python-dotenv
 """
 
 import json
 import csv
-import os
+import re
 import sys
 import time
 from collections import defaultdict
 from pathlib import Path
+
+from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIG
@@ -50,13 +53,59 @@ OUTPUT_JSON = OUTPUT_DIR / "top20_qa_pairs_selected.json"
 OUTPUT_CSV  = OUTPUT_DIR / "top20_qa_pairs_selected.csv"
 
 TARGET_N       = 20
-MIN_PER_CAT    = 3          # minimum samples per category in the final 20
-LLM_MODEL      = "claude-sonnet-4-20250514"
-LLM_BATCH_SIZE = 5          # entries per API call (keeps prompts short)
-LLM_RETRY      = 3          # retries on transient errors
-LLM_RETRY_WAIT = 5          # seconds between retries
+MIN_PER_CAT    = 3
+LLM_MODEL      = "mistral.mistral-large-3-675b-instruct"
+LLM_BATCH_SIZE = 5
+LLM_RETRY      = 3
+LLM_RETRY_WAIT = 5
+
+API_KEY_FILE = "/home/yup031/Project1/api-key.txt"
+API_BASE_URL = "https://tritonai-api.ucsd.edu"
 
 VALID_LABELS = {"procedural", "factual_lookup", "conceptual_explanation", "comparative"}
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LLM CLIENT
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _get_client() -> OpenAI:
+    api_key = Path(API_KEY_FILE).read_text().strip()
+    return OpenAI(api_key=api_key, base_url=API_BASE_URL)
+
+
+def _call_llm_raw(client: OpenAI, system: str, user: str) -> str | None:
+    """
+    Single LLM call. Returns the response text or None if content is missing.
+    The TritonAI endpoint is OpenAI-compatible; system prompt is passed as a
+    system-role message rather than a separate parameter.
+    """
+    for attempt in range(1, LLM_RETRY + 1):
+        try:
+            response = client.chat.completions.create(
+                model=LLM_MODEL,
+                max_tokens=512,
+                temperature=0.1,
+                messages=[
+                    {"role": "system", "content": system},
+                    {"role": "user",   "content": user},
+                ],
+            )
+            choice  = response.choices[0]
+            content = choice.message.content
+            if content is None:
+                raise ValueError(
+                    f"Response content is None (finish_reason={choice.finish_reason!r})"
+                )
+            return content.strip()
+
+        except Exception as exc:
+            print(f"  [WARN] LLM attempt {attempt}/{LLM_RETRY} failed: {exc}")
+            if attempt < LLM_RETRY:
+                time.sleep(LLM_RETRY_WAIT)
+
+    return None
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # LLM CATEGORY ENRICHMENT
@@ -96,15 +145,26 @@ Return a single JSON object like:
   ...
 }}
 
+Do NOT wrap the JSON in markdown fences. Return raw JSON only.
+
 Entries:
 {entries}
 """
 
 
-def _call_llm(entries: list[dict], client) -> dict[str, list[str]]:
+def _parse_llm_json(raw: str) -> dict:
+    """Strip markdown fences if present, then parse JSON."""
+    text = raw.strip()
+    # Remove ```json ... ``` or ``` ... ```
+    text = re.sub(r"^```[a-z]*\n?", "", text)
+    text = re.sub(r"\n?```$",       "", text)
+    return json.loads(text.strip())
+
+
+def _call_llm_batch(entries: list[dict], client: OpenAI) -> dict[str, list[str]]:
     """
-    Call the Anthropic API for a batch of entries.
-    Returns {question_id_str: [additional_labels]} for each entry.
+    Call the LLM for a batch of entries.
+    Returns {question_id_str: [additional_labels]}.
     """
     entries_text = "\n\n".join(
         f'ID {e["question_id"]}\n'
@@ -113,43 +173,24 @@ def _call_llm(entries: list[dict], client) -> dict[str, list[str]]:
         f'Answer: {e["reference_answer"]}'
         for e in entries
     )
-
     prompt = USER_PROMPT_TEMPLATE.format(n=len(entries), entries=entries_text)
 
-    for attempt in range(1, LLM_RETRY + 1):
-        try:
-            message = client.messages.create(
-                model=LLM_MODEL,
-                max_tokens=512,
-                system=SYSTEM_PROMPT,
-                messages=[{"role": "user", "content": prompt}],
-            )
-            raw = message.content[0].text.strip()
+    raw = _call_llm_raw(client, SYSTEM_PROMPT, prompt)
 
-            # Strip markdown fences if present
-            if raw.startswith("```"):
-                raw = raw.split("```")[1]
-                if raw.startswith("json"):
-                    raw = raw[4:]
-            raw = raw.strip()
+    if raw is None:
+        print("  [WARN] All retries exhausted; no labels added for this batch.")
+        return {str(e["question_id"]): [] for e in entries}
 
-            result = json.loads(raw)
-
-            # Normalise keys to str, validate labels
-            cleaned: dict[str, list[str]] = {}
-            for qid, labels in result.items():
-                valid = [l for l in labels if l in VALID_LABELS]
-                cleaned[str(qid)] = valid
-            return cleaned
-
-        except Exception as exc:
-            print(f"  [WARN] LLM call attempt {attempt}/{LLM_RETRY} failed: {exc}")
-            if attempt < LLM_RETRY:
-                time.sleep(LLM_RETRY_WAIT)
-
-    # On total failure return empty additions for all entries in this batch
-    print("  [WARN] All retries exhausted; no labels added for this batch.")
-    return {str(e["question_id"]): [] for e in entries}
+    try:
+        result = _parse_llm_json(raw)
+        cleaned: dict[str, list[str]] = {}
+        for qid, labels in result.items():
+            valid = [l for l in labels if l in VALID_LABELS]
+            cleaned[str(qid)] = valid
+        return cleaned
+    except (json.JSONDecodeError, AttributeError) as exc:
+        print(f"  [WARN] JSON parse failed: {exc}\n  Raw response: {raw[:300]}")
+        return {str(e["question_id"]): [] for e in entries}
 
 
 def enrich_categories(data: list[dict]) -> list[dict]:
@@ -157,30 +198,13 @@ def enrich_categories(data: list[dict]) -> list[dict]:
     For every entry:
       1. Start "categories" from the existing "category" field.
       2. Ask the LLM which of the 4 standard labels also apply.
-      3. Append any new labels not already present — never remove existing ones.
+      3. Append any new labels not already present.
     """
-    try:
-        import anthropic
-    except ImportError:
-        sys.exit(
-            "[ERROR] 'anthropic' package not found.\n"
-            "        Install it with:  pip install anthropic\n"
-            "        Then set:         export ANTHROPIC_API_KEY='sk-ant-...'"
-        )
-
-    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
-    if not api_key:
-        sys.exit(
-            "[ERROR] ANTHROPIC_API_KEY environment variable is not set.\n"
-            "        export ANTHROPIC_API_KEY='sk-ant-...'"
-        )
-
-    client = anthropic.Anthropic(api_key=api_key)
+    client = _get_client()
 
     # Initialise "categories" from the existing "category" field
     for entry in data:
         existing = entry.get("category", "")
-        # Normalise: could already be a list or a plain string
         if isinstance(existing, list):
             entry["categories"] = list(existing)
         elif existing:
@@ -194,10 +218,10 @@ def enrich_categories(data: list[dict]) -> list[dict]:
           f"({len(batches)} batches of ≤{LLM_BATCH_SIZE}) via {LLM_MODEL}...")
 
     for idx, batch in enumerate(batches, 1):
-        print(f"  Batch {idx}/{len(batches)} (ids: "
-              f"{[e['question_id'] for e in batch]}) ...", end=" ", flush=True)
+        print(f"  Batch {idx}/{len(batches)} "
+              f"(ids: {[e['question_id'] for e in batch]}) ...", end=" ", flush=True)
 
-        additions = _call_llm(batch, client)
+        additions = _call_llm_batch(batch, client)
 
         for entry in batch:
             qid      = str(entry["question_id"])
@@ -206,8 +230,8 @@ def enrich_categories(data: list[dict]) -> list[dict]:
                 if lab not in entry["categories"]:
                     entry["categories"].append(lab)
 
-        added_counts = {k: len(v) for k, v in additions.items()}
-        print(f"added {sum(added_counts.values())} label(s)")
+        added_total = sum(len(v) for v in additions.values())
+        print(f"added {added_total} label(s)")
 
     return data
 
@@ -217,7 +241,6 @@ def enrich_categories(data: list[dict]) -> list[dict]:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def get_source_files(entry: dict) -> list[str]:
-    """Deduplicated list of source file names from source_evidence."""
     seen: dict[str, None] = {}
     for ev in entry.get("source_evidence", []):
         f = ev.get("file", "").strip()
@@ -236,11 +259,6 @@ def entry_label(e: dict) -> str:
 
 # ─────────────────────────────────────────────────────────────────────────────
 # GREEDY SELECTION
-#
-# Pass 1 — file coverage    : for each unique source file, pick its best entry.
-# Pass 2 — category coverage: for each category below MIN_PER_CAT, add the
-#           highest-scoring available entry that belongs to that category.
-# Pass 3 — score fill       : fill remaining slots by composite_score desc.
 # ─────────────────────────────────────────────────────────────────────────────
 
 def select(data: list[dict]) -> list[dict]:
@@ -253,8 +271,8 @@ def select(data: list[dict]) -> list[dict]:
 
     pool_sorted = sorted(data, key=get_score, reverse=True)
 
-    selected: list[dict] = []
-    selected_ids: set    = set()
+    selected: list[dict]  = []
+    selected_ids: set     = set()
 
     def add(entry: dict, reason: str):
         selected.append(entry)
@@ -413,7 +431,7 @@ def main():
 
     print(f"[INFO] Loaded {len(data)} entries from '{INPUT_PATH.name}'")
 
-    # Step 1 — additive LLM enrichment (preserves original "category", adds to "categories")
+    # Step 1 — additive LLM enrichment
     data = enrich_categories(data)
 
     # Steps 2–4 — greedy selection

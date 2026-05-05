@@ -1,0 +1,436 @@
+[
+  {
+    "question_id": 1,
+    "question": "What are the steps to specify one or more tracking dashboards when starting a RapidFire AI server?",
+    "reference_answer": "To specify one or more tracking dashboards when starting a RapidFire AI server, you can use the `--tracking-backends` argument with the `rapidfireai start` command. Include the desired dashboards (mlflow, tensorboard, or trackio) separated by spaces. For example: `rapidfireai start --tracking-backends mlflow tensorboard`. Alternatively, you can set the dashboards using their environment variables in your Python code or notebook.",
+    "source_evidence": [
+      {
+        "file": "dashboard.rst",
+        "lines": [
+          11,
+          23
+        ]
+      }
+    ],
+    "question_type": "procedural",
+    "quality_score": 1.0,
+    "composite_score": 0.9929,
+    "categories": [
+      "procedural"
+    ]
+  },
+  {
+    "question_id": 2,
+    "question": "What are the two common knob set generators supported in the system, and what is the key difference between their use cases?",
+    "reference_answer": "The two common knob set generators supported in the system are `List()` and `Range()`. The key difference between their use cases is that `List()` is used for defining a discrete set of values (all of the same Python data type), while `Range()` is used for sampling from a continuous value interval between a specified start and end bound.",
+    "source_evidence": [
+      {
+        "file": "configs.rst",
+        "lines": [
+          23,
+          42
+        ]
+      }
+    ],
+    "question_type": "factual_lookup",
+    "quality_score": 1.0,
+    "composite_score": 0.9917,
+    "categories": [
+      "comparative",
+      "factual_lookup"
+    ]
+  },
+  {
+    "question_id": 3,
+    "question": "What are the steps to create a new variation of a high-performing AI run in RapidFire AI?",
+    "reference_answer": "To create a new variation of a high-performing AI run in RapidFire AI, follow these steps: 1) Clone the high-performing run from the dashboard, 2) Modify the configuration knobs as desired, and 3) Optionally warm start the clone's parameters with the parent's parameters to give it a headstart in learning behavior.",
+    "source_evidence": [
+      {
+        "file": "difference.rst",
+        "lines": [
+          38,
+          44
+        ]
+      }
+    ],
+    "question_type": "procedural",
+    "quality_score": 1.0,
+    "composite_score": 0.9793,
+    "categories": [
+      "procedural"
+    ]
+  },
+  {
+    "question_id": 4,
+    "question": "How does RapidFire AI's scheduler optimize token spend for RAG configurations when using closed model APIs like OpenAI?",
+    "reference_answer": "RapidFire AI's scheduler automatically optimizes token spend for RAG configurations when using closed model APIs like OpenAI by dynamically apportioning CPU cores and token rate limits across different configurations. This helps avoid wasting tokens on unproductive RAG setups and redirects the spend to more productive configurations in real time.",
+    "source_evidence": [
+      {
+        "file": "difference.rst",
+        "lines": [
+          69,
+          78
+        ]
+      }
+    ],
+    "question_type": "conceptual_explanation",
+    "quality_score": 1.0,
+    "composite_score": 0.9627,
+    "categories": [
+      "conceptual_explanation"
+    ]
+  },
+  {
+    "question_id": 5,
+    "question": "How does the sampling process work in RFRandomSearch() to generate knob combinations for multiple runs?",
+    "reference_answer": "In RFRandomSearch(), the sampling process works by independently and uniformly selecting a value for each knob from its defined options (a single value, a list of values, or a range of values) to create one knob combination. This process is repeated in an independently-identically-distributed (IID) manner for the specified number of runs (num_runs), ensuring each combination is distinct and randomly generated.",
+    "source_evidence": [
+      {
+        "file": "configs.rst",
+        "lines": [
+          95,
+          99
+        ]
+      }
+    ],
+    "question_type": [
+      "conceptual_explanation",
+      "comparative"
+    ],
+    "quality_score": 1.0,
+    "composite_score": 0.9502,
+    "categories": [
+      "conceptual_explanation"
+    ]
+  },
+  {
+    "question_id": 6,
+    "question": "What are the steps required to preprocess multimodal inputs (text and images) in a RAG pipeline using the provided sample function?",
+    "reference_answer": "To preprocess multimodal inputs (text and images) in a RAG pipeline using the provided sample function, follow these steps: 1) Ensure the original documents are ingested with image data stored in their metadata (e.g., as a base64 string or URL) via a `metadata_func` in the document loader (e.g., `metadata['image_data'] = record.get('image_base64', '')`). 2) Use the unserialized documents retrieved by the RAG pipeline to access the image data from the metadata. 3) Pass the batch of documents (containing text and image metadata) to the `sample_multimodal_preprocess_fn` function, which prepares the inputs for the generator model by combining text and image data.",
+    "source_evidence": [
+      {
+        "file": "evalsfunctions.rst",
+        "lines": [
+          104,
+          157
+        ]
+      }
+    ],
+    "question_type": "procedural",
+    "quality_score": 1.0,
+    "composite_score": 0.939,
+    "categories": [
+      "procedural"
+    ]
+  },
+  {
+    "question_id": 7,
+    "question": "How can I visualize multiple runs of the :func:`run_fit()` function on the ML metrics dashboard?",
+    "reference_answer": "You can visualize multiple runs of the :func:`run_fit()` function on the ML metrics dashboard by rerunning the function within the same experiment. Each run will automatically generate ML metrics files and overlay them on the same plots on the dashboard.",
+    "source_evidence": [
+      {
+        "file": "experiment.rst",
+        "lines": [
+          110,
+          114
+        ]
+      }
+    ],
+    "question_type": "procedural",
+    "quality_score": 1.0,
+    "composite_score": 0.9378,
+    "categories": [
+      "procedural"
+    ]
+  },
+  {
+    "question_id": 8,
+    "question": "What is the purpose of the `create_model_fn` function in the RapidFire AI framework, and what are its expected inputs and outputs?",
+    "reference_answer": "The `create_model_fn` function in the RapidFire AI framework is used to create HuggingFace model and tokenizer objects for each training run. Its purpose is to initialize and return a pre-trained model and tokenizer based on the provided configuration. The expected input is a dictionary (`model_config`) containing key-value pairs for one model configuration generated by the framework's config-group generator. The output is a tuple consisting of a `transformers.PreTrainedModel` and a `transformers.PreTrainedTokenizer`.",
+    "source_evidence": [
+      {
+        "file": "fitfunctions.rst",
+        "lines": [
+          8,
+          27
+        ]
+      }
+    ],
+    "question_type": "conceptual_explanation",
+    "quality_score": 1.0,
+    "composite_score": 0.9375,
+    "categories": [
+      "conceptual_explanation",
+      "factual_lookup"
+    ]
+  },
+  {
+    "question_id": 9,
+    "question": "Which two types of generator models does RapidFire AI currently support for its API?",
+    "reference_answer": "RapidFire AI currently supports self-hosted open LLMs (via vLLM model config) and closed model LLM APIs (via the OpenAI API) as generator models.",
+    "source_evidence": [
+      {
+        "file": "generators.rst",
+        "lines": [
+          1,
+          10
+        ]
+      }
+    ],
+    "question_type": "factual_lookup",
+    "quality_score": 1.0,
+    "composite_score": 0.936,
+    "categories": [
+      "factual_lookup"
+    ]
+  },
+  {
+    "question_id": 10,
+    "question": "How can I access the IC Ops panel during an active `run_fit()` session in RapidFire AI?",
+    "reference_answer": "You can access the IC Ops panel during an active `run_fit()` session in RapidFire AI by either clicking on the 'IC Ops' column buttons in the runs table or by clicking on any run's curve on any metrics plot in the 'Chart' view. Alternatively, you can also invoke the in-notebook IC Ops control panel in Google Colab using the `InteractiveController` class, follow these steps: 1) Import the `InteractiveController` class from `rapidfireai.utils.interactive_controller`. 2) Create an instance of `InteractiveController` by passing the `dispatcher_url` parameter with the value `\"http://127.0.0.1:8851\"`. 3) Call the `display()` method on the created controller instance.",
+    "source_evidence": [
+      {
+        "file": "icops.rst",
+        "lines": [
+          25,
+          44
+        ]
+      }
+    ],
+    "question_type": "procedural",
+    "quality_score": 1.0,
+    "composite_score": 0.9126,
+    "categories": [
+      "procedural"
+    ]
+  },
+  {
+    "question_id": 11,
+    "question": "What are the recommended steps to resolve the 'ImportError: cannot import name 'GenerationMixin' from 'transformers.generation'' error caused by stray Python processes?",
+    "reference_answer": "The recommended steps to resolve the 'ImportError: cannot import name 'GenerationMixin' from 'transformers.generation'' error are: 1) Run the command `ps -ef | grep python` to identify any stray 'multiprocessing.spawn' or 'defunct' Python processes, then kill them using `kill -9 [PID]` if found. 2) Wait for about 2 minutes, even if no processes were killed. 3) Restart the kernel and proceed with the new experiment.",
+    "source_evidence": [
+      {
+        "file": "issues.rst",
+        "lines": [
+          22,
+          39
+        ]
+      }
+    ],
+    "question_type": "procedural",
+    "quality_score": 1.0,
+    "composite_score": 0.9111,
+    "categories": [
+      "procedural"
+    ]
+  },
+  {
+    "question_id": 12,
+    "question": "What is the recommended starting approach for setting the rank and alpha parameters when configuring a PEFT model for query/value projection modules?",
+    "reference_answer": "The recommended starting approach is to set the rank to 16 and alpha to 32 (or rank 32 and alpha 64) when targeting only the query and value projection modules in a PEFT model.",
+    "source_evidence": [
+      {
+        "file": "models.rst",
+        "lines": [
+          49,
+          68
+        ]
+      }
+    ],
+    "question_type": "procedural",
+    "quality_score": 1.0,
+    "composite_score": 0.9084,
+    "categories": [
+      "factual_lookup"
+    ]
+  },
+
+  {
+    "question_id": 13,
+    "question": "What are the different types of inputs that the `param_config` argument can accept, and how do they enable flexible configuration combinations?",
+    "reference_answer": "The `param_config` argument can accept several types of inputs to enable flexible configuration combinations: 1) A single config dictionary, which allows specifying one set of parameters. 2) A list of config dictionaries, enabling the launch of multiple distinct configurations at once. 3) The output of a config group generator, such as `RFGridSearch()` or `RFRandomSearch()`, which systematically or randomly generates parameter combinations. 4) A list containing a mix of configs or config group generator outputs, allowing even more complex and varied parameter combinations to be executed in a single operation.",
+    "source_evidence": [
+      {
+        "file": "experiment.rst",
+        "lines": [
+          116,
+          121
+        ]
+      }
+    ],
+    "question_type": "conceptual_explanation",
+    "quality_score": 1.0,
+    "composite_score": 0.9295
+  },
+  {
+    "question_id": 14,
+    "question": "What are the steps to compute evaluation metrics (Rouge and BLEU) for predictions and labels using the `sample_compute_metrics` function in the SFT tutorial notebook?",
+    "reference_answer": "The steps to compute evaluation metrics (Rouge and BLEU) using the `sample_compute_metrics` function are as follows: 1) Import the `evaluate` library. 2) Load the Rouge and BLEU metrics using `evaluate.load('rouge')` and `evaluate.load('bleu')`. 3) Compute the Rouge score by calling `rouge.compute()` with the predictions and labels, then extract the `rougeL` value from the output. 4) Compute the BLEU score by calling `bleu.compute()` with the predictions and labels, then extract the `bleu` value from the output.",
+    "source_evidence": [
+      {
+        "file": "fitfunctions.rst",
+        "lines": [
+          87,
+          106
+        ]
+      }
+    ],
+    "question_type": "procedural",
+    "quality_score": 1.0,
+    "composite_score": 0.9209
+  },
+  {
+    "question_id": 15,
+    "question": "How does RapidFire AI's scheduler optimize token spend for RAG configurations when using closed model APIs like OpenAI?",
+    "reference_answer": "RapidFire AI's scheduler automatically optimizes token spend for RAG configurations when using closed model APIs like OpenAI by dynamically apportioning CPU cores and token rate limits across different configurations. This helps avoid wasting tokens on unproductive RAG setups and redirects the spend to more productive configurations in real time.",
+    "source_evidence": [
+      {
+        "file": "difference.rst",
+        "lines": [
+          69,
+          74
+        ]
+      }
+    ],
+    "question_type": "conceptual_explanation",
+    "quality_score": 1.0,
+    "composite_score": 0.9627
+  },
+  {
+    "question_id": 16,
+    "question": "What are the three strategies supported by RapidFire AI for calculating confidence intervals in its evals dataset, and how can you specify the confidence level and finite population correction in the configuration?",
+    "reference_answer": "The document does not explicitly list the three strategies supported by RapidFire AI for calculating confidence intervals. However, it states that you can specify the confidence level (recommended at 95%) and whether to perform 'finite population correction' (FPC) under the key `\"online_strategy_kwargs\"` in the configuration dictionary.",
+    "source_evidence": [
+      {
+        "file": "onlineagg.rst",
+        "lines": [
+          96,
+          109
+        ]
+      }
+    ]
+  },
+  {
+    "question_id": 17,
+    "question": "What are the three components that RapidFire AI establishes live three-way communication between?",
+    "reference_answer": "The three components that RapidFire AI establishes live three-way communication between are: the IDE where the experiment is launched, a metrics display/control dashboard, and a multi-core/multi-GPU execution backend.",
+    "source_evidence": [
+      {
+        "file": "overview.rst",
+        "lines": [
+          13,
+          20
+        ]
+      }
+    ]
+  },
+  {
+    "question_id": 18,
+    "question": "What are the three types of search algorithms available for vector retrieval in the search_cfg parameter, and how do they differ in functionality?",
+    "reference_answer": "The three types of search algorithms available for vector retrieval in the `search_cfg` parameter are:\n1. **similarity**: Performs a standard cosine similarity search, retrieving vectors/chunks most similar to the query.\n2. **similarity_score_threshold**: Conducts a similarity search but only returns results that meet or exceed a specified minimum score threshold (SST), filtering out less relevant matches.\n3. **mmr (Maximum Marginal Relevance)**: Balances relevance and diversity by retrieving results that are both similar to the query and diverse from each other, reducing redundancy in the output.",
+    "source_evidence": [
+      {
+        "file": "ragspecs.rst",
+        "lines": [
+          103,
+          107
+        ]
+      }
+    ]
+  },
+  {
+    "question_id": 19,
+    "question": "How do the value constraints for knobs differ between `RFGridSearch()` and `RFGROConfig`, and what is the practical implication of this difference for specifying configurations?",
+    "reference_answer": "The `RFGridSearch()` function restricts each knob to either a single value or a `List()` of values, explicitly prohibiting the use of `Range()` values, which would cause an error. In contrast, the `RFGROConfig` class allows knobs to be either `List` valued or `Range` valued, enabling the specification of a base set of knob combinations for generating config groups. This key difference means that `RFGridSearch()` is limited to discrete, predefined values, while `RFGROConfig` supports both discrete values and continuous ranges, offering greater flexibility in defining configuration spaces for training or evaluation.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "configs.rst",
+        "lines": [
+          92,
+          93
+        ]
+      },
+      {
+        "file": "trainers.rst",
+        "lines": [
+          175,
+          184
+        ]
+      }
+    ]
+  },
+  {
+    "question_id": 20,
+    "question": "How can a user access and visualize ML metrics in RapidFire AI when working on a remote machine, and what alternative dashboard options are available if they prefer not to use the default MLflow-fork dashboard?",
+    "reference_answer": "To access and visualize ML metrics in RapidFire AI on a remote machine, a user must first establish SSH tunnels to forward the necessary ports (8850, 8851, and 8853) from the remote machine to their local machine. Once the tunnels are set up, the user can open the dashboard URI in a browser, which is printed when the RapidFire AI server starts. The default dashboard is a fork of MLflow and provides functionalities such as visualizing all ML metrics (loss and eval metrics), overlaying IC Ops functionality, and displaying logs (Snippet 2). If the user prefers not to use the default MLflow-fork dashboard, RapidFire AI also supports alternative tools like TensorBoard and Trackio for logging and visualizing metrics.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "dashboard.rst",
+        "lines": [
+          1,
+          9
+        ]
+      },
+      {
+        "file": "glossary.rst",
+        "lines": [
+          106,
+          126
+        ]
+      },
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          119,
+          156
+        ]
+      }
+    ]
+  },
+  {
+    "question_id": 21,
+    "question": "What are the GPU memory constraints for running the GRPO math reasoning tutorial, and how do these constraints relate to the known multi-GPU model support limitations in RapidFire AI?",
+    "reference_answer": "The GRPO math reasoning tutorial offers a lite version designed for GPUs with less than 80 GB of HBM, which uses smaller LLMs to ensure faster completion and lower memory usage (Snippet 1). However, for both DPO and GRPO, the policy and reference models must fit together on a single GPU's memory, as RapidFire AI currently does not support distributing these models across multiple GPUs (Snippet 2). This means users with GPUs below the 80 GB threshold may still face challenges if the combined memory requirements of the policy and reference models exceed their available GPU memory, despite the lite version's optimizations.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "grpo.rst",
+        "lines": [
+          9,
+          18
+        ]
+      },
+      {
+        "file": "issues.rst",
+        "lines": [
+          1,
+          14
+        ]
+      }
+    ]
+  },
+  {
+    "question_id": 22,
+    "question": "What are the key differences between using RapidFire AI in Google Colab versus a full local/cloud installation, particularly regarding model and dataset limitations and hardware requirements?",
+    "reference_answer": "Using RapidFire AI in Google Colab allows instant access without installation, but it is limited to small models and datasets due to free resource constraints (Snippet 1). In contrast, a full installation on a local machine or remote/cloud instance provides complete functionality without these limitations (Snippet 1). Additionally, for RAG/context engineering, a local or cloud installation does not require GPUs if only OpenAI APIs are used (Snippet 2), but a valid OpenAI API key must be provided (Snippet 2). Thus, Colab is convenient for quick trials but restrictive, while a full installation offers flexibility and scalability.",
+    "question_type": "multi_file_synthesis",
+    "source_evidence": [
+      {
+        "file": "walkthroughft.rst",
+        "lines": [
+          13,
+          27
+        ]
+      },
+      {
+        "file": "walkthroughrag.rst",
+        "lines": [
+          27,
+          34
+        ]
+      }
+    ],
+  }
+]

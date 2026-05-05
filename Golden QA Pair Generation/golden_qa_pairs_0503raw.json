@@ -2484,13 +2484,13 @@
   },
   {
     "question": "What are the three strategies supported by RapidFire AI for calculating confidence intervals in its evals dataset, and how can you specify the confidence level and finite population correction in the configuration?",
-    "reference_answer": "The snippet does not explicitly list the three strategies supported by RapidFire AI for calculating confidence intervals. However, it states that you can specify the confidence level (recommended at 95%) and whether to perform 'finite population correction' (FPC) under the key `\"online_strategy_kwargs\"` in the configuration dictionary. Example configuration details are provided in the snippet, but the names of the three strategies are not visible.",
+    "reference_answer": "The document does not explicitly list the three strategies supported by RapidFire AI for calculating confidence intervals. However, it states that you can specify the confidence level (recommended at 95%) and whether to perform 'finite population correction' (FPC) under the key `\"online_strategy_kwargs\"` in the configuration dictionary. Example configuration details are provided in the snippet, but the names of the three strategies are not visible.",
     "source_evidence": [
       {
         "file": "onlineagg.rst",
         "lines": [
           96,
-          102
+          109
         ]
       }
     ]
