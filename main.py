@@ -50,7 +50,7 @@ TRITON_BASE_URL = "https://tritonai-api.ucsd.edu"
 EMBEDDING_MODEL = "api-tgpt-embeddings"
 GENERATOR_MODEL = "api-mistral-small-3.2-2506"
 RETRIEVAL_K     = 20
-RERANKER_TOP_N  = 5
+RERANKER_TOP_N  = 3
 BATCH_SIZE      = 32
 MAX_TOKENS      = 2000
 
@@ -169,8 +169,8 @@ def build_index() -> tuple[FAISS, list[Document]]:
     splitter = LineNumberSplitter(
         RecursiveCharacterTextSplitter.from_tiktoken_encoder(
             encoding_name="gpt2",
-            chunk_size=128,
-            chunk_overlap=32,
+            chunk_size=256,
+            chunk_overlap=64,
             add_start_index=True,
         )
     )
@@ -223,7 +223,7 @@ def generate(question: str, context: str, client: OpenAI, enc: tiktoken.Encoding
             {"role": "system", "content": SYSTEM_INSTRUCTIONS},
             {"role": "user",   "content": user_content},
         ],
-        max_tokens=4000,
+        max_tokens=2048,
         temperature=0.0,
     )
     return resp.choices[0].message.content.strip()
@@ -248,6 +248,9 @@ def run(input_path: str, output_path: str) -> None:
 
     results = []
     for i, item in enumerate(questions):
+        # test on first 10 questions for now
+        if i>10:
+            continue
         question_id = int(item["question_id"])
         question    = str(item["question"])
         log.info("[%d/%d] question_id=%d", i + 1, len(questions), question_id)

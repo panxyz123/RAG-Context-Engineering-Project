@@ -1,0 +1,141 @@
+{
+  "overall": {
+    "total_pairs": 60,
+    "avg_quality_score": 0.9993,
+    "min_quality_score": 0.9583,
+    "max_quality_score": 1.0,
+    "unique_categories": 4,
+    "unique_source_files": 14
+  },
+  "category_distribution": {
+    "procedural": {
+      "count": 24,
+      "percentage": 40.0,
+      "avg_quality": 1.0,
+      "file_breakdown": {
+        "dashboard.rst": 2,
+        "difference.rst": 1,
+        "evalsfunctions.rst": 8,
+        "experiment.rst": 3,
+        "fitfunctions.rst": 3,
+        "generators.rst": 1,
+        "icops.rst": 3,
+        "issues.rst": 2,
+        "models.rst": 1
+      }
+    },
+    "factual_lookup": {
+      "count": 20,
+      "percentage": 33.3,
+      "avg_quality": 0.9979,
+      "file_breakdown": {
+        "configs.rst": 5,
+        "dashboard.rst": 2,
+        "dpo.rst": 1,
+        "experiment.rst": 2,
+        "faq.rst": 1,
+        "fitfunctions.rst": 1,
+        "generators.rst": 3,
+        "glossary.rst": 2,
+        "grpo.rst": 2,
+        "models.rst": 1
+      }
+    },
+    "conceptual_explanation": {
+      "count": 14,
+      "percentage": 23.3,
+      "avg_quality": 1.0,
+      "file_breakdown": {
+        "configs.rst": 2,
+        "dashboard.rst": 2,
+        "difference.rst": 2,
+        "dpo.rst": 1,
+        "evalsfunctions.rst": 1,
+        "experiment.rst": 3,
+        "fitfunctions.rst": 2,
+        "generators.rst": 1
+      }
+    },
+    "comparative": {
+      "count": 2,
+      "percentage": 3.3,
+      "avg_quality": 1.0,
+      "file_breakdown": {
+        "configs.rst": 1,
+        "grpo.rst": 1
+      }
+    }
+  },
+  "file_distribution": {
+    "evalsfunctions.rst": {
+      "count": 9,
+      "percentage": 15.0,
+      "avg_quality": 1.0
+    },
+    "configs.rst": {
+      "count": 8,
+      "percentage": 13.3,
+      "avg_quality": 0.9948
+    },
+    "experiment.rst": {
+      "count": 8,
+      "percentage": 13.3,
+      "avg_quality": 1.0
+    },
+    "dashboard.rst": {
+      "count": 6,
+      "percentage": 10.0,
+      "avg_quality": 1.0
+    },
+    "fitfunctions.rst": {
+      "count": 6,
+      "percentage": 10.0,
+      "avg_quality": 1.0
+    },
+    "generators.rst": {
+      "count": 5,
+      "percentage": 8.3,
+      "avg_quality": 1.0
+    },
+    "difference.rst": {
+      "count": 3,
+      "percentage": 5.0,
+      "avg_quality": 1.0
+    },
+    "grpo.rst": {
+      "count": 3,
+      "percentage": 5.0,
+      "avg_quality": 1.0
+    },
+    "icops.rst": {
+      "count": 3,
+      "percentage": 5.0,
+      "avg_quality": 1.0
+    },
+    "dpo.rst": {
+      "count": 2,
+      "percentage": 3.3,
+      "avg_quality": 1.0
+    },
+    "glossary.rst": {
+      "count": 2,
+      "percentage": 3.3,
+      "avg_quality": 1.0
+    },
+    "issues.rst": {
+      "count": 2,
+      "percentage": 3.3,
+      "avg_quality": 1.0
+    },
+    "models.rst": {
+      "count": 2,
+      "percentage": 3.3,
+      "avg_quality": 1.0
+    },
+    "faq.rst": {
+      "count": 1,
+      "percentage": 1.7,
+      "avg_quality": 1.0
+    }
+  }
+}
