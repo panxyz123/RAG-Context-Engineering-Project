@@ -298,7 +298,7 @@
   },
   {
     "question_id": 16,
-    "question": "What are the three strategies supported by RapidFire AI for calculating confidence intervals in its evals dataset, and how can you specify the confidence level and finite population correction in the configuration?",
+    "question": "What are the three strategies supported by RapidFire AI for calculating confidence intervals in its evals dataset, and how can I specify the confidence level and finite population correction in the configuration?",
     "reference_answer": "The document does not explicitly list the three strategies supported by RapidFire AI for calculating confidence intervals. However, it states that you can specify the confidence level (recommended at 95%) and whether to perform 'finite population correction' (FPC) under the key `\"online_strategy_kwargs\"` in the configuration dictionary.",
     "source_evidence": [
       {
@@ -308,6 +308,9 @@
           109
         ]
       }
+    ],
+    "categories": [
+      "factual_lookup"
     ]
   },
   {
@@ -322,6 +325,9 @@
           20
         ]
       }
+    ],
+    "categories": [
+      "factual_lookup"
     ]
   },
   {
@@ -336,6 +342,9 @@
           107
         ]
       }
+    ],
+    "categories": [
+      "factual_lookup"
     ]
   },
   {
@@ -358,13 +367,17 @@
           184
         ]
       }
+    ],
+    "categories": [
+      "conceptual_explanation",
+      "comparative",
+      "multi-file_synthesis"
     ]
   },
   {
     "question_id": 20,
     "question": "How can a user access and visualize ML metrics in RapidFire AI when working on a remote machine, and what alternative dashboard options are available if they prefer not to use the default MLflow-fork dashboard?",
     "reference_answer": "To access and visualize ML metrics in RapidFire AI on a remote machine, a user must first establish SSH tunnels to forward the necessary ports (8850, 8851, and 8853) from the remote machine to their local machine. Once the tunnels are set up, the user can open the dashboard URI in a browser, which is printed when the RapidFire AI server starts. The default dashboard is a fork of MLflow and provides functionalities such as visualizing all ML metrics (loss and eval metrics), overlaying IC Ops functionality, and displaying logs (Snippet 2). If the user prefers not to use the default MLflow-fork dashboard, RapidFire AI also supports alternative tools like TensorBoard and Trackio for logging and visualizing metrics.",
-    "question_type": "multi_file_synthesis",
     "source_evidence": [
       {
         "file": "dashboard.rst",
@@ -387,6 +400,11 @@
           156
         ]
       }
+    ],
+    "categories": [
+      "procedural",
+      "factual_lookup",
+      "multi-file_synthesis"
     ]
   },
   {
@@ -409,6 +427,10 @@
           14
         ]
       }
+    ],
+    "categories": [
+      "factual_lookup",
+      "multi-file_synthesis"
     ]
   },
   {
@@ -432,5 +454,9 @@
         ]
       }
     ],
+    "categories": [
+      "comparative",
+      "multi-file_synthesis"
+    ]
   }
 ]
