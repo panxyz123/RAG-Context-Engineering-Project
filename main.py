@@ -44,7 +44,7 @@ EMBEDDING_MODEL   = "api-tgpt-embeddings"
 RETRIEVAL_K       = 20
 RERANKER_TOP_N    = 3
 FILE_SCORE_THRESH = 0.8
-MERGE_GAP         = 50
+MERGE_GAP         = 30
 MAX_TOKENS        = 2000
 MAX_COMPLETION    = 3000
 BATCH_SIZE        = 32
@@ -311,8 +311,7 @@ def merge_spans_and_text(
         intervals.sort(key=lambda x: x[0])
         cur_s, cur_e = intervals[0]
         for s, e in intervals[1:]:
-            # Only merge if the resulting span length stays within MERGE_GAP
-            if max(cur_e, e) - cur_s <= MERGE_GAP:
+            if s - cur_e <= MERGE_GAP:
                 cur_e = max(cur_e, e)
             else:
                 merged.append((fname, cur_s, cur_e))
@@ -576,9 +575,9 @@ def main() -> None:
                         help="Path to TritonAI gateway API key text file")
     parser.add_argument("--generation-model", required=True,
                         help="Gateway model id for answer generation")
-    parser.add_argument("--mode",             choices=["standalone", "rapidfire"],
-                        default="standalone",
-                        help="standalone: direct LangChain; rapidfire: RapidFire API")
+    # parser.add_argument("--mode",             choices=["standalone", "rapidfire"],
+    #                     default="standalone",
+    #                     help="standalone: direct LangChain; rapidfire: RapidFire API")
     args = parser.parse_args()
 
     with open(args.input, "r", encoding="utf-8") as f:
@@ -588,10 +587,7 @@ def main() -> None:
     api_key    = load_api_key(args.apikey_txt)
     corpus_dir = Path(args.corpus_dir).expanduser()
 
-    if args.mode == "rapidfire":
-        run_rapidfire(questions, args.output, corpus_dir, api_key, args.generation_model)
-    else:
-        run_standalone(questions, args.output, corpus_dir, api_key, args.generation_model)
+    run_standalone(questions, args.output, corpus_dir, api_key, args.generation_model)
 
 
 if __name__ == "__main__":
