@@ -44,7 +44,7 @@ EMBEDDING_MODEL   = "api-tgpt-embeddings"
 RETRIEVAL_K       = 20
 RERANKER_TOP_N    = 3
 FILE_SCORE_THRESH = 0.8
-MERGE_GAP         = 80
+MERGE_GAP         = 50
 MAX_TOKENS        = 2000
 MAX_COMPLETION    = 3000
 BATCH_SIZE        = 32
@@ -311,7 +311,8 @@ def merge_spans_and_text(
         intervals.sort(key=lambda x: x[0])
         cur_s, cur_e = intervals[0]
         for s, e in intervals[1:]:
-            if s - cur_e <= MERGE_GAP:
+            # Only merge if the resulting span length stays within MERGE_GAP
+            if max(cur_e, e) - cur_s <= MERGE_GAP:
                 cur_e = max(cur_e, e)
             else:
                 merged.append((fname, cur_s, cur_e))

@@ -7,3 +7,6 @@ sourcedocs.zip
 *.log
 tutorial_notebooks/
 core
+eval_scripts/
+RAG_exp_notebooks/
+test_outputs/

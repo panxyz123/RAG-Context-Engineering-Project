@@ -48,6 +48,8 @@ MERGE_GAP         = 80
 MAX_TOKENS        = 2000
 MAX_COMPLETION    = 3000
 BATCH_SIZE        = 32
+CHUNK_SIZE        = 256
+OVERLAP_SIZE      = 128
 
 SYSTEM_INSTRUCTIONS = (
     "You are a technical QA assistant for RapidFire AI documentation. "
@@ -98,8 +100,8 @@ def make_splitter() -> LineNumberSplitter:
     return LineNumberSplitter(
         RecursiveCharacterTextSplitter.from_tiktoken_encoder(
             encoding_name="gpt2",
-            chunk_size=128,
-            chunk_overlap=64,
+            chunk_size=CHUNK_SIZE,
+            chunk_overlap=OVERLAP_SIZE,
             add_start_index=True,
         )
     )
@@ -215,8 +217,10 @@ def merge_spans_and_text(
     for fname, intervals in by_file.items():
         intervals.sort(key=lambda x: x[0])
         cur_s, cur_e = intervals[0]
+        cur_s, cur_e = intervals[0]
         for s, e in intervals[1:]:
-            if s - cur_e <= MERGE_GAP:
+            # Only merge if the resulting span length stays within MERGE_GAP
+            if max(cur_e, e) - cur_s <= MERGE_GAP:
                 cur_e = max(cur_e, e)
             else:
                 merged.append((fname, cur_s, cur_e))

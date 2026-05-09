@@ -20,7 +20,7 @@ import math
 from pathlib import Path
 from typing import Any
 
-from project1_eval import (
+from eval_scripts.project1_eval import (
     to_spans,
     precision_at_k,
     recall_at_k,
