@@ -71,7 +71,7 @@ The final `main_strc.py` implements the following four-stage pipeline:
 The corpus directory of `.rst` files is loaded via `DirectoryLoader`. Each document is chunked with the custom RST structural splitter (`min_tokens=256`, `max_tokens=512`, one-paragraph overlap): sections are identified by RST heading underlines, paragraphs split on blank lines, small paragraphs merged, and oversized ones split line-by-line. Chunks are embedded with `api-tgpt-embeddings` and indexed into a FAISS flat vector store.
 
 **2. Retrieval and Reranking**
-Top-20 chunks are retrieved by cosine similarity. All candidates are scored by `BAAI/bge-reranker-v2-m3`. Scores are aggregated per file using a rank-weighted sum (`score × 1/(rank+1)`); the highest-scoring file is selected along with any file within 80% of its score. The top-3 chunks from the selected files are retained. Their line spans are merged if within 50 lines of each other, and the corresponding source file text is extracted as context.
+Top-20 chunks are retrieved by cosine similarity. All candidates are scored by `BAAI/bge-reranker-v2-m3`. Scores are aggregated per file using a rank-weighted sum (`score × 1/(rank+1)`); the highest-scoring file is selected along with any file within 80% of its score. The top-3 chunks from the selected files are retained. Their line spans are merged if within 80 lines of each other, and the corresponding source file text is extracted as context.
 
 **3. Generation**
 The merged context is passed to the user-specified LLM via the Triton gateway. The prompt presents the question first, followed by the context truncated to fit within a 2000-token budget (system prompt and question overhead reserved), then repeats the question to prevent truncation from hiding it.

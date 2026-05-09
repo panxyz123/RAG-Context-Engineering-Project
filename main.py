@@ -374,8 +374,6 @@ def run_standalone(
 
     results = []
     for i, item in enumerate(questions):
-        if i>3:
-            break
         question_id = int(item["question_id"])
         question    = str(item["question"])
         log.info("[%d/%d] qid=%d", i + 1, len(questions), question_id)
