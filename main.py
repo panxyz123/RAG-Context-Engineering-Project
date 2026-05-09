@@ -44,7 +44,7 @@ EMBEDDING_MODEL   = "api-tgpt-embeddings"
 RETRIEVAL_K       = 20
 RERANKER_TOP_N    = 3
 FILE_SCORE_THRESH = 0.8
-MERGE_GAP         = 30
+MERGE_GAP         = 80
 MAX_TOKENS        = 2000
 MAX_COMPLETION    = 3000
 BATCH_SIZE        = 32
@@ -374,6 +374,8 @@ def run_standalone(
 
     results = []
     for i, item in enumerate(questions):
+        if i>3:
+            break
         question_id = int(item["question_id"])
         question    = str(item["question"])
         log.info("[%d/%d] qid=%d", i + 1, len(questions), question_id)
