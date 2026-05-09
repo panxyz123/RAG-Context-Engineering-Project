@@ -1,2 +1,0 @@
-from langchain_classic.retrievers.document_compressors import CrossEncoderReranker
-print(CrossEncoderReranker.model_fields)
