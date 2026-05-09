@@ -1,0 +1,312 @@
+2026-05-01 17:25:15 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0501_7:DocProcessingActor] DocProcessingActor initialized
+2026-05-01 17:25:16 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0501_7:DocProcessingActor] DocProcessingActor initialized
+2026-05-01 17:25:16 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0501_7:DocProcessingActor] DocProcessingActor initialized
+2026-05-01 17:25:17 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0501_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-01 17:25:17 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0501_7:DocProcessingActor] Building document index...
+2026-05-01 17:25:18 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:25:18 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0501_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-01 17:25:18 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0501_7:DocProcessingActor] Building document index...
+2026-05-01 17:25:18 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0501_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-01 17:25:18 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0501_7:DocProcessingActor] Building document index...
+2026-05-01 17:25:18 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:25:19 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:25:24 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0501_7:DocProcessingActor] Document index built successfully
+2026-05-01 17:25:24 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0501_7:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-01 17:25:24 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0501_7:DocProcessingActor] FAISS index serialized: 1293400 bytes
+2026-05-01 17:25:24 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0501_7:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-01 17:25:25 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0501_7:DocProcessingActor] Document index built successfully
+2026-05-01 17:25:25 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0501_7:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-01 17:25:25 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0501_7:DocProcessingActor] FAISS index serialized: 3124632 bytes
+2026-05-01 17:25:25 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0501_7:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-01 17:25:25 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0501_7:DocProcessingActor] Document index built successfully
+2026-05-01 17:25:25 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0501_7:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-01 17:25:25 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0501_7:DocProcessingActor] FAISS index serialized: 2730492 bytes
+2026-05-01 17:25:25 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0501_7:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-01 17:25:48 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp_0501_7:QueryProcessingActor-0] Initializing new inference engine (config hash: 8241cbf7)
+2026-05-01 17:25:48 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0501_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-01 17:25:48 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0501_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-01 17:25:48 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0501_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-01 17:25:48 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0501_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-01 17:25:48 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0501_7:QueryProcessingActor-0] Recreated retriever with search_type=mmr
+2026-05-01 17:25:48 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:25:51 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0501_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-01 17:27:35 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0501_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 8241cbf7)
+2026-05-01 17:27:35 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0501_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-01 17:27:35 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0501_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-01 17:27:35 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0501_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-01 17:27:35 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0501_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-01 17:27:35 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0501_7:QueryProcessingActor-0] Recreated retriever with search_type=mmr
+2026-05-01 17:27:35 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:27:37 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0501_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-01 17:29:19 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0501_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 8241cbf7)
+2026-05-01 17:29:19 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0501_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-01 17:29:19 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0501_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-01 17:29:19 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0501_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-01 17:29:19 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0501_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-01 17:29:19 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0501_7:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-01 17:29:19 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:29:22 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0501_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-01 17:31:19 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0501_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 8241cbf7)
+2026-05-01 17:31:19 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0501_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-01 17:31:19 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0501_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-01 17:31:19 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0501_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-01 17:31:19 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0501_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-01 17:31:19 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0501_7:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-01 17:31:19 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:31:21 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0501_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-01 17:33:09 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0501_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 8241cbf7)
+2026-05-01 17:33:09 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0501_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-01 17:33:09 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0501_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-01 17:33:09 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0501_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-01 17:33:09 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0501_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-01 17:33:09 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0501_7:QueryProcessingActor-0] Recreated retriever with search_type=mmr
+2026-05-01 17:33:09 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:33:11 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0501_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-01 17:34:53 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0501_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 8241cbf7)
+2026-05-01 17:34:54 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0501_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-01 17:34:54 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0501_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-01 17:34:54 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0501_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-01 17:34:54 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0501_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-01 17:34:54 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0501_7:QueryProcessingActor-0] Recreated retriever with search_type=mmr
+2026-05-01 17:34:54 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:34:58 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0501_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-01 17:36:55 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0501_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 8241cbf7)
+2026-05-01 17:36:55 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0501_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-01 17:36:55 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0501_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-01 17:36:55 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0501_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-01 17:36:55 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0501_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-01 17:36:55 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0501_7:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-01 17:36:55 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:36:57 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0501_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-01 17:39:02 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0501_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 8241cbf7)
+2026-05-01 17:39:02 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0501_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-01 17:39:02 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0501_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-01 17:39:02 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0501_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-01 17:39:02 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0501_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-01 17:39:02 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0501_7:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-01 17:39:02 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:39:04 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0501_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-01 17:40:55 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0501_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 8241cbf7)
+2026-05-01 17:40:55 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0501_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-01 17:40:55 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0501_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-01 17:40:55 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0501_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-01 17:40:55 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0501_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-01 17:40:55 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0501_7:QueryProcessingActor-0] Recreated retriever with search_type=mmr
+2026-05-01 17:40:55 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:40:57 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0501_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-01 17:43:55 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0501_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 8241cbf7)
+2026-05-01 17:43:55 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0501_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-01 17:43:55 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0501_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-01 17:43:55 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0501_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-01 17:43:55 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0501_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-01 17:43:55 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0501_7:QueryProcessingActor-0] Recreated retriever with search_type=mmr
+2026-05-01 17:43:55 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:43:58 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0501_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-01 17:46:50 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0501_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 8241cbf7)
+2026-05-01 17:46:50 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0501_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-01 17:46:50 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0501_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-01 17:46:50 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0501_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-01 17:46:50 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0501_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-01 17:46:50 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0501_7:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-01 17:46:50 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:46:52 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0501_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-01 17:49:44 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0501_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 8241cbf7)
+2026-05-01 17:49:44 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0501_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-01 17:49:44 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0501_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-01 17:49:44 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0501_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-01 17:49:44 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0501_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-01 17:49:44 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0501_7:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-01 17:49:44 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-01 17:49:47 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0501_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-01 17:58:38 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0501_7:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-01 17:58:38 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0501_7:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-01 17:58:38 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0501_7:ExperimentUtils] Experiment exp_0501_7 ended
+2026-05-01 17:58:38 | Experiment | INFO | experiment.py:165 | [exp_0501_8:Experiment] The previously running experiment exp_0501_7 was forcibly ended. Created a new experiment 'exp_0501_8' with Experiment ID: 33 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0501_8
+2026-05-01 17:58:56 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0501_8:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-01 17:58:56 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0501_8:Experiment] Creating MLflow experiment: exp_0501_8
+2026-05-01 17:58:56 | Experiment | INFO | experiment.py:210 | [exp_0501_8:Experiment] Initialized MetricLogger experiment: 22
+2026-05-01 17:58:56 | Experiment | INFO | experiment.py:226 | [exp_0501_8:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-01 17:58:59 | Experiment | WARNING | experiment.py:381 | [exp_0501_8:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-01 17:58:59 | Experiment | INFO | experiment.py:383 | [exp_0501_8:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-01 17:58:59 | Experiment | INFO | experiment.py:392 | [exp_0501_8:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-01 17:58:59 | Controller | INFO | controller.py:895 | [exp_0501_8:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-01 17:58:59 | Controller | INFO | controller.py:900 | [exp_0501_8:Controller] Received 12 pipeline configuration(s)
+2026-05-01 17:58:59 | Controller | INFO | controller.py:309 | [exp_0501_8:Controller] Found 3 unique RAG context(s)
+2026-05-01 17:58:59 | Controller | INFO | controller.py:320 | [exp_0501_8:Controller] Will build new context 4912981c...
+2026-05-01 17:58:59 | Controller | INFO | controller.py:320 | [exp_0501_8:Controller] Will build new context e4f420f4...
+2026-05-01 17:58:59 | Controller | INFO | controller.py:320 | [exp_0501_8:Controller] Will build new context 8c8c3ddd...
+2026-05-01 17:58:59 | Controller | INFO | controller.py:346 | [exp_0501_8:Controller] Building 3 context(s) in parallel...
+2026-05-01 17:58:59 | Controller | INFO | controller.py:373 | [exp_0501_8:Controller] Creating 3 DocProcessingActor(s) for parallel processing
+2026-05-01 17:59:01 | matplotlib.font_manager | INFO | font_manager.py:1639 | generated new fontManager
+2026-05-01 17:59:01 | Controller | INFO | controller.py:461 | [exp_0501_8:Controller] Submitted 3 build task(s) in parallel
+2026-05-01 17:59:38 | Controller | INFO | controller.py:482 | [exp_0501_8:Controller] Built context 1 (4912981c...) successfully in 38.90s
+2026-05-01 17:59:39 | Controller | INFO | controller.py:482 | [exp_0501_8:Controller] Built context 2 (e4f420f4...) successfully in 39.22s
+2026-05-01 17:59:39 | Controller | INFO | controller.py:482 | [exp_0501_8:Controller] Built context 3 (8c8c3ddd...) successfully in 39.23s
+2026-05-01 17:59:39 | Controller | INFO | controller.py:523 | [exp_0501_8:Controller] Completed parallel context building for 3 context(s)
+2026-05-01 17:59:39 | Controller | INFO | controller.py:920 | [exp_0501_8:Controller] Created 1 query processing actors (generic pool)
+2026-05-01 17:59:39 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0501_8:Experiment] Created MLflow run: 044eda8243344fb1bdb023edb67a45fe, 1
+2026-05-01 17:59:39 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0501_8:Experiment] Created MLflow run: 159170e03e6547c097f476d8478bba77, 2
+2026-05-01 17:59:39 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0501_8:Experiment] Created MLflow run: 14f60f3cf59748c8824399d885d501ac, 3
+2026-05-01 17:59:39 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0501_8:Experiment] Created MLflow run: c5c248399c424c2e9017cc23e01758a6, 4
+2026-05-01 17:59:39 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0501_8:Experiment] Created MLflow run: b37bab04deca4baeb672acbca1047e32, 5
+2026-05-01 17:59:39 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0501_8:Experiment] Created MLflow run: 58c079587b014a7fba16a0eb312ef3a2, 6
+2026-05-01 17:59:39 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0501_8:Experiment] Created MLflow run: 91a7f6befc6e4e2daf7a0bf09f7ebe2c, 7
+2026-05-01 17:59:39 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0501_8:Experiment] Created MLflow run: 073db422aa6d4a8a98c47d3d33f938cc, 8
+2026-05-01 17:59:39 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0501_8:Experiment] Created MLflow run: fd95dcf05a454e81a2986ca56edbd42c, 9
+2026-05-01 17:59:40 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0501_8:Experiment] Created MLflow run: adacafe63442441da5f1f1981474fe96, 10
+2026-05-01 17:59:40 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0501_8:Experiment] Created MLflow run: eae4d0ed26ee42509e653e35a4bc25fe, 11
+2026-05-01 17:59:40 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0501_8:Experiment] Created MLflow run: ef961d56ea1245dea02f3aa658401c74, 12
+2026-05-01 17:59:40 | Controller | INFO | controller.py:931 | [exp_0501_8:Controller] Initialized scheduler with 12 pipelines, 1 actors, 4 shards
+2026-05-01 17:59:40 | Controller | INFO | controller.py:1118 | [exp_0501_8:Controller] Created experiment-wide rate limiter actor for 12 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-05-01 17:59:40 | Controller | INFO | controller.py:1124 | [exp_0501_8:Controller] Starting multi-pipeline inference scheduling...
+2026-05-01 17:59:40 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-01 18:02:10 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 1 completed shard 0 (1 batches, 126.10s)
+2026-05-01 18:02:10 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-05-01 18:04:04 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 2 completed shard 0 (1 batches, 112.18s)
+2026-05-01 18:04:04 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 0 (1 batches)
+2026-05-01 18:05:48 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 3 completed shard 0 (1 batches, 100.74s)
+2026-05-01 18:05:48 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 0 (1 batches)
+2026-05-01 18:07:28 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 4 completed shard 0 (1 batches, 97.73s)
+2026-05-01 18:07:28 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 5 (Pipeline 5) on actor 0 for shard 0 (1 batches)
+2026-05-01 18:09:15 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 5 completed shard 0 (1 batches, 104.77s)
+2026-05-01 18:09:15 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 6 (Pipeline 6) on actor 0 for shard 0 (1 batches)
+2026-05-01 18:11:08 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 6 completed shard 0 (1 batches, 109.44s)
+2026-05-01 18:11:08 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 7 (Pipeline 7) on actor 0 for shard 0 (1 batches)
+2026-05-01 18:12:53 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 7 completed shard 0 (1 batches, 102.31s)
+2026-05-01 18:12:53 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 8 (Pipeline 8) on actor 0 for shard 0 (1 batches)
+2026-05-01 18:14:35 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 8 completed shard 0 (1 batches, 100.27s)
+2026-05-01 18:14:35 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 9 (Pipeline 9) on actor 0 for shard 0 (1 batches)
+2026-05-01 18:17:13 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 9 completed shard 0 (1 batches, 155.42s)
+2026-05-01 18:17:13 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 10 (Pipeline 10) on actor 0 for shard 0 (1 batches)
+2026-05-01 18:20:01 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 10 completed shard 0 (1 batches, 165.48s)
+2026-05-01 18:20:01 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 11 (Pipeline 11) on actor 0 for shard 0 (1 batches)
+2026-05-01 18:22:52 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 11 completed shard 0 (1 batches, 167.97s)
+2026-05-01 18:22:52 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 12 (Pipeline 12) on actor 0 for shard 0 (1 batches)
+2026-05-01 18:25:47 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 12 completed shard 0 (1 batches, 172.47s)
+2026-05-01 18:25:47 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 1 (1 batches)
+2026-05-01 18:27:29 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 1 completed shard 1 (1 batches, 99.28s)
+2026-05-01 18:27:29 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 1 (1 batches)
+2026-05-01 18:29:11 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 2 completed shard 1 (1 batches, 99.30s)
+2026-05-01 18:29:11 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 1 (1 batches)
+2026-05-01 18:30:49 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 3 completed shard 1 (1 batches, 94.78s)
+2026-05-01 18:30:49 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 1 (1 batches)
+2026-05-01 18:32:23 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 4 completed shard 1 (1 batches, 91.34s)
+2026-05-01 18:32:23 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 5 (Pipeline 5) on actor 0 for shard 1 (1 batches)
+2026-05-01 18:33:54 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 5 completed shard 1 (1 batches, 88.79s)
+2026-05-01 18:33:54 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 6 (Pipeline 6) on actor 0 for shard 1 (1 batches)
+2026-05-01 18:35:31 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 6 completed shard 1 (1 batches, 94.36s)
+2026-05-01 18:35:31 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 7 (Pipeline 7) on actor 0 for shard 1 (1 batches)
+2026-05-01 18:37:08 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 7 completed shard 1 (1 batches, 94.33s)
+2026-05-01 18:37:08 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 8 (Pipeline 8) on actor 0 for shard 1 (1 batches)
+2026-05-01 18:38:45 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 8 completed shard 1 (1 batches, 94.33s)
+2026-05-01 18:38:45 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 9 (Pipeline 9) on actor 0 for shard 1 (1 batches)
+2026-05-01 18:41:30 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 9 completed shard 1 (1 batches, 161.11s)
+2026-05-01 18:41:30 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 10 (Pipeline 10) on actor 0 for shard 1 (1 batches)
+2026-05-01 18:43:59 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 10 completed shard 1 (1 batches, 146.40s)
+2026-05-01 18:43:59 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 11 (Pipeline 11) on actor 0 for shard 1 (1 batches)
+2026-05-01 18:46:19 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 11 completed shard 1 (1 batches, 137.03s)
+2026-05-01 18:46:19 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 12 (Pipeline 12) on actor 0 for shard 1 (1 batches)
+2026-05-01 18:48:55 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 12 completed shard 1 (1 batches, 153.57s)
+2026-05-01 18:48:55 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 2 (1 batches)
+2026-05-01 18:50:30 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 1 completed shard 2 (1 batches, 92.33s)
+2026-05-01 18:50:30 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 2 (1 batches)
+2026-05-01 18:52:08 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 2 completed shard 2 (1 batches, 95.84s)
+2026-05-01 18:52:08 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 2 (1 batches)
+2026-05-01 18:53:47 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 3 completed shard 2 (1 batches, 96.33s)
+2026-05-01 18:53:47 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 2 (1 batches)
+2026-05-01 18:55:21 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 4 completed shard 2 (1 batches, 91.32s)
+2026-05-01 18:55:21 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 5 (Pipeline 5) on actor 0 for shard 2 (1 batches)
+2026-05-01 18:56:54 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 5 completed shard 2 (1 batches, 89.83s)
+2026-05-01 18:56:54 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 6 (Pipeline 6) on actor 0 for shard 2 (1 batches)
+2026-05-01 18:58:39 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 6 completed shard 2 (1 batches, 102.87s)
+2026-05-01 18:58:39 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 7 (Pipeline 7) on actor 0 for shard 2 (1 batches)
+2026-05-01 19:00:12 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 7 completed shard 2 (1 batches, 89.84s)
+2026-05-01 19:00:12 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 8 (Pipeline 8) on actor 0 for shard 2 (1 batches)
+2026-05-01 19:01:42 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 8 completed shard 2 (1 batches, 87.79s)
+2026-05-01 19:01:42 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 9 (Pipeline 9) on actor 0 for shard 2 (1 batches)
+2026-05-01 19:04:16 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 9 completed shard 2 (1 batches, 150.47s)
+2026-05-01 19:04:16 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 10 (Pipeline 10) on actor 0 for shard 2 (1 batches)
+2026-05-01 19:06:42 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 10 completed shard 2 (1 batches, 143.53s)
+2026-05-01 19:06:42 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 11 (Pipeline 11) on actor 0 for shard 2 (1 batches)
+2026-05-01 19:08:55 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 11 completed shard 2 (1 batches, 129.94s)
+2026-05-01 19:08:55 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 12 (Pipeline 12) on actor 0 for shard 2 (1 batches)
+2026-05-01 19:11:10 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 12 completed shard 2 (1 batches, 133.01s)
+2026-05-01 19:11:10 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 3 (1 batches)
+2026-05-01 19:12:38 | Controller | INFO | controller.py:1192 | [exp_0501_8:Controller] Pipeline 1 completed all 4 shards
+2026-05-01 19:12:38 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 1 completed shard 3 (1 batches, 85.32s)
+2026-05-01 19:12:38 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 3 (1 batches)
+2026-05-01 19:14:05 | Controller | INFO | controller.py:1192 | [exp_0501_8:Controller] Pipeline 2 completed all 4 shards
+2026-05-01 19:14:05 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 2 completed shard 3 (1 batches, 84.29s)
+2026-05-01 19:14:05 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 3 (1 batches)
+2026-05-01 19:15:31 | Controller | INFO | controller.py:1192 | [exp_0501_8:Controller] Pipeline 3 completed all 4 shards
+2026-05-01 19:15:31 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 3 completed shard 3 (1 batches, 83.77s)
+2026-05-01 19:15:31 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 3 (1 batches)
+2026-05-01 19:17:22 | Controller | INFO | controller.py:1192 | [exp_0501_8:Controller] Pipeline 4 completed all 4 shards
+2026-05-01 19:17:22 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 4 completed shard 3 (1 batches, 108.33s)
+2026-05-01 19:17:22 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 5 (Pipeline 5) on actor 0 for shard 3 (1 batches)
+2026-05-01 19:18:54 | Controller | INFO | controller.py:1192 | [exp_0501_8:Controller] Pipeline 5 completed all 4 shards
+2026-05-01 19:18:54 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 5 completed shard 3 (1 batches, 89.29s)
+2026-05-01 19:18:54 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 6 (Pipeline 6) on actor 0 for shard 3 (1 batches)
+2026-05-01 19:20:41 | Controller | INFO | controller.py:1192 | [exp_0501_8:Controller] Pipeline 6 completed all 4 shards
+2026-05-01 19:20:42 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 6 completed shard 3 (1 batches, 104.32s)
+2026-05-01 19:20:42 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 7 (Pipeline 7) on actor 0 for shard 3 (1 batches)
+2026-05-01 19:22:15 | Controller | INFO | controller.py:1192 | [exp_0501_8:Controller] Pipeline 7 completed all 4 shards
+2026-05-01 19:22:15 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 7 completed shard 3 (1 batches, 90.74s)
+2026-05-01 19:22:15 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 8 (Pipeline 8) on actor 0 for shard 3 (1 batches)
+2026-05-01 19:23:52 | Controller | INFO | controller.py:1192 | [exp_0501_8:Controller] Pipeline 8 completed all 4 shards
+2026-05-01 19:23:52 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 8 completed shard 3 (1 batches, 94.75s)
+2026-05-01 19:23:52 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 9 (Pipeline 9) on actor 0 for shard 3 (1 batches)
+2026-05-01 19:26:33 | Controller | INFO | controller.py:1192 | [exp_0501_8:Controller] Pipeline 9 completed all 4 shards
+2026-05-01 19:26:33 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 9 completed shard 3 (1 batches, 157.92s)
+2026-05-01 19:26:33 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 10 (Pipeline 10) on actor 0 for shard 3 (1 batches)
+2026-05-01 19:29:11 | Controller | INFO | controller.py:1192 | [exp_0501_8:Controller] Pipeline 10 completed all 4 shards
+2026-05-01 19:29:11 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 10 completed shard 3 (1 batches, 155.51s)
+2026-05-01 19:29:11 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 11 (Pipeline 11) on actor 0 for shard 3 (1 batches)
+2026-05-01 19:31:49 | Controller | INFO | controller.py:1192 | [exp_0501_8:Controller] Pipeline 11 completed all 4 shards
+2026-05-01 19:31:50 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 11 completed shard 3 (1 batches, 155.90s)
+2026-05-01 19:31:50 | Controller | INFO | controller.py:1422 | [exp_0501_8:Controller] Scheduling pipeline 12 (Pipeline 12) on actor 0 for shard 3 (1 batches)
+2026-05-01 19:34:25 | Controller | INFO | controller.py:1192 | [exp_0501_8:Controller] Pipeline 12 completed all 4 shards
+2026-05-01 19:34:25 | Controller | INFO | controller.py:1299 | [exp_0501_8:Controller] Pipeline 12 completed shard 3 (1 batches, 153.37s)
+2026-05-01 19:34:25 | Controller | INFO | controller.py:1386 | [exp_0501_8:Controller] All pipelines completed all shards!
+2026-05-01 19:34:25 | Controller | INFO | controller.py:695 | [exp_0501_8:Controller] Computing final metrics for all pipelines...
+2026-05-01 19:34:26 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0501_8:Experiment] Ending run: 044eda8243344fb1bdb023edb67a45fe, 1 in rf_mlflow
+2026-05-01 19:34:26 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0501_8:Experiment] Run 044eda8243344fb1bdb023edb67a45fe is not the active run, no local context to clear
+2026-05-01 19:34:26 | Controller | INFO | controller.py:853 | [exp_0501_8:Controller] Pipeline 1 (Pipeline 1) completed successfully
+2026-05-01 19:34:26 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0501_8:Experiment] Ending run: 159170e03e6547c097f476d8478bba77, 2 in rf_mlflow
+2026-05-01 19:34:26 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0501_8:Experiment] Run 159170e03e6547c097f476d8478bba77 is not the active run, no local context to clear
+2026-05-01 19:34:26 | Controller | INFO | controller.py:853 | [exp_0501_8:Controller] Pipeline 2 (Pipeline 2) completed successfully
+2026-05-01 19:34:26 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0501_8:Experiment] Ending run: 14f60f3cf59748c8824399d885d501ac, 3 in rf_mlflow
+2026-05-01 19:34:26 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0501_8:Experiment] Run 14f60f3cf59748c8824399d885d501ac is not the active run, no local context to clear
+2026-05-01 19:34:26 | Controller | INFO | controller.py:853 | [exp_0501_8:Controller] Pipeline 3 (Pipeline 3) completed successfully
+2026-05-01 19:34:27 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0501_8:Experiment] Ending run: c5c248399c424c2e9017cc23e01758a6, 4 in rf_mlflow
+2026-05-01 19:34:27 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0501_8:Experiment] Run c5c248399c424c2e9017cc23e01758a6 is not the active run, no local context to clear
+2026-05-01 19:34:27 | Controller | INFO | controller.py:853 | [exp_0501_8:Controller] Pipeline 4 (Pipeline 4) completed successfully
+2026-05-01 19:34:27 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0501_8:Experiment] Ending run: b37bab04deca4baeb672acbca1047e32, 5 in rf_mlflow
+2026-05-01 19:34:27 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0501_8:Experiment] Run b37bab04deca4baeb672acbca1047e32 is not the active run, no local context to clear
+2026-05-01 19:34:27 | Controller | INFO | controller.py:853 | [exp_0501_8:Controller] Pipeline 5 (Pipeline 5) completed successfully
+2026-05-01 19:34:27 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0501_8:Experiment] Ending run: 58c079587b014a7fba16a0eb312ef3a2, 6 in rf_mlflow
+2026-05-01 19:34:27 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0501_8:Experiment] Run 58c079587b014a7fba16a0eb312ef3a2 is not the active run, no local context to clear
+2026-05-01 19:34:27 | Controller | INFO | controller.py:853 | [exp_0501_8:Controller] Pipeline 6 (Pipeline 6) completed successfully
+2026-05-01 19:34:27 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0501_8:Experiment] Ending run: 91a7f6befc6e4e2daf7a0bf09f7ebe2c, 7 in rf_mlflow
+2026-05-01 19:34:27 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0501_8:Experiment] Run 91a7f6befc6e4e2daf7a0bf09f7ebe2c is not the active run, no local context to clear
+2026-05-01 19:34:27 | Controller | INFO | controller.py:853 | [exp_0501_8:Controller] Pipeline 7 (Pipeline 7) completed successfully
+2026-05-01 19:34:28 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0501_8:Experiment] Ending run: 073db422aa6d4a8a98c47d3d33f938cc, 8 in rf_mlflow
+2026-05-01 19:34:28 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0501_8:Experiment] Run 073db422aa6d4a8a98c47d3d33f938cc is not the active run, no local context to clear
+2026-05-01 19:34:28 | Controller | INFO | controller.py:853 | [exp_0501_8:Controller] Pipeline 8 (Pipeline 8) completed successfully
+2026-05-01 19:34:28 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0501_8:Experiment] Ending run: fd95dcf05a454e81a2986ca56edbd42c, 9 in rf_mlflow
+2026-05-01 19:34:28 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0501_8:Experiment] Run fd95dcf05a454e81a2986ca56edbd42c is not the active run, no local context to clear
+2026-05-01 19:34:28 | Controller | INFO | controller.py:853 | [exp_0501_8:Controller] Pipeline 9 (Pipeline 9) completed successfully
+2026-05-01 19:34:28 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0501_8:Experiment] Ending run: adacafe63442441da5f1f1981474fe96, 10 in rf_mlflow
+2026-05-01 19:34:28 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0501_8:Experiment] Run adacafe63442441da5f1f1981474fe96 is not the active run, no local context to clear
+2026-05-01 19:34:28 | Controller | INFO | controller.py:853 | [exp_0501_8:Controller] Pipeline 10 (Pipeline 10) completed successfully
+2026-05-01 19:34:28 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0501_8:Experiment] Ending run: eae4d0ed26ee42509e653e35a4bc25fe, 11 in rf_mlflow
+2026-05-01 19:34:28 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0501_8:Experiment] Run eae4d0ed26ee42509e653e35a4bc25fe is not the active run, no local context to clear
+2026-05-01 19:34:28 | Controller | INFO | controller.py:853 | [exp_0501_8:Controller] Pipeline 11 (Pipeline 11) completed successfully
+2026-05-01 19:34:29 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0501_8:Experiment] Ending run: ef961d56ea1245dea02f3aa658401c74, 12 in rf_mlflow
+2026-05-01 19:34:29 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0501_8:Experiment] Run ef961d56ea1245dea02f3aa658401c74 is not the active run, no local context to clear
+2026-05-01 19:34:29 | Controller | INFO | controller.py:853 | [exp_0501_8:Controller] Pipeline 12 (Pipeline 12) completed successfully
+2026-05-01 19:34:29 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0501_8:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-01 19:34:29 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0501_8:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-01 19:34:29 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0501_8:ExperimentUtils] Experiment exp_0501_8 ended
+2026-05-01 19:34:31 | Experiment | INFO | experiment.py:574 | [exp_0501_8:Experiment] All actors shut down
+2026-05-01 19:34:31 | Experiment | INFO | experiment.py:575 | [exp_0501_8:Experiment] Dispatcher will automatically shut down (daemon thread)

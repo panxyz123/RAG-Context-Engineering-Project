@@ -1,0 +1,174 @@
+2026-05-06 13:21:31 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0505_14:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-06 13:21:31 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0505_14:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-06 13:21:31 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0505_14:ExperimentUtils] Experiment exp_0505_14 ended
+2026-05-06 13:21:31 | Experiment | INFO | experiment.py:165 | [exp_0505_15:Experiment] The previously running experiment exp_0505_14 was forcibly ended. Created a new experiment 'exp_0505_15' with Experiment ID: 70 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0505_15
+2026-05-06 13:22:21 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0505_14:DocProcessingActor] DocProcessingActor initialized
+2026-05-06 13:22:21 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0505_14:DocProcessingActor] DocProcessingActor initialized
+2026-05-06 13:22:23 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0505_14:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-06 13:22:23 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0505_14:DocProcessingActor] Building document index...
+2026-05-06 13:22:23 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0505_14:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-06 13:22:23 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0505_14:DocProcessingActor] Building document index...
+2026-05-06 13:22:29 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0505_14:DocProcessingActor] Document index built successfully
+2026-05-06 13:22:29 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0505_14:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-06 13:22:29 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0505_14:DocProcessingActor] FAISS index serialized: 661788 bytes
+2026-05-06 13:22:29 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0505_14:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-06 13:22:30 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0505_14:DocProcessingActor] Document index built successfully
+2026-05-06 13:22:30 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0505_14:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-06 13:22:30 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0505_14:DocProcessingActor] FAISS index serialized: 1293400 bytes
+2026-05-06 13:22:30 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0505_14:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-06 13:22:53 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp_0505_14:QueryProcessingActor-0] Initializing new inference engine (config hash: 9e22e06f)
+2026-05-06 13:22:54 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_14:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 13:22:54 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_14:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 13:22:54 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_14:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 13:22:54 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_14:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 13:22:54 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_14:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 13:22:54 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_14:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 13:22:55 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 13:41:21 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0505_15:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-06 13:41:21 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0505_15:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-06 13:41:21 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0505_15:ExperimentUtils] Experiment exp_0505_15 ended
+2026-05-06 13:41:21 | Experiment | INFO | experiment.py:165 | [exp_0506_1:Experiment] The previously running experiment exp_0505_15 was forcibly ended. Created a new experiment 'exp_0506_1' with Experiment ID: 71 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0506_1
+2026-05-06 13:41:38 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0506_1:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-06 13:41:38 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0506_1:Experiment] Creating MLflow experiment: exp_0506_1
+2026-05-06 13:41:38 | Experiment | INFO | experiment.py:210 | [exp_0506_1:Experiment] Initialized MetricLogger experiment: 46
+2026-05-06 13:41:38 | Experiment | INFO | experiment.py:226 | [exp_0506_1:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-06 13:41:43 | Experiment | WARNING | experiment.py:381 | [exp_0506_1:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-06 13:41:43 | Experiment | INFO | experiment.py:383 | [exp_0506_1:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-06 13:41:43 | Experiment | INFO | experiment.py:392 | [exp_0506_1:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-06 13:41:43 | Controller | INFO | controller.py:895 | [exp_0506_1:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-06 13:41:43 | Controller | INFO | controller.py:900 | [exp_0506_1:Controller] Received 4 pipeline configuration(s)
+2026-05-06 13:41:43 | Controller | INFO | controller.py:309 | [exp_0506_1:Controller] Found 4 unique RAG context(s)
+2026-05-06 13:41:43 | Controller | INFO | controller.py:320 | [exp_0506_1:Controller] Will build new context 72ba70d9...
+2026-05-06 13:41:43 | Controller | INFO | controller.py:320 | [exp_0506_1:Controller] Will build new context 3e2df02b...
+2026-05-06 13:41:43 | Controller | INFO | controller.py:320 | [exp_0506_1:Controller] Will build new context e676b28b...
+2026-05-06 13:41:43 | Controller | INFO | controller.py:320 | [exp_0506_1:Controller] Will build new context 6907ed5f...
+2026-05-06 13:41:43 | Controller | INFO | controller.py:346 | [exp_0506_1:Controller] Building 4 context(s) in parallel...
+2026-05-06 13:41:43 | Controller | INFO | controller.py:373 | [exp_0506_1:Controller] Creating 4 DocProcessingActor(s) for parallel processing
+2026-05-06 13:41:44 | Controller | INFO | controller.py:461 | [exp_0506_1:Controller] Submitted 4 build task(s) in parallel
+2026-05-06 13:42:17 | Controller | INFO | controller.py:482 | [exp_0506_1:Controller] Built context 1 (72ba70d9...) successfully in 33.51s
+2026-05-06 13:42:17 | Controller | INFO | controller.py:482 | [exp_0506_1:Controller] Built context 2 (3e2df02b...) successfully in 33.53s
+2026-05-06 13:42:17 | Controller | INFO | controller.py:482 | [exp_0506_1:Controller] Built context 3 (e676b28b...) successfully in 33.53s
+2026-05-06 13:42:17 | Controller | INFO | controller.py:482 | [exp_0506_1:Controller] Built context 4 (6907ed5f...) successfully in 33.54s
+2026-05-06 13:42:17 | Controller | INFO | controller.py:523 | [exp_0506_1:Controller] Completed parallel context building for 4 context(s)
+2026-05-06 13:42:17 | Controller | INFO | controller.py:920 | [exp_0506_1:Controller] Created 1 query processing actors (generic pool)
+2026-05-06 13:42:17 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0506_1:Experiment] Created MLflow run: 3eabc0d74d8146bab709fc3c75567949, 1
+2026-05-06 13:42:17 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0506_1:Experiment] Created MLflow run: d1bda91ff12d42ee91197e4c7c552c26, 2
+2026-05-06 13:42:17 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0506_1:Experiment] Created MLflow run: 395925beee504772a31ba2df678518ae, 3
+2026-05-06 13:42:17 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0506_1:Experiment] Created MLflow run: d8c036202e2744e8815e271b55577520, 4
+2026-05-06 13:42:17 | Controller | INFO | controller.py:931 | [exp_0506_1:Controller] Initialized scheduler with 4 pipelines, 1 actors, 4 shards
+2026-05-06 13:42:17 | Controller | INFO | controller.py:1118 | [exp_0506_1:Controller] Created experiment-wide rate limiter actor for 4 OpenAI pipeline(s) with per-model limits (claude-sonnet-4-6: 120 RPM, 1000000 TPM)
+2026-05-06 13:42:17 | Controller | INFO | controller.py:1124 | [exp_0506_1:Controller] Starting multi-pipeline inference scheduling...
+2026-05-06 13:42:17 | Controller | INFO | controller.py:1422 | [exp_0506_1:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-06 13:45:07 | Controller | INFO | controller.py:1299 | [exp_0506_1:Controller] Pipeline 1 completed shard 0 (1 batches, 147.53s)
+2026-05-06 13:45:07 | Controller | INFO | controller.py:1422 | [exp_0506_1:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-05-06 13:48:23 | Controller | INFO | controller.py:1299 | [exp_0506_1:Controller] Pipeline 2 completed shard 0 (1 batches, 196.16s)
+2026-05-06 13:48:23 | Controller | INFO | controller.py:1422 | [exp_0506_1:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 0 (1 batches)
+2026-05-06 13:53:40 | Controller | INFO | controller.py:1299 | [exp_0506_1:Controller] Pipeline 3 completed shard 0 (1 batches, 316.57s)
+2026-05-06 13:53:40 | Controller | INFO | controller.py:1422 | [exp_0506_1:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 0 (1 batches)
+2026-05-06 13:56:49 | Controller | INFO | controller.py:1299 | [exp_0506_1:Controller] Pipeline 4 completed shard 0 (1 batches, 188.07s)
+2026-05-06 13:56:49 | Controller | INFO | controller.py:1422 | [exp_0506_1:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 1 (1 batches)
+2026-05-06 13:58:41 | Controller | INFO | controller.py:1299 | [exp_0506_1:Controller] Pipeline 1 completed shard 1 (1 batches, 111.85s)
+2026-05-06 13:58:41 | Controller | INFO | controller.py:1422 | [exp_0506_1:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 1 (1 batches)
+2026-05-06 14:01:35 | Controller | INFO | controller.py:1299 | [exp_0506_1:Controller] Pipeline 2 completed shard 1 (1 batches, 173.59s)
+2026-05-06 14:01:35 | Controller | INFO | controller.py:1422 | [exp_0506_1:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 1 (1 batches)
+2026-05-06 14:06:01 | Controller | INFO | controller.py:1299 | [exp_0506_1:Controller] Pipeline 3 completed shard 1 (1 batches, 264.88s)
+2026-05-06 14:06:01 | Controller | INFO | controller.py:1422 | [exp_0506_1:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 1 (1 batches)
+2026-05-06 14:08:40 | Controller | INFO | controller.py:1299 | [exp_0506_1:Controller] Pipeline 4 completed shard 1 (1 batches, 159.02s)
+2026-05-06 14:08:40 | Controller | INFO | controller.py:1422 | [exp_0506_1:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 2 (1 batches)
+2026-05-06 14:10:33 | InteractiveControl | INFO | interactive_control.py:161 | [exp_0506_1:InteractiveControl] Stopped pipeline 1 at 2 shards completed
+2026-05-06 14:10:33 | InteractiveControl | INFO | interactive_control.py:126 | [exp_0506_1:InteractiveControl] Completed IC operation 1: stop (pipeline 1)
+2026-05-06 14:10:33 | Controller | INFO | controller.py:1422 | [exp_0506_1:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 2 (1 batches)
+2026-05-06 14:10:38 | InteractiveControl | INFO | interactive_control.py:161 | [exp_0506_1:InteractiveControl] Stopped pipeline 2 at 2 shards completed
+2026-05-06 14:10:38 | InteractiveControl | INFO | interactive_control.py:126 | [exp_0506_1:InteractiveControl] Completed IC operation 2: stop (pipeline 2)
+2026-05-06 14:10:38 | Controller | INFO | controller.py:1422 | [exp_0506_1:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 2 (1 batches)
+2026-05-06 14:13:23 | InteractiveControl | INFO | interactive_control.py:161 | [exp_0506_1:InteractiveControl] Stopped pipeline 3 at 2 shards completed
+2026-05-06 14:13:23 | InteractiveControl | INFO | interactive_control.py:126 | [exp_0506_1:InteractiveControl] Completed IC operation 3: stop (pipeline 3)
+2026-05-06 14:13:23 | InteractiveControl | INFO | interactive_control.py:161 | [exp_0506_1:InteractiveControl] Stopped pipeline 4 at 2 shards completed
+2026-05-06 14:13:23 | InteractiveControl | INFO | interactive_control.py:126 | [exp_0506_1:InteractiveControl] Completed IC operation 4: stop (pipeline 4)
+2026-05-06 14:13:24 | InteractiveControl | INFO | interactive_control.py:161 | [exp_0506_1:InteractiveControl] Stopped pipeline 4 at 0 shards completed
+2026-05-06 14:13:24 | InteractiveControl | INFO | interactive_control.py:126 | [exp_0506_1:InteractiveControl] Completed IC operation 5: stop (pipeline 4)
+2026-05-06 14:13:24 | InteractiveControl | INFO | interactive_control.py:161 | [exp_0506_1:InteractiveControl] Stopped pipeline 4 at 0 shards completed
+2026-05-06 14:13:24 | InteractiveControl | INFO | interactive_control.py:126 | [exp_0506_1:InteractiveControl] Completed IC operation 6: stop (pipeline 4)
+2026-05-06 14:13:25 | InteractiveControl | INFO | interactive_control.py:161 | [exp_0506_1:InteractiveControl] Stopped pipeline 3 at 0 shards completed
+2026-05-06 14:13:25 | InteractiveControl | INFO | interactive_control.py:126 | [exp_0506_1:InteractiveControl] Completed IC operation 7: stop (pipeline 3)
+2026-05-06 14:13:25 | InteractiveControl | INFO | interactive_control.py:161 | [exp_0506_1:InteractiveControl] Stopped pipeline 4 at 0 shards completed
+2026-05-06 14:13:25 | InteractiveControl | INFO | interactive_control.py:126 | [exp_0506_1:InteractiveControl] Completed IC operation 8: stop (pipeline 4)
+2026-05-06 14:13:26 | InteractiveControl | INFO | interactive_control.py:161 | [exp_0506_1:InteractiveControl] Stopped pipeline 4 at 0 shards completed
+2026-05-06 14:13:26 | InteractiveControl | INFO | interactive_control.py:126 | [exp_0506_1:InteractiveControl] Completed IC operation 9: stop (pipeline 4)
+2026-05-06 14:13:26 | InteractiveControl | INFO | interactive_control.py:161 | [exp_0506_1:InteractiveControl] Stopped pipeline 3 at 0 shards completed
+2026-05-06 14:13:26 | InteractiveControl | INFO | interactive_control.py:126 | [exp_0506_1:InteractiveControl] Completed IC operation 10: stop (pipeline 3)
+2026-05-06 14:13:27 | Controller | INFO | controller.py:1386 | [exp_0506_1:Controller] All pipelines completed all shards!
+2026-05-06 14:13:27 | Controller | INFO | controller.py:695 | [exp_0506_1:Controller] Computing final metrics for all pipelines...
+2026-05-06 14:13:27 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0506_1:Experiment] Ending run: 3eabc0d74d8146bab709fc3c75567949, 1 in rf_mlflow
+2026-05-06 14:13:27 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0506_1:Experiment] Run 3eabc0d74d8146bab709fc3c75567949 is not the active run, no local context to clear
+2026-05-06 14:13:27 | Controller | INFO | controller.py:853 | [exp_0506_1:Controller] Pipeline 1 (Pipeline 1) completed successfully
+2026-05-06 14:13:27 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0506_1:Experiment] Ending run: d1bda91ff12d42ee91197e4c7c552c26, 2 in rf_mlflow
+2026-05-06 14:13:27 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0506_1:Experiment] Run d1bda91ff12d42ee91197e4c7c552c26 is not the active run, no local context to clear
+2026-05-06 14:13:27 | Controller | INFO | controller.py:853 | [exp_0506_1:Controller] Pipeline 2 (Pipeline 2) completed successfully
+2026-05-06 14:13:28 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0506_1:Experiment] Ending run: 395925beee504772a31ba2df678518ae, 3 in rf_mlflow
+2026-05-06 14:13:28 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0506_1:Experiment] Run 395925beee504772a31ba2df678518ae is not the active run, no local context to clear
+2026-05-06 14:13:28 | Controller | INFO | controller.py:853 | [exp_0506_1:Controller] Pipeline 3 (Pipeline 3) completed successfully
+2026-05-06 14:13:28 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0506_1:Experiment] Ending run: d8c036202e2744e8815e271b55577520, 4 in rf_mlflow
+2026-05-06 14:13:28 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0506_1:Experiment] Run d8c036202e2744e8815e271b55577520 is not the active run, no local context to clear
+2026-05-06 14:13:28 | Controller | INFO | controller.py:853 | [exp_0506_1:Controller] Pipeline 4 (Pipeline 4) completed successfully
+2026-05-06 14:13:28 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0506_1:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-06 14:13:28 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0506_1:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-06 14:13:28 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0506_1:ExperimentUtils] Experiment exp_0506_1 ended
+2026-05-06 14:13:31 | Experiment | INFO | experiment.py:574 | [exp_0506_1:Experiment] All actors shut down
+2026-05-06 14:13:31 | Experiment | INFO | experiment.py:575 | [exp_0506_1:Experiment] Dispatcher will automatically shut down (daemon thread)
+2026-05-06 14:28:14 | Experiment | INFO | experiment.py:165 | [exp_0506_2:Experiment] An experiment with the same name already exists. Created a new experiment 'exp_0506_2' with Experiment ID: 72 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0506_2
+2026-05-06 14:28:33 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0506_2:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-06 14:28:33 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0506_2:Experiment] Creating MLflow experiment: exp_0506_2
+2026-05-06 14:28:33 | Experiment | INFO | experiment.py:210 | [exp_0506_2:Experiment] Initialized MetricLogger experiment: 47
+2026-05-06 14:28:33 | Experiment | INFO | experiment.py:226 | [exp_0506_2:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-06 14:28:33 | Experiment | WARNING | experiment.py:381 | [exp_0506_2:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-06 14:28:33 | Experiment | INFO | experiment.py:383 | [exp_0506_2:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-06 14:28:33 | Experiment | INFO | experiment.py:392 | [exp_0506_2:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-06 14:28:34 | Controller | INFO | controller.py:895 | [exp_0506_2:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-06 14:28:34 | Controller | INFO | controller.py:900 | [exp_0506_2:Controller] Received 2 pipeline configuration(s)
+2026-05-06 14:28:34 | Controller | INFO | controller.py:309 | [exp_0506_2:Controller] Found 2 unique RAG context(s)
+2026-05-06 14:28:34 | Controller | INFO | controller.py:320 | [exp_0506_2:Controller] Will build new context 9928349a...
+2026-05-06 14:28:34 | Controller | INFO | controller.py:320 | [exp_0506_2:Controller] Will build new context 1e617313...
+2026-05-06 14:28:34 | Controller | INFO | controller.py:346 | [exp_0506_2:Controller] Building 2 context(s) in parallel...
+2026-05-06 14:28:34 | Controller | INFO | controller.py:373 | [exp_0506_2:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-05-06 14:28:34 | Controller | INFO | controller.py:461 | [exp_0506_2:Controller] Submitted 2 build task(s) in parallel
+2026-05-06 14:29:02 | Controller | INFO | controller.py:482 | [exp_0506_2:Controller] Built context 1 (9928349a...) successfully in 28.65s
+2026-05-06 14:29:02 | Controller | INFO | controller.py:482 | [exp_0506_2:Controller] Built context 2 (1e617313...) successfully in 28.67s
+2026-05-06 14:29:02 | Controller | INFO | controller.py:523 | [exp_0506_2:Controller] Completed parallel context building for 2 context(s)
+2026-05-06 14:29:03 | Controller | INFO | controller.py:920 | [exp_0506_2:Controller] Created 1 query processing actors (generic pool)
+2026-05-06 14:29:03 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0506_2:Experiment] Created MLflow run: 09d092d9e1364c4092eaa5e6559b2652, 1
+2026-05-06 14:29:03 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0506_2:Experiment] Created MLflow run: b5163459f1cb43918d854a419f7a42de, 2
+2026-05-06 14:29:03 | Controller | INFO | controller.py:931 | [exp_0506_2:Controller] Initialized scheduler with 2 pipelines, 1 actors, 4 shards
+2026-05-06 14:29:03 | Controller | INFO | controller.py:1118 | [exp_0506_2:Controller] Created experiment-wide rate limiter actor for 2 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-05-06 14:29:03 | Controller | INFO | controller.py:1124 | [exp_0506_2:Controller] Starting multi-pipeline inference scheduling...
+2026-05-06 14:29:03 | Controller | INFO | controller.py:1422 | [exp_0506_2:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-06 14:32:30 | Controller | INFO | controller.py:1299 | [exp_0506_2:Controller] Pipeline 1 completed shard 0 (1 batches, 183.48s)
+2026-05-06 14:32:30 | Controller | INFO | controller.py:1422 | [exp_0506_2:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-05-06 14:36:03 | Controller | INFO | controller.py:1299 | [exp_0506_2:Controller] Pipeline 2 completed shard 0 (1 batches, 212.57s)
+2026-05-06 14:36:03 | Controller | INFO | controller.py:1422 | [exp_0506_2:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 1 (1 batches)
+2026-05-06 14:38:53 | Controller | INFO | controller.py:1299 | [exp_0506_2:Controller] Pipeline 1 completed shard 1 (1 batches, 169.52s)
+2026-05-06 14:38:53 | Controller | INFO | controller.py:1422 | [exp_0506_2:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 1 (1 batches)
+2026-05-06 14:41:34 | Controller | INFO | controller.py:1299 | [exp_0506_2:Controller] Pipeline 2 completed shard 1 (1 batches, 159.98s)
+2026-05-06 14:41:34 | Controller | INFO | controller.py:1422 | [exp_0506_2:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 2 (1 batches)
+2026-05-06 14:44:34 | Controller | INFO | controller.py:1299 | [exp_0506_2:Controller] Pipeline 1 completed shard 2 (1 batches, 180.47s)
+2026-05-06 14:44:34 | Controller | INFO | controller.py:1422 | [exp_0506_2:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 2 (1 batches)
+2026-05-06 14:47:24 | Controller | INFO | controller.py:1299 | [exp_0506_2:Controller] Pipeline 2 completed shard 2 (1 batches, 168.96s)
+2026-05-06 14:47:24 | Controller | INFO | controller.py:1422 | [exp_0506_2:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 3 (1 batches)
+2026-05-06 14:50:21 | Controller | INFO | controller.py:1192 | [exp_0506_2:Controller] Pipeline 1 completed all 4 shards
+2026-05-06 14:50:21 | Controller | INFO | controller.py:1299 | [exp_0506_2:Controller] Pipeline 1 completed shard 3 (1 batches, 176.98s)
+2026-05-06 14:50:21 | Controller | INFO | controller.py:1422 | [exp_0506_2:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 3 (1 batches)
+2026-05-06 14:51:51 | InteractiveControl | INFO | interactive_control.py:161 | [exp_0506_2:InteractiveControl] Stopped pipeline 2 at 3 shards completed
+2026-05-06 14:51:51 | InteractiveControl | INFO | interactive_control.py:126 | [exp_0506_2:InteractiveControl] Completed IC operation 1: stop (pipeline 2)
+2026-05-06 14:51:52 | Controller | INFO | controller.py:1386 | [exp_0506_2:Controller] All pipelines completed all shards!
+2026-05-06 14:51:52 | Controller | INFO | controller.py:695 | [exp_0506_2:Controller] Computing final metrics for all pipelines...
+2026-05-06 14:51:52 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0506_2:Experiment] Ending run: 09d092d9e1364c4092eaa5e6559b2652, 1 in rf_mlflow
+2026-05-06 14:51:52 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0506_2:Experiment] Run 09d092d9e1364c4092eaa5e6559b2652 is not the active run, no local context to clear
+2026-05-06 14:51:52 | Controller | INFO | controller.py:853 | [exp_0506_2:Controller] Pipeline 1 (Pipeline 1) completed successfully
+2026-05-06 14:51:52 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0506_2:Experiment] Ending run: b5163459f1cb43918d854a419f7a42de, 2 in rf_mlflow
+2026-05-06 14:51:52 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0506_2:Experiment] Run b5163459f1cb43918d854a419f7a42de is not the active run, no local context to clear
+2026-05-06 14:51:52 | Controller | INFO | controller.py:853 | [exp_0506_2:Controller] Pipeline 2 (Pipeline 2) completed successfully
+2026-05-06 14:51:53 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0506_2:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-06 14:51:53 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0506_2:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-06 14:51:53 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0506_2:ExperimentUtils] Experiment exp_0506_2 ended
+2026-05-06 14:51:55 | Experiment | INFO | experiment.py:574 | [exp_0506_2:Experiment] All actors shut down
+2026-05-06 14:51:55 | Experiment | INFO | experiment.py:575 | [exp_0506_2:Experiment] Dispatcher will automatically shut down (daemon thread)

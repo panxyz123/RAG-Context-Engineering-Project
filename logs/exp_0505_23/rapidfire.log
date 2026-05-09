@@ -1,0 +1,78 @@
+2026-05-06 20:14:45 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0505_23:DocProcessingActor] DocProcessingActor initialized
+2026-05-06 20:14:45 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0505_23:DocProcessingActor] DocProcessingActor initialized
+2026-05-06 20:14:47 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0505_23:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-06 20:14:47 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0505_23:DocProcessingActor] Building document index...
+2026-05-06 20:14:48 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0505_23:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-06 20:14:48 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0505_23:DocProcessingActor] Building document index...
+2026-05-06 20:14:56 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0505_23:DocProcessingActor] Document index built successfully
+2026-05-06 20:14:56 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0505_23:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-06 20:14:56 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0505_23:DocProcessingActor] FAISS index serialized: 1675088 bytes
+2026-05-06 20:14:56 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0505_23:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-06 20:14:57 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0505_23:DocProcessingActor] Document index built successfully
+2026-05-06 20:14:57 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0505_23:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-06 20:14:57 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0505_23:DocProcessingActor] FAISS index serialized: 3124632 bytes
+2026-05-06 20:14:57 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0505_23:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-06 20:15:19 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp_0505_23:QueryProcessingActor-0] Initializing new inference engine (config hash: 626f3c61)
+2026-05-06 20:15:20 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_23:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 20:15:20 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_23:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 20:15:20 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_23:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 20:15:20 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_23:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 20:15:20 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_23:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 20:15:20 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_23:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 20:15:28 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 20:17:20 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_23:QueryProcessingActor-0] Reusing existing inference engine (config hash: 626f3c61)
+2026-05-06 20:17:20 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_23:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 20:17:20 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_23:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 20:17:20 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_23:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 20:17:20 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_23:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 20:17:20 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_23:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 20:17:20 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_23:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 20:17:29 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 20:19:29 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_23:QueryProcessingActor-0] Reusing existing inference engine (config hash: 626f3c61)
+2026-05-06 20:19:29 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_23:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 20:19:29 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_23:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 20:19:29 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_23:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 20:19:29 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_23:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 20:19:29 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_23:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 20:19:29 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_23:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 20:19:30 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 20:21:28 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_23:QueryProcessingActor-0] Reusing existing inference engine (config hash: 626f3c61)
+2026-05-06 20:21:28 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_23:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 20:21:28 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_23:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 20:21:28 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_23:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 20:21:28 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_23:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 20:21:28 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_23:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 20:21:28 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_23:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 20:21:30 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 20:24:14 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_23:QueryProcessingActor-0] Reusing existing inference engine (config hash: 626f3c61)
+2026-05-06 20:24:14 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_23:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 20:24:14 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_23:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 20:24:14 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_23:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 20:24:14 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_23:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 20:24:14 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_23:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 20:24:14 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_23:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 20:24:21 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 20:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_23:QueryProcessingActor-0] Reusing existing inference engine (config hash: 626f3c61)
+2026-05-06 20:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_23:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 20:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_23:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 20:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_23:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 20:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_23:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 20:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_23:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 20:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_23:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 20:25:31 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 20:27:17 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_23:QueryProcessingActor-0] Reusing existing inference engine (config hash: 626f3c61)
+2026-05-06 20:27:17 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_23:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 20:27:17 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_23:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 20:27:17 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_23:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 20:27:17 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_23:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 20:27:17 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_23:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 20:27:17 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_23:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 20:27:18 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 20:28:21 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_23:QueryProcessingActor-0] Reusing existing inference engine (config hash: 626f3c61)
+2026-05-06 20:28:21 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_23:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 20:28:21 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_23:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 20:28:21 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_23:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 20:28:21 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_23:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 20:28:21 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_23:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 20:28:21 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_23:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 20:28:25 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.

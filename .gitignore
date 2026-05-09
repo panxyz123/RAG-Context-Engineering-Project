@@ -4,7 +4,6 @@ __pycache__/
 *.pyc
 sourcedocs/
 sourcedocs.zip
-*.log
 tutorial_notebooks/
 core
 eval_scripts/

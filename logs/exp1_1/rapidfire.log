@@ -1,0 +1,15 @@
+2026-04-28 12:54:47 | Experiment | INFO | experiment.py:165 | [exp1_1:Experiment] An experiment with the same name already exists. Created a new experiment 'exp1_1' with Experiment ID: 2 at /home/yup031/rapidfireai/rapidfire_experiments/exp1_1
+2026-04-28 12:55:12 | Experiment | WARNING | metric_rfmetric_manager.py:57 | [exp1_1:Experiment] Failed to initialize MLflowMetricLogger: MLflow server not available at http://127.0.0.1:8852. MLflow logging will be disabled. MLflow logging is disabled.
+2026-04-28 12:55:12 | Experiment | INFO | experiment.py:210 | [exp1_1:Experiment] Initialized MetricLogger experiment: exp1_1
+2026-04-28 12:55:12 | Experiment | INFO | experiment.py:230 | [exp1_1:Experiment] Starting new dispatcher/api server at 127.0.0.1:8851.
+2026-04-28 12:55:12 | Experiment | INFO | dispatcher.py:1121 | [exp1_1:Experiment] Started interactive control dispatcher on http://127.0.0.1:8851
+2026-04-28 12:55:12 | Experiment | INFO | dispatcher.py:1122 | [exp1_1:Experiment] Use dispatcher API to dynamically stop/resume/delete/clone pipelines
+2026-04-28 15:33:18 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp1_1:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-04-28 15:33:18 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp1_1:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-04-28 15:33:18 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp1_1:ExperimentUtils] Experiment exp1_1 ended
+2026-04-28 15:33:18 | Experiment | INFO | experiment.py:165 | [exp1_2:Experiment] The previously running experiment exp1_1 was forcibly ended. Created a new experiment 'exp1_2' with Experiment ID: 3 at /home/yup031/rapidfireai/rapidfire_experiments/exp1_2
+2026-04-28 15:33:38 | Experiment | WARNING | metric_rfmetric_manager.py:57 | [exp1_2:Experiment] Failed to initialize MLflowMetricLogger: MLflow server not available at http://127.0.0.1:8852. MLflow logging will be disabled. MLflow logging is disabled.
+2026-04-28 15:33:38 | Experiment | INFO | experiment.py:210 | [exp1_2:Experiment] Initialized MetricLogger experiment: exp1_2
+2026-04-28 15:33:38 | Experiment | INFO | experiment.py:230 | [exp1_2:Experiment] Starting new dispatcher/api server at 127.0.0.1:8851.
+2026-04-28 15:33:38 | Experiment | INFO | dispatcher.py:1121 | [exp1_2:Experiment] Started interactive control dispatcher on http://127.0.0.1:8851
+2026-04-28 15:33:38 | Experiment | INFO | dispatcher.py:1122 | [exp1_2:Experiment] Use dispatcher API to dynamically stop/resume/delete/clone pipelines

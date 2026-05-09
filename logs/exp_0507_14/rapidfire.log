@@ -1,0 +1,229 @@
+2026-05-08 00:33:35 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0507_14:DocProcessingActor] DocProcessingActor initialized
+2026-05-08 00:33:36 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0507_14:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-08 00:33:36 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0507_14:DocProcessingActor] Building document index...
+2026-05-08 00:34:01 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0507_14:DocProcessingActor] Document index built successfully
+2026-05-08 00:34:01 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0507_14:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-08 00:34:01 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0507_14:DocProcessingActor] FAISS index serialized: 852536 bytes
+2026-05-08 00:34:01 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0507_14:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-08 00:34:24 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp_0507_14:QueryProcessingActor-0] Initializing new inference engine (config hash: 4a00b4bf)
+2026-05-08 00:34:24 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0507_14:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 00:34:24 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0507_14:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 00:34:24 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0507_14:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-08 00:34:24 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0507_14:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-08 00:34:24 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0507_14:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-08 00:34:24 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0507_14:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-08 00:34:28 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-08 00:39:40 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0507_14:QueryProcessingActor-0] Reusing existing inference engine (config hash: 4a00b4bf)
+2026-05-08 00:39:40 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0507_14:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 00:39:40 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0507_14:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 00:39:40 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0507_14:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-08 00:39:40 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0507_14:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-08 00:39:40 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0507_14:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-08 00:39:40 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0507_14:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-08 00:39:42 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-08 00:44:23 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0507_14:QueryProcessingActor-0] Reusing existing inference engine (config hash: 4a00b4bf)
+2026-05-08 00:44:23 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0507_14:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 00:44:23 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0507_14:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 00:44:23 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0507_14:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-08 00:44:23 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0507_14:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-08 00:44:23 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0507_14:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-08 00:44:23 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0507_14:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-08 00:45:53 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-08 00:50:58 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0507_14:QueryProcessingActor-0] Reusing existing inference engine (config hash: 4a00b4bf)
+2026-05-08 00:50:58 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0507_14:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-08 00:50:58 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0507_14:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-08 00:50:58 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0507_14:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-08 00:50:58 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0507_14:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-08 00:50:58 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0507_14:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-08 00:50:58 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0507_14:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-08 00:51:01 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-08 00:52:33 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0507_14:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-08 00:52:33 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0507_14:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-08 00:52:33 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0507_14:ExperimentUtils] Experiment exp_0507_14 ended
+2026-05-08 00:52:33 | Experiment | INFO | experiment.py:165 | [exp_0507_15:Experiment] The previously running experiment exp_0507_14 was forcibly ended. Created a new experiment 'exp_0507_15' with Experiment ID: 98 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0507_15
+2026-05-08 01:14:04 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0507_15:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-08 01:14:04 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0507_15:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-08 01:14:04 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0507_15:ExperimentUtils] Experiment exp_0507_15 ended
+2026-05-08 01:14:04 | Experiment | INFO | experiment.py:165 | [exp_0507_16:Experiment] The previously running experiment exp_0507_15 was forcibly ended. Created a new experiment 'exp_0507_16' with Experiment ID: 99 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0507_16
+2026-05-08 01:14:07 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0507_16:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-08 01:14:07 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0507_16:Experiment] Creating MLflow experiment: exp_0507_16
+2026-05-08 01:14:07 | Experiment | INFO | experiment.py:210 | [exp_0507_16:Experiment] Initialized MetricLogger experiment: 71
+2026-05-08 01:14:07 | Experiment | INFO | experiment.py:226 | [exp_0507_16:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-08 01:14:09 | Experiment | WARNING | experiment.py:381 | [exp_0507_16:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-08 01:14:09 | Experiment | INFO | experiment.py:383 | [exp_0507_16:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-08 01:14:09 | Experiment | INFO | experiment.py:392 | [exp_0507_16:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-08 01:14:09 | Controller | INFO | controller.py:895 | [exp_0507_16:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-08 01:14:09 | Controller | INFO | controller.py:900 | [exp_0507_16:Controller] Received 2 pipeline configuration(s)
+2026-05-08 01:14:09 | Controller | INFO | controller.py:309 | [exp_0507_16:Controller] Found 2 unique RAG context(s)
+2026-05-08 01:14:09 | Controller | INFO | controller.py:320 | [exp_0507_16:Controller] Will build new context 44134354...
+2026-05-08 01:14:09 | Controller | INFO | controller.py:320 | [exp_0507_16:Controller] Will build new context 9ceba536...
+2026-05-08 01:14:09 | Controller | INFO | controller.py:346 | [exp_0507_16:Controller] Building 2 context(s) in parallel...
+2026-05-08 01:14:09 | Controller | INFO | controller.py:373 | [exp_0507_16:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-05-08 01:14:10 | Controller | INFO | controller.py:461 | [exp_0507_16:Controller] Submitted 2 build task(s) in parallel
+2026-05-08 01:15:31 | Controller | INFO | controller.py:482 | [exp_0507_16:Controller] Built context 1 (44134354...) successfully in 82.12s
+2026-05-08 01:15:31 | Controller | INFO | controller.py:482 | [exp_0507_16:Controller] Built context 2 (9ceba536...) successfully in 82.12s
+2026-05-08 01:15:32 | Controller | INFO | controller.py:523 | [exp_0507_16:Controller] Completed parallel context building for 2 context(s)
+2026-05-08 01:15:32 | Controller | INFO | controller.py:920 | [exp_0507_16:Controller] Created 1 query processing actors (generic pool)
+2026-05-08 01:15:32 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0507_16:Experiment] Created MLflow run: 946075ebe2e74a6d99340cd23d24718c, 1
+2026-05-08 01:15:32 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0507_16:Experiment] Created MLflow run: fb22c0556b944de2ae5ce02d4fe240ef, 2
+2026-05-08 01:15:32 | Controller | INFO | controller.py:931 | [exp_0507_16:Controller] Initialized scheduler with 2 pipelines, 1 actors, 4 shards
+2026-05-08 01:15:32 | Controller | INFO | controller.py:1118 | [exp_0507_16:Controller] Created experiment-wide rate limiter actor for 2 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-05-08 01:15:32 | Controller | INFO | controller.py:1124 | [exp_0507_16:Controller] Starting multi-pipeline inference scheduling...
+2026-05-08 01:15:32 | Controller | INFO | controller.py:1422 | [exp_0507_16:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-08 01:19:03 | Controller | INFO | controller.py:1299 | [exp_0507_16:Controller] Pipeline 1 completed shard 0 (1 batches, 188.11s)
+2026-05-08 01:19:03 | Controller | INFO | controller.py:1422 | [exp_0507_16:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-05-08 01:24:05 | Controller | INFO | controller.py:1299 | [exp_0507_16:Controller] Pipeline 2 completed shard 0 (1 batches, 301.93s)
+2026-05-08 01:24:05 | Controller | INFO | controller.py:1422 | [exp_0507_16:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 1 (1 batches)
+2026-05-08 01:26:50 | Controller | INFO | controller.py:1299 | [exp_0507_16:Controller] Pipeline 1 completed shard 1 (1 batches, 164.57s)
+2026-05-08 01:26:50 | Controller | INFO | controller.py:1422 | [exp_0507_16:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 1 (1 batches)
+2026-05-08 01:31:38 | Controller | INFO | controller.py:1299 | [exp_0507_16:Controller] Pipeline 2 completed shard 1 (1 batches, 286.95s)
+2026-05-08 01:31:38 | Controller | INFO | controller.py:1422 | [exp_0507_16:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 2 (1 batches)
+2026-05-08 01:34:23 | Controller | INFO | controller.py:1299 | [exp_0507_16:Controller] Pipeline 1 completed shard 2 (1 batches, 164.65s)
+2026-05-08 01:34:23 | Controller | INFO | controller.py:1422 | [exp_0507_16:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 2 (1 batches)
+2026-05-08 01:38:23 | Controller | INFO | controller.py:1299 | [exp_0507_16:Controller] Pipeline 2 completed shard 2 (1 batches, 239.49s)
+2026-05-08 01:38:23 | Controller | INFO | controller.py:1422 | [exp_0507_16:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 3 (1 batches)
+2026-05-08 01:38:26 | Controller | ERROR | controller.py:1310 | [exp_0507_16:Controller] Pipeline 1 failed on shard 3
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=40626, ip=10.46.173.44, actor_id=ecabe2e7fb5263e9427779da01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f282bbb4aa0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 66.76164116999988, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+2026-05-08 01:38:26 | Controller | INFO | controller.py:1422 | [exp_0507_16:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 3 (1 batches)
+2026-05-08 01:38:27 | Controller | ERROR | controller.py:1310 | [exp_0507_16:Controller] Pipeline 2 failed on shard 3
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=40626, ip=10.46.173.44, actor_id=ecabe2e7fb5263e9427779da01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f282bbb4aa0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 66.76164116999988, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+2026-05-08 01:38:27 | Controller | INFO | controller.py:1386 | [exp_0507_16:Controller] All pipelines completed all shards!
+2026-05-08 01:38:27 | Controller | INFO | controller.py:695 | [exp_0507_16:Controller] Computing final metrics for all pipelines...
+2026-05-08 01:38:27 | Controller | WARNING | controller.py:708 | [exp_0507_16:Controller] Pipeline 1 failed, skipping final metrics
+2026-05-08 01:38:27 | Controller | WARNING | controller.py:708 | [exp_0507_16:Controller] Pipeline 2 failed, skipping final metrics
+2026-05-08 01:59:10 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0507_16:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-08 01:59:10 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0507_16:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-08 01:59:10 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0507_16:ExperimentUtils] Experiment exp_0507_16 ended
+2026-05-08 01:59:10 | Experiment | INFO | experiment.py:165 | [exp_0507_17:Experiment] The previously running experiment exp_0507_16 was forcibly ended. Created a new experiment 'exp_0507_17' with Experiment ID: 100 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0507_17
+2026-05-08 01:59:11 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0507_17:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-08 01:59:11 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0507_17:Experiment] Creating MLflow experiment: exp_0507_17
+2026-05-08 01:59:11 | Experiment | INFO | experiment.py:210 | [exp_0507_17:Experiment] Initialized MetricLogger experiment: 72
+2026-05-08 01:59:11 | Experiment | INFO | experiment.py:226 | [exp_0507_17:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-08 01:59:11 | Experiment | WARNING | experiment.py:381 | [exp_0507_17:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-08 01:59:11 | Experiment | INFO | experiment.py:383 | [exp_0507_17:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-08 01:59:11 | Experiment | INFO | experiment.py:392 | [exp_0507_17:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-08 01:59:11 | Controller | INFO | controller.py:895 | [exp_0507_17:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-08 01:59:11 | Controller | INFO | controller.py:900 | [exp_0507_17:Controller] Received 2 pipeline configuration(s)
+2026-05-08 01:59:11 | Controller | INFO | controller.py:309 | [exp_0507_17:Controller] Found 2 unique RAG context(s)
+2026-05-08 01:59:11 | Controller | INFO | controller.py:320 | [exp_0507_17:Controller] Will build new context e2461002...
+2026-05-08 01:59:11 | Controller | INFO | controller.py:320 | [exp_0507_17:Controller] Will build new context 84410cf7...
+2026-05-08 01:59:11 | Controller | INFO | controller.py:346 | [exp_0507_17:Controller] Building 2 context(s) in parallel...
+2026-05-08 01:59:11 | Controller | INFO | controller.py:373 | [exp_0507_17:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-05-08 01:59:11 | Controller | INFO | controller.py:461 | [exp_0507_17:Controller] Submitted 2 build task(s) in parallel
+2026-05-08 01:59:41 | Controller | INFO | controller.py:482 | [exp_0507_17:Controller] Built context 1 (e2461002...) successfully in 29.74s
+2026-05-08 01:59:41 | Controller | INFO | controller.py:482 | [exp_0507_17:Controller] Built context 2 (84410cf7...) successfully in 30.10s
+2026-05-08 01:59:41 | Controller | INFO | controller.py:523 | [exp_0507_17:Controller] Completed parallel context building for 2 context(s)
+2026-05-08 01:59:41 | Controller | INFO | controller.py:920 | [exp_0507_17:Controller] Created 1 query processing actors (generic pool)
+2026-05-08 01:59:41 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0507_17:Experiment] Created MLflow run: 45e137fa1e974169bf50ad0dbcbd40b4, 1
+2026-05-08 01:59:41 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0507_17:Experiment] Created MLflow run: 5631c9cfa44e4e2588f50123a8bba6e6, 2
+2026-05-08 01:59:42 | Controller | INFO | controller.py:931 | [exp_0507_17:Controller] Initialized scheduler with 2 pipelines, 1 actors, 4 shards
+2026-05-08 01:59:42 | Controller | INFO | controller.py:1118 | [exp_0507_17:Controller] Created experiment-wide rate limiter actor for 2 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-05-08 01:59:42 | Controller | INFO | controller.py:1124 | [exp_0507_17:Controller] Starting multi-pipeline inference scheduling...
+2026-05-08 01:59:42 | Controller | INFO | controller.py:1422 | [exp_0507_17:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-08 02:03:44 | Controller | INFO | controller.py:1299 | [exp_0507_17:Controller] Pipeline 1 completed shard 0 (1 batches, 218.68s)
+2026-05-08 02:03:44 | Controller | INFO | controller.py:1422 | [exp_0507_17:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-05-08 02:09:31 | Controller | INFO | controller.py:1299 | [exp_0507_17:Controller] Pipeline 2 completed shard 0 (1 batches, 346.78s)
+2026-05-08 02:09:31 | Controller | INFO | controller.py:1422 | [exp_0507_17:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 1 (1 batches)
+2026-05-08 02:11:34 | Controller | INFO | controller.py:1299 | [exp_0507_17:Controller] Pipeline 1 completed shard 1 (1 batches, 121.97s)
+2026-05-08 02:11:34 | Controller | INFO | controller.py:1422 | [exp_0507_17:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 1 (1 batches)
+2026-05-08 02:11:35 | Controller | ERROR | controller.py:1310 | [exp_0507_17:Controller] Pipeline 2 failed on shard 1
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=46153, ip=10.46.173.44, actor_id=fd9d8c95a9f99fcbf1dcd32201000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7ff018c01b80>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 33.91485239999992, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+2026-05-08 02:11:35 | Controller | INFO | controller.py:1422 | [exp_0507_17:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 2 (1 batches)
+2026-05-08 02:11:36 | Controller | ERROR | controller.py:1310 | [exp_0507_17:Controller] Pipeline 1 failed on shard 2
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=46153, ip=10.46.173.44, actor_id=fd9d8c95a9f99fcbf1dcd32201000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7ff018c01b80>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 33.91485239999992, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+2026-05-08 02:11:36 | Controller | INFO | controller.py:1386 | [exp_0507_17:Controller] All pipelines completed all shards!
+2026-05-08 02:11:36 | Controller | INFO | controller.py:695 | [exp_0507_17:Controller] Computing final metrics for all pipelines...
+2026-05-08 02:11:36 | Controller | WARNING | controller.py:708 | [exp_0507_17:Controller] Pipeline 1 failed, skipping final metrics
+2026-05-08 02:11:36 | Controller | WARNING | controller.py:708 | [exp_0507_17:Controller] Pipeline 2 failed, skipping final metrics

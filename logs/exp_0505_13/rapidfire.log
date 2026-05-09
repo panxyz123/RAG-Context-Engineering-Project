@@ -1,0 +1,133 @@
+2026-05-06 00:24:50 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0505_13:DocProcessingActor] DocProcessingActor initialized
+2026-05-06 00:24:50 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0505_13:DocProcessingActor] DocProcessingActor initialized
+2026-05-06 00:24:51 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0505_13:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-06 00:24:51 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0505_13:DocProcessingActor] Building document index...
+2026-05-06 00:24:52 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0505_13:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-06 00:24:52 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0505_13:DocProcessingActor] Building document index...
+2026-05-06 00:24:56 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0505_13:DocProcessingActor] Document index built successfully
+2026-05-06 00:24:56 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0505_13:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-06 00:24:56 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0505_13:DocProcessingActor] FAISS index serialized: 661788 bytes
+2026-05-06 00:24:56 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0505_13:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-06 00:25:08 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0505_13:DocProcessingActor] Document index built successfully
+2026-05-06 00:25:08 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0505_13:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-06 00:25:08 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0505_13:DocProcessingActor] FAISS index serialized: 1293400 bytes
+2026-05-06 00:25:08 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0505_13:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-06 00:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp_0505_13:QueryProcessingActor-0] Initializing new inference engine (config hash: 0b266ec1)
+2026-05-06 00:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_13:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 00:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_13:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 00:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_13:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 00:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_13:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 00:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_13:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 00:25:30 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_13:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 00:25:32 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 00:33:13 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_13:QueryProcessingActor-0] Reusing existing inference engine (config hash: 0b266ec1)
+2026-05-06 00:33:13 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_13:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 00:33:13 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_13:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 00:33:13 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_13:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 00:33:13 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_13:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 00:33:13 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_13:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 00:33:13 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_13:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 00:33:13 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 00:41:55 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_13:QueryProcessingActor-0] Reusing existing inference engine (config hash: 0b266ec1)
+2026-05-06 00:41:55 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_13:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 00:41:55 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_13:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 00:41:55 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_13:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 00:41:55 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_13:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 00:41:55 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_13:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 00:41:55 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_13:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 00:41:55 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 00:49:24 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_13:QueryProcessingActor-0] Reusing existing inference engine (config hash: 0b266ec1)
+2026-05-06 00:49:24 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_13:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 00:49:24 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_13:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 00:49:24 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_13:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 00:49:24 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_13:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 00:49:24 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_13:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 00:49:24 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_13:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 00:49:24 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 00:57:27 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_13:QueryProcessingActor-0] Reusing existing inference engine (config hash: 0b266ec1)
+2026-05-06 00:57:27 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_13:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 00:57:27 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_13:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 00:57:27 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_13:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 00:57:27 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_13:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 00:57:27 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_13:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 00:57:27 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_13:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 00:57:28 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 01:04:40 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_13:QueryProcessingActor-0] Reusing existing inference engine (config hash: 0b266ec1)
+2026-05-06 01:04:40 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_13:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-06 01:04:40 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_13:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-06 01:04:40 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_13:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-06 01:04:40 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_13:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-06 01:04:40 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_13:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-06 01:04:40 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_13:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-06 01:04:40 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-06 13:21:30 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0505_13:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-06 13:21:30 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0505_13:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-06 13:21:30 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0505_13:ExperimentUtils] Experiment exp_0505_13 ended
+2026-05-06 13:21:30 | Experiment | INFO | experiment.py:165 | [exp_0505_14:Experiment] The previously running experiment exp_0505_13 was forcibly ended. Created a new experiment 'exp_0505_14' with Experiment ID: 69 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0505_14
+2026-05-06 13:21:53 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0505_14:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-06 13:21:53 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0505_14:Experiment] Creating MLflow experiment: exp_0505_14
+2026-05-06 13:21:53 | Experiment | INFO | experiment.py:210 | [exp_0505_14:Experiment] Initialized MetricLogger experiment: 45
+2026-05-06 13:21:53 | Experiment | INFO | experiment.py:226 | [exp_0505_14:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-06 13:21:56 | Experiment | WARNING | experiment.py:381 | [exp_0505_14:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-06 13:21:56 | Experiment | INFO | experiment.py:383 | [exp_0505_14:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-06 13:21:56 | Experiment | INFO | experiment.py:392 | [exp_0505_14:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-06 13:21:57 | Controller | INFO | controller.py:895 | [exp_0505_14:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-06 13:21:57 | Controller | INFO | controller.py:900 | [exp_0505_14:Controller] Received 2 pipeline configuration(s)
+2026-05-06 13:21:57 | Controller | INFO | controller.py:309 | [exp_0505_14:Controller] Found 2 unique RAG context(s)
+2026-05-06 13:21:57 | Controller | INFO | controller.py:320 | [exp_0505_14:Controller] Will build new context a4fe7bb7...
+2026-05-06 13:21:57 | Controller | INFO | controller.py:320 | [exp_0505_14:Controller] Will build new context 252a55a3...
+2026-05-06 13:21:57 | Controller | INFO | controller.py:346 | [exp_0505_14:Controller] Building 2 context(s) in parallel...
+2026-05-06 13:21:57 | Controller | INFO | controller.py:373 | [exp_0505_14:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-05-06 13:21:58 | matplotlib.font_manager | INFO | font_manager.py:1639 | generated new fontManager
+2026-05-06 13:21:59 | Controller | INFO | controller.py:461 | [exp_0505_14:Controller] Submitted 2 build task(s) in parallel
+2026-05-06 13:22:29 | Controller | INFO | controller.py:482 | [exp_0505_14:Controller] Built context 1 (a4fe7bb7...) successfully in 32.56s
+2026-05-06 13:22:30 | Controller | INFO | controller.py:482 | [exp_0505_14:Controller] Built context 2 (252a55a3...) successfully in 32.83s
+2026-05-06 13:22:30 | Controller | INFO | controller.py:523 | [exp_0505_14:Controller] Completed parallel context building for 2 context(s)
+2026-05-06 13:22:30 | Controller | INFO | controller.py:920 | [exp_0505_14:Controller] Created 1 query processing actors (generic pool)
+2026-05-06 13:22:30 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0505_14:Experiment] Created MLflow run: 6177ca9229354c70a53f92de7fdd21c0, 1
+2026-05-06 13:22:30 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0505_14:Experiment] Created MLflow run: 37c582a1cc2a4887a6eee75793d87c0c, 2
+2026-05-06 13:22:30 | Controller | INFO | controller.py:931 | [exp_0505_14:Controller] Initialized scheduler with 2 pipelines, 1 actors, 4 shards
+2026-05-06 13:22:30 | Controller | INFO | controller.py:1118 | [exp_0505_14:Controller] Created experiment-wide rate limiter actor for 2 OpenAI pipeline(s) with per-model limits (claude-sonnet-4-6: 120 RPM, 1000000 TPM)
+2026-05-06 13:22:30 | Controller | INFO | controller.py:1124 | [exp_0505_14:Controller] Starting multi-pipeline inference scheduling...
+2026-05-06 13:22:30 | Controller | INFO | controller.py:1422 | [exp_0505_14:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-06 13:30:49 | Controller | ERROR | controller.py:1310 | [exp_0505_14:Controller] Pipeline 1 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1025, in get_objects
+    raise value
+ray.exceptions.ActorUnavailableError: The actor d066b6b029cf2253897d1e8c01000000 is unavailable: The actor is temporarily unavailable: RpcError: RPC error: Socket closed rpc_code: 14. The task may or may not have been executed on the actor.
+2026-05-06 13:30:49 | Controller | INFO | controller.py:1422 | [exp_0505_14:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-05-06 13:30:51 | Controller | ERROR | controller.py:1513 | [exp_0505_14:Controller] Pipeline 2 (Pipeline 2) failed to initialize on actor 0: The actor d066b6b029cf2253897d1e8c01000000 is unavailable: The actor is temporarily unavailable: RpcError: RPC error: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.41.226.223:41439: Failed to connect to remote host: Connection refused rpc_code: 14. The task may or may not have been executed on the actor.
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1499, in run_multi_pipeline_inference
+    ray.get(
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1025, in get_objects
+    raise value
+ray.exceptions.ActorUnavailableError: The actor d066b6b029cf2253897d1e8c01000000 is unavailable: The actor is temporarily unavailable: RpcError: RPC error: failed to connect to all addresses; last error: UNKNOWN: ipv4:10.41.226.223:41439: Failed to connect to remote host: Connection refused rpc_code: 14. The task may or may not have been executed on the actor.
+2026-05-06 13:30:51 | Controller | INFO | controller.py:1386 | [exp_0505_14:Controller] All pipelines completed all shards!
+2026-05-06 13:30:51 | Controller | INFO | controller.py:695 | [exp_0505_14:Controller] Computing final metrics for all pipelines...
+2026-05-06 13:30:51 | Controller | WARNING | controller.py:708 | [exp_0505_14:Controller] Pipeline 1 failed, skipping final metrics
+2026-05-06 13:30:51 | Controller | WARNING | controller.py:708 | [exp_0505_14:Controller] Pipeline 2 failed, skipping final metrics

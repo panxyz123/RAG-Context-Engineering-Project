@@ -1,0 +1,476 @@
+2026-05-07 22:58:28 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0507_11:DocProcessingActor] DocProcessingActor initialized
+2026-05-07 22:58:28 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0507_11:DocProcessingActor] DocProcessingActor initialized
+2026-05-07 22:58:28 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0507_11:DocProcessingActor] DocProcessingActor initialized
+2026-05-07 22:58:28 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0507_11:DocProcessingActor] DocProcessingActor initialized
+2026-05-07 22:58:30 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0507_11:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-07 22:58:30 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0507_11:DocProcessingActor] Building document index...
+2026-05-07 22:58:30 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0507_11:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-07 22:58:30 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0507_11:DocProcessingActor] Building document index...
+2026-05-07 22:58:30 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0507_11:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-07 22:58:30 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0507_11:DocProcessingActor] Building document index...
+2026-05-07 22:58:30 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0507_11:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-07 22:58:30 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0507_11:DocProcessingActor] Building document index...
+2026-05-07 22:58:35 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0507_11:DocProcessingActor] Document index built successfully
+2026-05-07 22:58:35 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0507_11:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-07 22:58:35 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0507_11:DocProcessingActor] FAISS index serialized: 818648 bytes
+2026-05-07 22:58:35 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0507_11:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-07 22:58:36 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0507_11:DocProcessingActor] Document index built successfully
+2026-05-07 22:58:36 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0507_11:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-07 22:58:36 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0507_11:DocProcessingActor] FAISS index serialized: 852536 bytes
+2026-05-07 22:58:36 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0507_11:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-07 22:58:36 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0507_11:DocProcessingActor] Document index built successfully
+2026-05-07 22:58:36 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0507_11:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-07 22:58:36 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0507_11:DocProcessingActor] FAISS index serialized: 1293400 bytes
+2026-05-07 22:58:36 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0507_11:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-07 22:58:37 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0507_11:DocProcessingActor] Document index built successfully
+2026-05-07 22:58:37 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0507_11:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-07 22:58:37 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0507_11:DocProcessingActor] FAISS index serialized: 1675088 bytes
+2026-05-07 22:58:37 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0507_11:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-07 22:59:00 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp_0507_11:QueryProcessingActor-0] Initializing new inference engine (config hash: b1aa8165)
+2026-05-07 22:59:00 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0507_11:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-07 22:59:00 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0507_11:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-07 22:59:00 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0507_11:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-07 22:59:00 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0507_11:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-07 22:59:00 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0507_11:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-07 22:59:00 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0507_11:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-07 22:59:02 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-07 23:02:35 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0507_11:QueryProcessingActor-0] Reusing existing inference engine (config hash: b1aa8165)
+2026-05-07 23:02:35 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0507_11:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-07 23:02:35 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0507_11:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-07 23:02:35 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0507_11:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-07 23:02:35 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0507_11:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-07 23:02:35 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0507_11:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-07 23:02:35 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0507_11:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-07 23:02:36 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-07 23:06:58 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0507_11:QueryProcessingActor-0] Reusing existing inference engine (config hash: b1aa8165)
+2026-05-07 23:06:58 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0507_11:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-07 23:06:58 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0507_11:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-07 23:06:58 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0507_11:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-07 23:06:58 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0507_11:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-07 23:06:58 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0507_11:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-07 23:06:58 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0507_11:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-07 23:06:58 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_0507_11:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 31.36052951999994, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_7925/3135223639.py", line 46, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 451, in get_context
+    batch_docs = self._retrieve_docs(batch_queries=batch_queries)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 468, in _retrieve_docs
+    return self.retriever.batch(batch_queries)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 919, in batch
+    return cast("list[Output]", list(executor.map(invoke, inputs, configs)))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/runnables/config.py", line 610, in _wrapped_fn
+    return contexts.pop().run(fn, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 912, in invoke
+    return self.invoke(input_, config, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/retrievers.py", line 222, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/vectorstores/base.py", line 1045, in _get_relevant_documents
+    docs = self.vectorstore.similarity_search(query, **kwargs_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/vectorstores/faiss.py", line 643, in similarity_search
+    docs_and_scores = self.similarity_search_with_score(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/vectorstores/faiss.py", line 515, in similarity_search_with_score
+    embedding = self._embed_query(query)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/vectorstores/faiss.py", line 266, in _embed_query
+    return self.embedding_function.embed_query(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_openai/embeddings/base.py", line 801, in embed_query
+    return self.embed_documents([text], **kwargs)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_openai/embeddings/base.py", line 740, in embed_documents
+    response = self.client.create(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 484, in safe_patch_function
+    patch_function(call_original, *args, **kwargs)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/openai/autolog.py", line 249, in patched_call
+    raw_result = original(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 475, in call_original
+    return call_original_fn_with_event_logging(_original_fn, og_args, og_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 426, in call_original_fn_with_event_logging
+    original_fn_result = original_fn(*og_args, **og_kwargs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 472, in _original_fn
+    original_result = original(*_og_args, **_og_kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/resources/embeddings.py", line 136, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/_base_client.py", line 1314, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/_base_client.py", line 1087, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 31.36052951999994, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+2026-05-07 23:06:59 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0507_11:QueryProcessingActor-0] Reusing existing inference engine (config hash: b1aa8165)
+2026-05-07 23:06:59 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0507_11:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-07 23:06:59 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0507_11:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-07 23:06:59 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0507_11:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-07 23:06:59 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0507_11:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-07 23:06:59 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0507_11:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-07 23:06:59 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0507_11:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-07 23:06:59 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_0507_11:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 31.36052951999994, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_7925/3135223639.py", line 46, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 451, in get_context
+    batch_docs = self._retrieve_docs(batch_queries=batch_queries)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 468, in _retrieve_docs
+    return self.retriever.batch(batch_queries)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 919, in batch
+    return cast("list[Output]", list(executor.map(invoke, inputs, configs)))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/runnables/config.py", line 610, in _wrapped_fn
+    return contexts.pop().run(fn, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 912, in invoke
+    return self.invoke(input_, config, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/retrievers.py", line 222, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/vectorstores/base.py", line 1045, in _get_relevant_documents
+    docs = self.vectorstore.similarity_search(query, **kwargs_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/vectorstores/faiss.py", line 643, in similarity_search
+    docs_and_scores = self.similarity_search_with_score(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/vectorstores/faiss.py", line 515, in similarity_search_with_score
+    embedding = self._embed_query(query)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/vectorstores/faiss.py", line 266, in _embed_query
+    return self.embedding_function.embed_query(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_openai/embeddings/base.py", line 801, in embed_query
+    return self.embed_documents([text], **kwargs)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_openai/embeddings/base.py", line 740, in embed_documents
+    response = self.client.create(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 484, in safe_patch_function
+    patch_function(call_original, *args, **kwargs)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/openai/autolog.py", line 249, in patched_call
+    raw_result = original(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 475, in call_original
+    return call_original_fn_with_event_logging(_original_fn, og_args, og_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 426, in call_original_fn_with_event_logging
+    original_fn_result = original_fn(*og_args, **og_kwargs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 472, in _original_fn
+    original_result = original(*_og_args, **_og_kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/resources/embeddings.py", line 136, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/_base_client.py", line 1314, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/_base_client.py", line 1087, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 31.36052951999994, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+2026-05-07 23:07:00 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0507_11:QueryProcessingActor-0] Reusing existing inference engine (config hash: b1aa8165)
+2026-05-07 23:07:00 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0507_11:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-07 23:07:00 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0507_11:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-07 23:07:00 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0507_11:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-07 23:07:00 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0507_11:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-07 23:07:00 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0507_11:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-07 23:07:00 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0507_11:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-07 23:07:01 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_0507_11:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 31.36052951999994, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_7925/3135223639.py", line 46, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 451, in get_context
+    batch_docs = self._retrieve_docs(batch_queries=batch_queries)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 468, in _retrieve_docs
+    return self.retriever.batch(batch_queries)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 919, in batch
+    return cast("list[Output]", list(executor.map(invoke, inputs, configs)))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/runnables/config.py", line 610, in _wrapped_fn
+    return contexts.pop().run(fn, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 912, in invoke
+    return self.invoke(input_, config, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/retrievers.py", line 222, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/vectorstores/base.py", line 1045, in _get_relevant_documents
+    docs = self.vectorstore.similarity_search(query, **kwargs_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/vectorstores/faiss.py", line 643, in similarity_search
+    docs_and_scores = self.similarity_search_with_score(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/vectorstores/faiss.py", line 515, in similarity_search_with_score
+    embedding = self._embed_query(query)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/vectorstores/faiss.py", line 266, in _embed_query
+    return self.embedding_function.embed_query(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_openai/embeddings/base.py", line 801, in embed_query
+    return self.embed_documents([text], **kwargs)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_openai/embeddings/base.py", line 740, in embed_documents
+    response = self.client.create(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 484, in safe_patch_function
+    patch_function(call_original, *args, **kwargs)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/openai/autolog.py", line 249, in patched_call
+    raw_result = original(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 475, in call_original
+    return call_original_fn_with_event_logging(_original_fn, og_args, og_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 426, in call_original_fn_with_event_logging
+    original_fn_result = original_fn(*og_args, **og_kwargs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 472, in _original_fn
+    original_result = original(*_og_args, **_og_kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/resources/embeddings.py", line 136, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/_base_client.py", line 1314, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/_base_client.py", line 1087, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 31.36052951999994, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+2026-05-07 23:07:01 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0507_11:QueryProcessingActor-0] Reusing existing inference engine (config hash: b1aa8165)
+2026-05-07 23:07:01 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0507_11:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-07 23:07:01 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0507_11:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-07 23:07:01 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0507_11:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-07 23:07:01 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0507_11:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-07 23:07:01 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0507_11:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-07 23:07:01 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0507_11:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-07 23:07:02 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_0507_11:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 31.36052951999994, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_7925/3135223639.py", line 46, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 451, in get_context
+    batch_docs = self._retrieve_docs(batch_queries=batch_queries)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 468, in _retrieve_docs
+    return self.retriever.batch(batch_queries)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 919, in batch
+    return cast("list[Output]", list(executor.map(invoke, inputs, configs)))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/conda/envs/cse234/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/runnables/config.py", line 610, in _wrapped_fn
+    return contexts.pop().run(fn, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 912, in invoke
+    return self.invoke(input_, config, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/retrievers.py", line 222, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_core/vectorstores/base.py", line 1045, in _get_relevant_documents
+    docs = self.vectorstore.similarity_search(query, **kwargs_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/vectorstores/faiss.py", line 643, in similarity_search
+    docs_and_scores = self.similarity_search_with_score(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/vectorstores/faiss.py", line 515, in similarity_search_with_score
+    embedding = self._embed_query(query)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/vectorstores/faiss.py", line 266, in _embed_query
+    return self.embedding_function.embed_query(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_openai/embeddings/base.py", line 801, in embed_query
+    return self.embed_documents([text], **kwargs)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_openai/embeddings/base.py", line 740, in embed_documents
+    response = self.client.create(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 484, in safe_patch_function
+    patch_function(call_original, *args, **kwargs)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/openai/autolog.py", line 249, in patched_call
+    raw_result = original(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 475, in call_original
+    return call_original_fn_with_event_logging(_original_fn, og_args, og_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 426, in call_original_fn_with_event_logging
+    original_fn_result = original_fn(*og_args, **og_kwargs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/autologging_utils/safety.py", line 472, in _original_fn
+    original_result = original(*_og_args, **_og_kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/resources/embeddings.py", line 136, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/_base_client.py", line 1314, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/_base_client.py", line 1087, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 31.36052951999994, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}

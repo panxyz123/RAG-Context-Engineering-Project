@@ -1,0 +1,92 @@
+2026-05-02 00:11:53 | Experiment | INFO | experiment.py:165 | [inference_run_1:Experiment] An experiment with the same name already exists. Created a new experiment 'inference_run_1' with Experiment ID: 35 at /home/yup031/rapidfireai/rapidfire_experiments/inference_run_1
+2026-05-02 00:12:12 | Experiment | INFO | metric_rfmetric_manager.py:55 | [inference_run_1:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-02 00:12:12 | Experiment | INFO | metric_rfmetric_manager.py:119 | [inference_run_1:Experiment] Creating MLflow experiment: inference_run_1
+2026-05-02 00:12:12 | Experiment | INFO | experiment.py:210 | [inference_run_1:Experiment] Initialized MetricLogger experiment: 24
+2026-05-02 00:12:13 | Experiment | INFO | experiment.py:226 | [inference_run_1:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-02 00:12:13 | __main__ | INFO | main.py:330 | Starting inference ...
+2026-05-02 00:12:13 | Experiment | WARNING | experiment.py:381 | [inference_run_1:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-02 00:12:13 | Experiment | INFO | experiment.py:383 | [inference_run_1:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-02 00:12:13 | Experiment | INFO | experiment.py:392 | [inference_run_1:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-02 00:12:13 | Controller | INFO | controller.py:895 | [inference_run_1:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-02 00:13:57 | Controller | INFO | controller.py:900 | [inference_run_1:Controller] Received 1 pipeline configuration(s)
+2026-05-02 00:13:57 | Controller | INFO | controller.py:309 | [inference_run_1:Controller] Found 1 unique RAG context(s)
+2026-05-02 00:13:57 | Controller | INFO | controller.py:320 | [inference_run_1:Controller] Will build new context 75360c46...
+2026-05-02 00:13:57 | Controller | INFO | controller.py:346 | [inference_run_1:Controller] Building 1 context(s) in parallel...
+2026-05-02 00:13:57 | Controller | INFO | controller.py:373 | [inference_run_1:Controller] Creating 1 DocProcessingActor(s) for parallel processing
+2026-05-02 00:14:00 | matplotlib.font_manager | INFO | font_manager.py:1639 | generated new fontManager
+2026-05-02 00:14:06 | Controller | INFO | controller.py:461 | [inference_run_1:Controller] Submitted 1 build task(s) in parallel
+2026-05-02 00:14:21 | DocProcessingActor | INFO | doc_actor.py:59 | [inference_run_1:DocProcessingActor] DocProcessingActor initialized
+2026-05-02 00:14:28 | Controller | ERROR | controller.py:496 | [inference_run_1:Controller] Failed to build context 1 (75360c46...)
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1025, in get_objects
+    raise value
+ray.exceptions.OutOfMemoryError: 1 worker(s) were killed due to the node running low on memory. Memory on the node (IP: 10.41.226.226, ID: cafcccf3a224053014f5fa4692718e74b2005f035658e4aa4b4d816c) was 30.48GB / 32.00GB (0.952646), which exceeds the memory usage threshold of 0.950000; Object store memory usage: [- objects spillable: 0; - bytes spillable: 0; - objects unsealed: 0; - bytes unsealed: 0; - objects in use: 1; - bytes in use: 4560948480; - objects evictable: 0; - bytes evictable: 0; ; - objects created by worker: 1; - bytes created by worker: 4560948480; - objects restored: 0; - bytes restored: 0; - objects received: 0; - bytes received: 0; - objects errored: 0; - bytes errored: 0; ; Eviction Stats:; (global lru) capacity: 7825253990; (global lru) used: 0%; (global lru) num objects: 0; (global lru) num evictions: 0; (global lru) bytes evicted: 0]; Ray killed 1 worker(s) based on the killing policy: [(Actor(f58d337da4f02a698310ba7001000000): job ID=01000000, lease ID=00000000ac377cba988af1402d6f56311a5c5eb0179bf0eb3157fcccf877c4b0, task name=DocProcessingActor.__init__, required resources={CPU: 2}, pid=6160, actual memory used=7.46GB, worker ID=9adc7c8621d77580f7548213c43b17e631b8b69df5cc0c1ab1fcd8b6)]; To see more information about memory usage on this node, use `ray logs raylet.out -ip 10.41.226.226`; Top 10 memory users: PID	MEM(GB)	COMMAND, 3837	9.31	python3 main.py --input /home/yup031/Project1/validation-set-golden-qa-pairs.json --output test_0501..., 6160	7.46	ray::DocProcessingActor.build_rag_components, 4316	1.39	/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/core/src/ray/gcs/gcs_server --log_dir=/tmp/r..., 755	0.58	/home/yup031/.vscode-server/cli/servers/Stable-560a9dba96f961efea7b1612916f89e5d5d4d679/server/node ..., 311	0.47	/home/yup031/.vscode-server/cli/servers/Stable-560a9dba96f961efea7b1612916f89e5d5d4d679/server/node ..., 1890	0.17	/opt/conda/envs/cse234/bin/python3 -c from multiprocessing.spawn import spawn_main; spawn_main(track..., 1892	0.17	/opt/conda/envs/cse234/bin/python3 -c from multiprocessing.spawn import spawn_main; spawn_main(track..., 2250	0.17	/opt/conda/envs/cse234/bin/python3 -m huey.bin.huey_consumer mlflow.server.jobs._periodic_tasks_cons..., 2249	0.17	/opt/conda/envs/cse234/bin/python3 -m huey.bin.huey_consumer mlflow.server.jobs._huey_consumer.huey_..., 2243	0.17	/opt/conda/envs/cse234/bin/python3 -m huey.bin.huey_consumer mlflow.server.jobs._huey_consumer.huey_..., Refer to the documentation on how to address the out of memory issue: https://docs.ray.io/en/latest/ray-core/scheduling/ray-oom-prevention.html. Consider provisioning more memory on this node or reducing task parallelism by requesting more CPUs per task. Set max_restarts and max_task_retries to enable retry when the task crashes due to OOM. To adjust the kill threshold, set the environment variable `RAY_memory_usage_threshold` when starting Ray. To disable worker killing, set the environment variable `RAY_memory_monitor_refresh_ms` to zero.
+2026-05-02 00:14:28 | Controller | ERROR | controller.py:350 | [inference_run_1:Controller] Failed to build contexts in parallel
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1025, in get_objects
+    raise value
+ray.exceptions.OutOfMemoryError: 1 worker(s) were killed due to the node running low on memory. Memory on the node (IP: 10.41.226.226, ID: cafcccf3a224053014f5fa4692718e74b2005f035658e4aa4b4d816c) was 30.48GB / 32.00GB (0.952646), which exceeds the memory usage threshold of 0.950000; Object store memory usage: [- objects spillable: 0; - bytes spillable: 0; - objects unsealed: 0; - bytes unsealed: 0; - objects in use: 1; - bytes in use: 4560948480; - objects evictable: 0; - bytes evictable: 0; ; - objects created by worker: 1; - bytes created by worker: 4560948480; - objects restored: 0; - bytes restored: 0; - objects received: 0; - bytes received: 0; - objects errored: 0; - bytes errored: 0; ; Eviction Stats:; (global lru) capacity: 7825253990; (global lru) used: 0%; (global lru) num objects: 0; (global lru) num evictions: 0; (global lru) bytes evicted: 0]; Ray killed 1 worker(s) based on the killing policy: [(Actor(f58d337da4f02a698310ba7001000000): job ID=01000000, lease ID=00000000ac377cba988af1402d6f56311a5c5eb0179bf0eb3157fcccf877c4b0, task name=DocProcessingActor.__init__, required resources={CPU: 2}, pid=6160, actual memory used=7.46GB, worker ID=9adc7c8621d77580f7548213c43b17e631b8b69df5cc0c1ab1fcd8b6)]; To see more information about memory usage on this node, use `ray logs raylet.out -ip 10.41.226.226`; Top 10 memory users: PID	MEM(GB)	COMMAND, 3837	9.31	python3 main.py --input /home/yup031/Project1/validation-set-golden-qa-pairs.json --output test_0501..., 6160	7.46	ray::DocProcessingActor.build_rag_components, 4316	1.39	/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/core/src/ray/gcs/gcs_server --log_dir=/tmp/r..., 755	0.58	/home/yup031/.vscode-server/cli/servers/Stable-560a9dba96f961efea7b1612916f89e5d5d4d679/server/node ..., 311	0.47	/home/yup031/.vscode-server/cli/servers/Stable-560a9dba96f961efea7b1612916f89e5d5d4d679/server/node ..., 1890	0.17	/opt/conda/envs/cse234/bin/python3 -c from multiprocessing.spawn import spawn_main; spawn_main(track..., 1892	0.17	/opt/conda/envs/cse234/bin/python3 -c from multiprocessing.spawn import spawn_main; spawn_main(track..., 2250	0.17	/opt/conda/envs/cse234/bin/python3 -m huey.bin.huey_consumer mlflow.server.jobs._periodic_tasks_cons..., 2249	0.17	/opt/conda/envs/cse234/bin/python3 -m huey.bin.huey_consumer mlflow.server.jobs._huey_consumer.huey_..., 2243	0.17	/opt/conda/envs/cse234/bin/python3 -m huey.bin.huey_consumer mlflow.server.jobs._huey_consumer.huey_..., Refer to the documentation on how to address the out of memory issue: https://docs.ray.io/en/latest/ray-core/scheduling/ray-oom-prevention.html. Consider provisioning more memory on this node or reducing task parallelism by requesting more CPUs per task. Set max_restarts and max_task_retries to enable retry when the task crashes due to OOM. To adjust the kill threshold, set the environment variable `RAY_memory_usage_threshold` when starting Ray. To disable worker killing, set the environment variable `RAY_memory_monitor_refresh_ms` to zero.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 1
+2026-05-02 00:14:28 | Experiment | ERROR | experiment.py:423 | [inference_run_1:Experiment] Error running multi-config experiment
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1025, in get_objects
+    raise value
+ray.exceptions.OutOfMemoryError: 1 worker(s) were killed due to the node running low on memory. Memory on the node (IP: 10.41.226.226, ID: cafcccf3a224053014f5fa4692718e74b2005f035658e4aa4b4d816c) was 30.48GB / 32.00GB (0.952646), which exceeds the memory usage threshold of 0.950000; Object store memory usage: [- objects spillable: 0; - bytes spillable: 0; - objects unsealed: 0; - bytes unsealed: 0; - objects in use: 1; - bytes in use: 4560948480; - objects evictable: 0; - bytes evictable: 0; ; - objects created by worker: 1; - bytes created by worker: 4560948480; - objects restored: 0; - bytes restored: 0; - objects received: 0; - bytes received: 0; - objects errored: 0; - bytes errored: 0; ; Eviction Stats:; (global lru) capacity: 7825253990; (global lru) used: 0%; (global lru) num objects: 0; (global lru) num evictions: 0; (global lru) bytes evicted: 0]; Ray killed 1 worker(s) based on the killing policy: [(Actor(f58d337da4f02a698310ba7001000000): job ID=01000000, lease ID=00000000ac377cba988af1402d6f56311a5c5eb0179bf0eb3157fcccf877c4b0, task name=DocProcessingActor.__init__, required resources={CPU: 2}, pid=6160, actual memory used=7.46GB, worker ID=9adc7c8621d77580f7548213c43b17e631b8b69df5cc0c1ab1fcd8b6)]; To see more information about memory usage on this node, use `ray logs raylet.out -ip 10.41.226.226`; Top 10 memory users: PID	MEM(GB)	COMMAND, 3837	9.31	python3 main.py --input /home/yup031/Project1/validation-set-golden-qa-pairs.json --output test_0501..., 6160	7.46	ray::DocProcessingActor.build_rag_components, 4316	1.39	/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/core/src/ray/gcs/gcs_server --log_dir=/tmp/r..., 755	0.58	/home/yup031/.vscode-server/cli/servers/Stable-560a9dba96f961efea7b1612916f89e5d5d4d679/server/node ..., 311	0.47	/home/yup031/.vscode-server/cli/servers/Stable-560a9dba96f961efea7b1612916f89e5d5d4d679/server/node ..., 1890	0.17	/opt/conda/envs/cse234/bin/python3 -c from multiprocessing.spawn import spawn_main; spawn_main(track..., 1892	0.17	/opt/conda/envs/cse234/bin/python3 -c from multiprocessing.spawn import spawn_main; spawn_main(track..., 2250	0.17	/opt/conda/envs/cse234/bin/python3 -m huey.bin.huey_consumer mlflow.server.jobs._periodic_tasks_cons..., 2249	0.17	/opt/conda/envs/cse234/bin/python3 -m huey.bin.huey_consumer mlflow.server.jobs._huey_consumer.huey_..., 2243	0.17	/opt/conda/envs/cse234/bin/python3 -m huey.bin.huey_consumer mlflow.server.jobs._huey_consumer.huey_..., Refer to the documentation on how to address the out of memory issue: https://docs.ray.io/en/latest/ray-core/scheduling/ray-oom-prevention.html. Consider provisioning more memory on this node or reducing task parallelism by requesting more CPUs per task. Set max_restarts and max_task_retries to enable retry when the task crashes due to OOM. To adjust the kill threshold, set the environment variable `RAY_memory_usage_threshold` when starting Ray. To disable worker killing, set the environment variable `RAY_memory_monitor_refresh_ms` to zero.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/experiment.py", line 412, in run_evals
+    results = self.controller.run_multi_pipeline_inference(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 903, in run_multi_pipeline_inference
+    self._setup_context_generators(config_leaves, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 1

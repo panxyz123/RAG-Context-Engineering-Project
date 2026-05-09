@@ -1,0 +1,264 @@
+2026-05-01 12:19:29 | Experiment | INFO | experiment.py:165 | [exp_0501_1:Experiment] Experiment exp_0501_1 created with Experiment ID: 26 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0501_1
+2026-05-01 12:19:50 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0501_1:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-01 12:19:50 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0501_1:Experiment] Creating MLflow experiment: exp_0501_1
+2026-05-01 12:19:51 | Experiment | INFO | experiment.py:210 | [exp_0501_1:Experiment] Initialized MetricLogger experiment: 15
+2026-05-01 12:19:51 | Experiment | INFO | experiment.py:226 | [exp_0501_1:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-01 12:28:52 | Experiment | WARNING | experiment.py:381 | [exp_0501_1:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-01 12:28:52 | Experiment | INFO | experiment.py:383 | [exp_0501_1:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-01 12:28:52 | Experiment | INFO | experiment.py:392 | [exp_0501_1:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-01 12:28:53 | Controller | INFO | controller.py:895 | [exp_0501_1:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-01 12:28:53 | Controller | INFO | controller.py:900 | [exp_0501_1:Controller] Received 6 pipeline configuration(s)
+2026-05-01 12:28:53 | Controller | INFO | controller.py:309 | [exp_0501_1:Controller] Found 3 unique RAG context(s)
+2026-05-01 12:28:53 | Controller | INFO | controller.py:320 | [exp_0501_1:Controller] Will build new context 68167923...
+2026-05-01 12:28:53 | Controller | INFO | controller.py:320 | [exp_0501_1:Controller] Will build new context de80d60f...
+2026-05-01 12:28:53 | Controller | INFO | controller.py:320 | [exp_0501_1:Controller] Will build new context 1c9b8618...
+2026-05-01 12:28:53 | Controller | INFO | controller.py:346 | [exp_0501_1:Controller] Building 3 context(s) in parallel...
+2026-05-01 12:28:53 | Controller | INFO | controller.py:373 | [exp_0501_1:Controller] Creating 3 DocProcessingActor(s) for parallel processing
+2026-05-01 12:28:55 | matplotlib.font_manager | INFO | font_manager.py:1639 | generated new fontManager
+2026-05-01 12:28:55 | Controller | INFO | controller.py:461 | [exp_0501_1:Controller] Submitted 3 build task(s) in parallel
+2026-05-01 12:29:17 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0501_1:DocProcessingActor] DocProcessingActor initialized
+2026-05-01 12:29:17 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0501_1:DocProcessingActor] DocProcessingActor initialized
+2026-05-01 12:29:17 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0501_1:DocProcessingActor] DocProcessingActor initialized
+2026-05-01 12:29:19 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0501_1:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-01 12:29:19 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0501_1:DocProcessingActor] Building document index...
+2026-05-01 12:29:19 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0501_1:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-01 12:29:19 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0501_1:DocProcessingActor] Building document index...
+2026-05-01 12:29:19 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0501_1:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-01 12:29:19 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0501_1:DocProcessingActor] Building document index...
+2026-05-01 12:29:19 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-01 12:29:19 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-01 12:29:20 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-01 12:29:23 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp_0501_1:DocProcessingActor] Failed to build RAG components: NameError: name 'tiktoken' is not defined
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 416, in build_pipeline
+    self._build_vector_store()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 359, in _build_vector_store
+    documents = self._split_documents(documents)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 227, in _split_documents
+    return self.text_splitter.split_documents(documents)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_1698/2778756401.py", line 181, in split_documents
+  File "/tmp/ipykernel_1698/2778756401.py", line 48, in rst_structural_splitter
+NameError: name 'tiktoken' is not defined
+2026-05-01 12:29:27 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0501_1:DocProcessingActor] Document index built successfully
+2026-05-01 12:29:27 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0501_1:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-01 12:29:27 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0501_1:DocProcessingActor] FAISS index serialized: 1276456 bytes
+2026-05-01 12:29:27 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0501_1:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-01 12:29:27 | Controller | INFO | controller.py:482 | [exp_0501_1:Controller] Built context 1 (68167923...) successfully in 34.14s
+2026-05-01 12:29:30 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0501_1:DocProcessingActor] Document index built successfully
+2026-05-01 12:29:30 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0501_1:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-01 12:29:30 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0501_1:DocProcessingActor] FAISS index serialized: 2730492 bytes
+2026-05-01 12:29:30 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0501_1:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-01 12:29:30 | Controller | INFO | controller.py:482 | [exp_0501_1:Controller] Built context 2 (de80d60f...) successfully in 36.76s
+2026-05-01 12:29:30 | Controller | ERROR | controller.py:496 | [exp_0501_1:Controller] Failed to build context 3 (1c9b8618...)
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=7184, ip=10.46.173.27, actor_id=2c519af95c84a9e12d9ff0d901000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7fe96ce3e330>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: NameError: name 'tiktoken' is not defined
+2026-05-01 12:29:30 | Controller | ERROR | controller.py:350 | [exp_0501_1:Controller] Failed to build contexts in parallel
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=7184, ip=10.46.173.27, actor_id=2c519af95c84a9e12d9ff0d901000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7fe96ce3e330>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: NameError: name 'tiktoken' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 3
+2026-05-01 12:29:30 | Experiment | ERROR | experiment.py:423 | [exp_0501_1:Experiment] Error running multi-config experiment
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=7184, ip=10.46.173.27, actor_id=2c519af95c84a9e12d9ff0d901000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7fe96ce3e330>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: NameError: name 'tiktoken' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/experiment.py", line 412, in run_evals
+    results = self.controller.run_multi_pipeline_inference(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 903, in run_multi_pipeline_inference
+    self._setup_context_generators(config_leaves, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 3
+2026-05-01 12:30:00 | Experiment | WARNING | experiment.py:381 | [exp_0501_1:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-01 12:30:00 | Experiment | INFO | experiment.py:383 | [exp_0501_1:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-01 12:30:00 | Experiment | INFO | experiment.py:392 | [exp_0501_1:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-01 12:30:00 | Controller | INFO | controller.py:895 | [exp_0501_1:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-01 12:30:00 | Controller | INFO | controller.py:900 | [exp_0501_1:Controller] Received 6 pipeline configuration(s)
+2026-05-01 12:30:00 | Controller | INFO | controller.py:309 | [exp_0501_1:Controller] Found 3 unique RAG context(s)
+2026-05-01 12:30:00 | Controller | INFO | controller.py:316 | [exp_0501_1:Controller] Context 68167923... already in cache (session), reusing
+2026-05-01 12:30:00 | Controller | INFO | controller.py:316 | [exp_0501_1:Controller] Context de80d60f... already in cache (session), reusing
+2026-05-01 12:30:00 | Controller | INFO | controller.py:320 | [exp_0501_1:Controller] Will build new context 1c9b8618...
+2026-05-01 12:30:00 | Controller | INFO | controller.py:346 | [exp_0501_1:Controller] Building 1 context(s) in parallel...
+2026-05-01 12:30:00 | Controller | INFO | controller.py:373 | [exp_0501_1:Controller] Creating 1 DocProcessingActor(s) for parallel processing
+2026-05-01 12:30:00 | Controller | INFO | controller.py:461 | [exp_0501_1:Controller] Submitted 1 build task(s) in parallel
+2026-05-01 12:30:22 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0501_1:DocProcessingActor] DocProcessingActor initialized
+2026-05-01 12:30:24 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0501_1:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-01 12:30:24 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0501_1:DocProcessingActor] Building document index...
+2026-05-01 12:30:24 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-05-01 12:30:26 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp_0501_1:DocProcessingActor] Failed to build RAG components: NameError: name 'tiktoken' is not defined
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 416, in build_pipeline
+    self._build_vector_store()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 359, in _build_vector_store
+    documents = self._split_documents(documents)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 227, in _split_documents
+    return self.text_splitter.split_documents(documents)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_1698/2778756401.py", line 181, in split_documents
+  File "/tmp/ipykernel_1698/2778756401.py", line 48, in rst_structural_splitter
+NameError: name 'tiktoken' is not defined
+2026-05-01 12:30:26 | Controller | ERROR | controller.py:496 | [exp_0501_1:Controller] Failed to build context 3 (1c9b8618...)
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=7483, ip=10.46.173.27, actor_id=f15d7908492ec53460807cab01000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7f27c7b8b3b0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: NameError: name 'tiktoken' is not defined
+2026-05-01 12:30:26 | Controller | ERROR | controller.py:350 | [exp_0501_1:Controller] Failed to build contexts in parallel
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=7483, ip=10.46.173.27, actor_id=f15d7908492ec53460807cab01000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7f27c7b8b3b0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: NameError: name 'tiktoken' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 3
+2026-05-01 12:30:26 | Experiment | ERROR | experiment.py:423 | [exp_0501_1:Experiment] Error running multi-config experiment
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=7483, ip=10.46.173.27, actor_id=f15d7908492ec53460807cab01000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7f27c7b8b3b0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: NameError: name 'tiktoken' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/experiment.py", line 412, in run_evals
+    results = self.controller.run_multi_pipeline_inference(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 903, in run_multi_pipeline_inference
+    self._setup_context_generators(config_leaves, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 3

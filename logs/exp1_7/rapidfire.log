@@ -1,0 +1,104 @@
+2026-04-28 16:32:27 | DocProcessingActor | INFO | doc_actor.py:59 | [exp1_7:DocProcessingActor] DocProcessingActor initialized
+2026-04-28 16:32:27 | DocProcessingActor | INFO | doc_actor.py:59 | [exp1_7:DocProcessingActor] DocProcessingActor initialized
+2026-04-28 16:32:29 | DocProcessingActor | INFO | doc_actor.py:96 | [exp1_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-28 16:32:29 | DocProcessingActor | INFO | doc_actor.py:107 | [exp1_7:DocProcessingActor] Building document index...
+2026-04-28 16:32:29 | DocProcessingActor | INFO | doc_actor.py:96 | [exp1_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-28 16:32:29 | DocProcessingActor | INFO | doc_actor.py:107 | [exp1_7:DocProcessingActor] Building document index...
+2026-04-28 16:32:29 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-28 16:32:30 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-28 16:32:33 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp1_7:DocProcessingActor] Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 416, in build_pipeline
+    self._build_vector_store()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 357, in _build_vector_store
+    documents = self._load_documents()
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 214, in _load_documents
+    return self.document_loader.load() if self.document_loader is not None else []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 117, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 123, in lazy_load
+    raise FileNotFoundError(f"Directory not found: '{self.path}'")
+FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+2026-04-28 16:32:33 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp1_7:DocProcessingActor] Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 416, in build_pipeline
+    self._build_vector_store()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 357, in _build_vector_store
+    documents = self._load_documents()
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 214, in _load_documents
+    return self.document_loader.load() if self.document_loader is not None else []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 117, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 123, in lazy_load
+    raise FileNotFoundError(f"Directory not found: '{self.path}'")
+FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+2026-04-28 16:35:50 | DocProcessingActor | INFO | doc_actor.py:59 | [exp1_7:DocProcessingActor] DocProcessingActor initialized
+2026-04-28 16:35:50 | DocProcessingActor | INFO | doc_actor.py:59 | [exp1_7:DocProcessingActor] DocProcessingActor initialized
+2026-04-28 16:35:52 | DocProcessingActor | INFO | doc_actor.py:96 | [exp1_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-28 16:35:52 | DocProcessingActor | INFO | doc_actor.py:107 | [exp1_7:DocProcessingActor] Building document index...
+2026-04-28 16:35:52 | DocProcessingActor | INFO | doc_actor.py:96 | [exp1_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-28 16:35:52 | DocProcessingActor | INFO | doc_actor.py:107 | [exp1_7:DocProcessingActor] Building document index...
+2026-04-28 16:35:53 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-28 16:35:53 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-28 16:35:54 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp1_7:DocProcessingActor] Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 416, in build_pipeline
+    self._build_vector_store()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 357, in _build_vector_store
+    documents = self._load_documents()
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 214, in _load_documents
+    return self.document_loader.load() if self.document_loader is not None else []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 117, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 123, in lazy_load
+    raise FileNotFoundError(f"Directory not found: '{self.path}'")
+FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+2026-04-28 16:35:54 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp1_7:DocProcessingActor] Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 416, in build_pipeline
+    self._build_vector_store()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 357, in _build_vector_store
+    documents = self._load_documents()
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 214, in _load_documents
+    return self.document_loader.load() if self.document_loader is not None else []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 117, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 123, in lazy_load
+    raise FileNotFoundError(f"Directory not found: '{self.path}'")
+FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+2026-04-28 16:37:39 | DocProcessingActor | INFO | doc_actor.py:59 | [exp1_7:DocProcessingActor] DocProcessingActor initialized
+2026-04-28 16:37:39 | DocProcessingActor | INFO | doc_actor.py:59 | [exp1_7:DocProcessingActor] DocProcessingActor initialized
+2026-04-28 16:37:41 | DocProcessingActor | INFO | doc_actor.py:96 | [exp1_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-28 16:37:41 | DocProcessingActor | INFO | doc_actor.py:107 | [exp1_7:DocProcessingActor] Building document index...
+2026-04-28 16:37:41 | DocProcessingActor | INFO | doc_actor.py:96 | [exp1_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-28 16:37:41 | DocProcessingActor | INFO | doc_actor.py:107 | [exp1_7:DocProcessingActor] Building document index...
+2026-04-28 16:37:41 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-28 16:37:42 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-28 16:37:46 | DocProcessingActor | INFO | doc_actor.py:109 | [exp1_7:DocProcessingActor] Document index built successfully
+2026-04-28 16:37:46 | DocProcessingActor | INFO | doc_actor.py:134 | [exp1_7:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-04-28 16:37:46 | DocProcessingActor | INFO | doc_actor.py:144 | [exp1_7:DocProcessingActor] FAISS index serialized: 1276456 bytes
+2026-04-28 16:37:46 | DocProcessingActor | INFO | doc_actor.py:189 | [exp1_7:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-04-28 16:37:50 | DocProcessingActor | INFO | doc_actor.py:109 | [exp1_7:DocProcessingActor] Document index built successfully
+2026-04-28 16:37:50 | DocProcessingActor | INFO | doc_actor.py:134 | [exp1_7:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-04-28 16:37:50 | DocProcessingActor | INFO | doc_actor.py:144 | [exp1_7:DocProcessingActor] FAISS index serialized: 4125544 bytes
+2026-04-28 16:37:50 | DocProcessingActor | INFO | doc_actor.py:189 | [exp1_7:DocProcessingActor] DocProcessingActor: Context components ready for sharing

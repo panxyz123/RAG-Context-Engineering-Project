@@ -1,0 +1,80 @@
+2026-04-30 20:46:11 | DocProcessingActor | INFO | doc_actor.py:59 | [exp1-fiqa-rag-colab_1:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 20:46:11 | DocProcessingActor | INFO | doc_actor.py:59 | [exp1-fiqa-rag-colab_1:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 20:46:13 | DocProcessingActor | INFO | doc_actor.py:96 | [exp1-fiqa-rag-colab_1:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 20:46:13 | DocProcessingActor | INFO | doc_actor.py:107 | [exp1-fiqa-rag-colab_1:DocProcessingActor] Building document index...
+2026-04-30 20:46:13 | DocProcessingActor | INFO | doc_actor.py:96 | [exp1-fiqa-rag-colab_1:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 20:46:13 | DocProcessingActor | INFO | doc_actor.py:107 | [exp1-fiqa-rag-colab_1:DocProcessingActor] Building document index...
+2026-04-30 20:46:13 | sentence_transformers.base.model | INFO | model.py:973 | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-04-30 20:46:14 | sentence_transformers.base.model | INFO | model.py:973 | Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-04-30 20:46:17 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp1-fiqa-rag-colab_1:DocProcessingActor] Failed to build RAG components: AssertionError: Torch not compiled with CUDA enabled
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 386, in build_pipeline
+    self.embedding = self.embedding_cls(**self.embedding_kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_huggingface/embeddings/huggingface.py", line 97, in __init__
+    self._client = model_cls(
+                   ^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/sentence_transformers/util/decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/sentence_transformers/sentence_transformer/model.py", line 183, in __init__
+    super().__init__(
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/sentence_transformers/base/model.py", line 230, in __init__
+    self.to(device)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1371, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/nn/modules/module.py", line 957, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1357, in convert
+    return t.to(
+           ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/cuda/__init__.py", line 403, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled
+2026-04-30 20:46:17 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp1-fiqa-rag-colab_1:DocProcessingActor] Failed to build RAG components: AssertionError: Torch not compiled with CUDA enabled
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 386, in build_pipeline
+    self.embedding = self.embedding_cls(**self.embedding_kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_huggingface/embeddings/huggingface.py", line 97, in __init__
+    self._client = model_cls(
+                   ^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/sentence_transformers/util/decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/sentence_transformers/sentence_transformer/model.py", line 183, in __init__
+    super().__init__(
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/sentence_transformers/base/model.py", line 230, in __init__
+    self.to(device)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1371, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/nn/modules/module.py", line 930, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/nn/modules/module.py", line 957, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1357, in convert
+    return t.to(
+           ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/torch/cuda/__init__.py", line 403, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled

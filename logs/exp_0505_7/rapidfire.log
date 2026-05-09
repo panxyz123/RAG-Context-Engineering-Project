@@ -1,0 +1,46 @@
+2026-05-05 22:48:57 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0505_7:DocProcessingActor] DocProcessingActor initialized
+2026-05-05 22:48:57 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0505_7:DocProcessingActor] DocProcessingActor initialized
+2026-05-05 22:48:59 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0505_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-05 22:48:59 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0505_7:DocProcessingActor] Building document index...
+2026-05-05 22:48:59 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0505_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-05 22:48:59 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0505_7:DocProcessingActor] Building document index...
+2026-05-05 22:49:02 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0505_7:DocProcessingActor] Document index built successfully
+2026-05-05 22:49:02 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0505_7:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-05 22:49:02 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0505_7:DocProcessingActor] FAISS index serialized: 661788 bytes
+2026-05-05 22:49:02 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0505_7:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-05 22:49:04 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0505_7:DocProcessingActor] Document index built successfully
+2026-05-05 22:49:04 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0505_7:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-05 22:49:04 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0505_7:DocProcessingActor] FAISS index serialized: 1293400 bytes
+2026-05-05 22:49:04 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0505_7:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-05 22:49:27 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp_0505_7:QueryProcessingActor-0] Initializing new inference engine (config hash: 701797e1)
+2026-05-05 22:49:27 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-05 22:49:27 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-05 22:49:27 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-05 22:49:27 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-05 22:49:27 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_7:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-05 22:49:27 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-05 22:49:28 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-05 22:49:31 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_0505_7:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'NoneType' object has no attribute 'load'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_19537/1874782148.py", line 34, in openai_sample_preprocess_fn
+  File "/tmp/ipykernel_19537/4158449182.py", line 175, in get_or_build_bm25
+AttributeError: 'NoneType' object has no attribute 'load'
+2026-05-05 22:49:31 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 701797e1)
+2026-05-05 22:49:31 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-05 22:49:31 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-05 22:49:31 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-05 22:49:31 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-05 22:49:31 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_7:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-05 22:49:31 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-05 22:49:31 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-05 22:49:34 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_0505_7:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'NoneType' object has no attribute 'load'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_19537/1874782148.py", line 34, in openai_sample_preprocess_fn
+  File "/tmp/ipykernel_19537/4158449182.py", line 175, in get_or_build_bm25
+AttributeError: 'NoneType' object has no attribute 'load'

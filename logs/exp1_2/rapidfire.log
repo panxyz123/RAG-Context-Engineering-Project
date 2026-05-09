@@ -1,0 +1,245 @@
+2026-04-28 16:24:29 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp1_2:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-04-28 16:24:29 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp1_2:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-04-28 16:24:29 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp1_2:ExperimentUtils] Experiment exp1_2 ended
+2026-04-28 16:24:29 | Experiment | INFO | experiment.py:165 | [exp1_3:Experiment] The previously running experiment exp1_2 was forcibly ended. Created a new experiment 'exp1_3' with Experiment ID: 4 at /home/yup031/rapidfireai/rapidfire_experiments/exp1_3
+2026-04-28 16:25:06 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp1_3:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-04-28 16:25:06 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp1_3:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-04-28 16:25:06 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp1_3:ExperimentUtils] Experiment exp1_3 ended
+2026-04-28 16:25:06 | Experiment | INFO | experiment.py:165 | [exp1_4:Experiment] The previously running experiment exp1_3 was forcibly ended. Created a new experiment 'exp1_4' with Experiment ID: 5 at /home/yup031/rapidfireai/rapidfire_experiments/exp1_4
+2026-04-28 16:26:35 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp1_4:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-04-28 16:26:35 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp1_4:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-04-28 16:26:35 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp1_4:ExperimentUtils] Experiment exp1_4 ended
+2026-04-28 16:26:35 | Experiment | INFO | experiment.py:165 | [exp1_5:Experiment] The previously running experiment exp1_4 was forcibly ended. Created a new experiment 'exp1_5' with Experiment ID: 6 at /home/yup031/rapidfireai/rapidfire_experiments/exp1_5
+2026-04-28 16:27:21 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp1_5:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-04-28 16:27:21 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp1_5:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-04-28 16:27:21 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp1_5:ExperimentUtils] Experiment exp1_5 ended
+2026-04-28 16:27:21 | Experiment | INFO | experiment.py:165 | [exp1_6:Experiment] The previously running experiment exp1_5 was forcibly ended. Created a new experiment 'exp1_6' with Experiment ID: 7 at /home/yup031/rapidfireai/rapidfire_experiments/exp1_6
+2026-04-28 16:29:44 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp1_6:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-04-28 16:29:44 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp1_6:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-04-28 16:29:44 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp1_6:ExperimentUtils] Experiment exp1_6 ended
+2026-04-28 16:29:44 | Experiment | INFO | experiment.py:165 | [exp1_7:Experiment] The previously running experiment exp1_6 was forcibly ended. Created a new experiment 'exp1_7' with Experiment ID: 8 at /home/yup031/rapidfireai/rapidfire_experiments/exp1_7
+2026-04-28 16:30:05 | Experiment | WARNING | metric_rfmetric_manager.py:57 | [exp1_7:Experiment] Failed to initialize MLflowMetricLogger: MLflow server not available at http://127.0.0.1:8852. MLflow logging will be disabled. MLflow logging is disabled.
+2026-04-28 16:30:05 | Experiment | INFO | experiment.py:210 | [exp1_7:Experiment] Initialized MetricLogger experiment: exp1_7
+2026-04-28 16:30:05 | Experiment | INFO | experiment.py:226 | [exp1_7:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-04-28 16:32:04 | Experiment | WARNING | experiment.py:381 | [exp1_7:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-04-28 16:32:04 | Experiment | INFO | experiment.py:383 | [exp1_7:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-04-28 16:32:04 | Experiment | INFO | experiment.py:392 | [exp1_7:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-04-28 16:32:04 | Controller | INFO | controller.py:895 | [exp1_7:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-04-28 16:32:04 | Controller | INFO | controller.py:900 | [exp1_7:Controller] Received 6 pipeline configuration(s)
+2026-04-28 16:32:04 | Controller | INFO | controller.py:309 | [exp1_7:Controller] Found 2 unique RAG context(s)
+2026-04-28 16:32:04 | Controller | INFO | controller.py:320 | [exp1_7:Controller] Will build new context 9479e5cf...
+2026-04-28 16:32:04 | Controller | INFO | controller.py:320 | [exp1_7:Controller] Will build new context ece659e0...
+2026-04-28 16:32:04 | Controller | INFO | controller.py:346 | [exp1_7:Controller] Building 2 context(s) in parallel...
+2026-04-28 16:32:04 | Controller | INFO | controller.py:373 | [exp1_7:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-04-28 16:32:05 | matplotlib.font_manager | INFO | font_manager.py:1639 | generated new fontManager
+2026-04-28 16:32:06 | Controller | INFO | controller.py:461 | [exp1_7:Controller] Submitted 2 build task(s) in parallel
+2026-04-28 16:32:33 | Controller | ERROR | controller.py:496 | [exp1_7:Controller] Failed to build context 1 (9479e5cf...)
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=12232, ip=10.32.73.189, actor_id=1ac6fe22d5cdb446f4177b8401000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7fb141c7ee40>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+2026-04-28 16:32:33 | Controller | ERROR | controller.py:350 | [exp1_7:Controller] Failed to build contexts in parallel
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=12232, ip=10.32.73.189, actor_id=1ac6fe22d5cdb446f4177b8401000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7fb141c7ee40>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 1
+2026-04-28 16:32:33 | Experiment | ERROR | experiment.py:423 | [exp1_7:Experiment] Error running multi-config experiment
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=12232, ip=10.32.73.189, actor_id=1ac6fe22d5cdb446f4177b8401000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7fb141c7ee40>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/experiment.py", line 412, in run_evals
+    results = self.controller.run_multi_pipeline_inference(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 903, in run_multi_pipeline_inference
+    self._setup_context_generators(config_leaves, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 1
+2026-04-28 16:35:27 | Experiment | WARNING | experiment.py:381 | [exp1_7:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-04-28 16:35:27 | Experiment | INFO | experiment.py:383 | [exp1_7:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-04-28 16:35:27 | Experiment | INFO | experiment.py:392 | [exp1_7:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-04-28 16:35:28 | Controller | INFO | controller.py:895 | [exp1_7:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-04-28 16:35:28 | Controller | INFO | controller.py:900 | [exp1_7:Controller] Received 6 pipeline configuration(s)
+2026-04-28 16:35:28 | Controller | INFO | controller.py:309 | [exp1_7:Controller] Found 2 unique RAG context(s)
+2026-04-28 16:35:28 | Controller | INFO | controller.py:320 | [exp1_7:Controller] Will build new context 9479e5cf...
+2026-04-28 16:35:28 | Controller | INFO | controller.py:320 | [exp1_7:Controller] Will build new context ece659e0...
+2026-04-28 16:35:28 | Controller | INFO | controller.py:346 | [exp1_7:Controller] Building 2 context(s) in parallel...
+2026-04-28 16:35:28 | Controller | INFO | controller.py:373 | [exp1_7:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-04-28 16:35:28 | Controller | INFO | controller.py:461 | [exp1_7:Controller] Submitted 2 build task(s) in parallel
+2026-04-28 16:35:54 | Controller | ERROR | controller.py:496 | [exp1_7:Controller] Failed to build context 1 (9479e5cf...)
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=14879, ip=10.32.73.189, actor_id=b6b13c4528279fa49d38064301000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7f7f2ddb37d0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+2026-04-28 16:35:54 | Controller | ERROR | controller.py:350 | [exp1_7:Controller] Failed to build contexts in parallel
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=14879, ip=10.32.73.189, actor_id=b6b13c4528279fa49d38064301000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7f7f2ddb37d0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 1
+2026-04-28 16:35:54 | Experiment | ERROR | experiment.py:423 | [exp1_7:Experiment] Error running multi-config experiment
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=14879, ip=10.32.73.189, actor_id=b6b13c4528279fa49d38064301000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7f7f2ddb37d0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/experiment.py", line 412, in run_evals
+    results = self.controller.run_multi_pipeline_inference(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 903, in run_multi_pipeline_inference
+    self._setup_context_generators(config_leaves, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 1
+2026-04-28 16:37:18 | Experiment | WARNING | experiment.py:381 | [exp1_7:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-04-28 16:37:18 | Experiment | INFO | experiment.py:383 | [exp1_7:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-04-28 16:37:18 | Experiment | INFO | experiment.py:392 | [exp1_7:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-04-28 16:37:18 | Controller | INFO | controller.py:895 | [exp1_7:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-04-28 16:37:18 | Controller | INFO | controller.py:900 | [exp1_7:Controller] Received 6 pipeline configuration(s)
+2026-04-28 16:37:18 | Controller | INFO | controller.py:309 | [exp1_7:Controller] Found 2 unique RAG context(s)
+2026-04-28 16:37:18 | Controller | INFO | controller.py:320 | [exp1_7:Controller] Will build new context dfddef3f...
+2026-04-28 16:37:18 | Controller | INFO | controller.py:320 | [exp1_7:Controller] Will build new context 341e366e...
+2026-04-28 16:37:18 | Controller | INFO | controller.py:346 | [exp1_7:Controller] Building 2 context(s) in parallel...
+2026-04-28 16:37:18 | Controller | INFO | controller.py:373 | [exp1_7:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-04-28 16:37:18 | Controller | INFO | controller.py:461 | [exp1_7:Controller] Submitted 2 build task(s) in parallel
+2026-04-28 16:37:46 | Controller | INFO | controller.py:482 | [exp1_7:Controller] Built context 3 (dfddef3f...) successfully in 27.89s
+2026-04-28 16:37:50 | Controller | INFO | controller.py:482 | [exp1_7:Controller] Built context 4 (341e366e...) successfully in 31.72s
+2026-04-28 16:37:50 | Controller | INFO | controller.py:523 | [exp1_7:Controller] Completed parallel context building for 2 context(s)
+2026-04-28 16:37:50 | Controller | INFO | controller.py:920 | [exp1_7:Controller] Created 1 query processing actors (generic pool)
+2026-04-28 16:37:50 | Controller | INFO | controller.py:931 | [exp1_7:Controller] Initialized scheduler with 6 pipelines, 1 actors, 4 shards
+2026-04-28 16:37:50 | Controller | INFO | controller.py:1118 | [exp1_7:Controller] Created experiment-wide rate limiter actor for 6 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-04-28 16:37:50 | Controller | INFO | controller.py:1124 | [exp1_7:Controller] Starting multi-pipeline inference scheduling...
+2026-04-28 16:37:50 | Controller | INFO | controller.py:1422 | [exp1_7:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-04-28 16:52:39 | Experiment | INFO | experiment.py:574 | [exp1_7:Experiment] All actors shut down
+2026-04-28 16:52:39 | Experiment | INFO | experiment.py:575 | [exp1_7:Experiment] Dispatcher will automatically shut down (daemon thread)

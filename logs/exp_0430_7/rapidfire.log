@@ -1,0 +1,43 @@
+2026-04-30 21:14:18 | Experiment | INFO | experiment.py:165 | [exp_0430_7:Experiment] An experiment with the same name already exists. Created a new experiment 'exp_0430_7' with Experiment ID: 23 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0430_7
+2026-04-30 21:18:43 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0430_7:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-04-30 21:18:43 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0430_7:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-04-30 21:18:43 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0430_7:ExperimentUtils] Experiment exp_0430_7 ended
+2026-04-30 21:18:43 | Experiment | INFO | experiment.py:165 | [exp_0430_8:Experiment] The previously running experiment exp_0430_7 was forcibly ended. Created a new experiment 'exp_0430_8' with Experiment ID: 24 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0430_8
+2026-04-30 21:21:59 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0430_8:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-04-30 21:21:59 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0430_8:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-04-30 21:21:59 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0430_8:ExperimentUtils] Experiment exp_0430_8 ended
+2026-04-30 21:21:59 | Experiment | INFO | experiment.py:165 | [exp_0430_9:Experiment] The previously running experiment exp_0430_8 was forcibly ended. Created a new experiment 'exp_0430_9' with Experiment ID: 25 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0430_9
+2026-04-30 21:22:23 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0430_9:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-04-30 21:22:23 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0430_9:Experiment] Creating MLflow experiment: exp_0430_9
+2026-04-30 21:22:23 | Experiment | INFO | experiment.py:210 | [exp_0430_9:Experiment] Initialized MetricLogger experiment: 14
+2026-04-30 21:22:23 | Experiment | INFO | experiment.py:226 | [exp_0430_9:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-04-30 21:23:18 | Experiment | WARNING | experiment.py:381 | [exp_0430_9:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-04-30 21:23:18 | Experiment | INFO | experiment.py:383 | [exp_0430_9:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-04-30 21:23:18 | Experiment | INFO | experiment.py:392 | [exp_0430_9:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-04-30 21:23:19 | Controller | INFO | controller.py:895 | [exp_0430_9:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-04-30 21:23:19 | Controller | INFO | controller.py:900 | [exp_0430_9:Controller] Received 4 pipeline configuration(s)
+2026-04-30 21:23:19 | Controller | INFO | controller.py:309 | [exp_0430_9:Controller] Found 2 unique RAG context(s)
+2026-04-30 21:23:19 | Controller | INFO | controller.py:320 | [exp_0430_9:Controller] Will build new context 0c9ecd81...
+2026-04-30 21:23:19 | Controller | INFO | controller.py:320 | [exp_0430_9:Controller] Will build new context 05b8eb07...
+2026-04-30 21:23:19 | Controller | INFO | controller.py:346 | [exp_0430_9:Controller] Building 2 context(s) in parallel...
+2026-04-30 21:23:19 | Controller | INFO | controller.py:373 | [exp_0430_9:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-04-30 21:23:20 | Controller | INFO | controller.py:461 | [exp_0430_9:Controller] Submitted 2 build task(s) in parallel
+2026-04-30 21:23:56 | Controller | INFO | controller.py:482 | [exp_0430_9:Controller] Built context 1 (0c9ecd81...) successfully in 36.87s
+2026-04-30 21:23:58 | Controller | INFO | controller.py:482 | [exp_0430_9:Controller] Built context 2 (05b8eb07...) successfully in 39.45s
+2026-04-30 21:23:58 | Controller | INFO | controller.py:523 | [exp_0430_9:Controller] Completed parallel context building for 2 context(s)
+2026-04-30 21:23:58 | Controller | INFO | controller.py:920 | [exp_0430_9:Controller] Created 1 query processing actors (generic pool)
+2026-04-30 21:23:58 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0430_9:Experiment] Created MLflow run: 0e90599780cc443bb87fc02972ac4db4, 1
+2026-04-30 21:23:58 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0430_9:Experiment] Created MLflow run: 81103a01335f416283427657d5509816, 2
+2026-04-30 21:23:59 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0430_9:Experiment] Created MLflow run: 8fa6f143ea984aee97874ab83b90499c, 3
+2026-04-30 21:23:59 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0430_9:Experiment] Created MLflow run: c386be26ae1c4e6cb7f44edc133c1c2b, 4
+2026-04-30 21:23:59 | Controller | INFO | controller.py:931 | [exp_0430_9:Controller] Initialized scheduler with 4 pipelines, 1 actors, 4 shards
+2026-04-30 21:23:59 | Controller | INFO | controller.py:1118 | [exp_0430_9:Controller] Created experiment-wide rate limiter actor for 4 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-04-30 21:23:59 | Controller | INFO | controller.py:1124 | [exp_0430_9:Controller] Starting multi-pipeline inference scheduling...
+2026-04-30 21:23:59 | Controller | INFO | controller.py:1422 | [exp_0430_9:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-04-30 21:40:20 | Controller | INFO | controller.py:1299 | [exp_0430_9:Controller] Pipeline 1 completed shard 0 (1 batches, 949.45s)
+2026-04-30 21:40:20 | Controller | INFO | controller.py:1422 | [exp_0430_9:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-04-30 21:47:00 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0430_9:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-04-30 21:47:00 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0430_9:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-04-30 21:47:00 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0430_9:ExperimentUtils] Experiment exp_0430_9 ended
+2026-04-30 21:47:02 | Experiment | INFO | experiment.py:574 | [exp_0430_9:Experiment] All actors shut down
+2026-04-30 21:47:02 | Experiment | INFO | experiment.py:575 | [exp_0430_9:Experiment] Dispatcher will automatically shut down (daemon thread)

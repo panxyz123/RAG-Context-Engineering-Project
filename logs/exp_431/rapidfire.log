@@ -1,0 +1,750 @@
+2026-04-30 13:19:05 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_431:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 13:19:05 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_431:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 13:19:07 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_431:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 13:19:07 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_431:DocProcessingActor] Building document index...
+2026-04-30 13:19:08 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_431:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 13:19:08 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_431:DocProcessingActor] Building document index...
+2026-04-30 13:19:08 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:19:08 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:19:12 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_431:DocProcessingActor] Document index built successfully
+2026-04-30 13:19:12 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_431:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-04-30 13:19:12 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_431:DocProcessingActor] FAISS index serialized: 1276456 bytes
+2026-04-30 13:19:12 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_431:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-04-30 13:19:14 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_431:DocProcessingActor] Document index built successfully
+2026-04-30 13:19:14 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_431:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-04-30 13:19:14 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_431:DocProcessingActor] FAISS index serialized: 4125544 bytes
+2026-04-30 13:19:14 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_431:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-04-30 13:19:40 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp_431:QueryProcessingActor-0] Initializing new inference engine (config hash: dde32174)
+2026-04-30 13:19:40 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_431:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-04-30 13:19:40 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_431:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-04-30 13:19:40 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_431:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-04-30 13:19:40 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_431:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-04-30 13:19:40 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_431:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-04-30 13:19:40 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:19:41 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_431:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-04-30 13:19:47 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_431:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'tuple' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/3344782623.py", line 49, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 515, in serialize_documents
+    serialized = "\n\n".join([self.template(d) for d in docs])
+                              ^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in custom_template
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in <genexpr>
+AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:19:48 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_431:QueryProcessingActor-0] Reusing existing inference engine (config hash: dde32174)
+2026-04-30 13:19:48 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_431:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-04-30 13:19:48 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_431:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-04-30 13:19:48 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_431:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-04-30 13:19:48 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_431:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-04-30 13:19:48 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_431:QueryProcessingActor-0] Recreated retriever with search_type=mmr
+2026-04-30 13:19:48 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:19:49 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_431:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-04-30 13:19:53 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_431:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'tuple' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/3344782623.py", line 49, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 515, in serialize_documents
+    serialized = "\n\n".join([self.template(d) for d in docs])
+                              ^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in custom_template
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in <genexpr>
+AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:19:54 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_431:QueryProcessingActor-0] Reusing existing inference engine (config hash: dde32174)
+2026-04-30 13:19:54 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_431:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-04-30 13:19:54 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_431:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-04-30 13:19:54 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_431:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-04-30 13:19:54 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_431:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-04-30 13:19:54 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_431:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-04-30 13:19:54 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:19:55 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_431:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-04-30 13:20:00 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_431:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'tuple' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/3344782623.py", line 49, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 515, in serialize_documents
+    serialized = "\n\n".join([self.template(d) for d in docs])
+                              ^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in custom_template
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in <genexpr>
+AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:20:00 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_431:QueryProcessingActor-0] Reusing existing inference engine (config hash: dde32174)
+2026-04-30 13:20:00 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_431:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-04-30 13:20:00 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_431:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-04-30 13:20:00 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_431:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-04-30 13:20:00 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_431:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-04-30 13:20:00 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_431:QueryProcessingActor-0] Recreated retriever with search_type=mmr
+2026-04-30 13:20:00 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:20:01 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_431:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-04-30 13:20:06 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_431:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'tuple' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/3344782623.py", line 49, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 515, in serialize_documents
+    serialized = "\n\n".join([self.template(d) for d in docs])
+                              ^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in custom_template
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in <genexpr>
+AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:20:06 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_431:QueryProcessingActor-0] Reusing existing inference engine (config hash: dde32174)
+2026-04-30 13:20:06 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_431:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-04-30 13:20:06 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_431:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-04-30 13:20:06 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_431:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-04-30 13:20:06 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_431:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-04-30 13:20:06 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_431:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-04-30 13:20:06 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:20:07 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_431:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-04-30 13:20:10 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_431:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'tuple' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/3344782623.py", line 49, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 515, in serialize_documents
+    serialized = "\n\n".join([self.template(d) for d in docs])
+                              ^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in custom_template
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in <genexpr>
+AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:20:11 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_431:QueryProcessingActor-0] Reusing existing inference engine (config hash: dde32174)
+2026-04-30 13:20:11 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_431:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-04-30 13:20:11 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_431:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-04-30 13:20:11 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_431:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-04-30 13:20:11 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_431:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-04-30 13:20:11 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_431:QueryProcessingActor-0] Recreated retriever with search_type=mmr
+2026-04-30 13:20:11 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:20:12 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_431:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-04-30 13:20:15 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_431:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'tuple' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/3344782623.py", line 49, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 515, in serialize_documents
+    serialized = "\n\n".join([self.template(d) for d in docs])
+                              ^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in custom_template
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in <genexpr>
+AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:46:36 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_431:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 13:46:36 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_431:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 13:46:36 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_431:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 13:46:38 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_431:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 13:46:38 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_431:DocProcessingActor] Building document index...
+2026-04-30 13:46:38 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_431:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 13:46:38 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_431:DocProcessingActor] Building document index...
+2026-04-30 13:46:38 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_431:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 13:46:38 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_431:DocProcessingActor] Building document index...
+2026-04-30 13:46:38 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:46:38 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:46:39 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:46:43 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_431:DocProcessingActor] Document index built successfully
+2026-04-30 13:46:43 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_431:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-04-30 13:46:43 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_431:DocProcessingActor] FAISS index serialized: 1276456 bytes
+2026-04-30 13:46:43 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_431:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-04-30 13:46:45 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_431:DocProcessingActor] Document index built successfully
+2026-04-30 13:46:45 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_431:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-04-30 13:46:45 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_431:DocProcessingActor] FAISS index serialized: 2730492 bytes
+2026-04-30 13:46:45 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_431:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-04-30 13:46:46 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_431:DocProcessingActor] Document index built successfully
+2026-04-30 13:46:46 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_431:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-04-30 13:46:46 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_431:DocProcessingActor] FAISS index serialized: 4125544 bytes
+2026-04-30 13:46:46 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_431:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-04-30 13:47:08 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp_431:QueryProcessingActor-0] Initializing new inference engine (config hash: f5fb41fc)
+2026-04-30 13:47:08 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_431:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-04-30 13:47:08 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_431:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-04-30 13:47:08 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_431:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-04-30 13:47:08 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_431:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-04-30 13:47:08 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_431:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-04-30 13:47:08 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:47:10 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_431:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-04-30 13:47:14 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_431:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'tuple' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/3344782623.py", line 49, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 515, in serialize_documents
+    serialized = "\n\n".join([self.template(d) for d in docs])
+                              ^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in custom_template
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in <genexpr>
+AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:47:15 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_431:QueryProcessingActor-0] Reusing existing inference engine (config hash: f5fb41fc)
+2026-04-30 13:47:15 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_431:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-04-30 13:47:15 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_431:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-04-30 13:47:15 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_431:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-04-30 13:47:15 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_431:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-04-30 13:47:15 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_431:QueryProcessingActor-0] Recreated retriever with search_type=mmr
+2026-04-30 13:47:15 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:47:16 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_431:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-04-30 13:47:24 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_431:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'tuple' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/3344782623.py", line 49, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 515, in serialize_documents
+    serialized = "\n\n".join([self.template(d) for d in docs])
+                              ^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in custom_template
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in <genexpr>
+AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:47:24 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_431:QueryProcessingActor-0] Reusing existing inference engine (config hash: f5fb41fc)
+2026-04-30 13:47:24 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_431:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-04-30 13:47:24 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_431:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-04-30 13:47:24 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_431:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-04-30 13:47:24 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_431:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-04-30 13:47:24 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_431:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-04-30 13:47:24 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:47:26 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_431:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-04-30 13:47:28 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_431:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'tuple' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/3344782623.py", line 49, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 515, in serialize_documents
+    serialized = "\n\n".join([self.template(d) for d in docs])
+                              ^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in custom_template
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in <genexpr>
+AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:47:28 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_431:QueryProcessingActor-0] Reusing existing inference engine (config hash: f5fb41fc)
+2026-04-30 13:47:28 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_431:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-04-30 13:47:28 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_431:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-04-30 13:47:28 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_431:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-04-30 13:47:28 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_431:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-04-30 13:47:28 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_431:QueryProcessingActor-0] Recreated retriever with search_type=mmr
+2026-04-30 13:47:28 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:47:30 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_431:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-04-30 13:47:32 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_431:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'tuple' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/3344782623.py", line 49, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 515, in serialize_documents
+    serialized = "\n\n".join([self.template(d) for d in docs])
+                              ^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in custom_template
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in <genexpr>
+AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:47:32 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_431:QueryProcessingActor-0] Reusing existing inference engine (config hash: f5fb41fc)
+2026-04-30 13:47:32 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_431:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-04-30 13:47:32 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_431:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-04-30 13:47:32 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_431:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-04-30 13:47:32 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_431:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-04-30 13:47:32 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_431:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-04-30 13:47:32 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:47:34 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_431:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-04-30 13:47:36 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_431:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'tuple' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/3344782623.py", line 49, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 515, in serialize_documents
+    serialized = "\n\n".join([self.template(d) for d in docs])
+                              ^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in custom_template
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in <genexpr>
+AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:47:36 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_431:QueryProcessingActor-0] Reusing existing inference engine (config hash: f5fb41fc)
+2026-04-30 13:47:36 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_431:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-04-30 13:47:36 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_431:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-04-30 13:47:36 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_431:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-04-30 13:47:36 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_431:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-04-30 13:47:36 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_431:QueryProcessingActor-0] Recreated retriever with search_type=mmr
+2026-04-30 13:47:36 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:47:38 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_431:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-04-30 13:47:40 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_431:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'tuple' object has no attribute 'page_content'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/3344782623.py", line 49, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 337, in wrapper
+    _WrappingContext(fn, args, kwargs) as wrapping_coro,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 320, in __exit__
+    self.coro.throw(exc_value)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 297, in _wrapping_logic
+    result = yield  # sync/async function output to be sent here
+             ^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracing/fluent.py", line 339, in wrapper
+    return wrapping_coro.send(fn(*args, **kwargs))
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 515, in serialize_documents
+    serialized = "\n\n".join([self.template(d) for d in docs])
+                              ^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in custom_template
+  File "/tmp/ipykernel_2659/2548902029.py", line 15, in <genexpr>
+AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:48:28 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_431:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-04-30 13:48:28 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_431:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-04-30 13:48:28 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_431:ExperimentUtils] Experiment exp_431 ended
+2026-04-30 13:48:28 | Experiment | INFO | experiment.py:165 | [exp_432:Experiment] The previously running experiment exp_431 was forcibly ended. Created a new experiment 'exp_432' with Experiment ID: 11 at /home/yup031/rapidfireai/rapidfire_experiments/exp_432
+2026-04-30 13:48:47 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_432:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-04-30 13:48:47 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_432:Experiment] Creating MLflow experiment: exp_432
+2026-04-30 13:48:47 | Experiment | INFO | experiment.py:210 | [exp_432:Experiment] Initialized MetricLogger experiment: 4
+2026-04-30 13:48:47 | Experiment | INFO | experiment.py:226 | [exp_432:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-04-30 13:48:50 | Experiment | WARNING | experiment.py:381 | [exp_432:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-04-30 13:48:50 | Experiment | INFO | experiment.py:383 | [exp_432:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-04-30 13:48:50 | Experiment | INFO | experiment.py:392 | [exp_432:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-04-30 13:48:51 | Controller | INFO | controller.py:895 | [exp_432:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-04-30 13:48:51 | Controller | INFO | controller.py:900 | [exp_432:Controller] Received 6 pipeline configuration(s)
+2026-04-30 13:48:51 | Controller | INFO | controller.py:309 | [exp_432:Controller] Found 3 unique RAG context(s)
+2026-04-30 13:48:51 | Controller | INFO | controller.py:320 | [exp_432:Controller] Will build new context e6fde945...
+2026-04-30 13:48:51 | Controller | INFO | controller.py:320 | [exp_432:Controller] Will build new context 664cd3de...
+2026-04-30 13:48:51 | Controller | INFO | controller.py:320 | [exp_432:Controller] Will build new context 9876779a...
+2026-04-30 13:48:51 | Controller | INFO | controller.py:346 | [exp_432:Controller] Building 3 context(s) in parallel...
+2026-04-30 13:48:51 | Controller | INFO | controller.py:373 | [exp_432:Controller] Creating 3 DocProcessingActor(s) for parallel processing
+2026-04-30 13:48:52 | Controller | INFO | controller.py:461 | [exp_432:Controller] Submitted 3 build task(s) in parallel
+2026-04-30 13:49:19 | Controller | INFO | controller.py:482 | [exp_432:Controller] Built context 1 (e6fde945...) successfully in 28.35s
+2026-04-30 13:49:21 | Controller | INFO | controller.py:482 | [exp_432:Controller] Built context 2 (664cd3de...) successfully in 30.07s
+2026-04-30 13:49:23 | Controller | INFO | controller.py:482 | [exp_432:Controller] Built context 3 (9876779a...) successfully in 31.69s
+2026-04-30 13:49:23 | Controller | INFO | controller.py:523 | [exp_432:Controller] Completed parallel context building for 3 context(s)
+2026-04-30 13:49:23 | Controller | INFO | controller.py:920 | [exp_432:Controller] Created 1 query processing actors (generic pool)
+2026-04-30 13:49:23 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_432:Experiment] Created MLflow run: b74c4147b9d547d59aff5499d4efa37d, 1
+2026-04-30 13:49:23 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_432:Experiment] Created MLflow run: 983779dc6e544434b852968c1075bc8e, 2
+2026-04-30 13:49:23 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_432:Experiment] Created MLflow run: c03d7edb28314ec28b0ae53baa66098e, 3
+2026-04-30 13:49:23 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_432:Experiment] Created MLflow run: dc272c1b21d846d5a4d8bc0b8da574dc, 4
+2026-04-30 13:49:23 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_432:Experiment] Created MLflow run: fc5bd046b6ad445883b5942ef9d84535, 5
+2026-04-30 13:49:23 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_432:Experiment] Created MLflow run: a681987256b046578fcee7c0a8002b2d, 6
+2026-04-30 13:49:23 | Controller | INFO | controller.py:931 | [exp_432:Controller] Initialized scheduler with 6 pipelines, 1 actors, 4 shards
+2026-04-30 13:49:23 | Controller | INFO | controller.py:1118 | [exp_432:Controller] Created experiment-wide rate limiter actor for 6 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-04-30 13:49:23 | Controller | INFO | controller.py:1124 | [exp_432:Controller] Starting multi-pipeline inference scheduling...
+2026-04-30 13:49:23 | Controller | INFO | controller.py:1422 | [exp_432:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:49:57 | Controller | ERROR | controller.py:1310 | [exp_432:Controller] Pipeline 1 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=16863, ip=10.46.173.34, actor_id=2dd79d6b1f055406e985401601000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f5408b5c8f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:49:57 | Controller | INFO | controller.py:1422 | [exp_432:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:50:03 | Controller | ERROR | controller.py:1310 | [exp_432:Controller] Pipeline 2 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=16863, ip=10.46.173.34, actor_id=2dd79d6b1f055406e985401601000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f5408b5c8f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:50:03 | Controller | INFO | controller.py:1422 | [exp_432:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:50:07 | Controller | ERROR | controller.py:1310 | [exp_432:Controller] Pipeline 3 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=16863, ip=10.46.173.34, actor_id=2dd79d6b1f055406e985401601000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f5408b5c8f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:50:07 | Controller | INFO | controller.py:1422 | [exp_432:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:50:11 | Controller | ERROR | controller.py:1310 | [exp_432:Controller] Pipeline 4 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=16863, ip=10.46.173.34, actor_id=2dd79d6b1f055406e985401601000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f5408b5c8f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:50:11 | Controller | INFO | controller.py:1422 | [exp_432:Controller] Scheduling pipeline 5 (Pipeline 5) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:50:15 | Controller | ERROR | controller.py:1310 | [exp_432:Controller] Pipeline 5 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=16863, ip=10.46.173.34, actor_id=2dd79d6b1f055406e985401601000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f5408b5c8f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:50:15 | Controller | INFO | controller.py:1422 | [exp_432:Controller] Scheduling pipeline 6 (Pipeline 6) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:50:19 | Controller | ERROR | controller.py:1310 | [exp_432:Controller] Pipeline 6 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=16863, ip=10.46.173.34, actor_id=2dd79d6b1f055406e985401601000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f5408b5c8f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:50:19 | Controller | INFO | controller.py:1386 | [exp_432:Controller] All pipelines completed all shards!
+2026-04-30 13:50:19 | Controller | INFO | controller.py:695 | [exp_432:Controller] Computing final metrics for all pipelines...
+2026-04-30 13:50:19 | Controller | WARNING | controller.py:708 | [exp_432:Controller] Pipeline 1 failed, skipping final metrics
+2026-04-30 13:50:19 | Controller | WARNING | controller.py:708 | [exp_432:Controller] Pipeline 2 failed, skipping final metrics
+2026-04-30 13:50:19 | Controller | WARNING | controller.py:708 | [exp_432:Controller] Pipeline 3 failed, skipping final metrics
+2026-04-30 13:50:19 | Controller | WARNING | controller.py:708 | [exp_432:Controller] Pipeline 4 failed, skipping final metrics
+2026-04-30 13:50:19 | Controller | WARNING | controller.py:708 | [exp_432:Controller] Pipeline 5 failed, skipping final metrics
+2026-04-30 13:50:19 | Controller | WARNING | controller.py:708 | [exp_432:Controller] Pipeline 6 failed, skipping final metrics
+2026-04-30 13:53:34 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_432:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-04-30 13:53:34 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_432:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-04-30 13:53:34 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_432:ExperimentUtils] Experiment exp_432 ended
+2026-04-30 13:53:34 | Experiment | INFO | experiment.py:165 | [exp_433:Experiment] The previously running experiment exp_432 was forcibly ended. Created a new experiment 'exp_433' with Experiment ID: 12 at /home/yup031/rapidfireai/rapidfire_experiments/exp_433
+2026-04-30 13:53:34 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_433:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-04-30 13:53:34 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_433:Experiment] Creating MLflow experiment: exp_433
+2026-04-30 13:53:34 | Experiment | INFO | experiment.py:210 | [exp_433:Experiment] Initialized MetricLogger experiment: 5
+2026-04-30 13:53:34 | Experiment | INFO | experiment.py:226 | [exp_433:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-04-30 13:53:35 | Experiment | WARNING | experiment.py:381 | [exp_433:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-04-30 13:53:35 | Experiment | INFO | experiment.py:383 | [exp_433:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-04-30 13:53:35 | Experiment | INFO | experiment.py:392 | [exp_433:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-04-30 13:53:35 | Controller | INFO | controller.py:895 | [exp_433:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-04-30 13:53:35 | Controller | INFO | controller.py:900 | [exp_433:Controller] Received 4 pipeline configuration(s)
+2026-04-30 13:53:35 | Controller | INFO | controller.py:309 | [exp_433:Controller] Found 2 unique RAG context(s)
+2026-04-30 13:53:35 | Controller | INFO | controller.py:320 | [exp_433:Controller] Will build new context e2095739...
+2026-04-30 13:53:35 | Controller | INFO | controller.py:320 | [exp_433:Controller] Will build new context 85b0134a...
+2026-04-30 13:53:35 | Controller | INFO | controller.py:346 | [exp_433:Controller] Building 2 context(s) in parallel...
+2026-04-30 13:53:35 | Controller | INFO | controller.py:373 | [exp_433:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-04-30 13:53:35 | Controller | INFO | controller.py:461 | [exp_433:Controller] Submitted 2 build task(s) in parallel
+2026-04-30 13:54:03 | Controller | INFO | controller.py:482 | [exp_433:Controller] Built context 1 (e2095739...) successfully in 28.28s
+2026-04-30 13:54:05 | Controller | INFO | controller.py:482 | [exp_433:Controller] Built context 2 (85b0134a...) successfully in 30.33s
+2026-04-30 13:54:05 | Controller | INFO | controller.py:523 | [exp_433:Controller] Completed parallel context building for 2 context(s)
+2026-04-30 13:54:05 | Controller | INFO | controller.py:920 | [exp_433:Controller] Created 1 query processing actors (generic pool)
+2026-04-30 13:54:06 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_433:Experiment] Created MLflow run: 764557be024845ebae2299dd61b19180, 1
+2026-04-30 13:54:06 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_433:Experiment] Created MLflow run: 8065a264c3dd49b48764c8fa70acf37d, 2
+2026-04-30 13:54:06 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_433:Experiment] Created MLflow run: 86af12c3b5e0451eb9a3dd5c6c2d2765, 3
+2026-04-30 13:54:06 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_433:Experiment] Created MLflow run: b4d8690b93c34cf8aa4387c895fe55e7, 4
+2026-04-30 13:54:06 | Controller | INFO | controller.py:931 | [exp_433:Controller] Initialized scheduler with 4 pipelines, 1 actors, 4 shards
+2026-04-30 13:54:06 | Controller | INFO | controller.py:1118 | [exp_433:Controller] Created experiment-wide rate limiter actor for 4 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-04-30 13:54:06 | Controller | INFO | controller.py:1124 | [exp_433:Controller] Starting multi-pipeline inference scheduling...
+2026-04-30 13:54:06 | Controller | INFO | controller.py:1422 | [exp_433:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:54:34 | Controller | ERROR | controller.py:1310 | [exp_433:Controller] Pipeline 1 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=17472, ip=10.46.173.34, actor_id=b210a92beef35d6a2ab19ddd01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f4e8973d640>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:54:34 | Controller | INFO | controller.py:1422 | [exp_433:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:54:39 | Controller | ERROR | controller.py:1310 | [exp_433:Controller] Pipeline 2 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=17472, ip=10.46.173.34, actor_id=b210a92beef35d6a2ab19ddd01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f4e8973d640>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:54:39 | Controller | INFO | controller.py:1422 | [exp_433:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:54:43 | Controller | ERROR | controller.py:1310 | [exp_433:Controller] Pipeline 3 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=17472, ip=10.46.173.34, actor_id=b210a92beef35d6a2ab19ddd01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f4e8973d640>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:54:43 | Controller | INFO | controller.py:1422 | [exp_433:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:54:47 | Controller | ERROR | controller.py:1310 | [exp_433:Controller] Pipeline 4 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=17472, ip=10.46.173.34, actor_id=b210a92beef35d6a2ab19ddd01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f4e8973d640>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:54:47 | Controller | INFO | controller.py:1386 | [exp_433:Controller] All pipelines completed all shards!
+2026-04-30 13:54:47 | Controller | INFO | controller.py:695 | [exp_433:Controller] Computing final metrics for all pipelines...
+2026-04-30 13:54:47 | Controller | WARNING | controller.py:708 | [exp_433:Controller] Pipeline 1 failed, skipping final metrics
+2026-04-30 13:54:47 | Controller | WARNING | controller.py:708 | [exp_433:Controller] Pipeline 2 failed, skipping final metrics
+2026-04-30 13:54:47 | Controller | WARNING | controller.py:708 | [exp_433:Controller] Pipeline 3 failed, skipping final metrics
+2026-04-30 13:54:47 | Controller | WARNING | controller.py:708 | [exp_433:Controller] Pipeline 4 failed, skipping final metrics

@@ -1,0 +1,769 @@
+2026-05-04 18:15:08 | Experiment | INFO | experiment.py:165 | [exp_0504_4:Experiment] An experiment with the same name already exists. Created a new experiment 'exp_0504_4' with Experiment ID: 48 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0504_4
+2026-05-04 18:15:26 | Experiment | WARNING | metric_rfmetric_manager.py:57 | [exp_0504_4:Experiment] Failed to initialize MLflowMetricLogger: MLflow server not available at http://127.0.0.1:8852. MLflow logging will be disabled. MLflow logging is disabled.
+2026-05-04 18:15:26 | Experiment | INFO | experiment.py:210 | [exp_0504_4:Experiment] Initialized MetricLogger experiment: exp_0504_4
+2026-05-04 18:15:26 | Experiment | INFO | experiment.py:230 | [exp_0504_4:Experiment] Starting new dispatcher/api server at 127.0.0.1:8851.
+2026-05-04 18:15:26 | Experiment | INFO | dispatcher.py:1121 | [exp_0504_4:Experiment] Started interactive control dispatcher on http://127.0.0.1:8851
+2026-05-04 18:15:26 | Experiment | INFO | dispatcher.py:1122 | [exp_0504_4:Experiment] Use dispatcher API to dynamically stop/resume/delete/clone pipelines
+2026-05-04 18:19:02 | Experiment | WARNING | experiment.py:381 | [exp_0504_4:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-04 18:19:02 | Experiment | INFO | experiment.py:383 | [exp_0504_4:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-04 18:19:02 | Experiment | INFO | experiment.py:392 | [exp_0504_4:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-04 18:19:03 | Controller | INFO | controller.py:895 | [exp_0504_4:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-04 18:19:03 | Controller | INFO | controller.py:900 | [exp_0504_4:Controller] Received 3 pipeline configuration(s)
+2026-05-04 18:19:03 | Controller | INFO | controller.py:309 | [exp_0504_4:Controller] Found 2 unique RAG context(s)
+2026-05-04 18:19:03 | Controller | INFO | controller.py:320 | [exp_0504_4:Controller] Will build new context 2de310b6...
+2026-05-04 18:19:03 | Controller | INFO | controller.py:320 | [exp_0504_4:Controller] Will build new context d9f92d2b...
+2026-05-04 18:19:03 | Controller | INFO | controller.py:346 | [exp_0504_4:Controller] Building 2 context(s) in parallel...
+2026-05-04 18:19:03 | Controller | INFO | controller.py:373 | [exp_0504_4:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-05-04 18:19:04 | matplotlib.font_manager | INFO | font_manager.py:1639 | generated new fontManager
+2026-05-04 18:19:04 | Controller | INFO | controller.py:461 | [exp_0504_4:Controller] Submitted 2 build task(s) in parallel
+2026-05-04 18:19:25 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0504_4:DocProcessingActor] DocProcessingActor initialized
+2026-05-04 18:19:25 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0504_4:DocProcessingActor] DocProcessingActor initialized
+2026-05-04 18:19:27 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0504_4:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-04 18:19:27 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0504_4:DocProcessingActor] Building document index...
+2026-05-04 18:19:27 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0504_4:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-04 18:19:27 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0504_4:DocProcessingActor] Building document index...
+2026-05-04 18:19:27 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 18:19:28 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 18:19:33 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0504_4:DocProcessingActor] Document index built successfully
+2026-05-04 18:19:33 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0504_4:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-04 18:19:33 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0504_4:DocProcessingActor] FAISS index serialized: 1318816 bytes
+2026-05-04 18:19:33 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0504_4:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-04 18:19:33 | Controller | INFO | controller.py:482 | [exp_0504_4:Controller] Built context 1 (2de310b6...) successfully in 29.81s
+2026-05-04 18:19:33 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0504_4:DocProcessingActor] Document index built successfully
+2026-05-04 18:19:33 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0504_4:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-04 18:19:33 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0504_4:DocProcessingActor] FAISS index serialized: 1675088 bytes
+2026-05-04 18:19:33 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0504_4:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-04 18:19:34 | Controller | INFO | controller.py:482 | [exp_0504_4:Controller] Built context 2 (d9f92d2b...) successfully in 30.53s
+2026-05-04 18:19:34 | Controller | INFO | controller.py:523 | [exp_0504_4:Controller] Completed parallel context building for 2 context(s)
+2026-05-04 18:19:34 | Controller | INFO | controller.py:920 | [exp_0504_4:Controller] Created 1 query processing actors (generic pool)
+2026-05-04 18:19:34 | Controller | INFO | controller.py:931 | [exp_0504_4:Controller] Initialized scheduler with 3 pipelines, 1 actors, 4 shards
+2026-05-04 18:19:34 | Controller | INFO | controller.py:1118 | [exp_0504_4:Controller] Created experiment-wide rate limiter actor for 3 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-05-04 18:19:34 | Controller | INFO | controller.py:1124 | [exp_0504_4:Controller] Starting multi-pipeline inference scheduling...
+2026-05-04 18:19:34 | Controller | INFO | controller.py:1422 | [exp_0504_4:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-04 18:49:14 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0504_4:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-04 18:49:14 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0504_4:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-04 18:49:14 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0504_4:ExperimentUtils] Experiment exp_0504_4 ended
+2026-05-04 18:49:14 | Experiment | INFO | experiment.py:165 | [exp_0504_5:Experiment] The previously running experiment exp_0504_4 was forcibly ended. Created a new experiment 'exp_0504_5' with Experiment ID: 49 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0504_5
+2026-05-04 18:49:39 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0504_5:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-04 18:49:39 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0504_5:Experiment] Creating MLflow experiment: exp_0504_5
+2026-05-04 18:49:39 | Experiment | INFO | experiment.py:210 | [exp_0504_5:Experiment] Initialized MetricLogger experiment: 32
+2026-05-04 18:49:39 | Experiment | INFO | experiment.py:230 | [exp_0504_5:Experiment] Starting new dispatcher/api server at 127.0.0.1:8851.
+2026-05-04 18:49:39 | Experiment | INFO | dispatcher.py:1121 | [exp_0504_5:Experiment] Started interactive control dispatcher on http://127.0.0.1:8851
+2026-05-04 18:49:39 | Experiment | INFO | dispatcher.py:1122 | [exp_0504_5:Experiment] Use dispatcher API to dynamically stop/resume/delete/clone pipelines
+2026-05-04 18:49:42 | Experiment | WARNING | experiment.py:381 | [exp_0504_5:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-04 18:49:42 | Experiment | INFO | experiment.py:383 | [exp_0504_5:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-04 18:49:42 | Experiment | INFO | experiment.py:392 | [exp_0504_5:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-04 18:49:43 | Controller | INFO | controller.py:895 | [exp_0504_5:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-04 18:49:43 | Controller | INFO | controller.py:900 | [exp_0504_5:Controller] Received 3 pipeline configuration(s)
+2026-05-04 18:49:43 | Controller | INFO | controller.py:309 | [exp_0504_5:Controller] Found 2 unique RAG context(s)
+2026-05-04 18:49:43 | Controller | INFO | controller.py:320 | [exp_0504_5:Controller] Will build new context 0927e589...
+2026-05-04 18:49:43 | Controller | INFO | controller.py:320 | [exp_0504_5:Controller] Will build new context ee5e2a51...
+2026-05-04 18:49:43 | Controller | INFO | controller.py:346 | [exp_0504_5:Controller] Building 2 context(s) in parallel...
+2026-05-04 18:49:43 | Controller | INFO | controller.py:373 | [exp_0504_5:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-05-04 18:49:45 | matplotlib.font_manager | INFO | font_manager.py:1639 | generated new fontManager
+2026-05-04 18:49:45 | Controller | INFO | controller.py:461 | [exp_0504_5:Controller] Submitted 2 build task(s) in parallel
+2026-05-04 18:50:21 | Controller | INFO | controller.py:482 | [exp_0504_5:Controller] Built context 1 (0927e589...) successfully in 37.50s
+2026-05-04 18:50:21 | Controller | INFO | controller.py:482 | [exp_0504_5:Controller] Built context 2 (ee5e2a51...) successfully in 38.31s
+2026-05-04 18:50:21 | Controller | INFO | controller.py:523 | [exp_0504_5:Controller] Completed parallel context building for 2 context(s)
+2026-05-04 18:50:21 | Controller | INFO | controller.py:920 | [exp_0504_5:Controller] Created 1 query processing actors (generic pool)
+2026-05-04 18:50:22 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0504_5:Experiment] Created MLflow run: 29d8cc1a20f44f0eb8202b589882ce57, 1
+2026-05-04 18:50:22 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0504_5:Experiment] Created MLflow run: f75724d0beff41f8bcbf3dea30ec48b6, 2
+2026-05-04 18:50:22 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0504_5:Experiment] Created MLflow run: 90688d6972104eacab8a725e6a6804ae, 3
+2026-05-04 18:50:22 | Controller | INFO | controller.py:931 | [exp_0504_5:Controller] Initialized scheduler with 3 pipelines, 1 actors, 4 shards
+2026-05-04 18:50:22 | Controller | INFO | controller.py:1118 | [exp_0504_5:Controller] Created experiment-wide rate limiter actor for 3 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-05-04 18:50:22 | Controller | INFO | controller.py:1124 | [exp_0504_5:Controller] Starting multi-pipeline inference scheduling...
+2026-05-04 18:50:22 | Controller | INFO | controller.py:1422 | [exp_0504_5:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-04 19:20:28 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0504_5:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-04 19:20:28 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0504_5:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-04 19:20:29 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0504_5:ExperimentUtils] Experiment exp_0504_5 ended
+2026-05-04 19:20:29 | Experiment | INFO | experiment.py:165 | [exp_0504_6:Experiment] The previously running experiment exp_0504_5 was forcibly ended. Created a new experiment 'exp_0504_6' with Experiment ID: 50 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0504_6
+2026-05-04 19:20:29 | Experiment | WARNING | metric_rfmetric_manager.py:57 | [exp_0504_6:Experiment] Failed to initialize MLflowMetricLogger: MLflow server not available at http://127.0.0.1:8852. MLflow logging will be disabled. MLflow logging is disabled.
+2026-05-04 19:20:29 | Experiment | INFO | experiment.py:210 | [exp_0504_6:Experiment] Initialized MetricLogger experiment: exp_0504_6
+2026-05-04 19:20:29 | Experiment | INFO | experiment.py:226 | [exp_0504_6:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-04 19:20:35 | Experiment | WARNING | experiment.py:381 | [exp_0504_6:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-04 19:20:35 | Experiment | INFO | experiment.py:383 | [exp_0504_6:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-04 19:20:35 | Experiment | INFO | experiment.py:392 | [exp_0504_6:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-04 19:20:36 | Controller | INFO | controller.py:895 | [exp_0504_6:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-04 19:20:40 | Controller | INFO | controller.py:900 | [exp_0504_6:Controller] Received 3 pipeline configuration(s)
+2026-05-04 19:20:40 | Controller | INFO | controller.py:309 | [exp_0504_6:Controller] Found 2 unique RAG context(s)
+2026-05-04 19:20:40 | Controller | INFO | controller.py:320 | [exp_0504_6:Controller] Will build new context 5a10630b...
+2026-05-04 19:20:40 | Controller | INFO | controller.py:320 | [exp_0504_6:Controller] Will build new context dd657864...
+2026-05-04 19:20:41 | Controller | INFO | controller.py:346 | [exp_0504_6:Controller] Building 2 context(s) in parallel...
+2026-05-04 19:20:41 | Controller | INFO | controller.py:373 | [exp_0504_6:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-05-04 19:20:41 | Controller | INFO | controller.py:461 | [exp_0504_6:Controller] Submitted 2 build task(s) in parallel
+2026-05-04 19:31:23 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0504_6:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-04 19:31:23 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0504_6:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-04 19:31:23 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0504_6:ExperimentUtils] Experiment exp_0504_6 ended
+2026-05-04 19:31:25 | Experiment | INFO | experiment.py:574 | [exp_0504_6:Experiment] All actors shut down
+2026-05-04 19:31:25 | Experiment | INFO | experiment.py:575 | [exp_0504_6:Experiment] Dispatcher will automatically shut down (daemon thread)
+2026-05-04 19:31:26 | Experiment | INFO | experiment.py:165 | [exp_0504_7:Experiment] An experiment with the same name already exists. Created a new experiment 'exp_0504_7' with Experiment ID: 51 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0504_7
+2026-05-04 19:31:44 | Experiment | WARNING | metric_rfmetric_manager.py:57 | [exp_0504_7:Experiment] Failed to initialize MLflowMetricLogger: MLflow server not available at http://127.0.0.1:8852. MLflow logging will be disabled. MLflow logging is disabled.
+2026-05-04 19:31:44 | Experiment | INFO | experiment.py:210 | [exp_0504_7:Experiment] Initialized MetricLogger experiment: exp_0504_7
+2026-05-04 19:31:44 | Experiment | INFO | experiment.py:226 | [exp_0504_7:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-04 19:31:44 | Experiment | WARNING | experiment.py:381 | [exp_0504_7:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-04 19:31:44 | Experiment | INFO | experiment.py:383 | [exp_0504_7:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-04 19:31:44 | Experiment | INFO | experiment.py:392 | [exp_0504_7:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-04 19:31:45 | Controller | INFO | controller.py:895 | [exp_0504_7:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-04 19:31:45 | Controller | INFO | controller.py:900 | [exp_0504_7:Controller] Received 3 pipeline configuration(s)
+2026-05-04 19:31:45 | Controller | INFO | controller.py:309 | [exp_0504_7:Controller] Found 2 unique RAG context(s)
+2026-05-04 19:31:45 | Controller | INFO | controller.py:320 | [exp_0504_7:Controller] Will build new context c8a57a60...
+2026-05-04 19:31:45 | Controller | INFO | controller.py:320 | [exp_0504_7:Controller] Will build new context b3146722...
+2026-05-04 19:31:45 | Controller | INFO | controller.py:346 | [exp_0504_7:Controller] Building 2 context(s) in parallel...
+2026-05-04 19:31:45 | Controller | INFO | controller.py:373 | [exp_0504_7:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-05-04 19:31:45 | Controller | INFO | controller.py:461 | [exp_0504_7:Controller] Submitted 2 build task(s) in parallel
+2026-05-04 19:32:14 | Controller | INFO | controller.py:482 | [exp_0504_7:Controller] Built context 1 (c8a57a60...) successfully in 29.07s
+2026-05-04 19:32:15 | Controller | INFO | controller.py:482 | [exp_0504_7:Controller] Built context 2 (b3146722...) successfully in 30.04s
+2026-05-04 19:32:15 | Controller | INFO | controller.py:523 | [exp_0504_7:Controller] Completed parallel context building for 2 context(s)
+2026-05-04 19:32:15 | Controller | INFO | controller.py:920 | [exp_0504_7:Controller] Created 1 query processing actors (generic pool)
+2026-05-04 19:32:16 | Controller | INFO | controller.py:931 | [exp_0504_7:Controller] Initialized scheduler with 3 pipelines, 1 actors, 4 shards
+2026-05-04 19:32:16 | Controller | INFO | controller.py:1118 | [exp_0504_7:Controller] Created experiment-wide rate limiter actor for 3 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-05-04 19:32:16 | Controller | INFO | controller.py:1124 | [exp_0504_7:Controller] Starting multi-pipeline inference scheduling...
+2026-05-04 19:32:16 | Controller | INFO | controller.py:1422 | [exp_0504_7:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-04 19:36:44 | Controller | ERROR | controller.py:1513 | [exp_0504_7:Controller] Pipeline 1 (Pipeline 1) failed to initialize on actor 0: The actor died because of an error raised in its creation task, [36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1353, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1113, in _send_output
+    self.send(msg)
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1057, in send
+    self.connect()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 4 more times]
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 278, in http_request
+    return _get_http_response_with_retries(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/request_utils.py", line 282, in _get_http_response_with_retries
+    return session.request(method, url, allow_redirects=allow_redirects, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 64, in __init__
+    mlflow.set_experiment(experiment_name)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracking/fluent.py", line 207, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/client.py", line 283, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 1120, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 243, in _call_endpoint
+    return call_endpoint(
+           ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 645, in call_endpoint
+    response = http_request(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 301, in http_request
+    raise MlflowException(f"API request to {url} failed with exception {e}")
+mlflow.exceptions.MlflowException: API request to http://127.0.0.1:8852/api/2.0/mlflow/experiments/get-by-name failed with exception HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1499, in run_multi_pipeline_inference
+    ray.get(
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1025, in get_objects
+    raise value
+ray.exceptions.ActorDiedError: The actor died because of an error raised in its creation task, [36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1353, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1113, in _send_output
+    self.send(msg)
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1057, in send
+    self.connect()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 4 more times]
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 278, in http_request
+    return _get_http_response_with_retries(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/request_utils.py", line 282, in _get_http_response_with_retries
+    return session.request(method, url, allow_redirects=allow_redirects, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 64, in __init__
+    mlflow.set_experiment(experiment_name)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracking/fluent.py", line 207, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/client.py", line 283, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 1120, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 243, in _call_endpoint
+    return call_endpoint(
+           ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 645, in call_endpoint
+    response = http_request(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 301, in http_request
+    raise MlflowException(f"API request to {url} failed with exception {e}")
+mlflow.exceptions.MlflowException: API request to http://127.0.0.1:8852/api/2.0/mlflow/experiments/get-by-name failed with exception HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-05-04 19:36:44 | Controller | INFO | controller.py:1422 | [exp_0504_7:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-05-04 19:36:44 | Controller | ERROR | controller.py:1513 | [exp_0504_7:Controller] Pipeline 2 (Pipeline 2) failed to initialize on actor 0: The actor died because of an error raised in its creation task, [36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1353, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1113, in _send_output
+    self.send(msg)
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1057, in send
+    self.connect()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 4 more times]
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 278, in http_request
+    return _get_http_response_with_retries(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/request_utils.py", line 282, in _get_http_response_with_retries
+    return session.request(method, url, allow_redirects=allow_redirects, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 64, in __init__
+    mlflow.set_experiment(experiment_name)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracking/fluent.py", line 207, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/client.py", line 283, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 1120, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 243, in _call_endpoint
+    return call_endpoint(
+           ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 645, in call_endpoint
+    response = http_request(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 301, in http_request
+    raise MlflowException(f"API request to {url} failed with exception {e}")
+mlflow.exceptions.MlflowException: API request to http://127.0.0.1:8852/api/2.0/mlflow/experiments/get-by-name failed with exception HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1499, in run_multi_pipeline_inference
+    ray.get(
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1025, in get_objects
+    raise value
+ray.exceptions.ActorDiedError: The actor died because of an error raised in its creation task, [36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1353, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1113, in _send_output
+    self.send(msg)
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1057, in send
+    self.connect()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 4 more times]
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 278, in http_request
+    return _get_http_response_with_retries(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/request_utils.py", line 282, in _get_http_response_with_retries
+    return session.request(method, url, allow_redirects=allow_redirects, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 64, in __init__
+    mlflow.set_experiment(experiment_name)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracking/fluent.py", line 207, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/client.py", line 283, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 1120, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 243, in _call_endpoint
+    return call_endpoint(
+           ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 645, in call_endpoint
+    response = http_request(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 301, in http_request
+    raise MlflowException(f"API request to {url} failed with exception {e}")
+mlflow.exceptions.MlflowException: API request to http://127.0.0.1:8852/api/2.0/mlflow/experiments/get-by-name failed with exception HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-05-04 19:36:44 | Controller | INFO | controller.py:1422 | [exp_0504_7:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 0 (1 batches)
+2026-05-04 19:36:44 | Controller | ERROR | controller.py:1513 | [exp_0504_7:Controller] Pipeline 3 (Pipeline 3) failed to initialize on actor 0: The actor died because of an error raised in its creation task, [36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1353, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1113, in _send_output
+    self.send(msg)
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1057, in send
+    self.connect()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 4 more times]
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 278, in http_request
+    return _get_http_response_with_retries(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/request_utils.py", line 282, in _get_http_response_with_retries
+    return session.request(method, url, allow_redirects=allow_redirects, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 64, in __init__
+    mlflow.set_experiment(experiment_name)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracking/fluent.py", line 207, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/client.py", line 283, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 1120, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 243, in _call_endpoint
+    return call_endpoint(
+           ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 645, in call_endpoint
+    response = http_request(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 301, in http_request
+    raise MlflowException(f"API request to {url} failed with exception {e}")
+mlflow.exceptions.MlflowException: API request to http://127.0.0.1:8852/api/2.0/mlflow/experiments/get-by-name failed with exception HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1499, in run_multi_pipeline_inference
+    ray.get(
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1025, in get_objects
+    raise value
+ray.exceptions.ActorDiedError: The actor died because of an error raised in its creation task, [36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1353, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1113, in _send_output
+    self.send(msg)
+  File "/opt/conda/envs/cse234/lib/python3.12/http/client.py", line 1057, in send
+    self.connect()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 4 more times]
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 278, in http_request
+    return _get_http_response_with_retries(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/request_utils.py", line 282, in _get_http_response_with_retries
+    return session.request(method, url, allow_redirects=allow_redirects, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+[36mray::QueryProcessingActor.__init__()[39m (pid=12507, ip=10.46.173.9, actor_id=cb7bfe0b107294705642242f01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f9df454b5f0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 64, in __init__
+    mlflow.set_experiment(experiment_name)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracking/fluent.py", line 207, in set_experiment
+    experiment = client.get_experiment_by_name(experiment_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/client.py", line 283, in get_experiment_by_name
+    return self.store.get_experiment_by_name(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 1120, in get_experiment_by_name
+    response_proto = self._call_endpoint(GetExperimentByName, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 243, in _call_endpoint
+    return call_endpoint(
+           ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 645, in call_endpoint
+    response = http_request(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 301, in http_request
+    raise MlflowException(f"API request to {url} failed with exception {e}")
+mlflow.exceptions.MlflowException: API request to http://127.0.0.1:8852/api/2.0/mlflow/experiments/get-by-name failed with exception HTTPConnectionPool(host='127.0.0.1', port=8852): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=exp_0504_7 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8852): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-05-04 19:36:44 | Controller | INFO | controller.py:1386 | [exp_0504_7:Controller] All pipelines completed all shards!
+2026-05-04 19:36:44 | Controller | INFO | controller.py:695 | [exp_0504_7:Controller] Computing final metrics for all pipelines...
+2026-05-04 19:36:44 | Controller | WARNING | controller.py:708 | [exp_0504_7:Controller] Pipeline 1 failed, skipping final metrics
+2026-05-04 19:36:44 | Controller | WARNING | controller.py:708 | [exp_0504_7:Controller] Pipeline 2 failed, skipping final metrics
+2026-05-04 19:36:45 | Controller | WARNING | controller.py:708 | [exp_0504_7:Controller] Pipeline 3 failed, skipping final metrics
+2026-05-04 19:37:40 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0504_7:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-04 19:37:40 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0504_7:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-04 19:37:40 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0504_7:ExperimentUtils] Experiment exp_0504_7 ended
+2026-05-04 19:37:42 | Experiment | INFO | experiment.py:574 | [exp_0504_7:Experiment] All actors shut down
+2026-05-04 19:37:42 | Experiment | INFO | experiment.py:575 | [exp_0504_7:Experiment] Dispatcher will automatically shut down (daemon thread)

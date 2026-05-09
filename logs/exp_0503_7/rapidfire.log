@@ -1,0 +1,75 @@
+2026-05-03 22:24:12 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0503_7:DocProcessingActor] DocProcessingActor initialized
+2026-05-03 22:24:13 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0503_7:DocProcessingActor] DocProcessingActor initialized
+2026-05-03 22:24:14 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0503_7:DocProcessingActor] DocProcessingActor initialized
+2026-05-03 22:24:15 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0503_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-03 22:24:15 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0503_7:DocProcessingActor] Building document index...
+2026-05-03 22:24:15 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0503_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-03 22:24:15 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0503_7:DocProcessingActor] Building document index...
+2026-05-03 22:24:15 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-03 22:24:16 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-03 22:24:16 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0503_7:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-03 22:24:16 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0503_7:DocProcessingActor] Building document index...
+2026-05-03 22:24:17 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-03 22:24:21 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0503_7:DocProcessingActor] Document index built successfully
+2026-05-03 22:24:21 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0503_7:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-03 22:24:21 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0503_7:DocProcessingActor] FAISS index serialized: 1293400 bytes
+2026-05-03 22:24:21 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0503_7:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-03 22:24:22 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0503_7:DocProcessingActor] Document index built successfully
+2026-05-03 22:24:22 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0503_7:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-03 22:24:22 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0503_7:DocProcessingActor] FAISS index serialized: 1318816 bytes
+2026-05-03 22:24:22 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0503_7:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-03 22:24:23 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0503_7:DocProcessingActor] Document index built successfully
+2026-05-03 22:24:23 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0503_7:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-03 22:24:23 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0503_7:DocProcessingActor] FAISS index serialized: 2730492 bytes
+2026-05-03 22:24:23 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0503_7:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-03 22:24:52 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp_0503_7:QueryProcessingActor-0] Initializing new inference engine (config hash: 7b221f11)
+2026-05-03 22:24:52 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0503_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-03 22:24:52 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0503_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-03 22:24:52 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0503_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-03 22:24:52 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0503_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-03 22:24:52 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0503_7:QueryProcessingActor-0] Recreated retriever with search_type=similarity_score_threshold
+2026-05-03 22:24:52 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-03 22:24:54 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0503_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-03 22:25:18 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_0503_7:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: NameError: name 'SOURCEDOCS_PATH' is not defined
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 387, in process_batch
+    batch_metrics = {**default_metrics, **compute_metrics_fn(batch_data)}
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2176/3194393113.py", line 95, in sample_compute_metrics_fn
+  File "/tmp/ipykernel_2176/3194393113.py", line 52, in _normalise_retrieved_spans
+  File "/tmp/ipykernel_2176/3194393113.py", line 16, in _content_to_lines
+NameError: name 'SOURCEDOCS_PATH' is not defined
+2026-05-03 22:25:19 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0503_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 7b221f11)
+2026-05-03 22:25:19 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0503_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-03 22:25:19 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0503_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-03 22:25:19 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0503_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-03 22:25:19 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0503_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-03 22:25:19 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0503_7:QueryProcessingActor-0] Recreated retriever with search_type=similarity_score_threshold
+2026-05-03 22:25:19 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-03 22:25:22 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0503_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-03 22:25:45 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_0503_7:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: NameError: name 'SOURCEDOCS_PATH' is not defined
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 387, in process_batch
+    batch_metrics = {**default_metrics, **compute_metrics_fn(batch_data)}
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2176/3194393113.py", line 95, in sample_compute_metrics_fn
+  File "/tmp/ipykernel_2176/3194393113.py", line 52, in _normalise_retrieved_spans
+  File "/tmp/ipykernel_2176/3194393113.py", line 16, in _content_to_lines
+NameError: name 'SOURCEDOCS_PATH' is not defined
+2026-05-03 22:25:45 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0503_7:QueryProcessingActor-0] Reusing existing inference engine (config hash: 7b221f11)
+2026-05-03 22:25:45 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0503_7:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-03 22:25:45 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0503_7:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-03 22:25:45 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0503_7:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-03 22:25:45 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0503_7:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-03 22:25:45 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0503_7:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-03 22:25:45 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-03 22:25:47 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0503_7:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-03 22:27:29 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_0503_7:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: NameError: name 'SOURCEDOCS_PATH' is not defined
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 387, in process_batch
+    batch_metrics = {**default_metrics, **compute_metrics_fn(batch_data)}
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_2176/3194393113.py", line 95, in sample_compute_metrics_fn
+  File "/tmp/ipykernel_2176/3194393113.py", line 52, in _normalise_retrieved_spans
+  File "/tmp/ipykernel_2176/3194393113.py", line 16, in _content_to_lines
+NameError: name 'SOURCEDOCS_PATH' is not defined

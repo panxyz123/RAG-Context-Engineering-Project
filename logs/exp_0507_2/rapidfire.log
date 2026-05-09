@@ -1,0 +1,274 @@
+2026-05-07 09:54:13 | Experiment | INFO | experiment.py:165 | [exp_0507_2:Experiment] An experiment with the same name already exists. Created a new experiment 'exp_0507_2' with Experiment ID: 85 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0507_2
+2026-05-07 09:54:30 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0507_2:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-07 09:54:30 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0507_2:Experiment] Creating MLflow experiment: exp_0507_2
+2026-05-07 09:54:31 | Experiment | INFO | experiment.py:210 | [exp_0507_2:Experiment] Initialized MetricLogger experiment: 58
+2026-05-07 09:54:31 | Experiment | INFO | experiment.py:226 | [exp_0507_2:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-07 09:54:33 | Experiment | WARNING | experiment.py:381 | [exp_0507_2:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-07 09:54:33 | Experiment | INFO | experiment.py:383 | [exp_0507_2:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-07 09:54:33 | Experiment | INFO | experiment.py:392 | [exp_0507_2:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-07 09:54:34 | Controller | INFO | controller.py:895 | [exp_0507_2:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-07 09:54:34 | Controller | INFO | controller.py:900 | [exp_0507_2:Controller] Received 3 pipeline configuration(s)
+2026-05-07 09:54:34 | Controller | INFO | controller.py:309 | [exp_0507_2:Controller] Found 3 unique RAG context(s)
+2026-05-07 09:54:34 | Controller | INFO | controller.py:320 | [exp_0507_2:Controller] Will build new context 010fd6d8...
+2026-05-07 09:54:34 | Controller | INFO | controller.py:320 | [exp_0507_2:Controller] Will build new context d63180b2...
+2026-05-07 09:54:34 | Controller | INFO | controller.py:320 | [exp_0507_2:Controller] Will build new context cddede40...
+2026-05-07 09:54:34 | Controller | INFO | controller.py:346 | [exp_0507_2:Controller] Building 3 context(s) in parallel...
+2026-05-07 09:54:34 | Controller | INFO | controller.py:373 | [exp_0507_2:Controller] Creating 3 DocProcessingActor(s) for parallel processing
+2026-05-07 09:54:35 | matplotlib.font_manager | INFO | font_manager.py:1639 | generated new fontManager
+2026-05-07 09:54:36 | Controller | INFO | controller.py:461 | [exp_0507_2:Controller] Submitted 3 build task(s) in parallel
+2026-05-07 09:54:56 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0507_2:DocProcessingActor] DocProcessingActor initialized
+2026-05-07 09:54:56 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0507_2:DocProcessingActor] DocProcessingActor initialized
+2026-05-07 09:54:56 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0507_2:DocProcessingActor] DocProcessingActor initialized
+2026-05-07 09:54:58 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0507_2:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-07 09:54:58 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0507_2:DocProcessingActor] Building document index...
+2026-05-07 09:54:58 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0507_2:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-07 09:54:58 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0507_2:DocProcessingActor] Building document index...
+2026-05-07 09:54:58 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0507_2:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-07 09:54:58 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0507_2:DocProcessingActor] Building document index...
+2026-05-07 09:54:58 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp_0507_2:DocProcessingActor] Failed to build RAG components: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 30.63268312999998, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 415, in build_pipeline
+    self.vector_store = self._create_vector_store(type=self.vector_store_cfg.get("type", "faiss"))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 254, in _create_vector_store
+    hnsw_index = faiss.IndexHNSWFlat(len(self.embedding.embed_query("RapidFire AI is awesome!")), M)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_openai/embeddings/base.py", line 801, in embed_query
+    return self.embed_documents([text], **kwargs)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_openai/embeddings/base.py", line 740, in embed_documents
+    response = self.client.create(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/resources/embeddings.py", line 136, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/_base_client.py", line 1314, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/openai/_base_client.py", line 1087, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 30.63268312999998, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+2026-05-07 09:55:02 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0507_2:DocProcessingActor] Document index built successfully
+2026-05-07 09:55:02 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0507_2:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-07 09:55:02 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0507_2:DocProcessingActor] FAISS index serialized: 1318816 bytes
+2026-05-07 09:55:02 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0507_2:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-07 09:55:02 | Controller | INFO | controller.py:482 | [exp_0507_2:Controller] Built context 1 (010fd6d8...) successfully in 28.29s
+2026-05-07 09:55:03 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0507_2:DocProcessingActor] Document index built successfully
+2026-05-07 09:55:03 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0507_2:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-07 09:55:03 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0507_2:DocProcessingActor] FAISS index serialized: 1675088 bytes
+2026-05-07 09:55:03 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0507_2:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-07 09:55:03 | Controller | INFO | controller.py:482 | [exp_0507_2:Controller] Built context 2 (d63180b2...) successfully in 29.29s
+2026-05-07 09:55:03 | Controller | ERROR | controller.py:496 | [exp_0507_2:Controller] Failed to build context 3 (cddede40...)
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=5346, ip=10.46.173.27, actor_id=cf84975e37c1f52c5f483f3201000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7fd12ad6d8e0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 30.63268312999998, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+2026-05-07 09:55:03 | Controller | ERROR | controller.py:350 | [exp_0507_2:Controller] Failed to build contexts in parallel
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=5346, ip=10.46.173.27, actor_id=cf84975e37c1f52c5f483f3201000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7fd12ad6d8e0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 30.63268312999998, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 3
+2026-05-07 09:55:03 | Experiment | ERROR | experiment.py:423 | [exp_0507_2:Experiment] Error running multi-config experiment
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=5346, ip=10.46.173.27, actor_id=cf84975e37c1f52c5f483f3201000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7fd12ad6d8e0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 30.63268312999998, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/experiment.py", line 412, in run_evals
+    results = self.controller.run_multi_pipeline_inference(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 903, in run_multi_pipeline_inference
+    self._setup_context_generators(config_leaves, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 3
+2026-05-07 10:04:46 | Experiment | INFO | experiment.py:165 | [exp_0507_3:Experiment] An experiment with the same name already exists. Created a new experiment 'exp_0507_3' with Experiment ID: 86 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0507_3
+2026-05-07 10:04:46 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0507_3:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-07 10:04:46 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0507_3:Experiment] Creating MLflow experiment: exp_0507_3
+2026-05-07 10:04:46 | Experiment | INFO | experiment.py:210 | [exp_0507_3:Experiment] Initialized MetricLogger experiment: 59
+2026-05-07 10:04:46 | Experiment | INFO | experiment.py:226 | [exp_0507_3:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-07 10:04:46 | Experiment | WARNING | experiment.py:381 | [exp_0507_3:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-07 10:04:46 | Experiment | INFO | experiment.py:383 | [exp_0507_3:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-07 10:04:46 | Experiment | INFO | experiment.py:392 | [exp_0507_3:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-07 10:04:47 | Controller | INFO | controller.py:895 | [exp_0507_3:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-07 10:04:47 | Controller | INFO | controller.py:900 | [exp_0507_3:Controller] Received 3 pipeline configuration(s)
+2026-05-07 10:04:47 | Controller | INFO | controller.py:309 | [exp_0507_3:Controller] Found 3 unique RAG context(s)
+2026-05-07 10:04:47 | Controller | INFO | controller.py:320 | [exp_0507_3:Controller] Will build new context 01e14f99...
+2026-05-07 10:04:47 | Controller | INFO | controller.py:320 | [exp_0507_3:Controller] Will build new context ed0c121a...
+2026-05-07 10:04:47 | Controller | INFO | controller.py:320 | [exp_0507_3:Controller] Will build new context baf9168f...
+2026-05-07 10:04:47 | Controller | INFO | controller.py:346 | [exp_0507_3:Controller] Building 3 context(s) in parallel...
+2026-05-07 10:04:47 | Controller | INFO | controller.py:373 | [exp_0507_3:Controller] Creating 3 DocProcessingActor(s) for parallel processing
+2026-05-07 10:04:47 | Controller | INFO | controller.py:461 | [exp_0507_3:Controller] Submitted 3 build task(s) in parallel
+2026-05-07 10:05:15 | Controller | INFO | controller.py:482 | [exp_0507_3:Controller] Built context 1 (01e14f99...) successfully in 28.39s
+2026-05-07 10:05:16 | Controller | INFO | controller.py:482 | [exp_0507_3:Controller] Built context 2 (ed0c121a...) successfully in 29.32s
+2026-05-07 10:05:16 | Controller | INFO | controller.py:482 | [exp_0507_3:Controller] Built context 3 (baf9168f...) successfully in 29.33s
+2026-05-07 10:05:16 | Controller | INFO | controller.py:523 | [exp_0507_3:Controller] Completed parallel context building for 3 context(s)
+2026-05-07 10:05:16 | Controller | INFO | controller.py:920 | [exp_0507_3:Controller] Created 1 query processing actors (generic pool)
+2026-05-07 10:05:16 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0507_3:Experiment] Created MLflow run: c1df88a302ce4675b400c550f7aa2911, 1
+2026-05-07 10:05:16 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0507_3:Experiment] Created MLflow run: e15864b5f1ea4771a7a00f01a90ec205, 2
+2026-05-07 10:05:17 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0507_3:Experiment] Created MLflow run: dbed7ed277f948ccb2fadb6017555289, 3
+2026-05-07 10:05:17 | Controller | INFO | controller.py:931 | [exp_0507_3:Controller] Initialized scheduler with 3 pipelines, 1 actors, 4 shards
+2026-05-07 10:05:17 | Controller | INFO | controller.py:1118 | [exp_0507_3:Controller] Created experiment-wide rate limiter actor for 3 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-05-07 10:05:17 | Controller | INFO | controller.py:1124 | [exp_0507_3:Controller] Starting multi-pipeline inference scheduling...
+2026-05-07 10:05:17 | Controller | INFO | controller.py:1422 | [exp_0507_3:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-07 10:08:48 | Controller | INFO | controller.py:1299 | [exp_0507_3:Controller] Pipeline 1 completed shard 0 (1 batches, 188.60s)
+2026-05-07 10:08:48 | Controller | INFO | controller.py:1422 | [exp_0507_3:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-05-07 10:11:44 | Controller | INFO | controller.py:1299 | [exp_0507_3:Controller] Pipeline 2 completed shard 0 (1 batches, 175.54s)
+2026-05-07 10:11:44 | Controller | INFO | controller.py:1422 | [exp_0507_3:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 0 (1 batches)
+2026-05-07 10:16:28 | Controller | INFO | controller.py:1299 | [exp_0507_3:Controller] Pipeline 3 completed shard 0 (1 batches, 283.85s)
+2026-05-07 10:16:28 | Controller | INFO | controller.py:1422 | [exp_0507_3:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 1 (1 batches)
+2026-05-07 10:19:07 | Controller | INFO | controller.py:1299 | [exp_0507_3:Controller] Pipeline 1 completed shard 1 (1 batches, 158.77s)
+2026-05-07 10:19:07 | Controller | INFO | controller.py:1422 | [exp_0507_3:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 1 (1 batches)
+2026-05-07 10:21:41 | Controller | INFO | controller.py:1299 | [exp_0507_3:Controller] Pipeline 2 completed shard 1 (1 batches, 154.00s)
+2026-05-07 10:21:41 | Controller | INFO | controller.py:1422 | [exp_0507_3:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 1 (1 batches)
+2026-05-07 10:25:34 | Controller | INFO | controller.py:1299 | [exp_0507_3:Controller] Pipeline 3 completed shard 1 (1 batches, 232.31s)
+2026-05-07 10:25:34 | Controller | INFO | controller.py:1422 | [exp_0507_3:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 2 (1 batches)
+2026-05-07 10:25:35 | Controller | ERROR | controller.py:1310 | [exp_0507_3:Controller] Pipeline 1 failed on shard 2
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=6377, ip=10.46.173.27, actor_id=2d7d031ff05b4feef42fdffe01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f1eefbae000>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 30.73163416999996, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+2026-05-07 10:25:35 | Controller | INFO | controller.py:1422 | [exp_0507_3:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 2 (1 batches)
+2026-05-07 10:25:36 | Controller | ERROR | controller.py:1310 | [exp_0507_3:Controller] Pipeline 2 failed on shard 2
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=6377, ip=10.46.173.27, actor_id=2d7d031ff05b4feef42fdffe01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f1eefbae000>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 30.73163416999996, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+2026-05-07 10:25:36 | Controller | INFO | controller.py:1422 | [exp_0507_3:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 2 (1 batches)
+2026-05-07 10:25:41 | Controller | ERROR | controller.py:1310 | [exp_0507_3:Controller] Pipeline 3 failed on shard 2
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=6377, ip=10.46.173.27, actor_id=2d7d031ff05b4feef42fdffe01000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f1eefbae000>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: BadRequestError: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 30.73163416999996, Max budget: 25.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}
+2026-05-07 10:25:41 | Controller | INFO | controller.py:1386 | [exp_0507_3:Controller] All pipelines completed all shards!
+2026-05-07 10:25:41 | Controller | INFO | controller.py:695 | [exp_0507_3:Controller] Computing final metrics for all pipelines...
+2026-05-07 10:25:41 | Controller | WARNING | controller.py:708 | [exp_0507_3:Controller] Pipeline 1 failed, skipping final metrics
+2026-05-07 10:25:41 | Controller | WARNING | controller.py:708 | [exp_0507_3:Controller] Pipeline 2 failed, skipping final metrics
+2026-05-07 10:25:41 | Controller | WARNING | controller.py:708 | [exp_0507_3:Controller] Pipeline 3 failed, skipping final metrics

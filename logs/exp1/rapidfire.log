@@ -1,0 +1,14 @@
+2026-04-25 22:23:19 | Experiment | INFO | experiment.py:165 | [exp1:Experiment] Experiment exp1 created with Experiment ID: 1 at /home/yup031/rapidfireai/rapidfire_experiments/exp1
+2026-04-25 22:23:38 | Experiment | WARNING | metric_rfmetric_manager.py:57 | [exp1:Experiment] Failed to initialize MLflowMetricLogger: MLflow server not available at http://127.0.0.1:8852. MLflow logging will be disabled. MLflow logging is disabled.
+2026-04-25 22:23:38 | Experiment | INFO | experiment.py:210 | [exp1:Experiment] Initialized MetricLogger experiment: exp1
+2026-04-25 22:23:38 | Experiment | INFO | experiment.py:230 | [exp1:Experiment] Starting new dispatcher/api server at 127.0.0.1:8851.
+2026-04-25 22:23:38 | Experiment | INFO | dispatcher.py:1121 | [exp1:Experiment] Started interactive control dispatcher on http://127.0.0.1:8851
+2026-04-25 22:23:38 | Experiment | INFO | dispatcher.py:1122 | [exp1:Experiment] Use dispatcher API to dynamically stop/resume/delete/clone pipelines
+2026-04-26 00:58:34 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp1:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-04-26 00:58:34 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp1:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-04-26 00:58:34 | Experiment | INFO | experiment.py:165 | [exp1:Experiment] Experiment exp1 is currently running. Returning the same experiment object.
+2026-04-26 00:58:34 | Experiment | INFO | experiment.py:165 | [exp1:Experiment] Any running tasks have been cancelled.
+2026-04-26 00:58:52 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp1:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-04-26 00:58:52 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp1:Experiment] Creating MLflow experiment: exp1
+2026-04-26 00:58:52 | Experiment | INFO | experiment.py:210 | [exp1:Experiment] Initialized MetricLogger experiment: 1
+2026-04-26 00:58:52 | Experiment | INFO | experiment.py:226 | [exp1:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.

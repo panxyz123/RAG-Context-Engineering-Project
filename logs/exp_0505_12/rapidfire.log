@@ -1,0 +1,48 @@
+2026-05-05 23:43:59 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0505_12:DocProcessingActor] DocProcessingActor initialized
+2026-05-05 23:44:00 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0505_12:DocProcessingActor] DocProcessingActor initialized
+2026-05-05 23:44:01 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0505_12:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-05 23:44:01 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0505_12:DocProcessingActor] Building document index...
+2026-05-05 23:44:01 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0505_12:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-05 23:44:01 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0505_12:DocProcessingActor] Building document index...
+2026-05-05 23:44:04 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0505_12:DocProcessingActor] Document index built successfully
+2026-05-05 23:44:04 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0505_12:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-05 23:44:04 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0505_12:DocProcessingActor] FAISS index serialized: 661788 bytes
+2026-05-05 23:44:04 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0505_12:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-05 23:44:07 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0505_12:DocProcessingActor] Document index built successfully
+2026-05-05 23:44:07 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0505_12:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-05 23:44:07 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0505_12:DocProcessingActor] FAISS index serialized: 1293400 bytes
+2026-05-05 23:44:07 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0505_12:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-05 23:44:29 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp_0505_12:QueryProcessingActor-0] Initializing new inference engine (config hash: 4f8514a5)
+2026-05-05 23:44:30 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_12:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-05 23:44:30 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_12:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-05 23:44:30 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_12:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-05 23:44:30 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_12:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-05 23:44:30 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_12:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-05 23:44:30 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_12:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-05 23:44:31 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-05 23:44:39 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_0505_12:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'BM25Retriever' object has no attribute 'get_relevant_documents'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_6305/1554757331.py", line 43, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/pydantic/main.py", line 1042, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'BM25Retriever' object has no attribute 'get_relevant_documents'. Did you mean: '_get_relevant_documents'?
+2026-05-05 23:44:39 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0505_12:QueryProcessingActor-0] Reusing existing inference engine (config hash: 4f8514a5)
+2026-05-05 23:44:39 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0505_12:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-05 23:44:39 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0505_12:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-05 23:44:39 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0505_12:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-05 23:44:39 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0505_12:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-05 23:44:39 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0505_12:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-05 23:44:39 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0505_12:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-05 23:44:39 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-05 23:44:42 | QueryProcessingActor-0 | ERROR | query_actor.py:398 | [exp_0505_12:QueryProcessingActor-0] Error processing batch in QueryProcessingActor: AttributeError: 'BM25Retriever' object has no attribute 'get_relevant_documents'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 366, in process_batch
+    batch_data = preprocess_fn(batch_data, self.rag_spec, self.prompt_manager)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_6305/1554757331.py", line 43, in openai_sample_preprocess_fn
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/pydantic/main.py", line 1042, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'BM25Retriever' object has no attribute 'get_relevant_documents'. Did you mean: '_get_relevant_documents'?

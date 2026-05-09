@@ -1,0 +1,261 @@
+2026-05-04 12:34:34 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0504_2:DocProcessingActor] DocProcessingActor initialized
+2026-05-04 12:34:34 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0504_2:DocProcessingActor] DocProcessingActor initialized
+2026-05-04 12:34:36 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0504_2:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-04 12:34:36 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0504_2:DocProcessingActor] Building document index...
+2026-05-04 12:34:36 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 12:34:36 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0504_2:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-05-04 12:34:36 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0504_2:DocProcessingActor] Building document index...
+2026-05-04 12:34:37 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 12:34:42 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0504_2:DocProcessingActor] Document index built successfully
+2026-05-04 12:34:42 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0504_2:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-04 12:34:42 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0504_2:DocProcessingActor] FAISS index serialized: 1293400 bytes
+2026-05-04 12:34:42 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0504_2:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-04 12:34:42 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0504_2:DocProcessingActor] Document index built successfully
+2026-05-04 12:34:42 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0504_2:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-05-04 12:34:42 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0504_2:DocProcessingActor] FAISS index serialized: 1318816 bytes
+2026-05-04 12:34:42 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0504_2:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-05-04 12:35:05 | QueryProcessingActor-0 | INFO | query_actor.py:165 | [exp_0504_2:QueryProcessingActor-0] Initializing new inference engine (config hash: 5baa2646)
+2026-05-04 12:35:05 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 12:35:05 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 12:35:05 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 12:35:05 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 12:35:05 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 12:35:06 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 12:35:09 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 12:38:13 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 12:38:13 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 12:38:13 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 12:38:13 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 12:38:13 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 12:38:13 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 12:38:13 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for mixedbread-ai/mxbai-rerank-large-v1, initializing a new CrossEncoder model.
+2026-05-04 12:38:15 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 12:41:59 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 12:41:59 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 12:41:59 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 12:41:59 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 12:41:59 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 12:41:59 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 12:41:59 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 12:42:01 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 12:46:05 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 12:46:05 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 12:46:05 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 12:46:05 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 12:46:05 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 12:46:05 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 12:46:05 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for mixedbread-ai/mxbai-rerank-large-v1, initializing a new CrossEncoder model.
+2026-05-04 12:46:07 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 12:51:23 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 12:51:23 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 12:51:23 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 12:51:23 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 12:51:23 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 12:51:23 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 12:51:23 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 12:51:25 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 12:54:39 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 12:54:39 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 12:54:39 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 12:54:39 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 12:54:39 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 12:54:39 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 12:54:39 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for mixedbread-ai/mxbai-rerank-large-v1, initializing a new CrossEncoder model.
+2026-05-04 12:54:41 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 12:58:06 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 12:58:06 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 12:58:06 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 12:58:06 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 12:58:06 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 12:58:06 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 12:58:06 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 12:58:11 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:02:40 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:02:40 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:02:40 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:02:40 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:02:40 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:02:40 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:02:40 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for mixedbread-ai/mxbai-rerank-large-v1, initializing a new CrossEncoder model.
+2026-05-04 13:02:42 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:07:24 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:07:24 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:07:24 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:07:24 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:07:24 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:07:24 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:07:24 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 13:07:26 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:10:38 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:10:38 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:10:38 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:10:38 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:10:38 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:10:38 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:10:38 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for mixedbread-ai/mxbai-rerank-large-v1, initializing a new CrossEncoder model.
+2026-05-04 13:10:40 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:14:18 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:14:18 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:14:18 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:14:18 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:14:18 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:14:18 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:14:18 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 13:14:20 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:18:38 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:18:38 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:18:38 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:18:38 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:18:38 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:18:38 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:18:38 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for mixedbread-ai/mxbai-rerank-large-v1, initializing a new CrossEncoder model.
+2026-05-04 13:18:41 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:23:25 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:23:25 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:23:25 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:23:25 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:23:25 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:23:25 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:23:25 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 13:23:27 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:26:22 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:26:22 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:26:22 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:26:22 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:26:22 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:26:22 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:26:22 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for mixedbread-ai/mxbai-rerank-large-v1, initializing a new CrossEncoder model.
+2026-05-04 13:26:24 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:29:42 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:29:42 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:29:42 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:29:42 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:29:42 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:29:42 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:29:42 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 13:29:44 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:33:42 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:33:42 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:33:42 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:33:42 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:33:42 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:33:42 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:33:42 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for mixedbread-ai/mxbai-rerank-large-v1, initializing a new CrossEncoder model.
+2026-05-04 13:33:44 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:37:50 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:37:50 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:37:50 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:37:50 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:37:50 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:37:50 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:37:50 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 13:37:53 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:40:48 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:40:48 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:40:48 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:40:48 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:40:48 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:40:48 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:40:48 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for mixedbread-ai/mxbai-rerank-large-v1, initializing a new CrossEncoder model.
+2026-05-04 13:40:50 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:44:17 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:44:17 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:44:17 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:44:17 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:44:17 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:44:17 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:44:17 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for BAAI/bge-reranker-v2-m3, initializing a new CrossEncoder model.
+2026-05-04 13:44:20 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 13:48:18 | QueryProcessingActor-0 | INFO | query_actor.py:169 | [exp_0504_2:QueryProcessingActor-0] Reusing existing inference engine (config hash: 5baa2646)
+2026-05-04 13:48:18 | QueryProcessingActor-0 | INFO | query_actor.py:198 | [exp_0504_2:QueryProcessingActor-0] Recreated embedding function: OpenAIEmbeddings
+2026-05-04 13:48:18 | QueryProcessingActor-0 | INFO | query_actor.py:211 | [exp_0504_2:QueryProcessingActor-0] Using CPU-based FAISS for retrieval (avoids GPU memory conflicts)
+2026-05-04 13:48:18 | QueryProcessingActor-0 | INFO | query_actor.py:215 | [exp_0504_2:QueryProcessingActor-0] Deserializing FAISS index for this actor...
+2026-05-04 13:48:18 | QueryProcessingActor-0 | INFO | query_actor.py:230 | [exp_0504_2:QueryProcessingActor-0] Created independent FAISS vector store for this actor
+2026-05-04 13:48:18 | QueryProcessingActor-0 | INFO | query_actor.py:260 | [exp_0504_2:QueryProcessingActor-0] Recreated retriever with search_type=similarity
+2026-05-04 13:48:18 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for mixedbread-ai/mxbai-rerank-large-v1, initializing a new CrossEncoder model.
+2026-05-04 13:48:20 | QueryProcessingActor-0 | INFO | query_actor.py:277 | [exp_0504_2:QueryProcessingActor-0] Recreated RAG spec with retrieval mode
+2026-05-04 14:20:06 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0504_2:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-04 14:20:06 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0504_2:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-04 14:20:06 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0504_2:ExperimentUtils] Experiment exp_0504_2 ended
+2026-05-04 14:20:06 | Experiment | INFO | experiment.py:165 | [exp_0504_3:Experiment] The previously running experiment exp_0504_2 was forcibly ended. Created a new experiment 'exp_0504_3' with Experiment ID: 47 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0504_3
+2026-05-04 14:20:25 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0504_3:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-05-04 14:20:25 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0504_3:Experiment] Creating MLflow experiment: exp_0504_3
+2026-05-04 14:20:25 | Experiment | INFO | experiment.py:210 | [exp_0504_3:Experiment] Initialized MetricLogger experiment: 31
+2026-05-04 14:20:25 | Experiment | INFO | experiment.py:226 | [exp_0504_3:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-05-04 14:20:26 | Experiment | WARNING | experiment.py:381 | [exp_0504_3:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-05-04 14:20:26 | Experiment | INFO | experiment.py:383 | [exp_0504_3:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-05-04 14:20:26 | Experiment | INFO | experiment.py:392 | [exp_0504_3:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-05-04 14:20:26 | Controller | INFO | controller.py:895 | [exp_0504_3:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-05-04 14:20:26 | Controller | INFO | controller.py:900 | [exp_0504_3:Controller] Received 4 pipeline configuration(s)
+2026-05-04 14:20:26 | Controller | INFO | controller.py:309 | [exp_0504_3:Controller] Found 2 unique RAG context(s)
+2026-05-04 14:20:26 | Controller | INFO | controller.py:320 | [exp_0504_3:Controller] Will build new context 91424636...
+2026-05-04 14:20:26 | Controller | INFO | controller.py:320 | [exp_0504_3:Controller] Will build new context 6fe43661...
+2026-05-04 14:20:26 | Controller | INFO | controller.py:346 | [exp_0504_3:Controller] Building 2 context(s) in parallel...
+2026-05-04 14:20:26 | Controller | INFO | controller.py:373 | [exp_0504_3:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-05-04 14:20:28 | Controller | INFO | controller.py:461 | [exp_0504_3:Controller] Submitted 2 build task(s) in parallel
+2026-05-04 14:21:00 | Controller | INFO | controller.py:482 | [exp_0504_3:Controller] Built context 1 (91424636...) successfully in 34.03s
+2026-05-04 14:28:56 | Controller | INFO | controller.py:482 | [exp_0504_3:Controller] Built context 2 (6fe43661...) successfully in 509.89s
+2026-05-04 14:28:56 | Controller | INFO | controller.py:523 | [exp_0504_3:Controller] Completed parallel context building for 2 context(s)
+2026-05-04 14:28:56 | Controller | INFO | controller.py:920 | [exp_0504_3:Controller] Created 1 query processing actors (generic pool)
+2026-05-04 14:28:56 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0504_3:Experiment] Created MLflow run: 14c32e4a1127442697a911ccf70d55f3, 1
+2026-05-04 14:28:57 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0504_3:Experiment] Created MLflow run: 9a5a60d35cb2443b94d733d0a5d7eff1, 2
+2026-05-04 14:28:57 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0504_3:Experiment] Created MLflow run: d8cd2091367841c0a42e2c992a8bddeb, 3
+2026-05-04 14:28:57 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0504_3:Experiment] Created MLflow run: e5ea99bfd1744e2fa75cb1079841ef44, 4
+2026-05-04 14:28:57 | Controller | INFO | controller.py:931 | [exp_0504_3:Controller] Initialized scheduler with 4 pipelines, 1 actors, 4 shards
+2026-05-04 14:28:57 | Controller | INFO | controller.py:1118 | [exp_0504_3:Controller] Created experiment-wide rate limiter actor for 4 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-05-04 14:28:57 | Controller | INFO | controller.py:1124 | [exp_0504_3:Controller] Starting multi-pipeline inference scheduling...
+2026-05-04 14:28:57 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-05-04 14:32:42 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 1 completed shard 0 (1 batches, 199.07s)
+2026-05-04 14:32:42 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-05-04 14:36:52 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 2 completed shard 0 (1 batches, 246.77s)
+2026-05-04 14:36:52 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 0 (1 batches)
+2026-05-04 14:40:10 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 3 completed shard 0 (1 batches, 193.45s)
+2026-05-04 14:40:10 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 0 (1 batches)
+2026-05-04 14:44:31 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 4 completed shard 0 (1 batches, 257.11s)
+2026-05-04 14:44:31 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 1 (1 batches)
+2026-05-04 14:47:36 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 1 completed shard 1 (1 batches, 180.56s)
+2026-05-04 14:47:36 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 1 (1 batches)
+2026-05-04 14:51:20 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 2 completed shard 1 (1 batches, 222.15s)
+2026-05-04 14:51:20 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 1 (1 batches)
+2026-05-04 14:54:14 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 3 completed shard 1 (1 batches, 169.19s)
+2026-05-04 14:54:14 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 1 (1 batches)
+2026-05-04 14:58:25 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 4 completed shard 1 (1 batches, 246.10s)
+2026-05-04 14:58:25 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 2 (1 batches)
+2026-05-04 15:01:15 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 1 completed shard 2 (1 batches, 167.10s)
+2026-05-04 15:01:15 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 2 (1 batches)
+2026-05-04 15:05:16 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 2 completed shard 2 (1 batches, 239.23s)
+2026-05-04 15:05:16 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 2 (1 batches)
+2026-05-04 15:08:24 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 3 completed shard 2 (1 batches, 182.62s)
+2026-05-04 15:08:24 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 2 (1 batches)
+2026-05-04 15:12:18 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 4 completed shard 2 (1 batches, 229.57s)
+2026-05-04 15:12:18 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 3 (1 batches)
+2026-05-04 15:15:13 | Controller | INFO | controller.py:1192 | [exp_0504_3:Controller] Pipeline 1 completed all 4 shards
+2026-05-04 15:15:14 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 1 completed shard 3 (1 batches, 172.97s)
+2026-05-04 15:15:14 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 3 (1 batches)
+2026-05-04 15:19:05 | Controller | INFO | controller.py:1192 | [exp_0504_3:Controller] Pipeline 2 completed all 4 shards
+2026-05-04 15:19:05 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 2 completed shard 3 (1 batches, 229.08s)
+2026-05-04 15:19:05 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 3 (1 batches)
+2026-05-04 15:22:02 | Controller | INFO | controller.py:1192 | [exp_0504_3:Controller] Pipeline 3 completed all 4 shards
+2026-05-04 15:22:02 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 3 completed shard 3 (1 batches, 172.60s)
+2026-05-04 15:22:02 | Controller | INFO | controller.py:1422 | [exp_0504_3:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 3 (1 batches)
+2026-05-04 15:26:02 | Controller | INFO | controller.py:1192 | [exp_0504_3:Controller] Pipeline 4 completed all 4 shards
+2026-05-04 15:26:03 | Controller | INFO | controller.py:1299 | [exp_0504_3:Controller] Pipeline 4 completed shard 3 (1 batches, 235.80s)
+2026-05-04 15:26:03 | Controller | INFO | controller.py:1386 | [exp_0504_3:Controller] All pipelines completed all shards!
+2026-05-04 15:26:03 | Controller | INFO | controller.py:695 | [exp_0504_3:Controller] Computing final metrics for all pipelines...
+2026-05-04 15:26:03 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0504_3:Experiment] Ending run: 14c32e4a1127442697a911ccf70d55f3, 1 in rf_mlflow
+2026-05-04 15:26:03 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0504_3:Experiment] Run 14c32e4a1127442697a911ccf70d55f3 is not the active run, no local context to clear
+2026-05-04 15:26:03 | Controller | INFO | controller.py:853 | [exp_0504_3:Controller] Pipeline 1 (Pipeline 1) completed successfully
+2026-05-04 15:26:03 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0504_3:Experiment] Ending run: 9a5a60d35cb2443b94d733d0a5d7eff1, 2 in rf_mlflow
+2026-05-04 15:26:03 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0504_3:Experiment] Run 9a5a60d35cb2443b94d733d0a5d7eff1 is not the active run, no local context to clear
+2026-05-04 15:26:03 | Controller | INFO | controller.py:853 | [exp_0504_3:Controller] Pipeline 2 (Pipeline 2) completed successfully
+2026-05-04 15:26:03 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0504_3:Experiment] Ending run: d8cd2091367841c0a42e2c992a8bddeb, 3 in rf_mlflow
+2026-05-04 15:26:03 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0504_3:Experiment] Run d8cd2091367841c0a42e2c992a8bddeb is not the active run, no local context to clear
+2026-05-04 15:26:03 | Controller | INFO | controller.py:853 | [exp_0504_3:Controller] Pipeline 3 (Pipeline 3) completed successfully
+2026-05-04 15:26:04 | Experiment | INFO | metric_rfmetric_manager.py:190 | [exp_0504_3:Experiment] Ending run: e5ea99bfd1744e2fa75cb1079841ef44, 4 in rf_mlflow
+2026-05-04 15:26:04 | Experiment | WARNING | metric_mlflow_manager.py:101 | [exp_0504_3:Experiment] Run e5ea99bfd1744e2fa75cb1079841ef44 is not the active run, no local context to clear
+2026-05-04 15:26:04 | Controller | INFO | controller.py:853 | [exp_0504_3:Controller] Pipeline 4 (Pipeline 4) completed successfully
+2026-05-04 15:26:04 | ExperimentUtils | INFO | experiment_utils.py:180 | [exp_0504_3:ExperimentUtils] Reset experiment states - marked ongoing pipelines, contexts, and tasks as failed
+2026-05-04 15:26:04 | ExperimentUtils | INFO | experiment_utils.py:188 | [exp_0504_3:ExperimentUtils] Experiment marked as cancelled. Ongoing pipelines, contexts, and tasks have been marked as failed.
+2026-05-04 15:26:04 | ExperimentUtils | INFO | experiment_utils.py:154 | [exp_0504_3:ExperimentUtils] Experiment exp_0504_3 ended
+2026-05-04 15:26:06 | Experiment | INFO | experiment.py:574 | [exp_0504_3:Experiment] All actors shut down
+2026-05-04 15:26:06 | Experiment | INFO | experiment.py:575 | [exp_0504_3:Experiment] Dispatcher will automatically shut down (daemon thread)

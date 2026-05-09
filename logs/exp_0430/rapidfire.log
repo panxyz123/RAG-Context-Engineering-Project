@@ -1,0 +1,720 @@
+2026-04-30 12:50:06 | Experiment | INFO | experiment.py:165 | [exp_0430:Experiment] Experiment exp_0430 created with Experiment ID: 9 at /home/yup031/rapidfireai/rapidfire_experiments/exp_0430
+2026-04-30 12:50:25 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_0430:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-04-30 12:50:25 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_0430:Experiment] Creating MLflow experiment: exp_0430
+2026-04-30 12:50:25 | Experiment | INFO | experiment.py:210 | [exp_0430:Experiment] Initialized MetricLogger experiment: 2
+2026-04-30 12:50:25 | Experiment | INFO | experiment.py:226 | [exp_0430:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-04-30 12:50:37 | Experiment | WARNING | experiment.py:381 | [exp_0430:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-04-30 12:50:37 | Experiment | INFO | experiment.py:383 | [exp_0430:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-04-30 12:50:37 | Experiment | INFO | experiment.py:392 | [exp_0430:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-04-30 12:50:37 | Controller | INFO | controller.py:895 | [exp_0430:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-04-30 12:50:37 | Controller | INFO | controller.py:900 | [exp_0430:Controller] Received 6 pipeline configuration(s)
+2026-04-30 12:50:37 | Controller | INFO | controller.py:309 | [exp_0430:Controller] Found 2 unique RAG context(s)
+2026-04-30 12:50:37 | Controller | INFO | controller.py:320 | [exp_0430:Controller] Will build new context 425b599e...
+2026-04-30 12:50:37 | Controller | INFO | controller.py:320 | [exp_0430:Controller] Will build new context df56f68e...
+2026-04-30 12:50:37 | Controller | INFO | controller.py:346 | [exp_0430:Controller] Building 2 context(s) in parallel...
+2026-04-30 12:50:37 | Controller | INFO | controller.py:373 | [exp_0430:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-04-30 12:50:39 | matplotlib.font_manager | INFO | font_manager.py:1639 | generated new fontManager
+2026-04-30 12:50:39 | Controller | INFO | controller.py:461 | [exp_0430:Controller] Submitted 2 build task(s) in parallel
+2026-04-30 12:50:59 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0430:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 12:50:59 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0430:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 12:51:01 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0430:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 12:51:01 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0430:DocProcessingActor] Building document index...
+2026-04-30 12:51:01 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0430:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 12:51:01 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0430:DocProcessingActor] Building document index...
+2026-04-30 12:51:02 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 12:51:02 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 12:51:06 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp_0430:DocProcessingActor] Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 416, in build_pipeline
+    self._build_vector_store()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 357, in _build_vector_store
+    documents = self._load_documents()
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 214, in _load_documents
+    return self.document_loader.load() if self.document_loader is not None else []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 117, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 123, in lazy_load
+    raise FileNotFoundError(f"Directory not found: '{self.path}'")
+FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+2026-04-30 12:51:06 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp_0430:DocProcessingActor] Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 416, in build_pipeline
+    self._build_vector_store()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 357, in _build_vector_store
+    documents = self._load_documents()
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 214, in _load_documents
+    return self.document_loader.load() if self.document_loader is not None else []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 117, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 123, in lazy_load
+    raise FileNotFoundError(f"Directory not found: '{self.path}'")
+FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+2026-04-30 12:51:06 | Controller | ERROR | controller.py:496 | [exp_0430:Controller] Failed to build context 1 (425b599e...)
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=6991, ip=10.46.173.34, actor_id=6c7aca6a4cc2a669ae02b7ca01000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7feeab06e600>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+2026-04-30 12:51:06 | Controller | ERROR | controller.py:350 | [exp_0430:Controller] Failed to build contexts in parallel
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=6991, ip=10.46.173.34, actor_id=6c7aca6a4cc2a669ae02b7ca01000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7feeab06e600>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 1
+2026-04-30 12:51:06 | Experiment | ERROR | experiment.py:423 | [exp_0430:Experiment] Error running multi-config experiment
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=6991, ip=10.46.173.34, actor_id=6c7aca6a4cc2a669ae02b7ca01000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7feeab06e600>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/experiment.py", line 412, in run_evals
+    results = self.controller.run_multi_pipeline_inference(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 903, in run_multi_pipeline_inference
+    self._setup_context_generators(config_leaves, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 1
+2026-04-30 12:57:19 | Experiment | WARNING | experiment.py:381 | [exp_0430:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-04-30 12:57:19 | Experiment | INFO | experiment.py:383 | [exp_0430:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-04-30 12:57:19 | Experiment | INFO | experiment.py:392 | [exp_0430:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-04-30 12:57:19 | Controller | INFO | controller.py:895 | [exp_0430:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-04-30 12:57:19 | Controller | INFO | controller.py:900 | [exp_0430:Controller] Received 6 pipeline configuration(s)
+2026-04-30 12:57:19 | Controller | INFO | controller.py:309 | [exp_0430:Controller] Found 2 unique RAG context(s)
+2026-04-30 12:57:19 | Controller | INFO | controller.py:320 | [exp_0430:Controller] Will build new context 425b599e...
+2026-04-30 12:57:19 | Controller | INFO | controller.py:320 | [exp_0430:Controller] Will build new context df56f68e...
+2026-04-30 12:57:19 | Controller | INFO | controller.py:346 | [exp_0430:Controller] Building 2 context(s) in parallel...
+2026-04-30 12:57:19 | Controller | INFO | controller.py:373 | [exp_0430:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-04-30 12:57:19 | Controller | INFO | controller.py:461 | [exp_0430:Controller] Submitted 2 build task(s) in parallel
+2026-04-30 12:57:40 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0430:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 12:57:40 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0430:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 12:57:42 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0430:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 12:57:42 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0430:DocProcessingActor] Building document index...
+2026-04-30 12:57:42 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0430:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 12:57:42 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0430:DocProcessingActor] Building document index...
+2026-04-30 12:57:42 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 12:57:42 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 12:57:44 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp_0430:DocProcessingActor] Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 416, in build_pipeline
+    self._build_vector_store()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 357, in _build_vector_store
+    documents = self._load_documents()
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 214, in _load_documents
+    return self.document_loader.load() if self.document_loader is not None else []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 117, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 123, in lazy_load
+    raise FileNotFoundError(f"Directory not found: '{self.path}'")
+FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+2026-04-30 12:57:44 | DocProcessingActor | ERROR | doc_actor.py:198 | [exp_0430:DocProcessingActor] Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 108, in build_rag_components
+    rag_spec.build_pipeline()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 416, in build_pipeline
+    self._build_vector_store()
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 357, in _build_vector_store
+    documents = self._load_documents()
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/rag/rag_pipeline.py", line 214, in _load_documents
+    return self.document_loader.load() if self.document_loader is not None else []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 117, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/langchain_community/document_loaders/directory.py", line 123, in lazy_load
+    raise FileNotFoundError(f"Directory not found: '{self.path}'")
+FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+2026-04-30 12:57:44 | Controller | ERROR | controller.py:496 | [exp_0430:Controller] Failed to build context 1 (425b599e...)
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=7652, ip=10.46.173.34, actor_id=0f543171f16754186b72ddc201000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7fabb12f9940>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+2026-04-30 12:57:44 | Controller | ERROR | controller.py:350 | [exp_0430:Controller] Failed to build contexts in parallel
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=7652, ip=10.46.173.34, actor_id=0f543171f16754186b72ddc201000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7fabb12f9940>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 1
+2026-04-30 12:57:44 | Experiment | ERROR | experiment.py:423 | [exp_0430:Experiment] Error running multi-config experiment
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 472, in build_rag_components
+    components = ray.get(task["future"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::DocProcessingActor.build_rag_components()[39m (pid=7652, ip=10.46.173.34, actor_id=0f543171f16754186b72ddc201000000, repr=<rapidfireai.evals.actors.doc_actor.DocProcessingActor object at 0x7fabb12f9940>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/doc_actor.py", line 202, in build_rag_components
+    raise RuntimeError(
+RuntimeError: Failed to build RAG components: FileNotFoundError: Directory not found: '~/Project1/sourcedocs/'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/experiment.py", line 412, in run_evals
+    results = self.controller.run_multi_pipeline_inference(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 903, in run_multi_pipeline_inference
+    self._setup_context_generators(config_leaves, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 348, in _setup_context_generators
+    self.build_rag_components(contexts_to_build, db)
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 514, in build_rag_components
+    raise RuntimeError(f"Context creation failed for context {context_id}") from e
+RuntimeError: Context creation failed for context 1
+2026-04-30 13:02:42 | Experiment | WARNING | experiment.py:381 | [exp_0430:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-04-30 13:02:42 | Experiment | INFO | experiment.py:383 | [exp_0430:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-04-30 13:02:42 | Experiment | INFO | experiment.py:392 | [exp_0430:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-04-30 13:02:43 | Controller | INFO | controller.py:895 | [exp_0430:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-04-30 13:02:43 | Controller | INFO | controller.py:900 | [exp_0430:Controller] Received 6 pipeline configuration(s)
+2026-04-30 13:02:43 | Controller | INFO | controller.py:309 | [exp_0430:Controller] Found 2 unique RAG context(s)
+2026-04-30 13:02:43 | Controller | INFO | controller.py:320 | [exp_0430:Controller] Will build new context 28de3d23...
+2026-04-30 13:02:43 | Controller | INFO | controller.py:320 | [exp_0430:Controller] Will build new context f8fdf2c7...
+2026-04-30 13:02:43 | Controller | INFO | controller.py:346 | [exp_0430:Controller] Building 2 context(s) in parallel...
+2026-04-30 13:02:43 | Controller | INFO | controller.py:373 | [exp_0430:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-04-30 13:02:43 | Controller | INFO | controller.py:461 | [exp_0430:Controller] Submitted 2 build task(s) in parallel
+2026-04-30 13:03:05 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0430:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 13:03:05 | DocProcessingActor | INFO | doc_actor.py:59 | [exp_0430:DocProcessingActor] DocProcessingActor initialized
+2026-04-30 13:03:07 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0430:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 13:03:07 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0430:DocProcessingActor] Building document index...
+2026-04-30 13:03:07 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:03:07 | DocProcessingActor | INFO | doc_actor.py:96 | [exp_0430:DocProcessingActor] DocProcessingActor: Starting context initialization...
+2026-04-30 13:03:07 | DocProcessingActor | INFO | doc_actor.py:107 | [exp_0430:DocProcessingActor] Building document index...
+2026-04-30 13:03:08 | sentence_transformers.base.model | INFO | model.py:962 | No modules.json found for cross-encoder/ms-marco-MiniLM-L6-v2, initializing a new CrossEncoder model.
+2026-04-30 13:03:13 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0430:DocProcessingActor] Document index built successfully
+2026-04-30 13:03:13 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0430:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-04-30 13:03:13 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0430:DocProcessingActor] FAISS index serialized: 1276456 bytes
+2026-04-30 13:03:13 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0430:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-04-30 13:03:13 | Controller | INFO | controller.py:482 | [exp_0430:Controller] Built context 3 (28de3d23...) successfully in 30.07s
+2026-04-30 13:03:15 | DocProcessingActor | INFO | doc_actor.py:109 | [exp_0430:DocProcessingActor] Document index built successfully
+2026-04-30 13:03:15 | DocProcessingActor | INFO | doc_actor.py:134 | [exp_0430:DocProcessingActor] Serializing FAISS index for cross-actor sharing...
+2026-04-30 13:03:15 | DocProcessingActor | INFO | doc_actor.py:144 | [exp_0430:DocProcessingActor] FAISS index serialized: 4125544 bytes
+2026-04-30 13:03:15 | DocProcessingActor | INFO | doc_actor.py:189 | [exp_0430:DocProcessingActor] DocProcessingActor: Context components ready for sharing
+2026-04-30 13:03:15 | Controller | INFO | controller.py:482 | [exp_0430:Controller] Built context 4 (f8fdf2c7...) successfully in 32.02s
+2026-04-30 13:03:15 | Controller | INFO | controller.py:523 | [exp_0430:Controller] Completed parallel context building for 2 context(s)
+2026-04-30 13:03:15 | Controller | INFO | controller.py:920 | [exp_0430:Controller] Created 1 query processing actors (generic pool)
+2026-04-30 13:03:15 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0430:Experiment] Created MLflow run: 46bfbe48c4014288bc473a100f415bdf, 1
+2026-04-30 13:03:15 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0430:Experiment] Created MLflow run: 1e33cc20afbb4588abc9b43c5f53046c, 2
+2026-04-30 13:03:15 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0430:Experiment] Created MLflow run: dd76138976e843d684817a6d89e5ba6d, 3
+2026-04-30 13:03:15 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0430:Experiment] Created MLflow run: 9ace10e2bcc140f085d424d4ec75f998, 4
+2026-04-30 13:03:15 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0430:Experiment] Created MLflow run: 552251d8f03b4299b3863e7a2a078d19, 5
+2026-04-30 13:03:15 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_0430:Experiment] Created MLflow run: b5e2f0d2ab5946ff8de030fe3bccf8fa, 6
+2026-04-30 13:03:15 | Controller | INFO | controller.py:931 | [exp_0430:Controller] Initialized scheduler with 6 pipelines, 1 actors, 4 shards
+2026-04-30 13:03:15 | Controller | INFO | controller.py:1118 | [exp_0430:Controller] Created experiment-wide rate limiter actor for 6 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-04-30 13:03:15 | Controller | INFO | controller.py:1124 | [exp_0430:Controller] Starting multi-pipeline inference scheduling...
+2026-04-30 13:03:15 | Controller | INFO | controller.py:1422 | [exp_0430:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:15:17 | Experiment | INFO | experiment.py:574 | [exp_0430:Experiment] All actors shut down
+2026-04-30 13:15:17 | Experiment | INFO | experiment.py:575 | [exp_0430:Experiment] Dispatcher will automatically shut down (daemon thread)
+2026-04-30 13:18:19 | Experiment | INFO | experiment.py:165 | [exp_431:Experiment] An experiment with the same name already exists. Created a new experiment 'exp_431' with Experiment ID: 10 at /home/yup031/rapidfireai/rapidfire_experiments/exp_431
+2026-04-30 13:18:39 | Experiment | INFO | metric_rfmetric_manager.py:55 | [exp_431:Experiment] Initialized MLflowMetricLogger: rf_mlflow
+2026-04-30 13:18:39 | Experiment | INFO | metric_rfmetric_manager.py:119 | [exp_431:Experiment] Creating MLflow experiment: exp_431
+2026-04-30 13:18:39 | Experiment | INFO | experiment.py:210 | [exp_431:Experiment] Initialized MetricLogger experiment: 3
+2026-04-30 13:18:39 | Experiment | INFO | experiment.py:226 | [exp_431:Experiment] Using existing dispatcher/api server at 127.0.0.1:8851.
+2026-04-30 13:18:39 | Experiment | WARNING | experiment.py:381 | [exp_431:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-04-30 13:18:39 | Experiment | INFO | experiment.py:383 | [exp_431:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-04-30 13:18:39 | Experiment | INFO | experiment.py:392 | [exp_431:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-04-30 13:18:40 | Controller | INFO | controller.py:895 | [exp_431:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-04-30 13:18:40 | Controller | INFO | controller.py:900 | [exp_431:Controller] Received 6 pipeline configuration(s)
+2026-04-30 13:18:40 | Controller | INFO | controller.py:309 | [exp_431:Controller] Found 2 unique RAG context(s)
+2026-04-30 13:18:40 | Controller | INFO | controller.py:320 | [exp_431:Controller] Will build new context 66811c57...
+2026-04-30 13:18:40 | Controller | INFO | controller.py:320 | [exp_431:Controller] Will build new context 248ace1a...
+2026-04-30 13:18:40 | Controller | INFO | controller.py:346 | [exp_431:Controller] Building 2 context(s) in parallel...
+2026-04-30 13:18:40 | Controller | INFO | controller.py:373 | [exp_431:Controller] Creating 2 DocProcessingActor(s) for parallel processing
+2026-04-30 13:18:40 | Controller | INFO | controller.py:461 | [exp_431:Controller] Submitted 2 build task(s) in parallel
+2026-04-30 13:19:12 | Controller | INFO | controller.py:482 | [exp_431:Controller] Built context 1 (66811c57...) successfully in 32.45s
+2026-04-30 13:19:14 | Controller | INFO | controller.py:482 | [exp_431:Controller] Built context 2 (248ace1a...) successfully in 34.23s
+2026-04-30 13:19:14 | Controller | INFO | controller.py:523 | [exp_431:Controller] Completed parallel context building for 2 context(s)
+2026-04-30 13:19:14 | Controller | INFO | controller.py:920 | [exp_431:Controller] Created 1 query processing actors (generic pool)
+2026-04-30 13:19:14 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_431:Experiment] Created MLflow run: 14dc8c7593e742c09b4cfff623c1129f, 1
+2026-04-30 13:19:14 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_431:Experiment] Created MLflow run: a1e2e3c2229b4c1b8aaf75fab7f0cda0, 2
+2026-04-30 13:19:14 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_431:Experiment] Created MLflow run: 0267e83e155e44e7a3cacc71cfd0bbbe, 3
+2026-04-30 13:19:14 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_431:Experiment] Created MLflow run: 8052d4c14b294ebaa9e56ea50ee55287, 4
+2026-04-30 13:19:14 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_431:Experiment] Created MLflow run: 821fe3292a9b44a1a59cad361c435aae, 5
+2026-04-30 13:19:15 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_431:Experiment] Created MLflow run: dac78f32e6f0468caad461f418e0c2ed, 6
+2026-04-30 13:19:15 | Controller | INFO | controller.py:931 | [exp_431:Controller] Initialized scheduler with 6 pipelines, 1 actors, 4 shards
+2026-04-30 13:19:15 | Controller | INFO | controller.py:1118 | [exp_431:Controller] Created experiment-wide rate limiter actor for 6 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-04-30 13:19:15 | Controller | INFO | controller.py:1124 | [exp_431:Controller] Starting multi-pipeline inference scheduling...
+2026-04-30 13:19:15 | Controller | INFO | controller.py:1422 | [exp_431:Controller] Scheduling pipeline 1 (Pipeline 1) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:19:48 | Controller | ERROR | controller.py:1310 | [exp_431:Controller] Pipeline 1 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=11574, ip=10.46.173.34, actor_id=df250b2e9e69bf2a6731543001000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f8e2b06ce60>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:19:48 | Controller | INFO | controller.py:1422 | [exp_431:Controller] Scheduling pipeline 2 (Pipeline 2) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:19:54 | Controller | ERROR | controller.py:1310 | [exp_431:Controller] Pipeline 2 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=11574, ip=10.46.173.34, actor_id=df250b2e9e69bf2a6731543001000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f8e2b06ce60>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:19:54 | Controller | INFO | controller.py:1422 | [exp_431:Controller] Scheduling pipeline 3 (Pipeline 3) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:20:00 | Controller | ERROR | controller.py:1310 | [exp_431:Controller] Pipeline 3 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=11574, ip=10.46.173.34, actor_id=df250b2e9e69bf2a6731543001000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f8e2b06ce60>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:20:00 | Controller | INFO | controller.py:1422 | [exp_431:Controller] Scheduling pipeline 4 (Pipeline 4) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:20:06 | Controller | ERROR | controller.py:1310 | [exp_431:Controller] Pipeline 4 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=11574, ip=10.46.173.34, actor_id=df250b2e9e69bf2a6731543001000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f8e2b06ce60>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:20:06 | Controller | INFO | controller.py:1422 | [exp_431:Controller] Scheduling pipeline 5 (Pipeline 5) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:20:10 | Controller | ERROR | controller.py:1310 | [exp_431:Controller] Pipeline 5 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=11574, ip=10.46.173.34, actor_id=df250b2e9e69bf2a6731543001000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f8e2b06ce60>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:20:11 | Controller | INFO | controller.py:1422 | [exp_431:Controller] Scheduling pipeline 6 (Pipeline 6) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:20:15 | Controller | ERROR | controller.py:1310 | [exp_431:Controller] Pipeline 6 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=11574, ip=10.46.173.34, actor_id=df250b2e9e69bf2a6731543001000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7f8e2b06ce60>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:20:15 | Controller | INFO | controller.py:1386 | [exp_431:Controller] All pipelines completed all shards!
+2026-04-30 13:20:15 | Controller | INFO | controller.py:695 | [exp_431:Controller] Computing final metrics for all pipelines...
+2026-04-30 13:20:15 | Controller | WARNING | controller.py:708 | [exp_431:Controller] Pipeline 1 failed, skipping final metrics
+2026-04-30 13:20:15 | Controller | WARNING | controller.py:708 | [exp_431:Controller] Pipeline 2 failed, skipping final metrics
+2026-04-30 13:20:15 | Controller | WARNING | controller.py:708 | [exp_431:Controller] Pipeline 3 failed, skipping final metrics
+2026-04-30 13:20:15 | Controller | WARNING | controller.py:708 | [exp_431:Controller] Pipeline 4 failed, skipping final metrics
+2026-04-30 13:20:15 | Controller | WARNING | controller.py:708 | [exp_431:Controller] Pipeline 5 failed, skipping final metrics
+2026-04-30 13:20:15 | Controller | WARNING | controller.py:708 | [exp_431:Controller] Pipeline 6 failed, skipping final metrics
+2026-04-30 13:46:15 | Experiment | WARNING | experiment.py:381 | [exp_431:Experiment] No GPUs available. Be sure to use external APIs for inference.
+2026-04-30 13:46:15 | Experiment | INFO | experiment.py:383 | [exp_431:Experiment] Running multi-config experiment with 4 shard(s), (0.0 GPUs per actor, 8.0 CPUs per actor, 1 actors)
+2026-04-30 13:46:15 | Experiment | INFO | experiment.py:392 | [exp_431:Experiment] Reset states of existing pipelines/contexts/tasks (marked as failed)
+2026-04-30 13:46:16 | Controller | INFO | controller.py:895 | [exp_431:Controller] Dataset sharded into 4 shard(s). Shard sizes: [12, 11, 11, 11]
+2026-04-30 13:46:16 | Controller | INFO | controller.py:900 | [exp_431:Controller] Received 6 pipeline configuration(s)
+2026-04-30 13:46:16 | Controller | INFO | controller.py:309 | [exp_431:Controller] Found 3 unique RAG context(s)
+2026-04-30 13:46:16 | Controller | INFO | controller.py:320 | [exp_431:Controller] Will build new context 99d6a57f...
+2026-04-30 13:46:16 | Controller | INFO | controller.py:320 | [exp_431:Controller] Will build new context 0c01c422...
+2026-04-30 13:46:16 | Controller | INFO | controller.py:320 | [exp_431:Controller] Will build new context 1594c088...
+2026-04-30 13:46:16 | Controller | INFO | controller.py:346 | [exp_431:Controller] Building 3 context(s) in parallel...
+2026-04-30 13:46:16 | Controller | INFO | controller.py:373 | [exp_431:Controller] Creating 3 DocProcessingActor(s) for parallel processing
+2026-04-30 13:46:16 | Controller | INFO | controller.py:461 | [exp_431:Controller] Submitted 3 build task(s) in parallel
+2026-04-30 13:46:43 | Controller | INFO | controller.py:482 | [exp_431:Controller] Built context 3 (99d6a57f...) successfully in 27.22s
+2026-04-30 13:46:45 | Controller | INFO | controller.py:482 | [exp_431:Controller] Built context 4 (0c01c422...) successfully in 29.06s
+2026-04-30 13:46:46 | Controller | INFO | controller.py:482 | [exp_431:Controller] Built context 5 (1594c088...) successfully in 30.26s
+2026-04-30 13:46:46 | Controller | INFO | controller.py:523 | [exp_431:Controller] Completed parallel context building for 3 context(s)
+2026-04-30 13:46:46 | Controller | INFO | controller.py:920 | [exp_431:Controller] Created 1 query processing actors (generic pool)
+2026-04-30 13:46:46 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_431:Experiment] Created MLflow run: b5423a2ca3644784b857a5f97a82e22d, 7
+2026-04-30 13:46:46 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_431:Experiment] Created MLflow run: a2d6102f1c3043d08b076439a4170f3a, 8
+2026-04-30 13:46:46 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_431:Experiment] Created MLflow run: 368569a426ea4bf8b46aa94a485d94cb, 9
+2026-04-30 13:46:46 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_431:Experiment] Created MLflow run: ca1dbc3156b44da68ba38ccaec01c6d7, 10
+2026-04-30 13:46:46 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_431:Experiment] Created MLflow run: 0a3123a21d024928be5bf31f4eafee7d, 11
+2026-04-30 13:46:46 | Experiment | INFO | metric_rfmetric_manager.py:141 | [exp_431:Experiment] Created MLflow run: b5f67931159f4352be1651f5dea48108, 12
+2026-04-30 13:46:46 | Controller | INFO | controller.py:931 | [exp_431:Controller] Initialized scheduler with 6 pipelines, 1 actors, 4 shards
+2026-04-30 13:46:46 | Controller | INFO | controller.py:1118 | [exp_431:Controller] Created experiment-wide rate limiter actor for 6 OpenAI pipeline(s) with per-model limits (api-mistral-small-3.2-2506: 120 RPM, 1000000 TPM)
+2026-04-30 13:46:46 | Controller | INFO | controller.py:1124 | [exp_431:Controller] Starting multi-pipeline inference scheduling...
+2026-04-30 13:46:46 | Controller | INFO | controller.py:1422 | [exp_431:Controller] Scheduling pipeline 7 (Pipeline 7) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:47:15 | Controller | ERROR | controller.py:1310 | [exp_431:Controller] Pipeline 7 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=13735, ip=10.46.173.34, actor_id=eebac9a8c8487300fa65900201000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7fcd1f879f70>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:47:15 | Controller | INFO | controller.py:1422 | [exp_431:Controller] Scheduling pipeline 8 (Pipeline 8) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:47:24 | Controller | ERROR | controller.py:1310 | [exp_431:Controller] Pipeline 8 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=13735, ip=10.46.173.34, actor_id=eebac9a8c8487300fa65900201000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7fcd1f879f70>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:47:24 | Controller | INFO | controller.py:1422 | [exp_431:Controller] Scheduling pipeline 9 (Pipeline 9) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:47:28 | Controller | ERROR | controller.py:1310 | [exp_431:Controller] Pipeline 9 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=13735, ip=10.46.173.34, actor_id=eebac9a8c8487300fa65900201000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7fcd1f879f70>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:47:28 | Controller | INFO | controller.py:1422 | [exp_431:Controller] Scheduling pipeline 10 (Pipeline 10) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:47:32 | Controller | ERROR | controller.py:1310 | [exp_431:Controller] Pipeline 10 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=13735, ip=10.46.173.34, actor_id=eebac9a8c8487300fa65900201000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7fcd1f879f70>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:47:32 | Controller | INFO | controller.py:1422 | [exp_431:Controller] Scheduling pipeline 11 (Pipeline 11) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:47:36 | Controller | ERROR | controller.py:1310 | [exp_431:Controller] Pipeline 11 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=13735, ip=10.46.173.34, actor_id=eebac9a8c8487300fa65900201000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7fcd1f879f70>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:47:36 | Controller | INFO | controller.py:1422 | [exp_431:Controller] Scheduling pipeline 12 (Pipeline 12) on actor 0 for shard 0 (1 batches)
+2026-04-30 13:47:40 | Controller | ERROR | controller.py:1310 | [exp_431:Controller] Pipeline 12 failed on shard 0
+Traceback (most recent call last):
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/scheduling/controller.py", line 1157, in run_multi_pipeline_inference
+    shard_results, shard_metrics = aggregator.aggregate_with_progress(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/metrics/aggregator.py", line 192, in aggregate_with_progress
+    new_data = ray.get(ready)
+               ^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::QueryProcessingActor.process_batch()[39m (pid=13735, ip=10.46.173.34, actor_id=eebac9a8c8487300fa65900201000000, repr=<rapidfireai.evals.actors.query_actor.QueryProcessingActor object at 0x7fcd1f879f70>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/cse234/lib/python3.12/site-packages/rapidfireai/evals/actors/query_actor.py", line 401, in process_batch
+    raise RuntimeError(
+RuntimeError: Error processing batch: AttributeError: 'tuple' object has no attribute 'page_content'
+2026-04-30 13:47:40 | Controller | INFO | controller.py:1386 | [exp_431:Controller] All pipelines completed all shards!
+2026-04-30 13:47:40 | Controller | INFO | controller.py:695 | [exp_431:Controller] Computing final metrics for all pipelines...
+2026-04-30 13:47:40 | Controller | WARNING | controller.py:708 | [exp_431:Controller] Pipeline 7 failed, skipping final metrics
+2026-04-30 13:47:40 | Controller | WARNING | controller.py:708 | [exp_431:Controller] Pipeline 8 failed, skipping final metrics
+2026-04-30 13:47:40 | Controller | WARNING | controller.py:708 | [exp_431:Controller] Pipeline 9 failed, skipping final metrics
+2026-04-30 13:47:40 | Controller | WARNING | controller.py:708 | [exp_431:Controller] Pipeline 10 failed, skipping final metrics
+2026-04-30 13:47:40 | Controller | WARNING | controller.py:708 | [exp_431:Controller] Pipeline 11 failed, skipping final metrics
+2026-04-30 13:47:40 | Controller | WARNING | controller.py:708 | [exp_431:Controller] Pipeline 12 failed, skipping final metrics
